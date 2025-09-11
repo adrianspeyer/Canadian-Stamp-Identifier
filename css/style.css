@@ -388,30 +388,45 @@ body {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .header h1 {
-        font-size: 22px;
-    }
-    
-    .header p {
-        font-size: 12px;
-    }
-    
-    .header-links {
+    .header {
         flex-direction: column;
+        padding: 10px;
         gap: 10px;
     }
     
-    .search-bar, .controls {
+    .header-left, .header-center, .header-right {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .header h1 {
+        font-size: 20px;
+    }
+    
+    .header p {
+        font-size: 11px;
+    }
+    
+    .search-bar {
+        min-width: 200px;
+    }
+    
+    .header-links {
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .controls {
         position: relative;
         margin: 10px;
         top: auto;
-        left: auto;
         right: auto;
     }
     
     .canvas-container {
-        top: 200px;
-        height: calc(100vh - 200px);
+        top: 140px;
+        height: calc(100vh - 140px);
     }
     
     .stamp {
