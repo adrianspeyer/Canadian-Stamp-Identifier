@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canadian Stamp Identifier</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Canadian Stamp Identifier</h1>
+        <p>Visual identification tool for Canadian stamps 1851-2025 • Zoom, search, and identify your stamps</p>
+        <div class="header-links">
+            <a href="https://github.com/adrianspeyer/canadian-stamp-identifier" target="_blank">GitHub</a>
+            <a href="#about">About</a>
+            <a href="#contribute">Contribute</a>
+        </div>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search: beaver, 1935, wildlife, etc...">
+        <div id="searchInfo"></div>
+        <div class="search-help">Enter: next • Shift+Enter: prev</div>
+    </div>
+
+    <div class="controls">
+        <div class="zoom-controls">
+            <button class="zoom-btn" onclick="zoomIn()">Zoom In</button>
+            <button class="zoom-btn" onclick="zoomOut()">Zoom Out</button>
+            <button class="zoom-btn" onclick="resetView()">Fit All</button>
+            <button class="zoom-btn" onclick="jumpToEra('1930s')">1930s</button>
+            <button class="zoom-btn" onclick="jumpToEra('1960s')">1960s</button>
+            <div class="zoom-info">
+                <div>Scale: <span id="scaleInfo">25%</span></div>
+                <div>Total: <span id="stampCount">0</span> stamps</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="canvas-container" id="canvasContainer">
+        <div class="stamp-grid" id="stampGrid">
+            <div id="loadingMessage">Loading stamps...</div>
+        </div>
+    </div>
+
+    <!-- Stamp Details Modal -->
+    <div class="modal" id="stampModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-stamp">
+                <img id="modalStampImage" src="" alt="Stamp" />
+            </div>
+            <h2 id="modalTitle">Stamp Details</h2>
+            <div class="stamp-details">
+                <p><strong>ID:</strong> <span id="modalId"></span></p>
+                <p><strong>Year:</strong> <span id="modalYear"></span></p>
+                <p><strong>Topic:</strong> <span id="modalTopic"></span></p>
+                <p><strong>Denomination:</strong> <span id="modalDenomination"></span></p>
+                <p><strong>Color:</strong> <span id="modalColor"></span></p>
+                <p id="modalNotesContainer"><strong>Notes:</strong> <span id="modalNotes"></span></p>
+            </div>
+            <p class="modal-footer">Use this ID number to research varieties and details in stamp catalogs.</p>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="info-section" id="about">
+        <div class="info-content">
+            <h2>About This Project</h2>
+            <p>This tool helps identify Canadian stamps from 1851-2025 using visual pattern matching. Simply browse the timeline, zoom into the era that matches your stamp's style, and click to get the identification details.</p>
+            
+            <h3>How to Use</h3>
+            <ol>
+                <li><strong>Start zoomed out</strong> - see the entire timeline</li>
+                <li><strong>Navigate to your era</strong> - use visual cues or search</li>
+                <li><strong>Zoom in</strong> - see individual stamps clearly</li>
+                <li><strong>Click to identify</strong> - get ID number and details</li>
+                <li><strong>Research further</strong> - use the ID in stamp catalogs for varieties</li>
+            </ol>
+
+            <h3>Features</h3>
+            <ul>
+                <li>Visual timeline of Canadian stamps 1851-2025</li>
+                <li>Search by year, topic, or keyword</li>
+                <li>Zoomable interface for detailed viewing</li>
+                <li>Focus on main stamp designs (not varieties)</li>
+                <li>Open source and community-driven</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Contribute Section -->
+    <div class="info-section" id="contribute">
+        <div class="info-content">
+            <h2>Contribute</h2>
+            <p>Help expand this collection! This is an open source project and we welcome contributions.</p>
+            
+            <h3>How to Add Stamps</h3>
+            <ol>
+                <li>Fork the repository on GitHub</li>
+                <li>Add your stamp image to the appropriate decade folder</li>
+                <li>Update <code>data/stamps.json</code> with the stamp details</li>
+                <li>Submit a pull request</li>
+            </ol>
+
+            <h3>Image Guidelines</h3>
+            <ul>
+                <li>High quality scans (300+ DPI)</li>
+                <li>Square format preferred</li>
+                <li>Main stamp design only (not varieties)</li>
+                <li>File naming: <code>XXX-topic-year.jpg</code></li>
+            </ul>
+
+            <h3>JSON Format</h3>
+            <pre><code>{
+  "id": "001",
+  "year": 1851,
+  "mainTopic": "Beaver",
+  "subTopic": "Three Pence", 
+  "denomination": "3d",
+  "color": "red",
+  "image": "images/1850s/001-beaver-1851.jpg",
+  "notes": "First Canadian stamp"
+}</code></pre>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

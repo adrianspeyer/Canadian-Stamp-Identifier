@@ -1,0 +1,304 @@
+{
+  "stamps": [
+    {
+      "id": "001",
+      "year": 1851,
+      "mainTopic": "Beaver",
+      "subTopic": "Three Pence",
+      "denomination": "3d",
+      "color": "red",
+      "image": "images/1850s/001-beaver-1851.jpg",
+      "notes": "First Canadian stamp - multiple varieties exist"
+    },
+    {
+      "id": "002",
+      "year": 1852,
+      "mainTopic": "Prince Albert",
+      "subTopic": "Six Pence",
+      "denomination": "6d",
+      "color": "purple",
+      "image": "images/1850s/002-albert-1852.jpg",
+      "notes": "Early provincial stamp"
+    },
+    {
+      "id": "003",
+      "year": 1855,
+      "mainTopic": "Jacques Cartier",
+      "subTopic": "Ten Pence",
+      "denomination": "10d",
+      "color": "blue",
+      "image": "images/1850s/003-cartier-1855.jpg",
+      "notes": "Early explorer commemoration"
+    },
+    {
+      "id": "004",
+      "year": 1857,
+      "mainTopic": "Queen Victoria",
+      "subTopic": "Half Penny",
+      "denomination": "½d",
+      "color": "rose",
+      "image": "images/1850s/004-victoria-1857.jpg",
+      "notes": "Small format Victoria issue"
+    },
+    {
+      "id": "005",
+      "year": 1859,
+      "mainTopic": "Cents Issue",
+      "subTopic": "First Cents",
+      "denomination": "1¢",
+      "color": "orange",
+      "image": "images/1850s/005-cents-1859.jpg",
+      "notes": "Transition to decimal currency"
+    },
+    {
+      "id": "010",
+      "year": 1864,
+      "mainTopic": "Large Queen",
+      "subTopic": "Queen Victoria",
+      "denomination": "1¢",
+      "color": "brown",
+      "image": "images/1860s/010-large-queen-1864.jpg",
+      "notes": "Beginning of Large Queen series"
+    },
+    {
+      "id": "011",
+      "year": 1868,
+      "mainTopic": "Large Queen",
+      "subTopic": "Queen Victoria",
+      "denomination": "2¢",
+      "color": "green",
+      "image": "images/1860s/011-large-queen-1868.jpg",
+      "notes": "Part of Large Queen definitive series"
+    },
+    {
+      "id": "012",
+      "year": 1869,
+      "mainTopic": "Large Queen",
+      "subTopic": "Queen Victoria",
+      "denomination": "3¢",
+      "color": "red",
+      "image": "images/1860s/012-large-queen-1869.jpg",
+      "notes": "Most common Large Queen denomination"
+    },
+    {
+      "id": "050",
+      "year": 1888,
+      "mainTopic": "Small Queen",
+      "subTopic": "Queen Victoria",
+      "denomination": "1¢",
+      "color": "yellow",
+      "image": "images/1880s/050-small-queen-1888.jpg",
+      "notes": "Beginning of Small Queen series"
+    },
+    {
+      "id": "075",
+      "year": 1897,
+      "mainTopic": "Maple Leaf",
+      "subTopic": "Provisional",
+      "denomination": "3¢",
+      "color": "carmine",
+      "image": "images/1890s/075-maple-leaf-1897.jpg",
+      "notes": "Distinctive maple leaf surcharge"
+    },
+    {
+      "id": "100",
+      "year": 1903,
+      "mainTopic": "King Edward VII",
+      "subTopic": "Accession",
+      "denomination": "1¢",
+      "color": "green",
+      "image": "images/1900s/100-edward-1903.jpg",
+      "notes": "First stamps of King Edward VII"
+    },
+    {
+      "id": "125",
+      "year": 1911,
+      "mainTopic": "King George V",
+      "subTopic": "Accession",
+      "denomination": "1¢",
+      "color": "green",
+      "image": "images/1910s/125-george-1911.jpg",
+      "notes": "First stamps of King George V"
+    },
+    {
+      "id": "150",
+      "year": 1928,
+      "mainTopic": "Scroll Issue",
+      "subTopic": "King George V",
+      "denomination": "1¢",
+      "color": "orange",
+      "image": "images/1920s/150-scroll-1928.jpg",
+      "notes": "Distinctive scroll design around portrait"
+    },
+    {
+      "id": "156",
+      "year": 1935,
+      "mainTopic": "Jacques Cartier",
+      "subTopic": "Explorer Series",
+      "denomination": "3¢",
+      "color": "brown",
+      "image": "images/1930s/156-cartier-1935.jpg",
+      "notes": "Part of historical explorer commemoration series"
+    },
+    {
+      "id": "175",
+      "year": 1937,
+      "mainTopic": "King George VI",
+      "subTopic": "Coronation",
+      "denomination": "3¢",
+      "color": "carmine",
+      "image": "images/1930s/175-coronation-1937.jpg",
+      "notes": "Commemorating coronation of King George VI"
+    },
+    {
+      "id": "200",
+      "year": 1942,
+      "mainTopic": "War Effort",
+      "subTopic": "King George VI",
+      "denomination": "4¢",
+      "color": "dark carmine",
+      "image": "images/1940s/200-war-effort-1942.jpg",
+      "notes": "Wartime definitive series"
+    },
+    {
+      "id": "225",
+      "year": 1951,
+      "mainTopic": "King George VI",
+      "subTopic": "Definitive",
+      "denomination": "4¢",
+      "color": "dark carmine",
+      "image": "images/1950s/225-george-vi-1951.jpg",
+      "notes": "Post-war definitive design"
+    },
+    {
+      "id": "250",
+      "year": 1953,
+      "mainTopic": "Queen Elizabeth II",
+      "subTopic": "Coronation",
+      "denomination": "4¢",
+      "color": "violet",
+      "image": "images/1950s/250-elizabeth-coronation-1953.jpg",
+      "notes": "First stamps featuring Queen Elizabeth II"
+    },
+    {
+      "id": "301",
+      "year": 1967,
+      "mainTopic": "Centennial",
+      "subTopic": "Parliament Buildings",
+      "denomination": "4¢",
+      "color": "red",
+      "image": "images/1960s/301-centennial-parliament-1967.jpg",
+      "notes": "Canadian Confederation centennial celebration"
+    },
+    {
+      "id": "302",
+      "year": 1967,
+      "mainTopic": "Centennial",
+      "subTopic": "Maple Leaf",
+      "denomination": "5¢",
+      "color": "blue",
+      "image": "images/1960s/302-centennial-maple-1967.jpg",
+      "notes": "Iconic centennial maple leaf design"
+    },
+    {
+      "id": "350",
+      "year": 1976,
+      "mainTopic": "Olympics",
+      "subTopic": "Montreal Summer Games",
+      "denomination": "8¢",
+      "color": "multicolored",
+      "image": "images/1970s/350-olympics-1976.jpg",
+      "notes": "Montreal Summer Olympics commemoration"
+    },
+    {
+      "id": "400",
+      "year": 1982,
+      "mainTopic": "Constitution",
+      "subTopic": "Charter of Rights",
+      "denomination": "30¢",
+      "color": "red and blue",
+      "image": "images/1980s/400-constitution-1982.jpg",
+      "notes": "Canadian Constitution and Charter of Rights"
+    },
+    {
+      "id": "450",
+      "year": 1988,
+      "mainTopic": "Olympics",
+      "subTopic": "Calgary Winter Games",
+      "denomination": "34¢",
+      "color": "multicolored",
+      "image": "images/1980s/450-calgary-olympics-1988.jpg",
+      "notes": "Calgary Winter Olympics commemoration"
+    },
+    {
+      "id": "500",
+      "year": 1992,
+      "mainTopic": "Masterpieces",
+      "subTopic": "Canadian Art",
+      "denomination": "42¢",
+      "color": "multicolored",
+      "image": "images/1990s/500-art-masterpieces-1992.jpg",
+      "notes": "Celebrating Canadian artistic heritage"
+    },
+    {
+      "id": "600",
+      "year": 1999,
+      "mainTopic": "Millennium",
+      "subTopic": "Year 2000",
+      "denomination": "46¢",
+      "color": "gold and silver",
+      "image": "images/1990s/600-millennium-1999.jpg",
+      "notes": "Celebrating the new millennium"
+    },
+    {
+      "id": "700",
+      "year": 2005,
+      "mainTopic": "Daffodils",
+      "subTopic": "Spring Flowers",
+      "denomination": "50¢",
+      "color": "yellow",
+      "image": "images/2000s/700-daffodils-2005.jpg",
+      "notes": "Beautiful spring flower definitives"
+    },
+    {
+      "id": "750",
+      "year": 2010,
+      "mainTopic": "Olympics",
+      "subTopic": "Vancouver Winter Games",
+      "denomination": "57¢",
+      "color": "multicolored",
+      "image": "images/2010s/750-vancouver-olympics-2010.jpg",
+      "notes": "Vancouver Winter Olympics celebration"
+    },
+    {
+      "id": "800",
+      "year": 2017,
+      "mainTopic": "Canada 150",
+      "subTopic": "Sesquicentennial",
+      "denomination": "85¢",
+      "color": "red and white",
+      "image": "images/2010s/800-canada-150-2017.jpg",
+      "notes": "150th anniversary of Canadian Confederation"
+    },
+    {
+      "id": "850",
+      "year": 2020,
+      "mainTopic": "Healthcare Heroes",
+      "subTopic": "COVID-19 Response",
+      "denomination": "92¢",
+      "color": "blue",
+      "image": "images/2020s/850-healthcare-heroes-2020.jpg",
+      "notes": "Honoring frontline workers during pandemic"
+    },
+    {
+      "id": "900",
+      "year": 2023,
+      "mainTopic": "Indigenous Heritage",
+      "subTopic": "Cultural Celebration",
+      "denomination": "96¢",
+      "color": "earth tones",
+      "image": "images/2020s/900-indigenous-heritage-2023.jpg",
+      "notes": "Celebrating Indigenous culture and traditions"
+    }
+  ]
+}
