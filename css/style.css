@@ -58,8 +58,7 @@ body {
 /* Search bar */
 .search-bar {
     position: fixed;
-    top: 120px;
-    left: 20px;
+    right: 20px;
     z-index: 1000;
     background: white;
     padding: 15px;
