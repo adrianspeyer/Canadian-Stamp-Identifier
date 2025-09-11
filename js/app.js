@@ -551,5 +551,14 @@ function closeModal() {
 
 // Initialize the application when the page loads
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, initializing app...');
     stampApp = new StampIdentifier();
+    
+    // Also ensure drag setup runs after everything is loaded
+    window.addEventListener('load', () => {
+        console.log('Window fully loaded, setting up drag...');
+        if (stampApp && stampApp.setupDraggableSearch) {
+            stampApp.setupDraggableSearch();
+        }
+    });
 });
