@@ -218,6 +218,78 @@ class StampIdentifier {
         });
     }
     
+    setupDraggableSearch() {
+        const searchBar = document.getElementById('searchBar');
+        const dragHandle = searchBar.querySelector('.drag-handle');
+        let isDragging = false;
+        let offset = { x: 0, y: 0 };
+        
+        // Make the entire search bar draggable via the handle
+        dragHandle.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            searchBar.classList.add('dragging');
+            
+            const rect = searchBar.getBoundingClientRect();
+            offset.x = e.clientX - rect.left;
+            offset.y = e.clientY - rect.top;
+            
+            e.preventDefault();
+        });
+        
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            
+            const x = e.clientX - offset.x;
+            const y = e.clientY - offset.y;
+            
+            // Keep search bar within viewport bounds
+            const maxX = window.innerWidth - searchBar.offsetWidth;
+            const maxY = window.innerHeight - searchBar.offsetHeight;
+            
+            const constrainedX = Math.max(0, Math.min(x, maxX));
+            const constrainedY = Math.max(70, Math.min(y, maxY)); // 70px to stay below header
+            
+            searchBar.style.left = constrainedX + 'px';
+            searchBar.style.top = constrainedY + 'px';
+        });
+        
+        document.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                searchBar.classList.remove('dragging');
+            }
+        });
+        
+        // Touch support for mobile
+        dragHandle.addEventListener('touchstart', (e) => {
+            const touch = e.touches[0];
+            const mouseEvent = new MouseEvent('mousedown', {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            dragHandle.dispatchEvent(mouseEvent);
+            e.preventDefault();
+        });
+        
+        document.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const touch = e.touches[0];
+            const mouseEvent = new MouseEvent('mousemove', {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            document.dispatchEvent(mouseEvent);
+            e.preventDefault();
+        });
+        
+        document.addEventListener('touchend', () => {
+            if (isDragging) {
+                const mouseEvent = new MouseEvent('mouseup');
+                document.dispatchEvent(mouseEvent);
+            }
+        });
+    }
+    
     // Zoom and Pan Methods
     startDrag(e) {
         this.isDragging = true;
