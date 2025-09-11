@@ -219,75 +219,78 @@ class StampIdentifier {
     }
     
     setupDraggableSearch() {
-        const searchBar = document.getElementById('searchBar');
-        const dragHandle = searchBar.querySelector('.drag-handle');
-        let isDragging = false;
-        let offset = { x: 0, y: 0 };
+        console.log('Setting up draggable search...');
         
-        // Make the entire search bar draggable via the handle
+        const searchBar = document.getElementById('searchBar');
+        const dragHandle = searchBar?.querySelector('.drag-handle');
+        
+        if (!searchBar || !dragHandle) {
+            console.error('Search bar or drag handle not found!');
+            console.log('searchBar:', searchBar);
+            console.log('dragHandle:', dragHandle);
+            return;
+        }
+        
+        console.log('Found search bar and drag handle');
+        
+        let isDragging = false;
+        let startX, startY, initialX, initialY;
+        
+        // Add visual indicator that it's ready
+        dragHandle.style.background = '#ff0000'; // Make it bright red for testing
+        dragHandle.title = 'Drag me to move search box';
+        
         dragHandle.addEventListener('mousedown', (e) => {
+            console.log('Mouse down on drag handle');
             isDragging = true;
             searchBar.classList.add('dragging');
             
-            const rect = searchBar.getBoundingClientRect();
-            offset.x = e.clientX - rect.left;
-            offset.y = e.clientY - rect.top;
+            startX = e.clientX;
+            startY = e.clientY;
+            initialX = searchBar.offsetLeft;
+            initialY = searchBar.offsetTop;
             
             e.preventDefault();
+            e.stopPropagation();
         });
         
         document.addEventListener('mousemove', (e) => {
             if (!isDragging) return;
             
-            const x = e.clientX - offset.x;
-            const y = e.clientY - offset.y;
+            console.log('Dragging...');
             
-            // Keep search bar within viewport bounds
+            const deltaX = e.clientX - startX;
+            const deltaY = e.clientY - startY;
+            
+            const newX = initialX + deltaX;
+            const newY = initialY + deltaY;
+            
+            // Keep within bounds
             const maxX = window.innerWidth - searchBar.offsetWidth;
             const maxY = window.innerHeight - searchBar.offsetHeight;
             
-            const constrainedX = Math.max(0, Math.min(x, maxX));
-            const constrainedY = Math.max(70, Math.min(y, maxY)); // 70px to stay below header
+            const constrainedX = Math.max(0, Math.min(newX, maxX));
+            const constrainedY = Math.max(70, Math.min(newY, maxY));
             
             searchBar.style.left = constrainedX + 'px';
             searchBar.style.top = constrainedY + 'px';
         });
         
-        document.addEventListener('mouseup', () => {
+        document.addEventListener('mouseup', (e) => {
             if (isDragging) {
+                console.log('Mouse up - stopping drag');
                 isDragging = false;
                 searchBar.classList.remove('dragging');
             }
         });
         
-        // Touch support for mobile
-        dragHandle.addEventListener('touchstart', (e) => {
-            const touch = e.touches[0];
-            const mouseEvent = new MouseEvent('mousedown', {
-                clientX: touch.clientX,
-                clientY: touch.clientY
-            });
-            dragHandle.dispatchEvent(mouseEvent);
-            e.preventDefault();
+        // Test click handler
+        dragHandle.addEventListener('click', () => {
+            console.log('Drag handle clicked!');
+            alert('Drag handle is working! Try clicking and dragging.');
         });
         
-        document.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            const touch = e.touches[0];
-            const mouseEvent = new MouseEvent('mousemove', {
-                clientX: touch.clientX,
-                clientY: touch.clientY
-            });
-            document.dispatchEvent(mouseEvent);
-            e.preventDefault();
-        });
-        
-        document.addEventListener('touchend', () => {
-            if (isDragging) {
-                const mouseEvent = new MouseEvent('mouseup');
-                document.dispatchEvent(mouseEvent);
-            }
-        });
+        console.log('Drag setup complete');
     }
     
     // Zoom and Pan Methods
