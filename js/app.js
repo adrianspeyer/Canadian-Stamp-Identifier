@@ -309,8 +309,9 @@ class StampIdentifier {
         console.log('Found search bar and drag handle');
         
         // Position search bar in header area by default
-        searchBar.style.top = '90px';
-        searchBar.style.left = '300px';
+       searchBar.style.top = '15px';
+       searchBar.style.right = '20px';
+       searchBar.style.left = 'auto'; // Clear any left positioning
         
         let isDragging = false;
         let isResizing = false;

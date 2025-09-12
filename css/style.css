@@ -58,8 +58,8 @@ body {
 /* Moveable search bar with resize functionality */
 .search-bar.moveable {
     position: fixed;
-    top: 90px;
-    left: 300px;
+    top: 15px !important;
+    right: 20px; 
     z-index: 1001;
     background: white;
     padding: 15px;
@@ -72,6 +72,7 @@ body {
     transition: border-color 0.3s;
     resize: none;
 }
+
 
 .search-bar.moveable:hover {
     border-color: rgba(139,0,0,0.3);
