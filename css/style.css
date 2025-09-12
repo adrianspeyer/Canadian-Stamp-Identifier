@@ -531,8 +531,7 @@ body.pan-mode.dragging .canvas-container {
     100% { transform: rotate(360deg); }
 }
 
-/* --- UPDATED NAVIGATION STYLES --- */
-
+/* --- DESKTOP NAVIGATION STYLES --- */
 .nav-section {
     display: flex;
     gap: 15px;
@@ -666,61 +665,6 @@ body.pan-mode.dragging .canvas-container {
 }
 
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        padding: 10px;
-        gap: 10px;
-    }
-    
-    .header h1 {
-        font-size: 20px;
-    }
-    
-    .header p {
-        font-size: 11px;
-    }
-    
-    .search-bar.moveable {
-        top: 100px;
-        left: 10px;
-        width: calc(100vw - 40px);
-        min-width: 200px;
-    }
-    
-    .header-links {
-        justify-content: center;
-        gap: 10px;
-    }
-    
-    .controls {
-        position: relative;
-        margin: 10px;
-        top: auto;
-        right: auto;
-    }
-    
-    .canvas-container {
-        top: 180px;
-        height: calc(100vh - 180px);
-    }
-    
-    .stamp {
-        width: 60px;
-        height: 75px;
-    }
-    
-    .stamp-info {
-        font-size: 7px;
-    }
-    
-    /* Hide resize handle on mobile */
-    .resize-handle {
-        display: none;
-    }
-}
-
 /* Print styles */
 @media print {
     .header, .search-bar, .controls {
@@ -738,3 +682,129 @@ body.pan-mode.dragging .canvas-container {
         position: static;
     }
 }
+
+/* --- NEW: MOBILE RESPONSIVE STYLES --- */
+@media (max-width: 768px) {
+    /* --- HEADER --- */
+    .header {
+        padding: 10px 15px;
+        text-align: left;
+        position: relative; /* Make it part of the document flow */
+    }
+    .header h1 {
+        font-size: 18px;
+        margin-bottom: 2px;
+    }
+    .header p {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+    .header-links {
+        justify-content: flex-start;
+        gap: 15px;
+    }
+    .header-links a {
+        font-size: 12px;
+    }
+
+    /* --- SEARCH BAR --- */
+    .search-bar.moveable {
+        position: relative; /* Un-fix it from the viewport */
+        top: auto !important; /* Override inline styles from JS */
+        left: auto !important;
+        right: auto !important;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        z-index: 999;
+        padding: 10px;
+        min-width: unset;
+        border: none;
+    }
+    .search-bar.moveable .drag-handle, 
+    .search-bar.moveable .resize-handle {
+        display: none; /* Hide desktop drag/resize handles */
+    }
+    .search-bar input {
+        width: 100%;
+    }
+
+    /* --- CONTROLS PANEL (BOTTOM BAR) --- */
+    .controls {
+        top: auto; /* Unset original position */
+        bottom: 0; /* Stick to bottom */
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(4px);
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1001;
+    }
+    .zoom-controls {
+        flex-direction: row;
+        gap: 6px;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .zoom-btn {
+        padding: 10px;
+        flex-grow: 1; /* Make buttons share space */
+        max-width: 100px;
+    }
+    /* Hide era jump buttons on mobile to save space */
+    .zoom-btn:nth-child(n+4) {
+        display: none;
+    }
+    .zoom-info {
+        display: none; /* Hide scale/total text on mobile */
+    }
+    /* Hide the complex nav pad, as touch panning is primary */
+    .nav-section {
+        display: none;
+    }
+    /* Style the pan mode toggle for the bottom bar */
+    .nav-options {
+        border-top: none;
+        padding: 0 10px;
+        margin: 0;
+    }
+    .nav-toggle span {
+        font-size: 13px;
+    }
+    .nav-help {
+        display: none;
+    }
+
+    /* --- CANVAS --- */
+    .canvas-container {
+        top: 0; /* Let it fill the whole screen */
+        height: 100vh; /* Let it fill the whole screen */
+        /* Content will appear underneath the header/search and above the bottom bar */
+        /* Padding is a good way to handle this */
+        padding-top: 155px; /* Approx height of header + search */
+        padding-bottom: 70px; /* Approx height of bottom controls */
+    }
+
+    /* --- STAMPS --- */
+    .stamp {
+        width: 70px;
+        height: 85px;
+    }
+    .stamp-info {
+        font-size: 7px;
+    }
+
+    /* --- MODAL --- */
+    .modal-content {
+        max-width: 90vw;
+        padding: 20px;
+    }
+}
+
