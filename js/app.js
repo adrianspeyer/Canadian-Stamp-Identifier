@@ -63,8 +63,6 @@ class StampIdentifier {
     }
     
     createNavigationControls() {
-        // This function no longer creates elements, it just wires up the existing ones in index.html.
-        
         // Wire up navigation buttons
         document.getElementById('mainNavUp').addEventListener('click', () => this.navigate(0, 100));
         document.getElementById('mainNavDown').addEventListener('click', () => this.navigate(0, -100));
@@ -607,9 +605,16 @@ class StampIdentifier {
     setupEventListeners() {
         // Zoom and pan
         this.canvasContainer.addEventListener('mousedown', (e) => this.startDrag(e));
-        this.canvasContainer.addEventListener('contextmenu', (e) => e.preventDefault()); // Disable right-click menu
+        this.canvasContainer.addEventListener('touchstart', (e) => this.startDrag(e), { passive: false });
+
+        this.canvasContainer.addEventListener('contextmenu', (e) => e.preventDefault());
+        
         document.addEventListener('mousemove', (e) => this.drag(e));
+        document.addEventListener('touchmove', (e) => this.drag(e), { passive: false });
+
         document.addEventListener('mouseup', () => this.endDrag());
+        document.addEventListener('touchend', () => this.endDrag());
+        
         this.canvasContainer.addEventListener('wheel', (e) => this.handleWheel(e), { passive: false });
         
         // Keyboard navigation
@@ -821,26 +826,30 @@ class StampIdentifier {
         
         if (!shouldPan) return;
         
+        if (e.cancelable) e.preventDefault(); // Prevent text selection and default touch actions
+        
         this.isDragging = true;
-        this.lastX = e.clientX;
-        this.lastY = e.clientY;
+        const touch = e.touches ? e.touches[0] : e;
+        this.lastX = touch.clientX;
+        this.lastY = touch.clientY;
         this.canvasContainer.style.cursor = 'grabbing';
         document.body.classList.add('dragging');
-        
-        e.preventDefault(); // Prevent text selection while dragging
     }
     
     drag(e) {
         if (!this.isDragging) return;
         
-        const deltaX = e.clientX - this.lastX;
-        const deltaY = e.clientY - this.lastY;
+        if (e.cancelable) e.preventDefault();
+
+        const touch = e.touches ? e.touches[0] : e;
+        const deltaX = touch.clientX - this.lastX;
+        const deltaY = touch.clientY - this.lastY;
         
         this.translateX += deltaX;
         this.translateY += deltaY;
         
-        this.lastX = e.clientX;
-        this.lastY = e.clientY;
+        this.lastX = touch.clientX;
+        this.lastY = touch.clientY;
         
         this.updateTransform();
         this.updateMiniMap();
@@ -1277,4 +1286,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
