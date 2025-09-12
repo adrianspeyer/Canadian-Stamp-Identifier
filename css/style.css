@@ -12,6 +12,20 @@ body {
     color: #333;
 }
 
+/* Pan mode styles */
+body.pan-mode .stamp {
+    pointer-events: none !important;
+}
+
+body.pan-mode .canvas-container {
+    cursor: grab !important;
+}
+
+body.pan-mode.dragging .canvas-container {
+    cursor: grabbing !important;
+}
+
+
 /* Header */
 .header {
     background: linear-gradient(135deg, #8B0000, #DC143C);
@@ -516,6 +530,141 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+/* --- UPDATED NAVIGATION STYLES --- */
+
+.nav-section {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.timeline-overview {
+    flex: 1;
+}
+
+.nav-label {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 4px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.timeline-canvas {
+    position: relative;
+    width: 100%;
+    height: 40px; /* Increased height */
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.timeline-canvas:hover {
+    background: #e9ecef;
+}
+
+.timeline-viewport {
+    position: absolute;
+    top: 0;
+    background: #DC143C;
+    height: 100%;
+    min-width: 8px;
+    border-radius: 8px;
+    opacity: 0.7;
+    outline: 1px solid rgba(255, 255, 255, 0.9); /* Added outline */
+    pointer-events: none; /* Make it non-interactive */
+}
+
+/* NEW: Timeline hover preview */
+.timeline-preview {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.4);
+    border: 1px dashed #007bff;
+    border-radius: 8px;
+    pointer-events: none;
+    display: none; /* Hidden by default */
+}
+
+
+.cursor-controls {
+    flex-shrink: 0;
+}
+
+.cursor-pad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.cursor-row {
+    display: flex;
+    gap: 2px;
+}
+
+.cursor-btn {
+    width: 24px;
+    height: 24px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.cursor-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.cursor-btn:active {
+    background: #dee2e6;
+    transform: scale(0.95);
+}
+
+.cursor-btn.center-btn {
+    background: #8B0000;
+    color: white;
+    border-color: #6a0000;
+}
+.cursor-btn.center-btn:hover {
+    background: #A00000;
+}
+
+.nav-options {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.nav-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.nav-help {
+    font-size: 10px;
+    color: #999;
+    text-align: center;
+}
+
 
 /* Responsive design */
 @media (max-width: 768px) {

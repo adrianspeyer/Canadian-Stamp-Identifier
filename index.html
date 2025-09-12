@@ -43,6 +43,35 @@
                 <div>Scale: <span id="scaleInfo">25%</span></div>
                 <div>Total: <span id="stampCount">0</span> stamps</div>
             </div>
+            <div class="nav-section">
+                <div class="timeline-overview">
+                    <div class="nav-label">Timeline</div>
+                    <div class="timeline-canvas" id="mainTimelineCanvas">
+                        <div class="timeline-viewport" id="mainTimelineViewport"></div>
+                    </div>
+                </div>
+                <div class="cursor-controls">
+                    <div class="nav-label">Navigate</div>
+                    <div class="cursor-pad">
+                        <button class="cursor-btn" id="mainNavUp" title="Move Up (Arrow Up)">↑</button>
+                        <div class="cursor-row">
+                            <button class="cursor-btn" id="mainNavLeft" title="Move Left (Arrow Left)">←</button>
+                            <button class="cursor-btn center-btn" id="mainNavCenter" title="Center View">⌂</button>
+                            <button class="cursor-btn" id="mainNavRight" title="Move Right (Arrow Right)">→</button>
+                        </div>
+                        <button class="cursor-btn" id="mainNavDown" title="Move Down (Arrow Down)">↓</button>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-options">
+                <label class="nav-toggle">
+                    <input type="checkbox" id="panModeToggle">
+                    <span>Pan Mode</span>
+                </label>
+                <div class="nav-help">
+                    Hold Shift to pan
+                </div>
+            </div>
         </div>
     </div>
 
@@ -52,7 +81,6 @@
         </div>
     </div>
 
-    <!-- Stamp Details Modal -->
     <div class="modal" id="stampModal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -72,7 +100,6 @@
         </div>
     </div>
 
-    <!-- About Section -->
     <div class="info-section" id="about">
         <div class="info-content">
             <h2>About This Project</h2>
@@ -98,7 +125,6 @@
         </div>
     </div>
 
-    <!-- Contribute Section -->
     <div class="info-section" id="contribute">
         <div class="info-content">
             <h2>Contribute</h2>
@@ -128,7 +154,7 @@
   "subTopic": "Three Pence", 
   "denomination": "3d",
   "color": "red",
-  "image": "images/1850s/001-beaver-1851.jpg",
+  "image": "images/1850s/001-beaver-3d-1851.jpg",
   "notes": "First Canadian stamp"
 }</code></pre>
         </div>

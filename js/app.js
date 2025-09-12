@@ -35,6 +35,7 @@ class StampIdentifier {
         this.stampGrid = document.getElementById('stampGrid');
         this.canvasContainer = document.getElementById('canvasContainer');
         this.searchInput = document.getElementById('searchInput');
+        this.timelineCanvas = document.getElementById('mainTimelineCanvas');
         
         this.init();
     }
@@ -47,7 +48,7 @@ class StampIdentifier {
             this.renderStampsVirtual();
             this.setupEventListeners();
             this.createNavigationControls();
-            this.createMiniMap();
+            this.setupTimelineInteraction(); // Initialize the interactive mini-map
             this.startPreloadingImages();
             
             setTimeout(() => {
@@ -62,231 +63,68 @@ class StampIdentifier {
     }
     
     createNavigationControls() {
-        // Create navigation control panel
-        const navControls = document.createElement('div');
-        navControls.id = 'navigationControls';
-        navControls.className = 'navigation-controls';
-        navControls.innerHTML = `
-            <div class="nav-buttons">
-                <button class="nav-btn" id="navUp" title="Move Up (Arrow Up)">↑</button>
-                <div class="nav-row">
-                    <button class="nav-btn" id="navLeft" title="Move Left (Arrow Left)">←</button>
-                    <button class="nav-btn center-btn" id="navCenter" title="Center View">⌂</button>
-                    <button class="nav-btn" id="navRight" title="Move Right (Arrow Right)">→</button>
-                </div>
-                <button class="nav-btn" id="navDown" title="Move Down (Arrow Down)">↓</button>
-            </div>
-            <div class="nav-options">
-                <label class="nav-toggle">
-                    <input type="checkbox" id="panModeToggle">
-                    <span>Pan Mode (disable stamps)</span>
-                </label>
-                <div class="nav-help">
-                    Hold Shift: Pan mode<br>
-                    Arrow keys: Navigate<br>
-                    Right-click: Pan
-                </div>
-            </div>
-        `;
+        // This function no longer creates elements, it just wires up the existing ones in index.html.
         
-        // Add CSS styles
-        const navStyles = document.createElement('style');
-        navStyles.textContent = `
-            .navigation-controls {
-                position: fixed;
-                bottom: 20px;
-                left: 20px;
-                background: rgba(255, 255, 255, 0.95);
-                border: 1px solid #ddd;
-                border-radius: 8px;
-                padding: 15px;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                z-index: 1000;
-                backdrop-filter: blur(5px);
-                font-family: system-ui, -apple-system, sans-serif;
-            }
-            
-            .nav-buttons {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 5px;
-                margin-bottom: 10px;
-            }
-            
-            .nav-row {
-                display: flex;
-                gap: 5px;
-            }
-            
-            .nav-btn {
-                width: 32px;
-                height: 32px;
-                background: #f8f9fa;
-                border: 1px solid #ddd;
-                border-radius: 4px;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 16px;
-                transition: all 0.2s;
-            }
-            
-            .nav-btn:hover {
-                background: #e9ecef;
-                border-color: #adb5bd;
-            }
-            
-            .nav-btn:active {
-                background: #dee2e6;
-                transform: scale(0.95);
-            }
-            
-            .center-btn {
-                background: #007bff;
-                color: white;
-                border-color: #0056b3;
-            }
-            
-            .center-btn:hover {
-                background: #0056b3;
-            }
-            
-            .nav-options {
-                border-top: 1px solid #eee;
-                padding-top: 10px;
-            }
-            
-            .nav-toggle {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-                font-size: 12px;
-                cursor: pointer;
-                margin-bottom: 8px;
-            }
-            
-            .nav-help {
-                font-size: 10px;
-                color: #666;
-                line-height: 1.3;
-            }
-            
-            body.pan-mode .stamp {
-                pointer-events: none !important;
-            }
-            
-            body.pan-mode .canvas-container {
-                cursor: grab !important;
-            }
-            
-            body.pan-mode.dragging .canvas-container {
-                cursor: grabbing !important;
-            }
-        `;
-        document.head.appendChild(navStyles);
-        document.body.appendChild(navControls);
+        // Wire up navigation buttons
+        document.getElementById('mainNavUp').addEventListener('click', () => this.navigate(0, 100));
+        document.getElementById('mainNavDown').addEventListener('click', () => this.navigate(0, -100));
+        document.getElementById('mainNavLeft').addEventListener('click', () => this.navigate(100, 0));
+        document.getElementById('mainNavRight').addEventListener('click', () => this.navigate(-100, 0));
+        document.getElementById('mainNavCenter').addEventListener('click', () => this.recenterCurrentView()); // Use bullseye re-center
         
-        // Add event listeners
-        document.getElementById('navUp').addEventListener('click', () => this.navigate(0, 100));
-        document.getElementById('navDown').addEventListener('click', () => this.navigate(0, -100));
-        document.getElementById('navLeft').addEventListener('click', () => this.navigate(100, 0));
-        document.getElementById('navRight').addEventListener('click', () => this.navigate(-100, 0));
-        document.getElementById('navCenter').addEventListener('click', () => this.centerView());
-        
-        document.getElementById('panModeToggle').addEventListener('change', (e) => {
-            this.panMode = e.target.checked;
-            document.body.classList.toggle('pan-mode', this.panMode);
-        });
+        // Wire up pan mode toggle
+        const panToggle = document.getElementById('panModeToggle');
+        if (panToggle) {
+            panToggle.addEventListener('change', (e) => {
+                this.panMode = e.target.checked;
+                document.body.classList.toggle('pan-mode', this.panMode);
+            });
+        }
     }
-    
-    createMiniMap() {
-        // Create minimap container
-        const miniMap = document.createElement('div');
-        miniMap.id = 'miniMap';
-        miniMap.className = 'mini-map';
-        miniMap.innerHTML = `
-            <div class="mini-map-header">Timeline Overview</div>
-            <div class="mini-map-canvas" id="miniMapCanvas">
-                <div class="mini-map-viewport" id="miniMapViewport"></div>
-                <div class="mini-map-decades" id="miniMapDecades"></div>
-            </div>
-        `;
-        
-        // Add minimap CSS
-        const miniMapStyles = document.createElement('style');
-        miniMapStyles.textContent = `
-            .mini-map {
-                position: fixed;
-                top: 80px;
-                right: 20px;
-                width: 200px;
-                height: 120px;
-                background: rgba(255, 255, 255, 0.95);
-                border: 1px solid #ddd;
-                border-radius: 8px;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                z-index: 1000;
-                backdrop-filter: blur(5px);
-                overflow: hidden;
-            }
+
+    // NEW: Interactive Timeline (Mini-map) Logic
+    setupTimelineInteraction() {
+        if (!this.timelineCanvas) return;
+
+        let previewElement = document.createElement('div');
+        previewElement.className = 'timeline-preview';
+        this.timelineCanvas.appendChild(previewElement);
+
+        this.timelineCanvas.addEventListener('mousemove', (e) => {
+            const rect = this.timelineCanvas.getBoundingClientRect();
+            const hoverX = e.clientX - rect.left;
             
-            .mini-map-header {
-                background: #f8f9fa;
-                padding: 5px 10px;
-                font-size: 11px;
-                font-weight: 600;
-                border-bottom: 1px solid #eee;
-                color: #495057;
-            }
+            const viewportWidthPercent = (this.canvasContainer.clientWidth / (this.stampGrid.scrollWidth * this.scale)) * 100;
+
+            previewElement.style.display = 'block';
+            previewElement.style.width = `${viewportWidthPercent}%`;
+            previewElement.style.left = `${(hoverX / rect.width) * 100}%`;
+        });
+
+        this.timelineCanvas.addEventListener('mouseleave', () => {
+            previewElement.style.display = 'none';
+        });
+
+        this.timelineCanvas.addEventListener('click', (e) => {
+            const rect = this.timelineCanvas.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const clickPercent = clickX / rect.width;
+
+            // Calculate the total scrollable width of the stamp grid
+            const totalContentWidth = this.stampGrid.scrollWidth * this.scale;
+            const visibleWidth = this.canvasContainer.clientWidth;
+
+            // Calculate the new translateX
+            // We want the left of the viewport to align with the click percentage
+            this.translateX = -clickPercent * (totalContentWidth - visibleWidth);
             
-            .mini-map-canvas {
-                position: relative;
-                width: 100%;
-                height: 92px;
-                cursor: pointer;
-                overflow: hidden;
-            }
-            
-            .mini-map-viewport {
-                position: absolute;
-                border: 2px solid #007bff;
-                background: rgba(0, 123, 255, 0.1);
-                pointer-events: none;
-                z-index: 2;
-            }
-            
-            .mini-map-decades {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(to right, 
-                    #8B4513 0%, #4B0082 10%, #2F4F4F 20%, #8B0000 30%, 
-                    #006400 40%, #B8860B 50%, #800080 60%, #2E8B57 70%, 
-                    #1E90FF 80%, #DC143C 90%, #FF1493 100%);
-            }
-        `;
-        document.head.appendChild(miniMapStyles);
-        document.body.appendChild(miniMap);
-        
-        // Add minimap click handler
-        document.getElementById('miniMapCanvas').addEventListener('click', (e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width;
-            const totalWidth = this.stamps.length * 120; // Approximate stamp width
-            const targetX = -x * totalWidth + this.canvasContainer.clientWidth / 2;
-            
-            this.translateX = targetX;
             this.updateTransform();
             this.updateMiniMap();
         });
-        
-        this.updateMiniMap();
     }
     
     updateMiniMap() {
-        const viewport = document.getElementById('miniMapViewport');
+        const viewport = document.getElementById('mainTimelineViewport');
         if (!viewport) return;
         
         const container = this.canvasContainer;
@@ -294,30 +132,16 @@ class StampIdentifier {
         
         if (!container || !grid) return;
         
-        const containerWidth = container.clientWidth;
-        const containerHeight = container.clientHeight;
-        
-        // Calculate approximate total content dimensions
-        const totalStamps = this.stamps.length;
-        const stampsPerRow = Math.floor(containerWidth / 120); // Approximate
-        const totalRows = Math.ceil(totalStamps / stampsPerRow);
-        const totalWidth = stampsPerRow * 120;
-        const totalHeight = totalRows * 140;
+        const totalContentWidth = grid.scrollWidth * this.scale;
+        const visibleWidth = container.clientWidth;
         
         // Calculate viewport position and size relative to total content
-        const viewportLeft = (-this.translateX) / (totalWidth * this.scale);
-        const viewportTop = (-this.translateY) / (totalHeight * this.scale);
-        const viewportWidth = containerWidth / (totalWidth * this.scale);
-        const viewportHeight = containerHeight / (totalHeight * this.scale);
+        const viewportLeftPercent = (-this.translateX / totalContentWidth) * 100;
+        const viewportWidthPercent = (visibleWidth / totalContentWidth) * 100;
         
         // Update viewport indicator
-        const miniMapCanvas = document.getElementById('miniMapCanvas');
-        const canvasRect = miniMapCanvas.getBoundingClientRect();
-        
-        viewport.style.left = Math.max(0, Math.min(1, viewportLeft)) * 100 + '%';
-        viewport.style.top = Math.max(0, Math.min(1, viewportTop)) * 100 + '%';
-        viewport.style.width = Math.max(5, Math.min(100, viewportWidth * 100)) + '%';
-        viewport.style.height = Math.max(5, Math.min(100, viewportHeight * 100)) + '%';
+        viewport.style.left = `${viewportLeftPercent}%`;
+        viewport.style.width = `${viewportWidthPercent}%`;
     }
     
     navigate(deltaX, deltaY) {
@@ -327,12 +151,56 @@ class StampIdentifier {
         this.updateMiniMap();
     }
     
-    centerView() {
+    centerView() { // This is the full reset
         this.translateX = 0;
         this.translateY = 0;
         this.scale = 0.3;
         this.updateTransform();
         this.updateMiniMap();
+    }
+
+    // NEW: Bullseye re-center function
+    recenterCurrentView() {
+        const viewportCenterX = this.canvasContainer.clientWidth / 2;
+        const viewportCenterY = this.canvasContainer.clientHeight / 2;
+
+        let closestStamp = null;
+        let minDistance = Infinity;
+
+        // Find the stamp element closest to the center of the viewport
+        const stampElements = this.stampGrid.querySelectorAll('.stamp');
+        stampElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.width > 0 && rect.height > 0) { // Ensure element is visible
+                const elementCenterX = rect.left + rect.width / 2;
+                const elementCenterY = rect.top + rect.height / 2;
+                
+                const distance = Math.sqrt(
+                    Math.pow(elementCenterX - viewportCenterX, 2) +
+                    Math.pow(elementCenterY - viewportCenterY, 2)
+                );
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestStamp = element;
+                }
+            }
+        });
+        
+        if (closestStamp) {
+            const stampRect = closestStamp.getBoundingClientRect();
+            const gridRect = this.stampGrid.getBoundingClientRect();
+            
+            const stampX = (stampRect.left - gridRect.left) / this.scale;
+            const stampY = (stampRect.top - gridRect.top) / this.scale;
+            
+            // Pan smoothly to the center
+            this.translateX = viewportCenterX - (stampX * this.scale + (stampRect.width / 2 / this.scale) * this.scale);
+            this.translateY = viewportCenterY - (stampY * this.scale + (stampRect.height / 2 / this.scale) * this.scale);
+            
+            this.updateTransform();
+            this.updateMiniMap();
+        }
     }
     
     async loadStamps() {
@@ -1262,12 +1130,12 @@ class StampIdentifier {
         const stampRect = element.getBoundingClientRect();
         const gridRect = this.stampGrid.getBoundingClientRect();
         
-        const stampX = stampRect.left - gridRect.left;
-        const stampY = stampRect.top - gridRect.top;
+        const stampX = (stampRect.left - gridRect.left) / this.scale;
+        const stampY = (stampRect.top - gridRect.top) / this.scale;
         
         // Center the stamp
-        this.translateX = containerWidth/2 - (stampX * this.scale + stampRect.width * this.scale / 2);
-        this.translateY = containerHeight/2 - (stampY * this.scale + stampRect.height * this.scale / 2);
+        this.translateX = containerWidth/2 - (stampX * this.scale + (stampRect.width / 2));
+        this.translateY = containerHeight/2 - (stampY * this.scale + (stampRect.height / 2));
         
         this.updateTransform();
         this.updateMiniMap();
@@ -1349,12 +1217,6 @@ class StampIdentifier {
         this.preloadQueue = [];
         this.renderQueue = [];
         this.imageCache.clear();
-        
-        // Remove navigation controls
-        const navControls = document.getElementById('navigationControls');
-        const miniMap = document.getElementById('miniMap');
-        if (navControls) navControls.remove();
-        if (miniMap) miniMap.remove();
     }
 }
 
@@ -1415,3 +1277,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
