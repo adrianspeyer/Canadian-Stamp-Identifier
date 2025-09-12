@@ -11,6 +11,9 @@ class StampIdentifier {
         this.currentMatches = [];
         this.currentMatchIndex = 0;
         
+        // Lazy loading observer
+        this.lazyLoadObserver = null;
+        
         this.stampGrid = document.getElementById('stampGrid');
         this.canvasContainer = document.getElementById('canvasContainer');
         this.searchInput = document.getElementById('searchInput');
@@ -20,9 +23,16 @@ class StampIdentifier {
     
     async init() {
         try {
+            this.setupLazyLoading();
             await this.loadStamps();
             this.renderStamps();
             this.setupEventListeners();
+            
+            // Add small delay to ensure DOM is ready for drag setup
+            setTimeout(() => {
+                this.setupDraggableSearch();
+            }, 100);
+            
             this.updateTransform();
         } catch (error) {
             console.error('Failed to initialize:', error);
@@ -89,6 +99,40 @@ class StampIdentifier {
         ];
     }
     
+    setupLazyLoading() {
+        if ('IntersectionObserver' in window) {
+            this.lazyLoadObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const realSrc = img.dataset.src;
+                        
+                        if (realSrc) {
+                            img.src = realSrc;
+                            img.onload = () => {
+                                img.classList.remove('lazy-load');
+                            };
+                            img.onerror = () => {
+                                // Show placeholder on error
+                                const stampElement = img.closest('.stamp');
+                                const stamp = this.stamps.find(s => s.image === realSrc);
+                                if (stamp) {
+                                    const decade = Math.floor(stamp.year / 10) * 10;
+                                    img.style.display = 'none';
+                                    stampElement.style.background = this.getColorForDecade(decade);
+                                    stampElement.innerHTML += `<div style="display: flex; align-items: center; justify-content: center; height: 80%; font-size: 10px; text-align: center; padding: 5px; color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.8);">${stamp.mainTopic}</div>`;
+                                }
+                            };
+                            this.lazyLoadObserver.unobserve(img);
+                        }
+                    }
+                });
+            }, {
+                rootMargin: '200px' // Load images 200px before they come into view
+            });
+        }
+    }
+    
     renderStamps() {
         this.stampGrid.innerHTML = '';
         
@@ -97,9 +141,20 @@ class StampIdentifier {
             return;
         }
         
+        console.log(`Rendering ${this.stamps.length} stamps with lazy loading...`);
+        
+        // Instead of rendering all stamps at once, render in batches
+        this.renderStampsBatch(0, Math.min(200, this.stamps.length)); // Start with first 200
+        
+        // Update stamp count
+        document.getElementById('stampCount').textContent = this.stamps.length;
+    }
+    
+    renderStampsBatch(startIndex, endIndex) {
         let currentDecade = null;
         
-        this.stamps.forEach((stamp, index) => {
+        for (let i = startIndex; i < endIndex && i < this.stamps.length; i++) {
+            const stamp = this.stamps[i];
             const decade = Math.floor(stamp.year / 10) * 10;
             
             // Add decade marker if new decade
@@ -112,41 +167,55 @@ class StampIdentifier {
             }
             
             // Create stamp element
-            const stampElement = document.createElement('div');
-            stampElement.className = 'stamp';
-            stampElement.dataset.id = stamp.id;
-            stampElement.dataset.year = stamp.year;
-            stampElement.dataset.topic = stamp.mainTopic.toLowerCase();
-            stampElement.dataset.subtopic = (stamp.subTopic || '').toLowerCase();
-            stampElement.dataset.color = (stamp.color || '').toLowerCase();
-            
-            // Create image element
-            const img = document.createElement('img');
-            img.src = stamp.image;
-            img.alt = `${stamp.year} ${stamp.mainTopic}`;
-            img.onerror = () => {
-                // If image fails to load, show placeholder
-                img.style.display = 'none';
-                stampElement.style.background = this.getColorForDecade(decade);
-                stampElement.innerHTML += `<div style="display: flex; align-items: center; justify-content: center; height: 80%; font-size: 10px; text-align: center; padding: 5px; color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.8);">${stamp.mainTopic}</div>`;
-            };
-            
-            // Create info element
-            const info = document.createElement('div');
-            info.className = 'stamp-info';
-            info.innerHTML = `${stamp.id}<br>${stamp.year}`;
-            
-            stampElement.appendChild(img);
-            stampElement.appendChild(info);
-            
-            // Add click handler
-            stampElement.onclick = () => this.showStampDetails(stamp);
-            
+            const stampElement = this.createStampElement(stamp, decade);
             this.stampGrid.appendChild(stampElement);
-        });
+        }
         
-        // Update stamp count
-        document.getElementById('stampCount').textContent = this.stamps.length;
+        // If there are more stamps, render the next batch after a short delay
+        if (endIndex < this.stamps.length) {
+            setTimeout(() => {
+                this.renderStampsBatch(endIndex, Math.min(endIndex + 200, this.stamps.length));
+            }, 50); // 50ms delay between batches
+        }
+    }
+    
+    createStampElement(stamp, decade) {
+        // Create stamp element
+        const stampElement = document.createElement('div');
+        stampElement.className = 'stamp';
+        stampElement.dataset.id = stamp.id;
+        stampElement.dataset.year = stamp.year;
+        stampElement.dataset.topic = stamp.mainTopic.toLowerCase();
+        stampElement.dataset.subtopic = (stamp.subTopic || '').toLowerCase();
+        stampElement.dataset.color = (stamp.color || '').toLowerCase();
+        
+        // Create image element with lazy loading
+        const img = document.createElement('img');
+        img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4='; // Tiny placeholder
+        img.dataset.src = stamp.image; // Real image URL
+        img.alt = `${stamp.year} ${stamp.mainTopic}`;
+        img.className = 'lazy-load';
+        
+        // Set up intersection observer for lazy loading
+        if ('IntersectionObserver' in window) {
+            this.lazyLoadObserver.observe(img);
+        } else {
+            // Fallback for older browsers
+            img.src = stamp.image;
+        }
+        
+        // Create info element
+        const info = document.createElement('div');
+        info.className = 'stamp-info';
+        info.innerHTML = `${stamp.id}<br>${stamp.year}`;
+        
+        stampElement.appendChild(img);
+        stampElement.appendChild(info);
+        
+        // Add click handler
+        stampElement.onclick = () => this.showStampDetails(stamp);
+        
+        return stampElement;
     }
     
     getColorForDecade(decade) {
@@ -178,7 +247,7 @@ class StampIdentifier {
         this.canvasContainer.addEventListener('mousedown', (e) => this.startDrag(e));
         document.addEventListener('mousemove', (e) => this.drag(e));
         document.addEventListener('mouseup', () => this.endDrag());
-        this.canvasContainer.addEventListener('wheel', (e) => this.handleWheel(e));
+        this.canvasContainer.addEventListener('wheel', (e) => this.handleWheel(e), { passive: false });
         
         // Search
         this.searchInput.addEventListener('input', (e) => this.handleSearch(e.target.value));
@@ -237,7 +306,7 @@ class StampIdentifier {
         let startX, startY, initialX, initialY;
         
         // Add visual indicator that it's ready
-        dragHandle.style.background = '#ff0000'; // Make it bright red for testing
+        dragHandle.style.background = '#ccc'; // Normal gray color
         dragHandle.title = 'Drag me to move search box';
         
         dragHandle.addEventListener('mousedown', (e) => {
@@ -256,8 +325,6 @@ class StampIdentifier {
         
         document.addEventListener('mousemove', (e) => {
             if (!isDragging) return;
-            
-            console.log('Dragging...');
             
             const deltaX = e.clientX - startX;
             const deltaY = e.clientY - startY;
@@ -282,12 +349,6 @@ class StampIdentifier {
                 isDragging = false;
                 searchBar.classList.remove('dragging');
             }
-        });
-        
-        // Test click handler
-        dragHandle.addEventListener('click', () => {
-            console.log('Drag handle clicked!');
-            alert('Drag handle is working! Try clicking and dragging.');
         });
         
         console.log('Drag setup complete');
@@ -439,25 +500,28 @@ class StampIdentifier {
         const element = document.querySelector(`[data-id="${stamp.id}"]`);
         if (!element) return;
         
-        const rect = element.getBoundingClientRect();
-        const containerRect = this.canvasContainer.getBoundingClientRect();
-        
         // Calculate position to center the stamp
-        const containerCenterX = containerRect.width / 2;
-        const containerCenterY = containerRect.height / 2;
+        const containerWidth = this.canvasContainer.clientWidth;
+        const containerHeight = this.canvasContainer.clientHeight;
         
         // Set appropriate zoom level
         this.scale = Math.max(1, this.scale);
         
-        // Calculate translation to center the stamp
-        const elementRect = element.getBoundingClientRect();
-        const stampCenterX = (elementRect.left + elementRect.right) / 2 - containerRect.left;
-        const stampCenterY = (elementRect.top + elementRect.bottom) / 2 - containerRect.top;
+        // Get stamp position relative to grid
+        const stampRect = element.getBoundingClientRect();
+        const gridRect = this.stampGrid.getBoundingClientRect();
         
-        this.translateX += containerCenterX - stampCenterX;
-        this.translateY += containerCenterY - stampCenterY;
+        const stampX = stampRect.left - gridRect.left;
+        const stampY = stampRect.top - gridRect.top;
+        
+        // Center the stamp
+        this.translateX = containerWidth/2 - (stampX * this.scale + stampRect.width * this.scale / 2);
+        this.translateY = containerHeight/2 - (stampY * this.scale + stampRect.height * this.scale / 2);
         
         this.updateTransform();
+        
+        // Update highlight for current match
+        this.highlightMatches();
     }
     
     // Modal Methods
@@ -494,16 +558,20 @@ class StampIdentifier {
         document.getElementById(sectionId).style.display = 'block';
     }
     
-    // Era jumping
+    // Era jumping - Updated to handle all the eras in your HTML
     jumpToEra(era) {
         const eraYears = {
-            '1930s': 1935,
-            '1960s': 1967
+            '1900s': 1900,
+            '1930s': 1930,
+            '1960s': 1960,
+            '1990s': 1990,
+            '2020s': 2020
         };
         
         const targetYear = eraYears[era];
         if (!targetYear) return;
         
+        // Find the first stamp in that era (or closest after)
         const stamp = this.stamps.find(s => s.year >= targetYear);
         if (stamp) {
             this.jumpToStamp(stamp);

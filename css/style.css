@@ -455,3 +455,107 @@ body {
         position: static;
     }
 }
+
+/* Add these styles to your existing style.css file */
+
+/* Moveable search bar styles - add to existing search-bar section */
+.search-bar.moveable {
+    position: fixed;
+    top: 120px;
+    left: 20px;
+    z-index: 1001;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    min-width: 220px;
+    user-select: none;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.search-bar.moveable:hover {
+    border-color: rgba(139,0,0,0.3);
+}
+
+.search-bar.moveable.dragging {
+    border-color: #8B0000;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    transform: scale(1.02);
+}
+
+.search-bar.moveable .drag-handle {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 8px;
+    background: #bbb;
+    border-radius: 4px;
+    cursor: grab;
+    transition: all 0.3s;
+    border: 1px solid #999;
+}
+
+.search-bar.moveable .drag-handle:hover {
+    background: #8B0000;
+    height: 10px;
+    top: -13px;
+}
+
+.search-bar.moveable .drag-handle:active {
+    cursor: grabbing;
+    background: #DC143C;
+}
+
+.search-bar.moveable .drag-handle::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -20px;
+    right: -20px;
+    bottom: -10px;
+}
+
+/* Lazy loading styles */
+.lazy-load {
+    background: #f0f0f0;
+    transition: opacity 0.3s;
+}
+
+.stamp img.lazy-load {
+    opacity: 0.5;
+}
+
+.stamp img:not(.lazy-load) {
+    opacity: 1;
+}
+
+/* Loading indicator */
+.loading-batch {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 14px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff40;
+    border-top: 2px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
