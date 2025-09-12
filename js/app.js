@@ -1158,7 +1158,7 @@ class StampIdentifier {
             
             // Denominations
             'cent': ['¢', 'cents', 'penny'],
-            'dollar': [', 'dollars'],
+            'dollar': ['$', 'dollars'],
             'pence': ['penny', 'pennies', 'd'],
             
             // Common misspellings
