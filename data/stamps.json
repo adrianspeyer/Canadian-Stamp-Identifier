@@ -4954,7 +4954,7 @@
       "id": "493",
       "year": 1970,
       "mainTopic": "Santa Claus",
-      "subTopic": "Miscellaneous",
+      "subTopic": "Holidays & Events: Christmas",
       "denomination": "5¢",
       "color": "",
       "image": "images/1970s/493-santa-claus-5-1970.jpg",
@@ -4964,7 +4964,7 @@
       "id": "494",
       "year": 1970,
       "mainTopic": "Sleigh",
-      "subTopic": "Miscellaneous",
+      "subTopic": "Holidays & Events: Christmas",
       "denomination": "5¢",
       "color": "",
       "image": "images/1970s/494-sleigh-5-1970.jpg",
@@ -4974,7 +4974,7 @@
       "id": "495",
       "year": 1970,
       "mainTopic": "Nativity",
-      "subTopic": "Miscellaneous",
+      "subTopic": "Holidays & Events: Christmas",
       "denomination": "5¢",
       "color": "blue",
       "image": "images/1970s/495-nativity-5-1970.jpg",
@@ -30854,7 +30854,7 @@
       "id": "3083",
       "year": 2017,
       "mainTopic": "Hanukkah",
-      "subTopic": "Miscellaneous",
+      "subTopic": "Holidays & Events: Hanukkah",
       "denomination": "PERMANENT™ (P). Current monetary value: $0.92 .",
       "color": "",
       "image": "images/2010s/3083-hanukkah-permanent-p-current-monetary-value-092--2017.jpg",
@@ -32004,7 +32004,7 @@
       "id": "3198",
       "year": 2019,
       "mainTopic": "Hanukkah",
-      "subTopic": "Christmas 2019",
+      "subTopic": "Holidays & Events: Hanukkah",
       "denomination": "PERMANENT™ (P). Current monetary value: $0.92 .",
       "color": "",
       "image": "images/2010s/3198-hanukkah---christmas-2019-permanent-p-current-monetary-value-092--2019.jpg",
@@ -32414,7 +32414,7 @@
       "id": "3239",
       "year": 2020,
       "mainTopic": "Hanukkah 2020",
-      "subTopic": "Miscellaneous",
+      "subTopic": "Holidays & Events: Hanukkah",
       "denomination": "PERMANENT™ (P). Current monetary value: $0.92 .",
       "color": "",
       "image": "images/2020s/3239-hanukkah-2020-permanent-p-current-monetary-value-092--2020.jpg",
@@ -32844,7 +32844,7 @@
       "id": "3282",
       "year": 2021,
       "mainTopic": "Angels",
-      "subTopic": "Christmas",
+      "subTopic": "Holidays & Events: Christmas",
       "denomination": "PERMANENT™ (P). Current monetary value: $0.92 .",
       "color": "",
       "image": "images/2020s/3282-angels---christmas-permanent-p-current-monetary-value-092--2021.jpg",
@@ -32854,7 +32854,7 @@
       "id": "3283",
       "year": 2021,
       "mainTopic": "Santa Claus",
-      "subTopic": "Miscellaneous",
+      "subTopic": "Holidays & Events: Christmas",
       "denomination": "PERMANENT™ (P). Current monetary value: $0.92 .",
       "color": "",
       "image": "images/2020s/3283-santa-claus-permanent-p-current-monetary-value-092--2021.jpg",
@@ -32864,7 +32864,7 @@
       "id": "3284",
       "year": 2021,
       "mainTopic": "Reindeer",
-      "subTopic": "Miscellaneous",
+      "subTopic": "Holidays & Events: Christmas",
       "denomination": "$1.30",
       "color": "",
       "image": "images/2020s/3284-reindeer-130-2021.jpg",
@@ -32874,7 +32874,7 @@
       "id": "3285",
       "year": 2021,
       "mainTopic": "Elf",
-      "subTopic": "Miscellaneous",
+      "subTopic": "Holidays & Events: Christmas",
       "denomination": "$2.71",
       "color": "",
       "image": "images/2020s/3285-elf-271-2021.jpg",
@@ -32884,7 +32884,7 @@
       "id": "3286",
       "year": 2021,
       "mainTopic": "Hanukkah",
-      "subTopic": "Miscellaneous",
+      "subTopic": "Holidays & Events: Hanukkah",
       "denomination": "PERMANENT™ (P). Current monetary value: $0.92 .",
       "color": "",
       "image": "images/2020s/3286-hanukkah-permanent-p-current-monetary-value-092--2021.jpg",
@@ -33364,7 +33364,7 @@
       "id": "3334",
       "year": 2022,
       "mainTopic": "Hanukkah",
-      "subTopic": "2022",
+      "subTopic": "Holidays & Events: Hanukkah",
       "denomination": "PERMANENT™ (P). Current monetary value: $0.92 .",
       "color": "",
       "image": "images/2020s/3334-hanukkah---2022-permanent-p-current-monetary-value-092--2022.jpg",
@@ -33734,7 +33734,7 @@
       "id": "3371",
       "year": 2023,
       "mainTopic": "Hanukkah",
-      "subTopic": "Miscellaneous",
+      "subTopic": "Holidays & Events: Hanukkah",
       "denomination": "PERMANENT™ (P). Current monetary value: $0.92 .",
       "color": "",
       "image": "images/2020s/3371-hanukkah-permanent-p-current-monetary-value-092--2023.jpg",
@@ -33799,6 +33799,719 @@
       "color": "",
       "image": "images/2020s/3377-total-solar-eclipse-permanent-p-current-monetary-value-092--2024.jpg",
       "notes": ""
-    }
+    },
+    {
+  "id": "3378",
+  "year": 2024,
+  "mainTopic": "Eid",
+  "subTopic": "Holidays & Events: Eid",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.92 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3378-eid-permanent-p-current-monetary-value-092-2024.jpg",
+  "notes": "Issued: March 28, 2024."
+},
+{
+  "id": "3379",
+  "year": 2024,
+  "mainTopic": "Endangered Frogs — Oregon spotted frog",
+  "subTopic": "Nature & Wildlife: Animals",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.92 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3379-endangered-frogs-oregon-spotted-frog-permanent-p-current-monetary-value-092-2024.jpg",
+  "notes": "Issued: April 15, 2024; Series: Endangered Frogs."
+},
+{
+  "id": "3380",
+  "year": 2024,
+  "mainTopic": "Endangered Frogs — Fowler’s toad",
+  "subTopic": "Nature & Wildlife: Animals",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.92 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3380-endangered-frogs-fowlers-toad-permanent-p-current-monetary-value-092-2024.jpg",
+  "notes": "Issued: April 15, 2024; Series: Endangered Frogs."
+},
+{
+  "id": "3381",
+  "year": 2024,
+  "mainTopic": "Canada Post Community Foundation (semipostal)",
+  "subTopic": "Organizations",
+  "denomination": "PERMANENT™ (P) + 10¢ semipostal.",
+  "color": "multicoloured",
+  "image": "images/2020s/3381-canada-post-community-foundation-permanent-p-plus-10c-semipostal-2024.jpg",
+  "notes": "Issued: April 29, 2024; Semipostal to support community projects."
+},
+
+{
+  "id": "3382",
+  "year": 2024,
+  "mainTopic": "From Far and Wide — Torngat Mountains National Park",
+  "subTopic": "Nature & Wildlife: Mountains",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3382-from-far-and-wide-torngat-mountains-national-park-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: May 6, 2024; Series: From Far and Wide (Part IV)."
+},
+{
+  "id": "3383",
+  "year": 2024,
+  "mainTopic": "From Far and Wide — South Nahanni River",
+  "subTopic": "Nature & Wildlife: Parks",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3383-from-far-and-wide-south-nahanni-river-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: May 6, 2024; Series: From Far and Wide (Part IV)."
+},
+{
+  "id": "3384",
+  "year": 2024,
+  "mainTopic": "From Far and Wide — Sunflowers at Altona, Manitoba",
+  "subTopic": "Nature & Wildlife: Flowers",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3384-from-far-and-wide-sunflowers-at-altona-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: May 6, 2024; Series: From Far and Wide (Part IV)."
+},
+{
+  "id": "3385",
+  "year": 2024,
+  "mainTopic": "From Far and Wide — Galiano Island, British Columbia",
+  "subTopic": "Nature & Wildlife: Parks",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3385-from-far-and-wide-galiano-island-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: May 6, 2024; Series: From Far and Wide (Part IV)."
+},
+{
+  "id": "3386",
+  "year": 2024,
+  "mainTopic": "From Far and Wide — Abbaye de Saint-Benoît-du-Lac",
+  "subTopic": "Miscellaneous: Buildings",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3386-from-far-and-wide-abbaye-de-saint-benoit-du-lac-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: May 6, 2024; Series: From Far and Wide (Part IV)."
+},
+{
+  "id": "3387",
+  "year": 2024,
+  "mainTopic": "From Far and Wide — Point Prim Lighthouse",
+  "subTopic": "Miscellaneous: Buildings",
+  "denomination": "$1.15",
+  "color": "multicoloured",
+  "image": "images/2020s/3387-from-far-and-wide-point-prim-lighthouse-115-2024.jpg",
+  "notes": "Issued: May 6, 2024; Series: From Far and Wide (Part IV)."
+},
+{
+  "id": "3388",
+  "year": 2024,
+  "mainTopic": "From Far and Wide — Thousand Islands",
+  "subTopic": "Nature & Wildlife: Parks",
+  "denomination": "$1.40",
+  "color": "multicoloured",
+  "image": "images/2020s/3388-from-far-and-wide-thousand-islands-140-2024.jpg",
+  "notes": "Issued: May 6, 2024; Series: From Far and Wide (Part IV)."
+},
+{
+  "id": "3389",
+  "year": 2024,
+  "mainTopic": "From Far and Wide — Restigouche River",
+  "subTopic": "Nature & Wildlife: Parks",
+  "denomination": "$2.09",
+  "color": "multicoloured",
+  "image": "images/2020s/3389-from-far-and-wide-restigouche-river-209-2024.jpg",
+  "notes": "Issued: May 6, 2024; Series: From Far and Wide (Part IV)."
+},
+{
+  "id": "3390",
+  "year": 2024,
+  "mainTopic": "From Far and Wide — Qarlinngua Sea Arch (Nunavut)",
+  "subTopic": "Nature & Wildlife: Parks",
+  "denomination": "$2.92",
+  "color": "multicoloured",
+  "image": "images/2020s/3390-from-far-and-wide-qarlinngua-sea-arch-292-2024.jpg",
+  "notes": "Issued: May 6, 2024; Series: From Far and Wide (Part IV)."
+},
+
+{
+  "id": "3391",
+  "year": 2024,
+  "mainTopic": "Canadian Graphic Novelists — Chester Brown",
+  "subTopic": "Arts & Culture: Authors",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3391-canadian-graphic-novelists-chester-brown-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: May 10, 2024; Series: Canadian Graphic Novelists."
+},
+{
+  "id": "3392",
+  "year": 2024,
+  "mainTopic": "Canadian Graphic Novelists — Michel Rabagliati",
+  "subTopic": "Arts & Culture: Authors",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3392-canadian-graphic-novelists-michel-rabagliati-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: May 10, 2024; Series: Canadian Graphic Novelists."
+},
+{
+  "id": "3393",
+  "year": 2024,
+  "mainTopic": "Canadian Graphic Novelists — Seth",
+  "subTopic": "Arts & Culture: Authors",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3393-canadian-graphic-novelists-seth-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: May 10, 2024; Series: Canadian Graphic Novelists."
+},
+{
+  "id": "3394",
+  "year": 2024,
+  "mainTopic": "Canadian Graphic Novelists — Jillian Tamaki & Mariko Tamaki",
+  "subTopic": "Arts & Culture: Authors",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3394-canadian-graphic-novelists-jillian-tamaki-and-mariko-tamaki-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: May 10, 2024; Series: Canadian Graphic Novelists."
+},
+
+{
+  "id": "3395",
+  "year": 2024,
+  "mainTopic": "Indigenous Leaders — Elisapie",
+  "subTopic": "History & Heritage: Aboriginals",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3395-indigenous-leaders-elisapie-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: June 21, 2024; Series: Indigenous Leaders."
+},
+{
+  "id": "3396",
+  "year": 2024,
+  "mainTopic": "Indigenous Leaders — Christi Belcourt",
+  "subTopic": "History & Heritage: Aboriginals",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3396-indigenous-leaders-christi-belcourt-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: June 21, 2024; Series: Indigenous Leaders."
+},
+{
+  "id": "3397",
+  "year": 2024,
+  "mainTopic": "Indigenous Leaders — Josephine Mandamin",
+  "subTopic": "History & Heritage: Aboriginals",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3397-indigenous-leaders-josephine-mandamin-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: June 21, 2024; Series: Indigenous Leaders."
+},
+
+{
+  "id": "3398",
+  "year": 2024,
+  "mainTopic": "Norman Jewison — Filmmaker",
+  "subTopic": "Arts & Culture: Theatre",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3398-norman-jewison-filmmaker-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: July 24, 2024."
+},
+{
+  "id": "3399",
+  "year": 2024,
+  "mainTopic": "Sarah McLachlan",
+  "subTopic": "Arts & Culture: Music",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3399-sarah-mclachlan-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: September 17, 2024."
+},
+
+{
+  "id": "3400",
+  "year": 2024,
+  "mainTopic": "National Day for Truth and Reconciliation — Robert Burke",
+  "subTopic": "History & Heritage: Aboriginals",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3400-national-day-for-truth-and-reconciliation-robert-burke-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: September 27, 2024; Commemorates National Day for Truth and Reconciliation."
+},
+{
+  "id": "3401",
+  "year": 2024,
+  "mainTopic": "National Day for Truth and Reconciliation — Helen Iguptak",
+  "subTopic": "History & Heritage: Aboriginals",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3401-national-day-for-truth-and-reconciliation-helen-iguptak-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: September 27, 2024; Commemorates National Day for Truth and Reconciliation."
+},
+{
+  "id": "3402",
+  "year": 2024,
+  "mainTopic": "National Day for Truth and Reconciliation — Adrian Stimson",
+  "subTopic": "History & Heritage: Aboriginals",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3402-national-day-for-truth-and-reconciliation-adrian-stimson-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: September 27, 2024; Commemorates National Day for Truth and Reconciliation."
+},
+
+{
+  "id": "3403",
+  "year": 2024,
+  "mainTopic": "MuchMusic",
+  "subTopic": "Arts & Culture: Music",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3403-muchmusic-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: October 10, 2024."
+},
+{
+  "id": "3404",
+  "year": 2024,
+  "mainTopic": "MusiquePlus",
+  "subTopic": "Arts & Culture: Music",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3404-musiqueplus-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: October 10, 2024."
+},
+
+{
+  "id": "3405",
+  "year": 2024,
+  "mainTopic": "Diwali",
+  "subTopic": "Holidays & Events: Diwali",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3405-diwali-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: October 14, 2024."
+},
+
+{
+  "id": "3406",
+  "year": 2024,
+  "mainTopic": "Farmerettes",
+  "subTopic": "History & Heritage: War/military",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3406-farmerettes-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: October 28, 2024; With 'Soldiers of the Soil'."
+},
+{
+  "id": "3407",
+  "year": 2024,
+  "mainTopic": "Soldiers of the Soil",
+  "subTopic": "History & Heritage: War/military",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3407-soldiers-of-the-soil-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: October 28, 2024; With 'Farmerettes'."
+},
+
+{
+  "id": "3408",
+  "year": 2024,
+  "mainTopic": "Christmas — The Nativity",
+  "subTopic": "Holidays & Events: Christmas",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3408-christmas-the-nativity-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: November 4, 2024."
+},
+{
+  "id": "3409",
+  "year": 2024,
+  "mainTopic": "Christmas — Gingerbread Houses (Permanent)",
+  "subTopic": "Holidays & Events: Christmas",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3409-christmas-gingerbread-houses-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: November 4, 2024; Series: Christmas — Gingerbread Houses."
+},
+{
+  "id": "3410",
+  "year": 2024,
+  "mainTopic": "Christmas — Gingerbread Houses ($1.40)",
+  "subTopic": "Holidays & Events: Christmas",
+  "denomination": "$1.40",
+  "color": "multicoloured",
+  "image": "images/2020s/3410-christmas-gingerbread-houses-140-2024.jpg",
+  "notes": "Issued: November 4, 2024; Series: Christmas — Gingerbread Houses."
+},
+{
+  "id": "3411",
+  "year": 2024,
+  "mainTopic": "Christmas — Gingerbread Houses ($2.92)",
+  "subTopic": "Holidays & Events: Christmas",
+  "denomination": "$2.92",
+  "color": "multicoloured",
+  "image": "images/2020s/3411-christmas-gingerbread-houses-292-2024.jpg",
+  "notes": "Issued: November 4, 2024; Series: Christmas — Gingerbread Houses."
+},
+
+{
+  "id": "3412",
+  "year": 2024,
+  "mainTopic": "Hanukkah",
+  "subTopic": "Holidays & Events: Hanukkah",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3412-hanukkah-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: November 14, 2024."
+},
+
+{
+  "id": "3413",
+  "year": 2024,
+  "mainTopic": "French-Canadian Authors — Marie-Claire Blais",
+  "subTopic": "Arts & Culture: Authors",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3413-french-canadian-authors-marie-claire-blais-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: November 27, 2024; Series: French-Canadian Authors."
+},
+{
+  "id": "3414",
+  "year": 2024,
+  "mainTopic": "French-Canadian Authors — Jean Marc Dalpé",
+  "subTopic": "Arts & Culture: Authors",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3414-french-canadian-authors-jean-marc-dalpe-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: November 27, 2024; Series: French-Canadian Authors."
+},
+{
+  "id": "3415",
+  "year": 2024,
+  "mainTopic": "French-Canadian Authors — Dany Laferrière",
+  "subTopic": "Arts & Culture: Authors",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3415-french-canadian-authors-dany-laferriere-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: November 27, 2024; Series: French-Canadian Authors."
+},
+{
+  "id": "3416",
+  "year": 2024,
+  "mainTopic": "French-Canadian Authors — Antonine Maillet",
+  "subTopic": "Arts & Culture: Authors",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3416-french-canadian-authors-antonine-maillet-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: November 27, 2024; Series: French-Canadian Authors."
+},
+{
+  "id": "3417",
+  "year": 2024,
+  "mainTopic": "French-Canadian Authors — Marguerite-A. Primeau",
+  "subTopic": "Arts & Culture: Authors",
+  "denomination": "PERMANENT™ (P). Current monetary value: $0.99 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3417-french-canadian-authors-marguerite-a-primeau-permanent-p-current-monetary-value-099-2024.jpg",
+  "notes": "Issued: November 27, 2024; Series: French-Canadian Authors."
+},
+
+{
+  "id": "3418",
+  "year": 2025,
+  "mainTopic": "From Far and Wide — Point Prim Lighthouse",
+  "subTopic": "Miscellaneous: Buildings",
+  "denomination": "$1.44",
+  "color": "multicoloured",
+  "image": "images/2020s/3418-from-far-and-wide-point-prim-lighthouse-144-2025.jpg",
+  "notes": "Issued: January 13, 2025; Series: From Far and Wide (definitives)."
+},
+{
+  "id": "3419",
+  "year": 2025,
+  "mainTopic": "From Far and Wide — Thousand Islands",
+  "subTopic": "Nature & Wildlife: Parks",
+  "denomination": "$1.75",
+  "color": "multicoloured",
+  "image": "images/2020s/3419-from-far-and-wide-thousand-islands-175-2025.jpg",
+  "notes": "Issued: January 13, 2025; Series: From Far and Wide (definitives)."
+},
+{
+  "id": "3420",
+  "year": 2025,
+  "mainTopic": "From Far and Wide — Restigouche River",
+  "subTopic": "Nature & Wildlife: Parks",
+  "denomination": "$2.61",
+  "color": "multicoloured",
+  "image": "images/2020s/3420-from-far-and-wide-restigouche-river-261-2025.jpg",
+  "notes": "Issued: January 13, 2025; Series: From Far and Wide (definitives)."
+},
+{
+  "id": "3421",
+  "year": 2025,
+  "mainTopic": "From Far and Wide — Qarlinngua Sea Arch (Nunavut)",
+  "subTopic": "Nature & Wildlife: Parks",
+  "denomination": "$3.65",
+  "color": "multicoloured",
+  "image": "images/2020s/3421-from-far-and-wide-qarlinngua-sea-arch-365-2025.jpg",
+  "notes": "Issued: January 13, 2025; Series: From Far and Wide (definitives)."
+},
+
+{
+  "id": "3422",
+  "year": 2025,
+  "mainTopic": "Black History Month — Marie-Joseph Angélique",
+  "subTopic": "History & Heritage: Black History",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3422-black-history-month-marie-joseph-angelique-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: January 31, 2025."
+},
+{
+  "id": "3423",
+  "year": 2025,
+  "mainTopic": "Flowers — Peony ‘Cytherea’",
+  "subTopic": "Nature & Wildlife: Flowers",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3423-flowers-peony-cytherea-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: March 3, 2025; Series: Flowers (Peonies)."
+},
+{
+  "id": "3424",
+  "year": 2025,
+  "mainTopic": "Flowers — Peony ‘Marie-Victorin’",
+  "subTopic": "Nature & Wildlife: Flowers",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3424-flowers-peony-marie-victorin-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: March 3, 2025; Series: Flowers (Peonies)."
+},
+{
+  "id": "3425",
+  "year": 2025,
+  "mainTopic": "Eid",
+  "subTopic": "Holidays & Events: Eid",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3425-eid-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: March 10, 2025."
+},
+{
+  "id": "3426",
+  "year": 2025,
+  "mainTopic": "Brian Mulroney",
+  "subTopic": "History & Heritage: Prime Ministers",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3426-brian-mulroney-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: March 21, 2025."
+},
+{
+  "id": "3427",
+  "year": 2025,
+  "mainTopic": "Blue Rodeo",
+  "subTopic": "Arts & Culture: Music",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3427-blue-rodeo-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: April 4, 2025."
+},
+{
+  "id": "3428",
+  "year": 2025,
+  "mainTopic": "Canada Post Community Foundation (semipostal)",
+  "subTopic": "Organizations",
+  "denomination": "PERMANENT™ (P) + 10¢ semipostal.",
+  "color": "multicoloured",
+  "image": "images/2020s/3428-canada-post-community-foundation-permanent-p-plus-10c-semipostal-2025.jpg",
+  "notes": "Issued: April 28, 2025; Semipostal to support community projects."
+},
+{
+  "id": "3429",
+  "year": 2025,
+  "mainTopic": "Places of Pride — Club Carousel (Calgary)",
+  "subTopic": "History & Heritage",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3429-places-of-pride-club-carousel-calgary-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: May 30, 2025; Series: Places of Pride."
+},
+{
+  "id": "3430",
+  "year": 2025,
+  "mainTopic": "Places of Pride — Hanlan’s Point Gay Day Picnic (Toronto, 1971)",
+  "subTopic": "History & Heritage",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3430-places-of-pride-hanlans-point-picnic-toronto-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: May 30, 2025; Series: Places of Pride."
+},
+{
+  "id": "3431",
+  "year": 2025,
+  "mainTopic": "Places of Pride — Truxx Bar Police Raid (Montreal, 1977)",
+  "subTopic": "History & Heritage",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3431-places-of-pride-truxx-bar-police-raid-montreal-1977-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: May 30, 2025; Series: Places of Pride."
+},
+{
+  "id": "3432",
+  "year": 2025,
+  "mainTopic": "Places of Pride — North American Native Gay & Lesbian Gathering (Beausejour, 1990)",
+  "subTopic": "History & Heritage",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3432-places-of-pride-native-gay-lesbian-gathering-beausejour-1990-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: May 30, 2025; Series: Places of Pride."
+},
+{
+  "id": "3433",
+  "year": 2025,
+  "mainTopic": "Indigenous Leaders — Julia Haogak Ogina",
+  "subTopic": "History & Heritage: Aboriginals",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3433-indigenous-leaders-julia-haogak-ogina-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: June 20, 2025; Series: Indigenous Leaders."
+},
+{
+  "id": "3434",
+  "year": 2025,
+  "mainTopic": "Indigenous Leaders — Bruce Starlight",
+  "subTopic": "History & Heritage: Aboriginals",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3434-indigenous-leaders-bruce-starlight-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: June 20, 2025; Series: Indigenous Leaders."
+},
+{
+  "id": "3435",
+  "year": 2025,
+  "mainTopic": "Indigenous Leaders — Sophie McDougall",
+  "subTopic": "History & Heritage: Aboriginals",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3435-indigenous-leaders-sophie-mcdougall-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: June 20, 2025; Series: Indigenous Leaders."
+},
+{
+  "id": "3436",
+  "year": 2025,
+  "mainTopic": "Civilian Internment in Canada",
+  "subTopic": "History & Heritage: War/military",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3436-civilian-internment-in-canada-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: July 17, 2025."
+},
+{
+  "id": "3437",
+  "year": 2025,
+  "mainTopic": "Fungi — Star-tipped Reindeer Lichen (Cladonia stellaris)",
+  "subTopic": "Nature & Wildlife",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3437-fungi-star-tipped-reindeer-lichen-cladonia-stellaris-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: Aug. 27, 2025; Series: Fungi."
+},
+{
+  "id": "3438",
+  "year": 2025,
+  "mainTopic": "Fungi — Oyster Mushroom (Pleurotus ostreatus)",
+  "subTopic": "Nature & Wildlife",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3438-fungi-oyster-mushroom-pleurotus-ostreatus-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: Aug. 27, 2025; Series: Fungi."
+},
+{
+  "id": "3439",
+  "year": 2025,
+  "mainTopic": "Fungi — Chicken of the Woods (Laetiporus sulphureus)",
+  "subTopic": "Nature & Wildlife",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3439-fungi-chicken-of-the-woods-laetiporus-sulphureus-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: Aug. 27, 2025; Series: Fungi."
+},
+{
+  "id": "3440",
+  "year": 2025,
+  "mainTopic": "Fungi — Tinder Fungus (Fomes fomentarius)",
+  "subTopic": "Nature & Wildlife",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3440-fungi-tinder-fungus-fomes-fomentarius-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: Aug. 27, 2025; Series: Fungi."
+},
+{
+  "id": "3441",
+  "year": 2025,
+  "mainTopic": "Fungi — Rhizophagus irregularis",
+  "subTopic": "Nature & Wildlife",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "multicoloured",
+  "image": "images/2020s/3441-fungi-rhizophagus-irregularis-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Issued: Aug. 27, 2025; Series: Fungi."
+},
+{
+  "id": "3442",
+  "year": 2025,
+  "mainTopic": "National Day for Truth and Reconciliation",
+  "subTopic": "History & Heritage: Aboriginals",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "",
+  "image": "images/2020s/3442-national-day-for-truth-and-reconciliation-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Expected: September 2025."
+},
+{
+  "id": "3443",
+  "year": 2025,
+  "mainTopic": "Remembrance Day",
+  "subTopic": "History & Heritage: War/military",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "",
+  "image": "images/2020s/3443-remembrance-day-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Expected: October 2025."
+},
+{
+  "id": "3444",
+  "year": 2025,
+  "mainTopic": "Canadian Graphic Novelists (second issue)",
+  "subTopic": "Arts & Culture: Authors",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "",
+  "image": "images/2020s/3444-canadian-graphic-novelists-ii-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Expected: 2025."
+},
+{
+  "id": "3445",
+  "year": 2025,
+  "mainTopic": "Diwali",
+  "subTopic": "Holidays & Events: Diwali",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "",
+  "image": "images/2020s/3445-diwali-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Expected: October/November 2025."
+},
+{
+  "id": "3446",
+  "year": 2025,
+  "mainTopic": "Hanukkah",
+  "subTopic": "Holidays & Events: Hanukkah",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "",
+  "image": "images/2020s/3446-hanukkah-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Expected: November 2025."
+},
+{
+  "id": "3447",
+  "year": 2025,
+  "mainTopic": "Christmas",
+  "subTopic": "Holidays & Events: Christmas",
+  "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+  "color": "",
+  "image": "images/2020s/3447-christmas-permanent-p-current-monetary-value-124-2025.jpg",
+  "notes": "Expected: November/December 2025."
+}
   ]
 }
