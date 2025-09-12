@@ -1,4 +1,4 @@
-// Canadian Stamp Identifier - Complete Optimized Application
+// Canadian Stamp Identifier - Complete Optimized Application with Enhanced Navigation
 class StampIdentifier {
     constructor() {
         this.stamps = [];
@@ -11,6 +11,10 @@ class StampIdentifier {
         this.currentMatches = [];
         this.currentMatchIndex = 0;
         this.renderedDecades = new Set();
+        
+        // Navigation state
+        this.isShiftPressed = false;
+        this.panMode = false;
         
         // Virtual scrolling/viewport culling
         this.viewportBuffer = 500; // pixels
@@ -42,6 +46,8 @@ class StampIdentifier {
             await this.loadStamps();
             this.renderStampsVirtual();
             this.setupEventListeners();
+            this.createNavigationControls();
+            this.createMiniMap();
             this.startPreloadingImages();
             
             setTimeout(() => {
@@ -53,6 +59,280 @@ class StampIdentifier {
             console.error('Failed to initialize:', error);
             document.getElementById('loadingMessage').textContent = 'Failed to load stamps. Please check that data/stamps.json exists.';
         }
+    }
+    
+    createNavigationControls() {
+        // Create navigation control panel
+        const navControls = document.createElement('div');
+        navControls.id = 'navigationControls';
+        navControls.className = 'navigation-controls';
+        navControls.innerHTML = `
+            <div class="nav-buttons">
+                <button class="nav-btn" id="navUp" title="Move Up (Arrow Up)">↑</button>
+                <div class="nav-row">
+                    <button class="nav-btn" id="navLeft" title="Move Left (Arrow Left)">←</button>
+                    <button class="nav-btn center-btn" id="navCenter" title="Center View">⌂</button>
+                    <button class="nav-btn" id="navRight" title="Move Right (Arrow Right)">→</button>
+                </div>
+                <button class="nav-btn" id="navDown" title="Move Down (Arrow Down)">↓</button>
+            </div>
+            <div class="nav-options">
+                <label class="nav-toggle">
+                    <input type="checkbox" id="panModeToggle">
+                    <span>Pan Mode (disable stamps)</span>
+                </label>
+                <div class="nav-help">
+                    Hold Shift: Pan mode<br>
+                    Arrow keys: Navigate<br>
+                    Right-click: Pan
+                </div>
+            </div>
+        `;
+        
+        // Add CSS styles
+        const navStyles = document.createElement('style');
+        navStyles.textContent = `
+            .navigation-controls {
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                background: rgba(255, 255, 255, 0.95);
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 15px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                z-index: 1000;
+                backdrop-filter: blur(5px);
+                font-family: system-ui, -apple-system, sans-serif;
+            }
+            
+            .nav-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                margin-bottom: 10px;
+            }
+            
+            .nav-row {
+                display: flex;
+                gap: 5px;
+            }
+            
+            .nav-btn {
+                width: 32px;
+                height: 32px;
+                background: #f8f9fa;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                transition: all 0.2s;
+            }
+            
+            .nav-btn:hover {
+                background: #e9ecef;
+                border-color: #adb5bd;
+            }
+            
+            .nav-btn:active {
+                background: #dee2e6;
+                transform: scale(0.95);
+            }
+            
+            .center-btn {
+                background: #007bff;
+                color: white;
+                border-color: #0056b3;
+            }
+            
+            .center-btn:hover {
+                background: #0056b3;
+            }
+            
+            .nav-options {
+                border-top: 1px solid #eee;
+                padding-top: 10px;
+            }
+            
+            .nav-toggle {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 12px;
+                cursor: pointer;
+                margin-bottom: 8px;
+            }
+            
+            .nav-help {
+                font-size: 10px;
+                color: #666;
+                line-height: 1.3;
+            }
+            
+            body.pan-mode .stamp {
+                pointer-events: none !important;
+            }
+            
+            body.pan-mode .canvas-container {
+                cursor: grab !important;
+            }
+            
+            body.pan-mode.dragging .canvas-container {
+                cursor: grabbing !important;
+            }
+        `;
+        document.head.appendChild(navStyles);
+        document.body.appendChild(navControls);
+        
+        // Add event listeners
+        document.getElementById('navUp').addEventListener('click', () => this.navigate(0, 100));
+        document.getElementById('navDown').addEventListener('click', () => this.navigate(0, -100));
+        document.getElementById('navLeft').addEventListener('click', () => this.navigate(100, 0));
+        document.getElementById('navRight').addEventListener('click', () => this.navigate(-100, 0));
+        document.getElementById('navCenter').addEventListener('click', () => this.centerView());
+        
+        document.getElementById('panModeToggle').addEventListener('change', (e) => {
+            this.panMode = e.target.checked;
+            document.body.classList.toggle('pan-mode', this.panMode);
+        });
+    }
+    
+    createMiniMap() {
+        // Create minimap container
+        const miniMap = document.createElement('div');
+        miniMap.id = 'miniMap';
+        miniMap.className = 'mini-map';
+        miniMap.innerHTML = `
+            <div class="mini-map-header">Timeline Overview</div>
+            <div class="mini-map-canvas" id="miniMapCanvas">
+                <div class="mini-map-viewport" id="miniMapViewport"></div>
+                <div class="mini-map-decades" id="miniMapDecades"></div>
+            </div>
+        `;
+        
+        // Add minimap CSS
+        const miniMapStyles = document.createElement('style');
+        miniMapStyles.textContent = `
+            .mini-map {
+                position: fixed;
+                top: 80px;
+                right: 20px;
+                width: 200px;
+                height: 120px;
+                background: rgba(255, 255, 255, 0.95);
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                z-index: 1000;
+                backdrop-filter: blur(5px);
+                overflow: hidden;
+            }
+            
+            .mini-map-header {
+                background: #f8f9fa;
+                padding: 5px 10px;
+                font-size: 11px;
+                font-weight: 600;
+                border-bottom: 1px solid #eee;
+                color: #495057;
+            }
+            
+            .mini-map-canvas {
+                position: relative;
+                width: 100%;
+                height: 92px;
+                cursor: pointer;
+                overflow: hidden;
+            }
+            
+            .mini-map-viewport {
+                position: absolute;
+                border: 2px solid #007bff;
+                background: rgba(0, 123, 255, 0.1);
+                pointer-events: none;
+                z-index: 2;
+            }
+            
+            .mini-map-decades {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to right, 
+                    #8B4513 0%, #4B0082 10%, #2F4F4F 20%, #8B0000 30%, 
+                    #006400 40%, #B8860B 50%, #800080 60%, #2E8B57 70%, 
+                    #1E90FF 80%, #DC143C 90%, #FF1493 100%);
+            }
+        `;
+        document.head.appendChild(miniMapStyles);
+        document.body.appendChild(miniMap);
+        
+        // Add minimap click handler
+        document.getElementById('miniMapCanvas').addEventListener('click', (e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width;
+            const totalWidth = this.stamps.length * 120; // Approximate stamp width
+            const targetX = -x * totalWidth + this.canvasContainer.clientWidth / 2;
+            
+            this.translateX = targetX;
+            this.updateTransform();
+            this.updateMiniMap();
+        });
+        
+        this.updateMiniMap();
+    }
+    
+    updateMiniMap() {
+        const viewport = document.getElementById('miniMapViewport');
+        if (!viewport) return;
+        
+        const container = this.canvasContainer;
+        const grid = this.stampGrid;
+        
+        if (!container || !grid) return;
+        
+        const containerWidth = container.clientWidth;
+        const containerHeight = container.clientHeight;
+        
+        // Calculate approximate total content dimensions
+        const totalStamps = this.stamps.length;
+        const stampsPerRow = Math.floor(containerWidth / 120); // Approximate
+        const totalRows = Math.ceil(totalStamps / stampsPerRow);
+        const totalWidth = stampsPerRow * 120;
+        const totalHeight = totalRows * 140;
+        
+        // Calculate viewport position and size relative to total content
+        const viewportLeft = (-this.translateX) / (totalWidth * this.scale);
+        const viewportTop = (-this.translateY) / (totalHeight * this.scale);
+        const viewportWidth = containerWidth / (totalWidth * this.scale);
+        const viewportHeight = containerHeight / (totalHeight * this.scale);
+        
+        // Update viewport indicator
+        const miniMapCanvas = document.getElementById('miniMapCanvas');
+        const canvasRect = miniMapCanvas.getBoundingClientRect();
+        
+        viewport.style.left = Math.max(0, Math.min(1, viewportLeft)) * 100 + '%';
+        viewport.style.top = Math.max(0, Math.min(1, viewportTop)) * 100 + '%';
+        viewport.style.width = Math.max(5, Math.min(100, viewportWidth * 100)) + '%';
+        viewport.style.height = Math.max(5, Math.min(100, viewportHeight * 100)) + '%';
+    }
+    
+    navigate(deltaX, deltaY) {
+        this.translateX += deltaX;
+        this.translateY += deltaY;
+        this.updateTransform();
+        this.updateMiniMap();
+    }
+    
+    centerView() {
+        this.translateX = 0;
+        this.translateY = 0;
+        this.scale = 0.3;
+        this.updateTransform();
+        this.updateMiniMap();
     }
     
     async loadStamps() {
@@ -343,6 +623,7 @@ class StampIdentifier {
             } else {
                 this.isRendering = false;
                 console.log('Rendering complete');
+                this.updateMiniMap();
             }
         };
         
@@ -384,8 +665,12 @@ class StampIdentifier {
         stampElement.appendChild(img);
         stampElement.appendChild(info);
         
-        // Add click handler
-        stampElement.onclick = () => this.showStampDetails(stamp);
+        // Add click handler (will be disabled in pan mode)
+        stampElement.onclick = () => {
+            if (!this.panMode && !this.isShiftPressed) {
+                this.showStampDetails(stamp);
+            }
+        };
         
         return stampElement;
     }
@@ -454,9 +739,14 @@ class StampIdentifier {
     setupEventListeners() {
         // Zoom and pan
         this.canvasContainer.addEventListener('mousedown', (e) => this.startDrag(e));
+        this.canvasContainer.addEventListener('contextmenu', (e) => e.preventDefault()); // Disable right-click menu
         document.addEventListener('mousemove', (e) => this.drag(e));
         document.addEventListener('mouseup', () => this.endDrag());
         this.canvasContainer.addEventListener('wheel', (e) => this.handleWheel(e), { passive: false });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => this.handleKeyDown(e));
+        document.addEventListener('keyup', (e) => this.handleKeyUp(e));
         
         // Search
         this.searchInput.addEventListener('input', (e) => this.handleSearch(e.target.value));
@@ -500,6 +790,52 @@ class StampIdentifier {
                 document.querySelectorAll('.info-section').forEach(s => s.style.display = 'none');
             }
         });
+    }
+    
+    handleKeyDown(e) {
+        // Track shift key for pan mode
+        if (e.key === 'Shift') {
+            this.isShiftPressed = true;
+            document.body.classList.add('pan-mode');
+        }
+        
+        // Arrow key navigation (only if not in a text input)
+        if (!e.target.matches('input, textarea, select')) {
+            const moveDistance = e.ctrlKey ? 200 : 100; // Faster with Ctrl
+            
+            switch(e.key) {
+                case 'ArrowUp':
+                    e.preventDefault();
+                    this.navigate(0, moveDistance);
+                    break;
+                case 'ArrowDown':
+                    e.preventDefault();
+                    this.navigate(0, -moveDistance);
+                    break;
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    this.navigate(moveDistance, 0);
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    this.navigate(-moveDistance, 0);
+                    break;
+                case 'Home':
+                    e.preventDefault();
+                    this.centerView();
+                    break;
+            }
+        }
+    }
+    
+    handleKeyUp(e) {
+        // Release shift key
+        if (e.key === 'Shift') {
+            this.isShiftPressed = false;
+            if (!this.panMode) {
+                document.body.classList.remove('pan-mode');
+            }
+        }
     }
     
     setupDraggableSearch() {
@@ -607,15 +943,23 @@ class StampIdentifier {
         console.log('Drag and resize setup complete');
     }
     
-    // Zoom and Pan Methods
+    // Enhanced Zoom and Pan Methods
     startDrag(e) {
-        // Don't start dragging if clicking on a stamp
-        if (e.target.closest('.stamp')) return;
+        // Right-click always allows panning
+        const isRightClick = e.button === 2;
+        
+        // Left-click behavior depends on pan mode and shift key
+        const shouldPan = isRightClick || this.panMode || this.isShiftPressed || !e.target.closest('.stamp');
+        
+        if (!shouldPan) return;
         
         this.isDragging = true;
         this.lastX = e.clientX;
         this.lastY = e.clientY;
         this.canvasContainer.style.cursor = 'grabbing';
+        document.body.classList.add('dragging');
+        
+        e.preventDefault(); // Prevent text selection while dragging
     }
     
     drag(e) {
@@ -631,18 +975,49 @@ class StampIdentifier {
         this.lastY = e.clientY;
         
         this.updateTransform();
+        this.updateMiniMap();
     }
     
     endDrag() {
+        if (!this.isDragging) return;
+        
         this.isDragging = false;
-        this.canvasContainer.style.cursor = 'grab';
+        this.canvasContainer.style.cursor = this.panMode || this.isShiftPressed ? 'grab' : 'default';
+        document.body.classList.remove('dragging');
     }
     
     handleWheel(e) {
         e.preventDefault();
-        const zoomFactor = e.deltaY > 0 ? 0.9 : 1.1;
-        this.scale = Math.max(0.1, Math.min(3, this.scale * zoomFactor));
-        this.updateTransform();
+        
+        // Zoom faster with Ctrl/Cmd
+        const zoomSpeed = e.ctrlKey || e.metaKey ? 1.2 : 1.1;
+        const zoomFactor = e.deltaY > 0 ? 1/zoomSpeed : zoomSpeed;
+        
+        // Get mouse position for zoom centering
+        const rect = this.canvasContainer.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        
+        // Calculate zoom point
+        const beforeZoomX = (mouseX - this.translateX) / this.scale;
+        const beforeZoomY = (mouseY - this.translateY) / this.scale;
+        
+        // Apply zoom
+        const newScale = Math.max(0.1, Math.min(5, this.scale * zoomFactor));
+        
+        if (newScale !== this.scale) {
+            this.scale = newScale;
+            
+            // Adjust translation to zoom toward mouse
+            const afterZoomX = beforeZoomX * this.scale;
+            const afterZoomY = beforeZoomY * this.scale;
+            
+            this.translateX = mouseX - afterZoomX;
+            this.translateY = mouseY - afterZoomY;
+            
+            this.updateTransform();
+            this.updateMiniMap();
+        }
     }
     
     updateTransform() {
@@ -783,7 +1158,7 @@ class StampIdentifier {
             
             // Denominations
             'cent': ['¢', 'cents', 'penny'],
-            'dollar': ['$', 'dollars'],
+            'dollar': [', 'dollars'],
             'pence': ['penny', 'pennies', 'd'],
             
             // Common misspellings
@@ -895,6 +1270,7 @@ class StampIdentifier {
         this.translateY = containerHeight/2 - (stampY * this.scale + stampRect.height * this.scale / 2);
         
         this.updateTransform();
+        this.updateMiniMap();
         
         // Update highlight for current match
         this.highlightMatches();
@@ -973,6 +1349,12 @@ class StampIdentifier {
         this.preloadQueue = [];
         this.renderQueue = [];
         this.imageCache.clear();
+        
+        // Remove navigation controls
+        const navControls = document.getElementById('navigationControls');
+        const miniMap = document.getElementById('miniMap');
+        if (navControls) navControls.remove();
+        if (miniMap) miniMap.remove();
     }
 }
 
@@ -981,8 +1363,9 @@ let stampApp;
 
 function zoomIn() {
     if (stampApp) {
-        stampApp.scale = Math.min(stampApp.scale * 1.5, 3);
+        stampApp.scale = Math.min(stampApp.scale * 1.5, 5);
         stampApp.updateTransform();
+        stampApp.updateMiniMap();
     }
 }
 
@@ -990,15 +1373,13 @@ function zoomOut() {
     if (stampApp) {
         stampApp.scale = Math.max(stampApp.scale / 1.5, 0.1);
         stampApp.updateTransform();
+        stampApp.updateMiniMap();
     }
 }
 
 function resetView() {
     if (stampApp) {
-        stampApp.scale = 0.3;
-        stampApp.translateX = 0;
-        stampApp.translateY = 0;
-        stampApp.updateTransform();
+        stampApp.centerView();
     }
 }
 
