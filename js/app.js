@@ -10,6 +10,7 @@ class StampIdentifier {
         this.lastY = 0;
         this.currentMatches = [];
         this.currentMatchIndex = 0;
+        this.renderedDecades = new Set();
         
         // Lazy loading observer
         this.lazyLoadObserver = null;
@@ -260,15 +261,21 @@ class StampIdentifier {
         });
         
         // Info sections
-        document.querySelector('a[href="#about"]').addEventListener('click', (e) => {
-            e.preventDefault();
-            this.showInfo('about');
-        });
+        const aboutLink = document.querySelector('a[href="#about"]');
+        if (aboutLink) {
+            aboutLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.showInfo('about');
+            });
+        }
         
-        document.querySelector('a[href="#contribute"]').addEventListener('click', (e) => {
-            e.preventDefault();
-            this.showInfo('contribute');
-        });
+        const contributeLink = document.querySelector('a[href="#contribute"]');
+        if (contributeLink) {
+            contributeLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.showInfo('contribute');
+            });
+        }
         
         // Close info sections when clicking outside
         document.querySelectorAll('.info-section').forEach(section => {
@@ -296,8 +303,6 @@ class StampIdentifier {
         
         if (!searchBar || !dragHandle) {
             console.error('Search bar or drag handle not found!');
-            console.log('searchBar:', searchBar);
-            console.log('dragHandle:', dragHandle);
             return;
         }
         
@@ -305,14 +310,13 @@ class StampIdentifier {
         
         // Position search bar in header area by default
         searchBar.style.top = '90px';
-        searchBar.style.left = '300px'; // Position it in the header area
+        searchBar.style.left = '300px';
         
         let isDragging = false;
         let isResizing = false;
         let startX, startY, initialX, initialY;
         let startWidth, startMouseX;
         
-        // Add visual indicator that it's ready
         dragHandle.style.background = '#ccc';
         dragHandle.title = 'Drag to move, drag right edge to resize';
         
@@ -324,7 +328,6 @@ class StampIdentifier {
         
         // Drag functionality
         dragHandle.addEventListener('mousedown', (e) => {
-            console.log('Mouse down on drag handle');
             isDragging = true;
             searchBar.classList.add('dragging');
             
@@ -339,7 +342,6 @@ class StampIdentifier {
         
         // Resize functionality
         resizeHandle.addEventListener('mousedown', (e) => {
-            console.log('Mouse down on resize handle');
             isResizing = true;
             searchBar.classList.add('resizing');
             
@@ -374,13 +376,11 @@ class StampIdentifier {
             }
         });
         
-        document.addEventListener('mouseup', (e) => {
+        document.addEventListener('mouseup', () => {
             if (isDragging) {
-                console.log('Mouse up - stopping drag');
                 isDragging = false;
                 searchBar.classList.remove('dragging');
             } else if (isResizing) {
-                console.log('Mouse up - stopping resize');
                 isResizing = false;
                 searchBar.classList.remove('resizing');
             }
@@ -572,205 +572,7 @@ class StampIdentifier {
             
             // Denominations
             'cent': ['¢', 'cents', 'penny'],
-            'dollar': ['
-    
-    handleSearchKeys(e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            if (e.shiftKey) {
-                this.previousMatch();
-            } else {
-                this.nextMatch();
-            }
-        }
-    }
-    
-    nextMatch() {
-        if (this.currentMatches.length === 0) return;
-        
-        this.currentMatchIndex = (this.currentMatchIndex + 1) % this.currentMatches.length;
-        this.jumpToStamp(this.currentMatches[this.currentMatchIndex]);
-        this.highlightMatches();
-        this.updateSearchInfo();
-    }
-    
-    previousMatch() {
-        if (this.currentMatches.length === 0) return;
-        
-        this.currentMatchIndex = (this.currentMatchIndex - 1 + this.currentMatches.length) % this.currentMatches.length;
-        this.jumpToStamp(this.currentMatches[this.currentMatchIndex]);
-        this.highlightMatches();
-        this.updateSearchInfo();
-    }
-    
-    highlightMatches() {
-        this.clearSearchHighlights();
-        
-        this.currentMatches.forEach((stamp, index) => {
-            const element = document.querySelector(`[data-id="${stamp.id}"]`);
-            if (element) {
-                if (index === this.currentMatchIndex) {
-                    element.classList.add('search-current');
-                } else {
-                    element.classList.add('search-match');
-                }
-            }
-        });
-    }
-    
-    clearSearchHighlights() {
-        document.querySelectorAll('.search-match, .search-current').forEach(el => {
-            el.classList.remove('search-match', 'search-current');
-        });
-    }
-    
-    updateSearchInfo() {
-        const info = document.getElementById('searchInfo');
-        if (this.currentMatches.length > 0) {
-            info.textContent = `${this.currentMatchIndex + 1} of ${this.currentMatches.length}`;
-            info.style.display = 'block';
-        } else if (this.searchInput.value.trim()) {
-            info.textContent = 'No matches found';
-            info.style.display = 'block';
-        } else {
-            info.style.display = 'none';
-        }
-    }
-    
-    jumpToStamp(stamp) {
-        const element = document.querySelector(`[data-id="${stamp.id}"]`);
-        if (!element) return;
-        
-        // Calculate position to center the stamp
-        const containerWidth = this.canvasContainer.clientWidth;
-        const containerHeight = this.canvasContainer.clientHeight;
-        
-        // Set appropriate zoom level
-        this.scale = Math.max(1, this.scale);
-        
-        // Get stamp position relative to grid
-        const stampRect = element.getBoundingClientRect();
-        const gridRect = this.stampGrid.getBoundingClientRect();
-        
-        const stampX = stampRect.left - gridRect.left;
-        const stampY = stampRect.top - gridRect.top;
-        
-        // Center the stamp
-        this.translateX = containerWidth/2 - (stampX * this.scale + stampRect.width * this.scale / 2);
-        this.translateY = containerHeight/2 - (stampY * this.scale + stampRect.height * this.scale / 2);
-        
-        this.updateTransform();
-        
-        // Update highlight for current match
-        this.highlightMatches();
-    }
-    
-    // Modal Methods
-    showStampDetails(stamp) {
-        document.getElementById('modalId').textContent = stamp.id;
-        document.getElementById('modalYear').textContent = stamp.year;
-        document.getElementById('modalTopic').textContent = stamp.mainTopic + (stamp.subTopic ? ` - ${stamp.subTopic}` : '');
-        document.getElementById('modalDenomination').textContent = stamp.denomination || 'N/A';
-        document.getElementById('modalColor').textContent = stamp.color || 'N/A';
-        
-        const notesContainer = document.getElementById('modalNotesContainer');
-        const notesSpan = document.getElementById('modalNotes');
-        if (stamp.notes && stamp.notes.trim()) {
-            notesSpan.textContent = stamp.notes;
-            notesContainer.style.display = 'block';
-        } else {
-            notesContainer.style.display = 'none';
-        }
-        
-        document.getElementById('modalTitle').textContent = `${stamp.year} - ${stamp.mainTopic}`;
-        
-        const modalImage = document.getElementById('modalStampImage');
-        modalImage.src = stamp.image;
-        modalImage.alt = `${stamp.year} ${stamp.mainTopic}`;
-        
-        document.getElementById('stampModal').style.display = 'flex';
-    }
-    
-    closeModal() {
-        document.getElementById('stampModal').style.display = 'none';
-    }
-    
-    showInfo(sectionId) {
-        document.getElementById(sectionId).style.display = 'block';
-    }
-    
-    // Era jumping - Updated to handle all the eras in your HTML
-    jumpToEra(era) {
-        const eraYears = {
-            '1900s': 1900,
-            '1930s': 1930,
-            '1960s': 1960,
-            '1990s': 1990,
-            '2020s': 2020
-        };
-        
-        const targetYear = eraYears[era];
-        if (!targetYear) return;
-        
-        // Find the first stamp in that era (or closest after)
-        const stamp = this.stamps.find(s => s.year >= targetYear);
-        if (stamp) {
-            this.jumpToStamp(stamp);
-        }
-    }
-}
-
-// Global zoom functions (called by buttons)
-let stampApp;
-
-function zoomIn() {
-    if (stampApp) {
-        stampApp.scale = Math.min(stampApp.scale * 1.5, 3);
-        stampApp.updateTransform();
-    }
-}
-
-function zoomOut() {
-    if (stampApp) {
-        stampApp.scale = Math.max(stampApp.scale / 1.5, 0.1);
-        stampApp.updateTransform();
-    }
-}
-
-function resetView() {
-    if (stampApp) {
-        stampApp.scale = 0.3;
-        stampApp.translateX = 0;
-        stampApp.translateY = 0;
-        stampApp.updateTransform();
-    }
-}
-
-function jumpToEra(era) {
-    if (stampApp) {
-        stampApp.jumpToEra(era);
-    }
-}
-
-function closeModal() {
-    if (stampApp) {
-        stampApp.closeModal();
-    }
-}
-
-// Initialize the application when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded, initializing app...');
-    stampApp = new StampIdentifier();
-    
-    // Also ensure drag setup runs after everything is loaded
-    window.addEventListener('load', () => {
-        console.log('Window fully loaded, setting up drag...');
-        if (stampApp && stampApp.setupDraggableSearch) {
-            stampApp.setupDraggableSearch();
-        }
-    });
-});, 'dollars'],
+            'dollar': ['$', 'dollars'],
             'pence': ['penny', 'pennies', 'd'],
             
             // Common misspellings
