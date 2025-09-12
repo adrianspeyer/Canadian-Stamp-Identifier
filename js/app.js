@@ -1,4 +1,4 @@
-// Canadian Stamp Identifier - Main Application
+// Canadian Stamp Identifier - Complete Optimized Application
 class StampIdentifier {
     constructor() {
         this.stamps = [];
@@ -12,7 +12,20 @@ class StampIdentifier {
         this.currentMatchIndex = 0;
         this.renderedDecades = new Set();
         
-        // Lazy loading observer
+        // Virtual scrolling/viewport culling
+        this.viewportBuffer = 500; // pixels
+        this.visibleStamps = new Set();
+        this.renderQueue = [];
+        this.isRendering = false;
+        
+        // Image preloading cache
+        this.imageCache = new Map();
+        this.preloadQueue = [];
+        this.maxConcurrentLoads = 6; // Limit concurrent image loads
+        this.currentLoads = 0;
+        
+        // Intersection observer for viewport culling
+        this.viewportObserver = null;
         this.lazyLoadObserver = null;
         
         this.stampGrid = document.getElementById('stampGrid');
@@ -24,12 +37,13 @@ class StampIdentifier {
     
     async init() {
         try {
+            this.setupViewportObserver();
             this.setupLazyLoading();
             await this.loadStamps();
-            this.renderStamps();
+            this.renderStampsVirtual();
             this.setupEventListeners();
+            this.startPreloadingImages();
             
-            // Add small delay to ensure DOM is ready for drag setup
             setTimeout(() => {
                 this.setupDraggableSearch();
             }, 100);
@@ -43,10 +57,20 @@ class StampIdentifier {
     
     async loadStamps() {
         try {
-            const response = await fetch('data/stamps.json');
+            // Add cache busting only in development
+            const cacheBust = location.hostname === 'localhost' ? `?v=${Date.now()}` : '';
+            
+            const response = await fetch(`data/stamps.json${cacheBust}`, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Cache-Control': 'public, max-age=3600' // Cache for 1 hour
+                }
+            });
+            
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
+            
             const data = await response.json();
             this.stamps = data.stamps || [];
             
@@ -57,11 +81,313 @@ class StampIdentifier {
             });
             
             console.log(`Loaded ${this.stamps.length} stamps`);
+            
+            // Preprocess stamps for faster searching
+            this.preprocessStampsForSearch();
+            
         } catch (error) {
             console.error('Error loading stamps:', error);
-            // Create sample data if file doesn't exist
             this.createSampleData();
         }
+    }
+    
+    preprocessStampsForSearch() {
+        // Create searchable text once and cache it
+        this.stamps.forEach(stamp => {
+            const searchableFields = [
+                stamp.mainTopic || '',
+                stamp.subTopic || '',
+                stamp.color || '',
+                stamp.denomination || '',
+                stamp.notes || '',
+                stamp.year?.toString() || '',
+                stamp.id || ''
+            ];
+            stamp._searchText = searchableFields.join(' ').toLowerCase();
+        });
+    }
+    
+    setupViewportObserver() {
+        // Observer to track which stamps are in viewport
+        this.viewportObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const stampElement = entry.target;
+                const stampId = stampElement.dataset.id;
+                
+                if (entry.isIntersecting) {
+                    this.visibleStamps.add(stampId);
+                    this.loadImageIfNeeded(stampElement);
+                } else {
+                    this.visibleStamps.delete(stampId);
+                    // Optionally unload image to save memory
+                    this.unloadImageIfFaraway(stampElement);
+                }
+            });
+        }, {
+            rootMargin: `${this.viewportBuffer}px`,
+            threshold: 0
+        });
+    }
+    
+    setupLazyLoading() {
+        // High-performance lazy loading with priority queue
+        if ('IntersectionObserver' in window) {
+            this.lazyLoadObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        this.prioritizeImageLoad(img);
+                    }
+                });
+            }, {
+                rootMargin: '400px', // Load images further out
+                threshold: 0
+            });
+        }
+    }
+    
+    prioritizeImageLoad(img) {
+        const realSrc = img.dataset.src;
+        if (!realSrc || img.src === realSrc) return;
+        
+        // Check cache first
+        if (this.imageCache.has(realSrc)) {
+            const cachedSrc = this.imageCache.get(realSrc);
+            img.src = cachedSrc;
+            img.classList.remove('lazy-load');
+            return;
+        }
+        
+        // Add to priority queue
+        this.preloadQueue.unshift({ img, src: realSrc, priority: 'high' });
+        this.processImageQueue();
+    }
+    
+    loadImageIfNeeded(stampElement) {
+        const img = stampElement.querySelector('img[data-src]');
+        if (img) {
+            this.prioritizeImageLoad(img);
+        }
+    }
+    
+    startPreloadingImages() {
+        // Preload visible images first, then nearby ones
+        const visibleImages = Array.from(document.querySelectorAll('.stamp img[data-src]'))
+            .slice(0, 50); // Start with first 50
+        
+        visibleImages.forEach(img => {
+            const realSrc = img.dataset.src;
+            if (realSrc) {
+                this.preloadQueue.push({ img, src: realSrc, priority: 'medium' });
+            }
+        });
+        
+        this.processImageQueue();
+    }
+    
+    processImageQueue() {
+        if (this.currentLoads >= this.maxConcurrentLoads || this.preloadQueue.length === 0) {
+            return;
+        }
+        
+        const item = this.preloadQueue.shift();
+        this.currentLoads++;
+        
+        this.loadImage(item.src)
+            .then(objectUrl => {
+                this.imageCache.set(item.src, objectUrl);
+                if (item.img && item.img.dataset.src === item.src) {
+                    item.img.src = objectUrl;
+                    item.img.classList.remove('lazy-load');
+                    if (this.lazyLoadObserver) {
+                        this.lazyLoadObserver.unobserve(item.img);
+                    }
+                }
+            })
+            .catch(() => {
+                // Handle error - show placeholder
+                if (item.img) {
+                    this.showImagePlaceholder(item.img);
+                }
+            })
+            .finally(() => {
+                this.currentLoads--;
+                // Process next item
+                setTimeout(() => this.processImageQueue(), 10);
+            });
+    }
+    
+    loadImage(src) {
+        return new Promise((resolve, reject) => {
+            // Use fetch for better control and caching
+            fetch(src, {
+                headers: {
+                    'Cache-Control': 'public, max-age=86400' // Cache for 1 day
+                }
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.blob();
+            })
+            .then(blob => {
+                const objectUrl = URL.createObjectURL(blob);
+                resolve(objectUrl);
+            })
+            .catch(reject);
+        });
+    }
+    
+    showImagePlaceholder(img) {
+        const stampElement = img.closest('.stamp');
+        if (stampElement) {
+            const stamp = this.stamps.find(s => s.image === img.dataset.src);
+            if (stamp) {
+                const decade = Math.floor(stamp.year / 10) * 10;
+                img.style.display = 'none';
+                stampElement.style.background = this.getColorForDecade(decade);
+                stampElement.style.color = 'white';
+                stampElement.innerHTML += `<div class="placeholder-text" style="display: flex; align-items: center; justify-content: center; height: 80%; font-size: 10px; text-align: center; padding: 5px; color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.8);">${stamp.mainTopic}</div>`;
+            }
+        }
+    }
+    
+    unloadImageIfFaraway(stampElement) {
+        // Unload images that are far from viewport to save memory
+        const img = stampElement.querySelector('img');
+        if (img && img.src && img.src.startsWith('blob:')) {
+            const rect = stampElement.getBoundingClientRect();
+            const viewportRect = this.canvasContainer.getBoundingClientRect();
+            
+            const distance = Math.min(
+                Math.abs(rect.top - viewportRect.bottom),
+                Math.abs(rect.bottom - viewportRect.top),
+                Math.abs(rect.left - viewportRect.right),
+                Math.abs(rect.right - viewportRect.left)
+            );
+            
+            // Unload if more than 2000px away
+            if (distance > 2000) {
+                URL.revokeObjectURL(img.src);
+                img.src = this.getPlaceholderSrc();
+                img.classList.add('lazy-load');
+            }
+        }
+    }
+    
+    getPlaceholderSrc() {
+        // Optimized 1x1 SVG placeholder
+        return 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4=';
+    }
+    
+    renderStampsVirtual() {
+        this.stampGrid.innerHTML = '';
+        
+        if (this.stamps.length === 0) {
+            this.stampGrid.innerHTML = '<div id="loadingMessage">No stamps found. Add stamps to data/stamps.json</div>';
+            return;
+        }
+        
+        console.log(`Rendering ${this.stamps.length} stamps with virtual scrolling...`);
+        
+        // Render in chunks using requestAnimationFrame for smooth performance
+        this.renderQueue = [...this.stamps];
+        this.renderedDecades = new Set();
+        this.scheduleRender();
+        
+        // Update stamp count
+        document.getElementById('stampCount').textContent = this.stamps.length;
+    }
+    
+    scheduleRender() {
+        if (this.isRendering || this.renderQueue.length === 0) return;
+        
+        this.isRendering = true;
+        
+        const renderBatch = () => {
+            const startTime = performance.now();
+            const batchSize = 25; // Smaller batches for smoother rendering
+            
+            for (let i = 0; i < batchSize && this.renderQueue.length > 0; i++) {
+                const stamp = this.renderQueue.shift();
+                const decade = Math.floor(stamp.year / 10) * 10;
+                
+                // Add decade marker if new decade
+                if (!this.renderedDecades.has(decade)) {
+                    const decadeMarker = document.createElement('div');
+                    decadeMarker.className = 'decade-marker';
+                    decadeMarker.textContent = `${decade}s`;
+                    this.stampGrid.appendChild(decadeMarker);
+                    this.renderedDecades.add(decade);
+                }
+                
+                // Create stamp element
+                const stampElement = this.createStampElementOptimized(stamp, decade);
+                this.stampGrid.appendChild(stampElement);
+                
+                // Set up viewport observation
+                if (this.viewportObserver) {
+                    this.viewportObserver.observe(stampElement);
+                }
+            }
+            
+            // Continue rendering if there are more stamps and we haven't exceeded time budget
+            if (this.renderQueue.length > 0 && (performance.now() - startTime) < 16) {
+                // Continue in same frame if under 16ms (60fps budget)
+                renderBatch();
+            } else if (this.renderQueue.length > 0) {
+                // Schedule next batch for next frame
+                requestAnimationFrame(() => {
+                    this.isRendering = false;
+                    this.scheduleRender();
+                });
+            } else {
+                this.isRendering = false;
+                console.log('Rendering complete');
+            }
+        };
+        
+        requestAnimationFrame(renderBatch);
+    }
+    
+    createStampElementOptimized(stamp, decade) {
+        // Create stamp element with minimal DOM manipulation
+        const stampElement = document.createElement('div');
+        stampElement.className = 'stamp';
+        
+        // Use dataset for efficient attribute setting
+        Object.assign(stampElement.dataset, {
+            id: stamp.id,
+            year: stamp.year,
+            topic: stamp.mainTopic.toLowerCase(),
+            subtopic: (stamp.subTopic || '').toLowerCase(),
+            color: (stamp.color || '').toLowerCase()
+        });
+        
+        // Create image element with optimized lazy loading
+        const img = document.createElement('img');
+        img.src = this.getPlaceholderSrc();
+        img.dataset.src = stamp.image;
+        img.alt = `${stamp.year} ${stamp.mainTopic}`;
+        img.className = 'lazy-load';
+        img.loading = 'lazy'; // Native lazy loading as fallback
+        
+        // Set up intersection observer for lazy loading
+        if (this.lazyLoadObserver) {
+            this.lazyLoadObserver.observe(img);
+        }
+        
+        // Create info element
+        const info = document.createElement('div');
+        info.className = 'stamp-info';
+        info.textContent = `${stamp.id} ${stamp.year}`;
+        
+        stampElement.appendChild(img);
+        stampElement.appendChild(info);
+        
+        // Add click handler
+        stampElement.onclick = () => this.showStampDetails(stamp);
+        
+        return stampElement;
     }
     
     createSampleData() {
@@ -98,126 +424,7 @@ class StampIdentifier {
                 notes: "Part of historical series"
             }
         ];
-    }
-    
-    setupLazyLoading() {
-        if ('IntersectionObserver' in window) {
-            this.lazyLoadObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        const realSrc = img.dataset.src;
-                        
-                        if (realSrc) {
-                            img.src = realSrc;
-                            img.onload = () => {
-                                img.classList.remove('lazy-load');
-                            };
-                            img.onerror = () => {
-                                // Show placeholder on error
-                                const stampElement = img.closest('.stamp');
-                                const stamp = this.stamps.find(s => s.image === realSrc);
-                                if (stamp) {
-                                    const decade = Math.floor(stamp.year / 10) * 10;
-                                    img.style.display = 'none';
-                                    stampElement.style.background = this.getColorForDecade(decade);
-                                    stampElement.innerHTML += `<div style="display: flex; align-items: center; justify-content: center; height: 80%; font-size: 10px; text-align: center; padding: 5px; color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.8);">${stamp.mainTopic}</div>`;
-                                }
-                            };
-                            this.lazyLoadObserver.unobserve(img);
-                        }
-                    }
-                });
-            }, {
-                rootMargin: '200px' // Load images 200px before they come into view
-            });
-        }
-    }
-    
-    renderStamps() {
-        this.stampGrid.innerHTML = '';
-        
-        if (this.stamps.length === 0) {
-            this.stampGrid.innerHTML = '<div id="loadingMessage">No stamps found. Add stamps to data/stamps.json</div>';
-            return;
-        }
-        
-        console.log(`Rendering ${this.stamps.length} stamps with lazy loading...`);
-        
-        // Track decades globally across all batches
-        this.renderedDecades = new Set();
-        
-        // Instead of rendering all stamps at once, render in batches
-        this.renderStampsBatch(0, Math.min(200, this.stamps.length)); // Start with first 200
-        
-        // Update stamp count
-        document.getElementById('stampCount').textContent = this.stamps.length;
-    }
-    
-    renderStampsBatch(startIndex, endIndex) {
-        for (let i = startIndex; i < endIndex && i < this.stamps.length; i++) {
-            const stamp = this.stamps[i];
-            const decade = Math.floor(stamp.year / 10) * 10;
-            
-            // Add decade marker if new decade (and we haven't rendered it yet)
-            if (!this.renderedDecades.has(decade)) {
-                const decadeMarker = document.createElement('div');
-                decadeMarker.className = 'decade-marker';
-                decadeMarker.textContent = `${decade}s`;
-                this.stampGrid.appendChild(decadeMarker);
-                this.renderedDecades.add(decade);
-            }
-            
-            // Create stamp element
-            const stampElement = this.createStampElement(stamp, decade);
-            this.stampGrid.appendChild(stampElement);
-        }
-        
-        // If there are more stamps, render the next batch after a short delay
-        if (endIndex < this.stamps.length) {
-            setTimeout(() => {
-                this.renderStampsBatch(endIndex, Math.min(endIndex + 200, this.stamps.length));
-            }, 50); // 50ms delay between batches
-        }
-    }
-    
-    createStampElement(stamp, decade) {
-        // Create stamp element
-        const stampElement = document.createElement('div');
-        stampElement.className = 'stamp';
-        stampElement.dataset.id = stamp.id;
-        stampElement.dataset.year = stamp.year;
-        stampElement.dataset.topic = stamp.mainTopic.toLowerCase();
-        stampElement.dataset.subtopic = (stamp.subTopic || '').toLowerCase();
-        stampElement.dataset.color = (stamp.color || '').toLowerCase();
-        
-        // Create image element with lazy loading
-        const img = document.createElement('img');
-        img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4='; // Tiny placeholder
-        img.dataset.src = stamp.image; // Real image URL
-        img.alt = `${stamp.year} ${stamp.mainTopic}`;
-        img.className = 'lazy-load';
-        
-        // Set up intersection observer for lazy loading
-        if ('IntersectionObserver' in window) {
-            this.lazyLoadObserver.observe(img);
-        } else {
-            // Fallback for older browsers
-            img.src = stamp.image;
-        }
-        
-        // Create info element
-        const info = document.createElement('div');
-        info.className = 'stamp-info';
-        info.innerHTML = `${stamp.id}<br>${stamp.year}`;
-        
-        stampElement.appendChild(img);
-        stampElement.appendChild(info);
-        
-        // Add click handler
-        stampElement.onclick = () => this.showStampDetails(stamp);
-        
-        return stampElement;
+        this.preprocessStampsForSearch();
     }
     
     getColorForDecade(decade) {
@@ -309,9 +516,9 @@ class StampIdentifier {
         console.log('Found search bar and drag handle');
         
         // Position search bar in header area by default
-       searchBar.style.top = '15px';
-       searchBar.style.right = '20px';
-       searchBar.style.left = 'auto'; // Clear any left positioning
+        searchBar.style.top = '15px';
+        searchBar.style.right = '20px';
+        searchBar.style.left = 'auto'; // Clear any left positioning
         
         let isDragging = false;
         let isResizing = false;
@@ -325,6 +532,15 @@ class StampIdentifier {
         const resizeHandle = document.createElement('div');
         resizeHandle.className = 'resize-handle';
         resizeHandle.title = 'Drag to resize';
+        resizeHandle.style.cssText = `
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 10px;
+            height: 100%;
+            cursor: ew-resize;
+            background: transparent;
+        `;
         searchBar.appendChild(resizeHandle);
         
         // Drag functionality
@@ -370,6 +586,7 @@ class StampIdentifier {
                 
                 searchBar.style.left = constrainedX + 'px';
                 searchBar.style.top = constrainedY + 'px';
+                searchBar.style.right = 'auto'; // Clear right positioning when dragging
             } else if (isResizing) {
                 const deltaX = e.clientX - startMouseX;
                 const newWidth = Math.max(200, Math.min(600, startWidth + deltaX));
@@ -392,6 +609,9 @@ class StampIdentifier {
     
     // Zoom and Pan Methods
     startDrag(e) {
+        // Don't start dragging if clicking on a stamp
+        if (e.target.closest('.stamp')) return;
+        
         this.isDragging = true;
         this.lastX = e.clientX;
         this.lastY = e.clientY;
@@ -430,7 +650,7 @@ class StampIdentifier {
         document.getElementById('scaleInfo').textContent = Math.round(this.scale * 100) + '%';
     }
     
-    // Enhanced Search Methods
+    // Enhanced Search Methods with optimized matching
     handleSearch(query) {
         this.clearSearchHighlights();
         
@@ -449,7 +669,7 @@ class StampIdentifier {
         if (!isNaN(yearMatch) && yearMatch >= 1800 && yearMatch <= 2030) {
             matches.push(...this.stamps.filter(stamp => stamp.year === yearMatch));
         } else {
-            // Advanced text search across all fields
+            // Advanced text search using cached search text
             matches.push(...this.stamps.filter(stamp => this.matchesSearchTerm(stamp, searchTerm)));
         }
         
@@ -474,18 +694,8 @@ class StampIdentifier {
     }
     
     matchesSearchTerm(stamp, searchTerm) {
-        // Create searchable text from all stamp fields
-        const searchableFields = [
-            stamp.mainTopic || '',
-            stamp.subTopic || '',
-            stamp.color || '',
-            stamp.denomination || '',
-            stamp.notes || '',
-            stamp.year?.toString() || '',
-            stamp.id || ''
-        ];
-        
-        const searchableText = searchableFields.join(' ').toLowerCase();
+        // Use cached search text for faster matching
+        const searchableText = stamp._searchText || '';
         
         // Split search term into individual words for more flexible matching
         const searchWords = searchTerm.split(/\s+/).filter(word => word.length > 0);
@@ -743,6 +953,27 @@ class StampIdentifier {
             this.jumpToStamp(stamp);
         }
     }
+    
+    // Cleanup method to prevent memory leaks
+    destroy() {
+        // Revoke all blob URLs
+        this.imageCache.forEach(objectUrl => {
+            URL.revokeObjectURL(objectUrl);
+        });
+        
+        // Disconnect observers
+        if (this.viewportObserver) {
+            this.viewportObserver.disconnect();
+        }
+        if (this.lazyLoadObserver) {
+            this.lazyLoadObserver.disconnect();
+        }
+        
+        // Clear queues
+        this.preloadQueue = [];
+        this.renderQueue = [];
+        this.imageCache.clear();
+    }
 }
 
 // Global zoom functions (called by buttons)
@@ -793,6 +1024,13 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Window fully loaded, setting up drag...');
         if (stampApp && stampApp.setupDraggableSearch) {
             stampApp.setupDraggableSearch();
+        }
+    });
+    
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', () => {
+        if (stampApp && stampApp.destroy) {
+            stampApp.destroy();
         }
     });
 });
