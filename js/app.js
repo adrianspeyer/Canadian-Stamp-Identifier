@@ -1007,7 +1007,7 @@ class StampIdentifier {
             'queen': ['elizabeth', 'victoria'], 
             'king': ['george', 'edward'], 
             'cent': ['¢', 'cents'], 
-            'dollar': ['] 
+            'dollar': ['$'] 
         };
         
         const wordVariations = [word, ...(synonyms[word] || [])];
