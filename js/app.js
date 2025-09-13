@@ -1,4 +1,4 @@
-// Canadian Stamp Identifier - Mobile Fixed Version (Visual Browsing Preserved)
+// Canadian Stamp Identifier - Platform Optimized Version
 class StampIdentifier {
     constructor() {
         this.stamps = [];
@@ -16,31 +16,46 @@ class StampIdentifier {
         this.isShiftPressed = false;
         this.panMode = false;
         
-        // Mobile detection with better memory management
+        // Platform detection and adaptive settings
         this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
         this.isTouch = 'ontouchstart' in window;
         
-        // CRITICAL FIX: Prevent batch rendering on mobile
-        this.maxBatchSize = this.isMobile ? 5 : 25; // Much smaller batches on mobile
-        this.renderDelay = this.isMobile ? 50 : 16; // Slower rendering on mobile
-        this.maxConcurrentImages = this.isMobile ? 1 : 3; // Only 1 image at a time on mobile
+        // ADAPTIVE RENDERING: Fast on desktop, safe on mobile
+        if (this.isMobile) {
+            // Mobile: Progressive rendering to prevent crashes
+            this.renderMode = 'progressive';
+            this.batchSize = 8;
+            this.renderDelay = 75;
+            this.maxConcurrentImages = 1;
+            this.maxCacheSize = 25;
+            this.viewportBuffer = 150;
+        } else {
+            // Desktop: Fast batch rendering like original
+            this.renderMode = 'batch';
+            this.batchSize = 30;
+            this.renderDelay = 10;
+            this.maxConcurrentImages = 6;
+            this.maxCacheSize = 200;
+            this.viewportBuffer = 500;
+        }
         
-        // Progressive rendering state
+        // Rendering state
         this.renderQueue = [];
         this.isRendering = false;
         this.renderedCount = 0;
         
-        // Very conservative image handling
+        // Image handling
         this.imageCache = new Map();
         this.loadingImages = new Set();
-        this.maxCacheSize = this.isMobile ? 30 : 100;
+        this.currentLoads = 0;
         
-        // Intersection observer for smart unloading
+        // Observers
         this.viewportObserver = null;
-        this.unloadThreshold = this.isMobile ? 1 : 2; // More aggressive unloading on mobile
+        this.lazyLoadObserver = null;
         
         // Throttled functions
-        this.throttledUpdateTransform = this.throttle(this.updateTransform.bind(this), this.isMobile ? 50 : 16);
+        this.throttledUpdateTransform = this.throttle(this.updateTransform.bind(this), this.isMobile ? 33 : 16);
+        this.throttledUpdateMiniMap = this.throttle(this.updateMiniMap.bind(this), this.isMobile ? 200 : 100);
         
         this.stampGrid = document.getElementById('stampGrid');
         this.canvasContainer = document.getElementById('canvasContainer');
@@ -65,15 +80,17 @@ class StampIdentifier {
     
     async init() {
         try {
-            console.log('Initializing mobile-safe stamp app:', this.isMobile ? 'MOBILE' : 'DESKTOP');
+            console.log(`Initializing stamp app - Platform: ${this.isMobile ? 'MOBILE' : 'DESKTOP'}, Render mode: ${this.renderMode}`);
             
             this.setupMobileOptimizations();
             this.setupViewportObserver();
+            this.setupLazyLoading();
             await this.loadStamps();
-            this.startProgressiveRendering(); // CHANGED: Progressive instead of batch
+            this.renderStampsAdaptive(); // Adaptive rendering based on platform
             this.setupEventListeners();
             this.createNavigationControls();
             this.setupTimelineInteraction();
+            this.startPreloadingImages();
             
             if (!this.isMobile) {
                 setTimeout(() => this.setupDraggableSearch(), 100);
@@ -91,50 +108,40 @@ class StampIdentifier {
         if (this.isMobile) {
             document.body.classList.add('mobile-device');
             
-            // Aggressive memory monitoring on mobile
+            // Memory monitoring only on mobile
             this.memoryCheckInterval = setInterval(() => {
-                if (this.imageCache.size > this.maxCacheSize * 0.7) {
+                if (this.imageCache.size > this.maxCacheSize * 0.8) {
                     this.emergencyImageCleanup();
                 }
-            }, 3000);
-            
-            // Listen for memory pressure events
-            if ('onmemorywarning' in window) {
-                window.addEventListener('memorywarning', () => {
-                    console.log('Memory warning detected - emergency cleanup');
-                    this.emergencyImageCleanup();
-                });
-            }
+            }, 5000);
         }
     }
     
     emergencyImageCleanup() {
+        if (!this.isMobile) return;
+        
         console.log('Emergency image cleanup triggered');
         
-        // Get all images that are far from viewport
         const stampElements = this.stampGrid.querySelectorAll('.stamp');
         const viewportHeight = window.innerHeight;
         let cleanedCount = 0;
         
         stampElements.forEach(element => {
             const rect = element.getBoundingClientRect();
-            const distanceFromViewport = Math.min(
-                Math.abs(rect.bottom),
-                Math.abs(rect.top - viewportHeight)
-            );
+            const isVeryFar = rect.bottom < -viewportHeight * 2 || rect.top > viewportHeight * 3;
             
-            // If image is more than 2 screen heights away, unload it
-            if (distanceFromViewport > viewportHeight * this.unloadThreshold) {
+            if (isVeryFar) {
                 const img = element.querySelector('img');
                 if (img && img.src && img.src.startsWith('blob:')) {
                     URL.revokeObjectURL(img.src);
                     img.src = this.getPlaceholderSrc();
+                    img.classList.add('lazy-load');
                     cleanedCount++;
                 }
             }
         });
         
-        // Also clean the cache
+        // Clean cache
         if (this.imageCache.size > this.maxCacheSize) {
             const entries = Array.from(this.imageCache.entries());
             const toDelete = entries.slice(0, Math.floor(entries.length / 3));
@@ -189,8 +196,8 @@ class StampIdentifier {
         });
     }
     
-    // CRITICAL CHANGE: Progressive rendering instead of batch rendering
-    startProgressiveRendering() {
+    // ADAPTIVE RENDERING: Choose rendering method based on platform
+    renderStampsAdaptive() {
         this.stampGrid.innerHTML = '';
         
         if (this.stamps.length === 0) {
@@ -198,9 +205,83 @@ class StampIdentifier {
             return;
         }
         
-        console.log(`Starting progressive rendering of ${this.stamps.length} stamps`);
+        if (this.renderMode === 'progressive') {
+            this.renderStampsProgressive(); // Mobile: Safe progressive rendering
+        } else {
+            this.renderStampsBatch(); // Desktop: Fast batch rendering
+        }
         
-        // Show loading message
+        const stampCountEl = document.getElementById('stampCount');
+        if (stampCountEl) {
+            stampCountEl.textContent = this.stamps.length;
+        }
+    }
+    
+    // DESKTOP: Fast batch rendering (like original)
+    renderStampsBatch() {
+        console.log(`Fast batch rendering ${this.stamps.length} stamps for desktop`);
+        
+        this.renderQueue = [...this.stamps];
+        this.renderedDecades = new Set();
+        this.scheduleBatchRender();
+    }
+    
+    scheduleBatchRender() {
+        if (this.isRendering || this.renderQueue.length === 0) {
+            if (this.renderQueue.length === 0) {
+                console.log('Batch rendering complete');
+                this.updateMiniMap();
+            }
+            return;
+        }
+        
+        this.isRendering = true;
+        
+        const renderBatch = () => {
+            const startTime = performance.now();
+            
+            for (let i = 0; i < this.batchSize && this.renderQueue.length > 0; i++) {
+                const stamp = this.renderQueue.shift();
+                const decade = Math.floor(stamp.year / 10) * 10;
+                
+                if (!this.renderedDecades.has(decade)) {
+                    const decadeMarker = document.createElement('div');
+                    decadeMarker.className = 'decade-marker';
+                    decadeMarker.textContent = `${decade}s`;
+                    this.stampGrid.appendChild(decadeMarker);
+                    this.renderedDecades.add(decade);
+                }
+                
+                const stampElement = this.createStampElementOptimized(stamp, decade);
+                this.stampGrid.appendChild(stampElement);
+                
+                if (this.viewportObserver) {
+                    this.viewportObserver.observe(stampElement);
+                }
+            }
+            
+            if (this.renderQueue.length > 0 && (performance.now() - startTime) < 16) {
+                renderBatch(); // Continue immediately if under 16ms
+            } else if (this.renderQueue.length > 0) {
+                requestAnimationFrame(() => {
+                    this.isRendering = false;
+                    this.scheduleBatchRender();
+                });
+            } else {
+                this.isRendering = false;
+                console.log('Batch rendering complete');
+                this.updateMiniMap();
+            }
+        };
+        
+        requestAnimationFrame(renderBatch);
+    }
+    
+    // MOBILE: Progressive rendering to prevent crashes
+    renderStampsProgressive() {
+        console.log(`Progressive rendering ${this.stamps.length} stamps for mobile`);
+        
+        // Show loading message on mobile only
         const loadingDiv = document.createElement('div');
         loadingDiv.id = 'progressive-loading';
         loadingDiv.textContent = 'Loading stamps...';
@@ -211,20 +292,15 @@ class StampIdentifier {
         this.renderedDecades = new Set();
         this.renderedCount = 0;
         this.scheduleProgressiveRender();
-        
-        const stampCountEl = document.getElementById('stampCount');
-        if (stampCountEl) {
-            stampCountEl.textContent = this.stamps.length;
-        }
     }
     
     scheduleProgressiveRender() {
         if (this.isRendering || this.renderQueue.length === 0) {
             if (this.renderQueue.length === 0) {
-                // Remove loading message when done
                 const loadingDiv = document.getElementById('progressive-loading');
                 if (loadingDiv) loadingDiv.remove();
                 console.log('Progressive rendering complete');
+                this.updateMiniMap();
             }
             return;
         }
@@ -238,13 +314,10 @@ class StampIdentifier {
     
     renderProgressiveBatch() {
         try {
-            const startTime = performance.now();
-            
-            for (let i = 0; i < this.maxBatchSize && this.renderQueue.length > 0; i++) {
+            for (let i = 0; i < this.batchSize && this.renderQueue.length > 0; i++) {
                 const stamp = this.renderQueue.shift();
                 const decade = Math.floor(stamp.year / 10) * 10;
                 
-                // Add decade marker if needed
                 if (!this.renderedDecades.has(decade)) {
                     const decadeMarker = document.createElement('div');
                     decadeMarker.className = 'decade-marker';
@@ -253,10 +326,9 @@ class StampIdentifier {
                     this.renderedDecades.add(decade);
                 }
                 
-                const stampElement = this.createStampElement(stamp);
+                const stampElement = this.createStampElementOptimized(stamp, decade);
                 this.stampGrid.appendChild(stampElement);
                 
-                // Observe for viewport-based image loading
                 if (this.viewportObserver) {
                     this.viewportObserver.observe(stampElement);
                 }
@@ -272,11 +344,9 @@ class StampIdentifier {
             
             this.isRendering = false;
             
-            // Continue rendering
             if (this.renderQueue.length > 0) {
                 this.scheduleProgressiveRender();
             } else {
-                // Rendering complete
                 if (loadingDiv) loadingDiv.remove();
                 this.updateMiniMap();
             }
@@ -287,94 +357,7 @@ class StampIdentifier {
         }
     }
     
-    setupViewportObserver() {
-        this.viewportObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const stampElement = entry.target;
-                
-                if (entry.isIntersecting) {
-                    // Load image when stamp comes into view
-                    this.loadImageForStamp(stampElement);
-                } else {
-                    // Unload image when stamp goes out of view (mobile only)
-                    if (this.isMobile) {
-                        this.unloadImageForStamp(stampElement);
-                    }
-                }
-            });
-        }, {
-            rootMargin: this.isMobile ? '100px' : '300px',
-            threshold: 0
-        });
-    }
-    
-    loadImageForStamp(stampElement) {
-        const img = stampElement.querySelector('img[data-src]');
-        if (!img || this.loadingImages.has(img)) return;
-        
-        const imageSrc = img.dataset.src;
-        if (!imageSrc || img.src !== this.getPlaceholderSrc()) return;
-        
-        // Check if we already have it cached
-        if (this.imageCache.has(imageSrc)) {
-            img.src = this.imageCache.get(imageSrc);
-            return;
-        }
-        
-        // Limit concurrent image loads
-        if (this.loadingImages.size >= this.maxConcurrentImages) return;
-        
-        this.loadingImages.add(img);
-        
-        fetch(imageSrc, {
-            headers: { 'Cache-Control': 'public, max-age=86400' }
-        })
-        .then(response => {
-            if (!response.ok) throw new Error('Network response was not ok');
-            return response.blob();
-        })
-        .then(blob => {
-            const objectUrl = URL.createObjectURL(blob);
-            
-            // Cache it (with size limit)
-            if (this.imageCache.size < this.maxCacheSize) {
-                this.imageCache.set(imageSrc, objectUrl);
-            }
-            
-            // Set the image
-            if (img.dataset.src === imageSrc) { // Make sure it's still the same image
-                img.src = objectUrl;
-                img.classList.remove('lazy-load');
-            }
-        })
-        .catch(error => {
-            console.log('Failed to load image:', imageSrc);
-            this.showImagePlaceholder(img);
-        })
-        .finally(() => {
-            this.loadingImages.delete(img);
-        });
-    }
-    
-    unloadImageForStamp(stampElement) {
-        if (!this.isMobile) return;
-        
-        const img = stampElement.querySelector('img');
-        if (img && img.src && img.src.startsWith('blob:') && img.src !== this.getPlaceholderSrc()) {
-            // Check if it's far from viewport
-            const rect = stampElement.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
-            const isFarAway = rect.bottom < -viewportHeight || rect.top > viewportHeight * 2;
-            
-            if (isFarAway) {
-                URL.revokeObjectURL(img.src);
-                img.src = this.getPlaceholderSrc();
-                img.classList.add('lazy-load');
-            }
-        }
-    }
-    
-    createStampElement(stamp) {
+    createStampElementOptimized(stamp, decade) {
         const stampElement = document.createElement('div');
         stampElement.className = 'stamp';
         
@@ -393,6 +376,10 @@ class StampIdentifier {
         img.className = 'lazy-load';
         img.loading = 'lazy';
         
+        if (this.lazyLoadObserver) {
+            this.lazyLoadObserver.observe(img);
+        }
+        
         const info = document.createElement('div');
         info.className = 'stamp-info';
         info.textContent = `${stamp.id} ${stamp.year}`;
@@ -400,44 +387,189 @@ class StampIdentifier {
         stampElement.appendChild(img);
         stampElement.appendChild(info);
         
-        // Click handler
-        stampElement.addEventListener('click', (e) => {
-            if (!this.panMode && !this.isShiftPressed && !this.isDragging) {
-                e.preventDefault();
+        stampElement.onclick = () => {
+            if (!this.panMode && !this.isShiftPressed) {
                 this.showStampDetails(stamp);
             }
-        });
+        };
         
         return stampElement;
     }
     
+    setupViewportObserver() {
+        this.viewportObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const stampElement = entry.target;
+                
+                if (entry.isIntersecting) {
+                    this.loadImageIfNeeded(stampElement);
+                } else {
+                    if (this.isMobile) {
+                        this.unloadImageIfFaraway(stampElement);
+                    }
+                }
+            });
+        }, {
+            rootMargin: `${this.viewportBuffer}px`,
+            threshold: 0
+        });
+    }
+    
+    setupLazyLoading() {
+        if ('IntersectionObserver' in window) {
+            this.lazyLoadObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        this.prioritizeImageLoad(img);
+                    }
+                });
+            }, {
+                rootMargin: this.isMobile ? '200px' : '400px',
+                threshold: 0
+            });
+        }
+    }
+    
+    prioritizeImageLoad(img) {
+        const realSrc = img.dataset.src;
+        if (!realSrc || img.src === realSrc) return;
+        
+        if (this.imageCache.has(realSrc)) {
+            const cachedSrc = this.imageCache.get(realSrc);
+            if (cachedSrc && cachedSrc.startsWith('blob:')) {
+                img.src = cachedSrc;
+                img.classList.remove('lazy-load');
+                return;
+            }
+        }
+        
+        // Limit queue size on mobile
+        if (this.isMobile && this.loadingImages.size > 5) {
+            return;
+        }
+        
+        if (this.loadingImages.has(img) || this.currentLoads >= this.maxConcurrentImages) {
+            return;
+        }
+        
+        this.loadingImages.add(img);
+        this.currentLoads++;
+        
+        this.loadImage(realSrc)
+            .then(objectUrl => {
+                if (this.imageCache.size < this.maxCacheSize) {
+                    this.imageCache.set(realSrc, objectUrl);
+                }
+                
+                if (img && img.dataset.src === realSrc) {
+                    img.src = objectUrl;
+                    img.classList.remove('lazy-load');
+                    if (this.lazyLoadObserver) {
+                        this.lazyLoadObserver.unobserve(img);
+                    }
+                }
+            })
+            .catch(() => {
+                if (img) {
+                    this.showImagePlaceholder(img);
+                }
+            })
+            .finally(() => {
+                this.loadingImages.delete(img);
+                this.currentLoads--;
+                setTimeout(() => this.processImageQueue(), this.isMobile ? 100 : 10);
+            });
+    }
+    
+    loadImageIfNeeded(stampElement) {
+        const img = stampElement.querySelector('img[data-src]');
+        if (img) {
+            this.prioritizeImageLoad(img);
+        }
+    }
+    
+    startPreloadingImages() {
+        const maxInitialImages = this.isMobile ? 10 : 50;
+        const visibleImages = Array.from(document.querySelectorAll('.stamp img[data-src]'))
+            .slice(0, maxInitialImages);
+        
+        visibleImages.forEach(img => {
+            const realSrc = img.dataset.src;
+            if (realSrc) {
+                setTimeout(() => this.prioritizeImageLoad(img), Math.random() * 1000);
+            }
+        });
+    }
+    
+    processImageQueue() {
+        // This method exists for compatibility but actual processing is handled in prioritizeImageLoad
+    }
+    
+    loadImage(src) {
+        return new Promise((resolve, reject) => {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 15000);
+            
+            fetch(src, {
+                headers: { 'Cache-Control': 'public, max-age=86400' },
+                signal: controller.signal
+            })
+            .then(response => {
+                clearTimeout(timeoutId);
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.blob();
+            })
+            .then(blob => {
+                const objectUrl = URL.createObjectURL(blob);
+                resolve(objectUrl);
+            })
+            .catch(reject);
+        });
+    }
+    
     showImagePlaceholder(img) {
         const stampElement = img.closest('.stamp');
-        if (!stampElement) return;
-        
-        const stampId = stampElement.dataset.id;
-        const stamp = this.stamps.find(s => s.id === stampId);
-        if (!stamp) return;
-        
-        img.style.display = 'none';
-        
-        let placeholder = stampElement.querySelector('.placeholder-text');
-        if (!placeholder) {
-            placeholder = document.createElement('div');
-            placeholder.className = 'placeholder-text';
-            placeholder.style.cssText = `
-                display: flex; align-items: center; justify-content: center; 
-                height: 80%; font-size: 10px; text-align: center; padding: 5px; 
-                color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
-                background: ${this.getColorForDecade(Math.floor(stamp.year / 10) * 10)};
-            `;
-            placeholder.textContent = stamp.mainTopic;
-            stampElement.appendChild(placeholder);
+        if (stampElement) {
+            const stamp = this.stamps.find(s => s.image === img.dataset.src);
+            if (stamp) {
+                img.style.display = 'none';
+                stampElement.style.background = this.getColorForDecade(Math.floor(stamp.year / 10) * 10);
+                stampElement.style.color = 'white';
+                
+                if (!stampElement.querySelector('.placeholder-text')) {
+                    const placeholder = document.createElement('div');
+                    placeholder.className = 'placeholder-text';
+                    placeholder.style.cssText = 'display: flex; align-items: center; justify-content: center; height: 80%; font-size: 10px; text-align: center; padding: 5px; color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.8);';
+                    placeholder.textContent = stamp.mainTopic;
+                    stampElement.appendChild(placeholder);
+                }
+            }
+        }
+    }
+    
+    unloadImageIfFaraway(stampElement) {
+        const img = stampElement.querySelector('img');
+        if (img && img.src && img.src.startsWith('blob:')) {
+            const rect = stampElement.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            
+            const isFarAway = rect.bottom < -viewportHeight || rect.top > viewportHeight * 2;
+            
+            if (isFarAway) {
+                URL.revokeObjectURL(img.src);
+                img.src = this.getPlaceholderSrc();
+                img.classList.add('lazy-load');
+                
+                if (this.lazyLoadObserver) {
+                    this.lazyLoadObserver.observe(img);
+                }
+            }
         }
     }
     
     getPlaceholderSrc() {
-        return 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgODAgMTAwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4=';
+        return 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4=';
     }
     
     createSampleData() {
@@ -452,16 +584,20 @@ class StampIdentifier {
     
     getColorForDecade(decade) {
         const colors = { 
-            1850: '#8B4513', 1860: '#4B0082', 1870: '#2F4F4F', 1880: '#8B0000', 1890: '#006400',
-            1900: '#B8860B', 1910: '#800080', 1920: '#2E8B57', 1930: '#1E90FF', 1940: '#B22222',
-            1950: '#FF4500', 1960: '#FF1493', 1970: '#00CED1', 1980: '#9370DB', 1990: '#228B22',
-            2000: '#FF8C00', 2010: '#4682B4', 2020: '#DC143C'
+            1850: 'linear-gradient(45deg, #8B4513, #A0522D)', 1860: 'linear-gradient(45deg, #4B0082, #6A5ACD)', 
+            1870: 'linear-gradient(45deg, #2F4F4F, #708090)', 1880: 'linear-gradient(45deg, #8B0000, #DC143C)', 
+            1890: 'linear-gradient(45deg, #006400, #32CD32)', 1900: 'linear-gradient(45deg, #B8860B, #DAA520)', 
+            1910: 'linear-gradient(45deg, #800080, #9932CC)', 1920: 'linear-gradient(45deg, #2E8B57, #3CB371)', 
+            1930: 'linear-gradient(45deg, #1E90FF, #4169E1)', 1940: 'linear-gradient(45deg, #B22222, #DC143C)', 
+            1950: 'linear-gradient(45deg, #FF4500, #FF6347)', 1960: 'linear-gradient(45deg, #FF1493, #FF69B4)', 
+            1970: 'linear-gradient(45deg, #00CED1, #20B2AA)', 1980: 'linear-gradient(45deg, #9370DB, #BA55D3)', 
+            1990: 'linear-gradient(45deg, #228B22, #32CD32)', 2000: 'linear-gradient(45deg, #FF8C00, #FFA500)', 
+            2010: 'linear-gradient(45deg, #4682B4, #5F9EA0)', 2020: 'linear-gradient(45deg, #DC143C, #FF1493)' 
         };
-        return colors[decade] || '#666';
+        return colors[decade] || 'linear-gradient(45deg, #666, #999)';
     }
     
     setupEventListeners() {
-        // Touch-optimized event handling
         if (this.isTouch) {
             this.canvasContainer.addEventListener('touchstart', (e) => this.startDrag(e), { passive: false });
             this.canvasContainer.addEventListener('touchmove', (e) => this.drag(e), { passive: false });
@@ -472,35 +608,26 @@ class StampIdentifier {
             document.addEventListener('mouseup', () => this.endDrag());
         }
         
+        this.canvasContainer.addEventListener('contextmenu', (e) => e.preventDefault());
         this.canvasContainer.addEventListener('wheel', (e) => this.handleWheel(e), { passive: false });
         document.addEventListener('keydown', (e) => this.handleKeyDown(e));
         document.addEventListener('keyup', (e) => this.handleKeyUp(e));
         this.searchInput.addEventListener('input', (e) => this.handleSearch(e.target.value));
         this.searchInput.addEventListener('keydown', (e) => this.handleSearchKeys(e));
         
-        // Modal and info handlers
-        const stampModal = document.getElementById('stampModal');
-        if (stampModal) {
-            stampModal.addEventListener('click', (e) => { 
-                if (e.target.id === 'stampModal') this.closeModal(); 
-            });
-        }
+        document.getElementById('stampModal')?.addEventListener('click', (e) => { 
+            if (e.target.id === 'stampModal') this.closeModal(); 
+        });
         
-        const aboutLink = document.querySelector('a[href="#about"]');
-        if (aboutLink) { 
-            aboutLink.addEventListener('click', (e) => { 
-                e.preventDefault(); 
-                this.showInfo('about'); 
-            }); 
-        }
+        document.querySelector('a[href="#about"]')?.addEventListener('click', (e) => { 
+            e.preventDefault(); 
+            this.showInfo('about'); 
+        });
         
-        const contributeLink = document.querySelector('a[href="#contribute"]');
-        if (contributeLink) { 
-            contributeLink.addEventListener('click', (e) => { 
-                e.preventDefault(); 
-                this.showInfo('contribute'); 
-            }); 
-        }
+        document.querySelector('a[href="#contribute"]')?.addEventListener('click', (e) => { 
+            e.preventDefault(); 
+            this.showInfo('contribute'); 
+        });
         
         document.querySelectorAll('.info-section').forEach(section => { 
             section.addEventListener('click', (e) => { 
@@ -564,178 +691,8 @@ class StampIdentifier {
             const visibleWidth = this.canvasContainer.clientWidth;
             this.translateX = -clickPercent * (totalContentWidth - visibleWidth);
             this.throttledUpdateTransform();
-            this.updateMiniMap();
+            this.throttledUpdateMiniMap();
         });
-    }
-    
-    updateMiniMap() {
-        const viewport = document.getElementById('mainTimelineViewport');
-        if (!viewport) return;
-        
-        const container = this.canvasContainer;
-        const grid = this.stampGrid;
-        
-        if (!container || !grid) return;
-        
-        const totalContentWidth = grid.scrollWidth * this.scale;
-        const visibleWidth = container.clientWidth;
-        
-        const viewportLeftPercent = (-this.translateX / totalContentWidth) * 100;
-        const viewportWidthPercent = (visibleWidth / totalContentWidth) * 100;
-        
-        viewport.style.left = `${Math.max(0, Math.min(100, viewportLeftPercent))}%`;
-        viewport.style.width = `${Math.max(1, Math.min(100, viewportWidthPercent))}%`;
-    }
-    
-    navigate(deltaX, deltaY) {
-        this.translateX += deltaX;
-        this.translateY += deltaY;
-        this.throttledUpdateTransform();
-        this.updateMiniMap();
-    }
-    
-    centerView() {
-        this.translateX = 0;
-        this.translateY = 0;
-        this.scale = 0.3;
-        this.updateTransform();
-        this.updateMiniMap();
-    }
-
-    recenterCurrentView() {
-        const viewportCenterX = this.canvasContainer.clientWidth / 2;
-        const viewportCenterY = this.canvasContainer.clientHeight / 2;
-
-        let closestStamp = null;
-        let minDistance = Infinity;
-
-        const stampElements = this.stampGrid.querySelectorAll('.stamp');
-        stampElements.forEach(element => {
-            const rect = element.getBoundingClientRect();
-            if (rect.width > 0 && rect.height > 0) { 
-                const elementCenterX = rect.left + rect.width / 2;
-                const elementCenterY = rect.top + rect.height / 2;
-                
-                const distance = Math.sqrt(
-                    Math.pow(elementCenterX - viewportCenterX, 2) +
-                    Math.pow(elementCenterY - viewportCenterY, 2)
-                );
-
-                if (distance < minDistance) {
-                    minDistance = distance;
-                    closestStamp = element;
-                }
-            }
-        });
-        
-        if (closestStamp) {
-            const stampRect = closestStamp.getBoundingClientRect();
-            const gridRect = this.stampGrid.getBoundingClientRect();
-            
-            const stampX = (stampRect.left - gridRect.left) / this.scale;
-            const stampY = (stampRect.top - gridRect.top) / this.scale;
-            
-            this.translateX = viewportCenterX - (stampX * this.scale + (stampRect.width / 2 / this.scale) * this.scale);
-            this.translateY = viewportCenterY - (stampY * this.scale + (stampRect.height / 2 / this.scale) * this.scale);
-            
-            this.updateTransform();
-            this.updateMiniMap();
-        }
-    }
-    
-    startDrag(e) {
-        const shouldPan = e.button === 2 || this.panMode || this.isShiftPressed || !e.target.closest('.stamp');
-        if (!shouldPan) return;
-        
-        if (e.cancelable) e.preventDefault();
-        
-        this.isDragging = true;
-        const touch = e.touches ? e.touches[0] : e;
-        this.lastX = touch.clientX;
-        this.lastY = touch.clientY;
-        this.canvasContainer.style.cursor = 'grabbing';
-    }
-    
-    drag(e) {
-        if (!this.isDragging) return;
-        
-        if (e.cancelable) e.preventDefault();
-        
-        const touch = e.touches ? e.touches[0] : e;
-        this.translateX += touch.clientX - this.lastX;
-        this.translateY += touch.clientY - this.lastY;
-        this.lastX = touch.clientX;
-        this.lastY = touch.clientY;
-        
-        this.throttledUpdateTransform();
-        this.updateMiniMap();
-    }
-    
-    endDrag() {
-        if (!this.isDragging) return;
-        
-        this.isDragging = false;
-        this.canvasContainer.style.cursor = this.panMode || this.isShiftPressed ? 'grab' : 'default';
-    }
-    
-    handleWheel(e) {
-        e.preventDefault();
-        
-        const zoomSpeed = e.ctrlKey || e.metaKey ? 1.2 : 1.1;
-        const zoomFactor = e.deltaY > 0 ? 1/zoomSpeed : zoomSpeed;
-        
-        const rect = this.canvasContainer.getBoundingClientRect();
-        const mouseX = e.clientX - rect.left;
-        const mouseY = e.clientY - rect.top;
-        
-        const beforeZoomX = (mouseX - this.translateX) / this.scale;
-        const beforeZoomY = (mouseY - this.translateY) / this.scale;
-        
-        const newScale = Math.max(0.1, Math.min(5, this.scale * zoomFactor));
-        
-        if (newScale !== this.scale) {
-            this.scale = newScale;
-            this.translateX = mouseX - (beforeZoomX * this.scale);
-            this.translateY = mouseY - (beforeZoomY * this.scale);
-            this.throttledUpdateTransform();
-            this.updateMiniMap();
-        }
-    }
-    
-    updateTransform() {
-        this.stampGrid.style.transform = `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})`;
-        
-        const scaleInfo = document.getElementById('scaleInfo');
-        if (scaleInfo) {
-            scaleInfo.textContent = Math.round(this.scale * 100) + '%';
-        }
-    }
-    
-    handleKeyDown(e) {
-        if (e.key === 'Shift') { 
-            this.isShiftPressed = true; 
-            document.body.classList.add('pan-mode'); 
-        }
-        
-        if (!e.target.matches('input, textarea, select')) {
-            const moveDistance = e.ctrlKey ? 200 : 100;
-            switch(e.key) {
-                case 'ArrowUp': e.preventDefault(); this.navigate(0, moveDistance); break;
-                case 'ArrowDown': e.preventDefault(); this.navigate(0, -moveDistance); break;
-                case 'ArrowLeft': e.preventDefault(); this.navigate(moveDistance, 0); break;
-                case 'ArrowRight': e.preventDefault(); this.navigate(-moveDistance, 0); break;
-                case 'Home': e.preventDefault(); this.centerView(); break;
-            }
-        }
-    }
-    
-    handleKeyUp(e) {
-        if (e.key === 'Shift') { 
-            this.isShiftPressed = false; 
-            if (!this.panMode) { 
-                document.body.classList.remove('pan-mode'); 
-            } 
-        }
     }
     
     setupDraggableSearch() {
@@ -797,6 +754,179 @@ class StampIdentifier {
             isResizing = false; 
             searchBar.classList.remove('resizing'); 
         });
+    }
+    
+    updateMiniMap() {
+        const viewport = document.getElementById('mainTimelineViewport');
+        if (!viewport) return;
+        
+        const container = this.canvasContainer;
+        const grid = this.stampGrid;
+        
+        if (!container || !grid) return;
+        
+        const totalContentWidth = grid.scrollWidth * this.scale;
+        const visibleWidth = container.clientWidth;
+        
+        const viewportLeftPercent = (-this.translateX / totalContentWidth) * 100;
+        const viewportWidthPercent = (visibleWidth / totalContentWidth) * 100;
+        
+        viewport.style.left = `${Math.max(0, Math.min(100, viewportLeftPercent))}%`;
+        viewport.style.width = `${Math.max(1, Math.min(100, viewportWidthPercent))}%`;
+    }
+    
+    navigate(deltaX, deltaY) {
+        this.translateX += deltaX;
+        this.translateY += deltaY;
+        this.throttledUpdateTransform();
+        this.throttledUpdateMiniMap();
+    }
+    
+    centerView() {
+        this.translateX = 0;
+        this.translateY = 0;
+        this.scale = 0.3;
+        this.updateTransform();
+        this.updateMiniMap();
+    }
+
+    recenterCurrentView() {
+        const viewportCenterX = this.canvasContainer.clientWidth / 2;
+        const viewportCenterY = this.canvasContainer.clientHeight / 2;
+
+        let closestStamp = null;
+        let minDistance = Infinity;
+
+        const stampElements = this.stampGrid.querySelectorAll('.stamp');
+        stampElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.width > 0 && rect.height > 0) { 
+                const elementCenterX = rect.left + rect.width / 2;
+                const elementCenterY = rect.top + rect.height / 2;
+                
+                const distance = Math.sqrt(
+                    Math.pow(elementCenterX - viewportCenterX, 2) +
+                    Math.pow(elementCenterY - viewportCenterY, 2)
+                );
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestStamp = element;
+                }
+            }
+        });
+        
+        if (closestStamp) {
+            const stampRect = closestStamp.getBoundingClientRect();
+            const gridRect = this.stampGrid.getBoundingClientRect();
+            
+            const stampX = (stampRect.left - gridRect.left) / this.scale;
+            const stampY = (stampRect.top - gridRect.top) / this.scale;
+            
+            this.translateX = viewportCenterX - (stampX * this.scale + (stampRect.width / 2 / this.scale) * this.scale);
+            this.translateY = viewportCenterY - (stampY * this.scale + (stampRect.height / 2 / this.scale) * this.scale);
+            
+            this.updateTransform();
+            this.updateMiniMap();
+        }
+    }
+    
+    startDrag(e) {
+        const isRightClick = e.button === 2;
+        const shouldPan = isRightClick || this.panMode || this.isShiftPressed || !e.target.closest('.stamp');
+        if (!shouldPan) return;
+        
+        if (e.cancelable) e.preventDefault();
+        
+        this.isDragging = true;
+        const touch = e.touches ? e.touches[0] : e;
+        this.lastX = touch.clientX;
+        this.lastY = touch.clientY;
+        this.canvasContainer.style.cursor = 'grabbing';
+        document.body.classList.add('dragging');
+    }
+    
+    drag(e) {
+        if (!this.isDragging) return;
+        
+        if (e.cancelable) e.preventDefault();
+        
+        const touch = e.touches ? e.touches[0] : e;
+        this.translateX += touch.clientX - this.lastX;
+        this.translateY += touch.clientY - this.lastY;
+        this.lastX = touch.clientX;
+        this.lastY = touch.clientY;
+        
+        this.throttledUpdateTransform();
+        this.throttledUpdateMiniMap();
+    }
+    
+    endDrag() {
+        if (!this.isDragging) return;
+        
+        this.isDragging = false;
+        this.canvasContainer.style.cursor = this.panMode || this.isShiftPressed ? 'grab' : 'default';
+        document.body.classList.remove('dragging');
+    }
+    
+    handleWheel(e) {
+        e.preventDefault();
+        
+        const zoomSpeed = e.ctrlKey || e.metaKey ? 1.2 : 1.1;
+        const zoomFactor = e.deltaY > 0 ? 1/zoomSpeed : zoomSpeed;
+        
+        const rect = this.canvasContainer.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        
+        const beforeZoomX = (mouseX - this.translateX) / this.scale;
+        const beforeZoomY = (mouseY - this.translateY) / this.scale;
+        
+        const newScale = Math.max(0.1, Math.min(5, this.scale * zoomFactor));
+        
+        if (newScale !== this.scale) {
+            this.scale = newScale;
+            this.translateX = mouseX - (beforeZoomX * this.scale);
+            this.translateY = mouseY - (beforeZoomY * this.scale);
+            this.throttledUpdateTransform();
+            this.throttledUpdateMiniMap();
+        }
+    }
+    
+    updateTransform() {
+        this.stampGrid.style.transform = `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})`;
+        
+        const scaleInfo = document.getElementById('scaleInfo');
+        if (scaleInfo) {
+            scaleInfo.textContent = Math.round(this.scale * 100) + '%';
+        }
+    }
+    
+    handleKeyDown(e) {
+        if (e.key === 'Shift') { 
+            this.isShiftPressed = true; 
+            document.body.classList.add('pan-mode'); 
+        }
+        
+        if (!e.target.matches('input, textarea, select')) {
+            const moveDistance = e.ctrlKey ? 200 : 100;
+            switch(e.key) {
+                case 'ArrowUp': e.preventDefault(); this.navigate(0, moveDistance); break;
+                case 'ArrowDown': e.preventDefault(); this.navigate(0, -moveDistance); break;
+                case 'ArrowLeft': e.preventDefault(); this.navigate(moveDistance, 0); break;
+                case 'ArrowRight': e.preventDefault(); this.navigate(-moveDistance, 0); break;
+                case 'Home': e.preventDefault(); this.centerView(); break;
+            }
+        }
+    }
+    
+    handleKeyUp(e) {
+        if (e.key === 'Shift') { 
+            this.isShiftPressed = false; 
+            if (!this.panMode) { 
+                document.body.classList.remove('pan-mode'); 
+            } 
+        }
     }
     
     handleSearch(query) {
@@ -1040,6 +1170,7 @@ class StampIdentifier {
         
         // Disconnect observers
         if (this.viewportObserver) this.viewportObserver.disconnect();
+        if (this.lazyLoadObserver) this.lazyLoadObserver.disconnect();
         
         // Clear intervals
         if (this.memoryCheckInterval) clearInterval(this.memoryCheckInterval);
@@ -1098,7 +1229,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Add mobile-specific CSS class
+    // Add platform-specific CSS class
     if (stampApp && stampApp.isMobile) {
         document.body.classList.add('mobile-optimized');
     }
