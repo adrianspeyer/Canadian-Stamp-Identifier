@@ -240,6 +240,7 @@ class StampIdentifier {
         const renderBatch = () => {
             const startTime = performance.now();
             
+            // Desktop: Render much larger batches continuously
             for (let i = 0; i < this.batchSize && this.renderQueue.length > 0; i++) {
                 const stamp = this.renderQueue.shift();
                 const decade = Math.floor(stamp.year / 10) * 10;
@@ -260,13 +261,15 @@ class StampIdentifier {
                 }
             }
             
-            if (this.renderQueue.length > 0 && (performance.now() - startTime) < 16) {
-                renderBatch(); // Continue immediately if under 16ms
+            // Desktop: Keep rendering aggressively until done
+            if (this.renderQueue.length > 0 && (performance.now() - startTime) < 50) {
+                renderBatch(); // Continue immediately if under 50ms
             } else if (this.renderQueue.length > 0) {
-                requestAnimationFrame(() => {
+                // Very short delay on desktop
+                setTimeout(() => {
                     this.isRendering = false;
                     this.scheduleBatchRender();
-                });
+                }, this.renderDelay);
             } else {
                 this.isRendering = false;
                 console.log('Batch rendering complete');
@@ -274,7 +277,8 @@ class StampIdentifier {
             }
         };
         
-        requestAnimationFrame(renderBatch);
+        // Start immediately on desktop
+        renderBatch();
     }
     
     // MOBILE: Progressive rendering to prevent crashes
@@ -1003,7 +1007,7 @@ class StampIdentifier {
             'queen': ['elizabeth', 'victoria'], 
             'king': ['george', 'edward'], 
             'cent': ['¢', 'cents'], 
-            'dollar': ['$'] 
+            'dollar': ['] 
         };
         
         const wordVariations = [word, ...(synonyms[word] || [])];
