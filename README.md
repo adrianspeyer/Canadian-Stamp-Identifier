@@ -10,14 +10,14 @@
 
 ## 🌟 What Makes This Special?
 
-This tool revolutionizes stamp identification through **visual pattern matching** in a zoomable, interactive interface. Instead of flipping through catalogs:
+This tool makes stamp identification easy through **visual pattern matching** in a zoomable, interactive interface. Instead of flipping through catalogues:
 
-- **Browse 3,777+ stamps** in one massive, zoomable timeline mosaic
+- **Browse 3,400+ stamps** in one massive, zoomable timeline mosaic
 - **Smart search** with fuzzy matching, synonyms, and multi-field queries
 - **Instant visual identification** - zoom, click, get details
 - **Drag & resize interface** - customize your workspace
 - **Era jumping** - instantly navigate to 1900s, 1930s, 1960s, 1990s, 2020s
-- **Mobile responsive** - works perfectly on all devices
+- **Mobile responsive** - works perfectly on all devices [work in progress]
 
 ## 🚀 Try It Now
 
@@ -35,7 +35,7 @@ No installation needed - works in any modern web browser!
 - **All field search**: searches topics, colors, denominations, notes, years
 
 ### 🖼️ Visual Interface
-- **Million Dollar Homepage style**: 3,777 stamps in one zoomable grid
+- **Million Dollar Homepage style**: 3,400+ stamps in one zoomable grid
 - **Lazy loading**: fast performance with thousands of images
 - **Drag & drop search**: moveable, resizable search box
 - **Era navigation**: quick jump buttons for major time periods
@@ -49,23 +49,14 @@ No installation needed - works in any modern web browser!
 
 ## 📊 Current Statistics
 
-- 🖼️ **Stamps cataloged**: 3,777 stamps
+- 🖼️ **Stamps cataloged**: 3,400+ stamps
 - 📅 **Years covered**: 1851-2025 (174 years)
 - 🔍 **Search accuracy**: Multi-field fuzzy matching
 - 📱 **Platforms**: Web (fully responsive)
 - ⚡ **Performance**: Lazy loading, batch rendering
-- 🎯 **Coverage**: Main stamp designs (no varieties)
+- 🎯 **Coverage**: Main stamp designs (no varieties,no errors)
 
 ## 🤝 How to Contribute
-
-### 🖼️ Add Missing Stamps
-**Help us reach 100% coverage!**
-
-**Priority areas:**
-- Early provincial issues (1851-1900)
-- Commemorative series gaps
-- Modern definitives (2020-2025)
-- Regional issues
 
 ### 📝 Data Improvements
 - Correct stamp details
@@ -88,7 +79,7 @@ No installation needed - works in any modern web browser!
 
 ### Option 2: Direct Contribution
 1. **Fork the repository**
-2. **Add image** to `images/[decade]/[id]-[topic]-[year].jpg`
+2. **Add image** to `images/[decade]/[id]-[topic]-[denomination]-[year].jpg`
 3. **Update** `data/stamps.json`:
    ```json
    {
@@ -98,7 +89,7 @@ No installation needed - works in any modern web browser!
      "subTopic": "Three Pence",
      "denomination": "3d",
      "color": "red",
-     "image": "images/1850s/001-beaver-1851.jpg",
+     "image": "images/1850s/001-beaver-3d-1851.jpg",
      "notes": "First Canadian stamp"
    }
    ```
@@ -108,7 +99,6 @@ No installation needed - works in any modern web browser!
 
 **Frontend**: Pure HTML5, CSS3, JavaScript
 - No frameworks or dependencies
-- Intersection Observer API for lazy loading
 - Canvas-based zoom and pan interactions
 - Responsive flexbox layout
 
@@ -135,7 +125,6 @@ Traditional catalogs require knowing details to find stamps. This tool reverses 
 
 ### Community-Driven
 Open source approach ensures:
-- No vendor lock-in
 - Community ownership
 - Transparent development
 - Collaborative improvement
@@ -159,32 +148,25 @@ Built to handle thousands of stamps smoothly:
 - **Accuracy**: Verified against reliable sources
 - **Completeness**: All available fields populated
 - **Consistency**: Standardized terminology
-- **Documentation**: Sources noted when possible
 
 ### Code
 - **No dependencies**: Pure web technologies
-- **Accessibility**: WCAG compliant
 - **Performance**: Optimized for scale
 - **Documentation**: Comprehensive comments
 
 ## 🗺️ Roadmap
 
 ### Phase 1: Coverage Completion
-- [ ] Fill remaining gaps in 1851-1950
-- [ ] Complete commemorative series
-- [ ] Add recent definitives (2020-2025)
+- [x] Fill remaining gaps in 1851-1950
+- [x] Complete commemorative series
+- [x] Add recent definitives (2020-2025)
 
 ### Phase 2: Enhanced Features  
+- [ ] Mobile enhancements
 - [ ] Advanced filters (denomination, color, era)
-- [ ] Comparison mode (side-by-side stamps)
 - [ ] Print-friendly views
-- [ ] Bookmark/favorites system
-
-### Phase 3: Community Features
-- [ ] User contributions workflow
-- [ ] Discussion system for stamp details
-- [ ] Rating/verification system
-- [ ] API for developers
+- [ ] Bookmark/favourites 
+- [ ] Wishlist
 
 ## 📜 License & Legal
 
