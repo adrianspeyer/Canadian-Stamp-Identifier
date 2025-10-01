@@ -34397,57 +34397,77 @@
       "subTopic": "History & Heritage: Aboriginals",
       "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
       "color": "",
-      "image": "images/2020s/3438-national-day-for-truth-and-reconciliation-permanent-p-current-monetary-value-124-2025.jpg",
-      "notes": "Expected: September 2025."
+      "image": "images/2020s/3438-national-day-for-truth-and-reconciliation-frontpanel-permanent-p-current-monetary-value-124-2025.jpg",
+      "notes": "Issued September 30, 2025."
+    },
+       {
+      "id": "3439",
+      "year": 2025,
+      "mainTopic": "National Day for Truth and Reconciliation",
+      "subTopic": "History & Heritage: Aboriginals",
+      "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+      "color": "",
+      "image": "images/2020s/3439-national-day-for-truth-and-reconciliation-inuit-permanent-p-current-monetary-value-124-2025.jpg",
+      "notes": "Issued September 30, 2025."
+    },
+       {
+      "id": "3440",
+      "year": 2025,
+      "mainTopic": "National Day for Truth and Reconciliation",
+      "subTopic": "History & Heritage: Aboriginals",
+      "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+      "color": "",
+      "image": "images/2020s/3440-national-day-for-truth-and-reconciliation-prairies-eastern-permanent-p-current-monetary-value-124-2025.jpg",
+      "notes": "Issued September 30, 2025."
     },
     {
-      "id": "3439",
+      "id": "3441",
       "year": 2025,
       "mainTopic": "Remembrance Day",
       "subTopic": "History & Heritage: War/military",
       "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
       "color": "",
-      "image": "images/2020s/3439-remembrance-day-permanent-p-current-monetary-value-124-2025.jpg",
+      "image": "images/2020s/3441-remembrance-day-permanent-p-current-monetary-value-124-2025.jpg",
       "notes": "Expected: October 2025."
     },
     {
-      "id": "3440",
+      "id": "3442",
       "year": 2025,
       "mainTopic": "Canadian Graphic Novelists (second issue)",
       "subTopic": "Arts & Culture: Authors",
       "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
       "color": "",
-      "image": "images/2020s/3440-canadian-graphic-novelists-ii-permanent-p-current-monetary-value-124-2025.jpg",
+      "image": "images/2020s/3442-canadian-graphic-novelists-ii-permanent-p-current-monetary-value-124-2025.jpg",
       "notes": "Expected: 2025."
     },
     {
-      "id": "3441",
+      "id": "3443",
       "year": 2025,
       "mainTopic": "Diwali",
       "subTopic": "Holidays & Events: Diwali",
       "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
       "color": "",
-      "image": "images/2020s/3441-diwali-permanent-p-current-monetary-value-124-2025.jpg",
+      "image": "images/2020s/3443-diwali-permanent-p-current-monetary-value-124-2025.jpg",
       "notes": "Expected: October/November 2025."
     },
     {
-      "id": "3442",
+      "id": "3444",
       "year": 2025,
       "mainTopic": "Hanukkah",
       "subTopic": "Holidays & Events: Hanukkah",
       "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
       "color": "",
-      "image": "images/2020s/3442-hanukkah-permanent-p-current-monetary-value-124-2025.jpg",
+      "image": "images/2020s/3444-hanukkah-permanent-p-current-monetary-value-124-2025.jpg",
       "notes": "Expected: November 2025."
     },
     {
-      "id": "3443",
+      "id": "3445",
       "year": 2025,
       "mainTopic": "Christmas",
       "subTopic": "Holidays & Events: Christmas",
       "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
       "color": "",
-      "image": "images/2020s/3443-christmas-permanent-p-current-monetary-value-124-2025.jpg",
+      "image": "images/2020s/3445-christmas-permanent-p-current-monetary-value-124-2025.jpg",
       "notes": "Expected: November/December 2025."
     }
   ]
