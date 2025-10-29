@@ -1,4 +1,5 @@
-/* Mobile-Optimized CSS for Canadian Stamp Identifier */
+/* css/style.css */
+/* MASTER STYLESHEET */
 
 /* Reset and base styles */
 * {
@@ -50,6 +51,9 @@ body.pan-mode.dragging .canvas-container {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    /* Calculate header height dynamically or use a fixed height */
+    /* Let's assume a fixed height for now */
+    height: 100px; /* Example fixed height */
 }
 
 .header h1 {
@@ -86,7 +90,7 @@ body.pan-mode.dragging .canvas-container {
 .search-bar.moveable {
     position: fixed;
     top: 15px !important;
-    right: 20px; 
+    right: 20px;
     z-index: 1001;
     background: white;
     padding: 15px;
@@ -212,7 +216,8 @@ body.pan-mode.dragging .canvas-container {
 /* Controls */
 .controls {
     position: fixed;
-    top: 120px;
+    /* Adjust top based on header height */
+    top: 120px; /* Example: 100px header height + 20px margin */
     right: 20px;
     z-index: 1000;
     background: white;
@@ -261,10 +266,12 @@ body.pan-mode.dragging .canvas-container {
 /* Canvas container */
 .canvas-container {
     position: absolute;
-    top: 100px;
+    /* === FIX: Adjust top based on header height === */
+    top: 100px; /* Make this match the .header height */
     left: 0;
     width: 100vw;
-    height: calc(100vh - 100px);
+    /* === FIX: Adjust height to fill remaining space === */
+    height: calc(100vh - 100px); /* Subtract header height */
     overflow: hidden;
     cursor: grab;
     background: #34495e;
@@ -284,8 +291,9 @@ body.pan-mode.dragging .canvas-container {
     transition: transform 0.1s ease-out;
     display: flex;
     flex-wrap: wrap;
-    width: 3000px;
-    padding: 20px;
+    width: 3000px; /* Adjust if needed */
+    /* === FIX: Add padding-top === */
+    padding: 20px 20px 20px 20px; /* Add top padding (20px) */
     gap: 2px;
     will-change: transform;
 }
@@ -735,274 +743,186 @@ body.pan-mode.dragging .canvas-container {
     }
 }
 
-/* MOBILE & TABLET RESPONSIVE STYLES */
-@media (max-width: 1024px) {
-    /* Header */
-    .header {
-        padding: 12px 15px;
-        text-align: left;
-        position: relative;
+/* ===============================================
+=== NEW MOBILE-FIRST STYLES ARE BELOW ===
+===============================================
+*/
+
+/* By default (on desktop), hide the mobile view */
+#mobile-view {
+    display: none;
+}
+
+/* This is the most important part:
+  We set a screen width limit (e.g., 768px for tablets and phones).
+*/
+@media (max-width: 768px) {
+
+    /* 1. HIDE ALL DESKTOP ELEMENTS
+      These selectors are now CORRECT and match your index.html
+    */
+    .header,
+    .search-bar,
+    .controls,
+    .canvas-container,
+    .info-section {
+        display: none !important; /* Hide all desktop stuff */
     }
     
-    .header h1 {
-        font-size: 18px;
-        margin-bottom: 4px;
-    }
-    
-    .header p {
-        font-size: 11px;
-        margin-bottom: 8px;
-    }
-    
-    .header-links {
-        justify-content: flex-start;
-        gap: 15px;
-    }
-    
-    .header-links a {
-        font-size: 12px;
+  
+
+    /* 2. SHOW THE NEW MOBILE VIEW */
+    #mobile-view {
+        display: flex; /* Show our new mobile-friendly UI */
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        background-color: #f4f4f4;
     }
 
-    /* Search bar - mobile layout */
-    .search-bar.moveable {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        width: 100%;
-        border-radius: 0;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-        z-index: 999;
-        padding: 12px;
-        min-width: unset;
-        border: none;
-        border-bottom: 1px solid #ddd;
+    /* 3. STYLE THE MOBILE VIEW */
+    .mobile-header {
+        padding: 15px;
+        background-color: #A92C2C; /* Match your site's red */
+        color: white;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
     
-    .search-bar.moveable .drag-handle, 
-    .search-bar.moveable .resize-handle {
-        display: none;
-    }
-    
-    .search-bar input {
-        width: 100%;
-        padding: 12px;
-        font-size: 16px; /* Prevent zoom on iOS */
+    .mobile-header h1 {
+        margin: 0;
+        font-size: 1.2rem;
     }
 
-    /* Controls - bottom bar layout */
-    .controls {
-        position: fixed;
-        top: auto;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        border-radius: 15px 15px 0 0;
+    #mobile-search-input {
+        width: 90%;
+        padding: 12px;
+        margin: 15px auto;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        display: block;
+        -webkit-appearance: none; /* Fix iOS styling */
+    }
+    
+    #mobile-results {
+        flex: 1; /* Make the results grid fill the remaining space */
+        overflow-y: auto; /* Allow scrolling */
         padding: 10px;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 10px;
+    }
+    
+    .info-text {
+        text-align: center;
+        color: #555;
+        grid-column: 1 / -1; /* Span full width */
+        padding-top: 20px;
+    }
+
+    /* === UPDATED: Mobile Stamp Styles (Spacing Fix) === */
+    .mobile-stamp {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        padding: 10px;
+        cursor: pointer;
+        text-align: center;
+        
+        /* Flexbox layout for consistent height */
+        height: 160px; /* Increased height slightly */
         display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1001;
+        flex-direction: column;
+        justify-content: flex-start; /* Align content to the top */
     }
     
-    .zoom-controls {
-        flex-direction: row;
-        gap: 8px;
+    .mobile-stamp img {
         width: 100%;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap;
+        height: 80px; /* Keep image height */
+        object-fit: contain;
+        border-radius: 4px;
+        margin-bottom: 5px; /* Add space below image */
     }
     
-    .zoom-btn {
-        padding: 12px 8px;
-        flex: 1;
-        max-width: 80px;
-        font-size: 10px;
-        white-space: nowrap;
+    .mobile-stamp .stamp-info-bottom {
+        /* This wrapper holds the title and ID */
+        margin-top: auto; /* Push this to the bottom */
+        padding-top: 5px; /* Add space above text */
+    }
+    
+    .mobile-stamp .stamp-title {
+        font-size: 0.8rem; /* Slightly smaller font */
+        font-weight: bold;
+        margin: 0 0 2px 0; /* Reduced margin */
+        color: #333;
+        line-height: 1.2;
+        /* Prevent long titles from wrapping too much */
         overflow: hidden;
         text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limit to 2 lines */
+        -webkit-box-orient: vertical;
     }
     
-    /* Hide era jump buttons on small screens */
-    .zoom-btn:nth-child(n+4):nth-child(-n+8) {
-        display: none;
-    }
-    
-    .zoom-info {
-        display: none;
-    }
-    
-    /* Hide complex navigation on mobile */
-    .nav-section {
-        display: none;
-    }
-    
-    .nav-options {
-        border-top: none;
-        padding: 5px 10px;
+    .mobile-stamp .stamp-id {
+        font-size: 0.75rem; /* Slightly smaller font */
+        color: #777;
         margin: 0;
-        width: 100%;
+    }
+    
+    /* === Placeholder styles === */
+    .mobile-stamp.mobile-placeholder {
+        background: #FF1493; /* Bright pink from your screenshot */
+        color: white;
+        justify-content: center; /* Center placeholder text vertically */
+    }
+    
+    .mobile-placeholder .placeholder-text {
+        font-weight: bold;
+        font-size: 1rem;
+        text-align: center;
+        line-height: 1.3;
+        padding: 5px;
+    }
+
+    .mobile-placeholder .placeholder-soon {
+        font-size: 0.8rem;
+        font-style: italic;
+        font-weight: normal;
+        opacity: 0.8;
+        margin-top: 5px; /* Space below topic */
         text-align: center;
     }
     
-    .nav-toggle {
+    .mobile-placeholder .stamp-id-placeholder {
+        font-size: 0.9rem;
+        color: white;
+        opacity: 0.9;
+        margin-top: 10px; /* Space between "soon" and ID */
+    }
+    
+    /* This helper is used by the onerror handler */
+    .mobile-stamp .img-error-placeholder {
+        display: none; /* Hide by default */
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
         justify-content: center;
-        font-size: 11px;
-    }
-    
-    .nav-help {
-        display: none;
+        align-items: center;
     }
 
-    /* Canvas container */
-    .canvas-container {
-        top: 0;
-        height: 100vh;
-        padding-top: 140px; /* Space for header + search */
-        padding-bottom: 80px; /* Space for bottom controls */
-    }
-
-    /* Stamps - smaller on mobile */
-    .stamp {
-        width: 70px;
-        height: 85px;
-        transition: transform 0.1s ease;
-    }
-    
-    .stamp-info {
-        font-size: 7px;
-        padding: 1px 2px;
-    }
-
-    /* Modal - mobile optimized */
+    /* 4. RESTYLE THE EXISTING MODAL FOR MOBILE */
+    /* This makes your existing desktop modal look good on mobile */
     .modal-content {
-        max-width: 95vw;
-        max-height: 95vh;
-        padding: 20px;
-        margin: 10px;
-    }
-    
-    .modal-stamp {
-        width: 150px;
-        height: 200px;
-    }
-    
-    .close {
-        font-size: 24px;
-        top: 10px;
-        right: 15px;
+        width: 90%;
+        max-height: 85vh;
+        overflow-y: auto;
     }
 
-    /* Info sections - mobile optimized */
-    .info-section {
-        padding: 60px 15px 15px;
-    }
-    
-    .info-content {
-        padding: 20px;
-        font-size: 14px;
-    }
-    
-    .info-content h2 {
-        font-size: 20px;
-    }
-    
-    .info-content h3 {
-        font-size: 16px;
-    }
-    
-    .info-content pre {
-        font-size: 10px;
-        padding: 10px;
-        overflow-x: scroll;
-    }
-}
-
-/* Extra small screens */
-@media (max-width: 480px) {
-    .header h1 {
-        font-size: 16px;
-    }
-    
-    .header p {
-        font-size: 10px;
-    }
-    
-    .header-links a {
-        font-size: 11px;
-    }
-    
-    .search-bar.moveable {
-        padding: 8px;
-    }
-    
-    .search-bar input {
-        padding: 10px;
-    }
-    
-    .stamp {
-        width: 60px;
-        height: 75px;
-    }
-    
-    .stamp-info {
-        font-size: 6px;
-    }
-    
-    .zoom-btn {
-        padding: 10px 6px;
-        font-size: 9px;
-        max-width: 70px;
-    }
-    
-    .canvas-container {
-        padding-top: 120px;
-        padding-bottom: 70px;
-    }
-    
-    .modal-content {
-        padding: 15px;
-    }
-    
-    .modal-stamp {
-        width: 120px;
-        height: 160px;
-    }
-}
-
-/* Performance optimizations for mobile */
-@media (max-width: 1024px) {
-    /* Disable expensive animations on mobile */
-    .mobile-optimized * {
-        animation-duration: 0.1s !important;
-        transition-duration: 0.1s !important;
-    }
-    
-    /* Simplify transforms for better performance */
-    .mobile-optimized .stamp:not(.search-current):not(.search-match) {
-        transform: none !important;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important;
-    }
-    
-    /* Reduce complexity of gradients on mobile */
-    .mobile-optimized .decade-marker {
-        background: #8B0000 !important;
-    }
-    
-    /* Optimize canvas container for touch */
-    .mobile-optimized .canvas-container {
-        -webkit-overflow-scrolling: auto;
-        overscroll-behavior: contain;
-    }
-    
-    /* Simplify stamp grid transforms */
-    .mobile-optimized .stamp-grid {
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
+    .modal-stamp img {
+        width: 80%;
+        margin: 0 auto;
     }
 }

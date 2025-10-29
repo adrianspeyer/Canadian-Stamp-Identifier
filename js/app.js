@@ -1,4 +1,7 @@
-// Canadian Stamp Identifier - Restored Desktop Experience + Mobile Safe
+// js/app.js
+// FINAL CONSOLIDATED SCRIPT
+// Canadian Stamp Identifier - With Mobile Search Fallback
+
 class StampIdentifier {
     constructor() {
         this.stamps = [];
@@ -16,7 +19,7 @@ class StampIdentifier {
         this.isShiftPressed = false;
         this.panMode = false;
         
-        // Mobile detection - but keep desktop experience unchanged
+        // --- KEY CHANGE: Mobile detection ---
         this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
         this.isTouch = 'ontouchstart' in window;
         
@@ -42,41 +45,206 @@ class StampIdentifier {
         this.viewportObserver = null;
         this.lazyLoadObserver = null;
         
+        // Desktop elements
         this.stampGrid = document.getElementById('stampGrid');
         this.canvasContainer = document.getElementById('canvasContainer');
         this.searchInput = document.getElementById('searchInput');
         this.timelineCanvas = document.getElementById('mainTimelineCanvas');
         
+        // Mobile elements
+        this.mobileSearchInput = document.getElementById('mobile-search-input');
+        this.mobileResultsContainer = document.getElementById('mobile-results');
+        
+        // This starts the app
         this.init();
     }
     
+    // ---
+    // === MODIFIED init() FUNCTION ===
+    // This now acts as a "router", sending users to the correct experience.
+    // ---
     async init() {
         try {
+            // Load stamp data first, as both paths need it
+            await this.loadStamps(); 
+            
             if (this.isMobile) {
-                this.setupMobileOptimizations();
+                // --- MOBILE PATH ---
+                console.log("Initializing Mobile (Search-First) Experience");
+                this.initMobileSearch(); 
+                this.setupMobileEventListeners();
+            } else {
+                // --- DESKTOP PATH ---
+                console.log("Initializing Desktop (Visual-First) Experience");
+                this.setupViewportObserver();
+                this.setupLazyLoading();
+                this.renderStampsVirtual(); // The heavy part, only on desktop
+                this.setupDesktopEventListeners(); // The full desktop listeners
+                this.createNavigationControls();
+                this.setupTimelineInteraction();
+                this.startPreloadingImages();
+                
+                setTimeout(() => {
+                    this.setupDraggableSearch();
+                }, 100);
+                
+                this.updateTransform();
             }
-            this.setupViewportObserver();
-            this.setupLazyLoading();
-            await this.loadStamps();
-            this.renderStampsVirtual(); // Keep original rendering
-            this.setupEventListeners();
-            this.createNavigationControls();
-            this.setupTimelineInteraction();
-            this.startPreloadingImages();
-            
-            setTimeout(() => {
-                this.setupDraggableSearch();
-            }, 100);
-            
-            this.updateTransform();
         } catch (error) {
             console.error('Failed to initialize:', error);
-            document.getElementById('loadingMessage').textContent = 'Failed to load stamps. Please check that data/stamps.json exists.';
+            if (this.isMobile) {
+                 this.mobileResultsContainer.innerHTML = '<p class="info-text">Failed to load stamps. Please try again.</p>';
+            } else {
+                document.getElementById('loadingMessage').textContent = 'Failed to load stamps. Please check that data/stamps.json exists.';
+            }
         }
     }
-    
+
+    // ---
+    // === NEW FUNCTION: initMobileSearch() ===
+    // This powers the new mobile search UI.
+    // ---
+    initMobileSearch() {
+        // Show some recent stamps on load
+        this.renderMobileResults(this.stamps.slice(-30).reverse());
+
+        // Listen for search input
+        this.mobileSearchInput.addEventListener('input', () => {
+            const query = this.mobileSearchInput.value.toLowerCase().trim();
+
+            if (query.length < 3) {
+                 // If query is cleared, show recent stamps again
+                if (query.length === 0) {
+                     this.renderMobileResults(this.stamps.slice(-30).reverse());
+                } else {
+                    this.mobileResultsContainer.innerHTML = '<p class="info-text">Enter 3 or more characters to search.</p>';
+                }
+                return;
+            }
+
+            // Filter stamps using the *exact same* logic as desktop
+            const results = this.stamps.filter(stamp => 
+                (stamp._searchText || '').includes(query)
+            );
+            
+            // Sort by relevance, same as desktop
+            results.sort((a, b) => {
+                const scoreA = this.calculateRelevanceScore(a, query);
+                const scoreB = this.calculateRelevanceScore(b, query);
+                if (scoreA !== scoreB) return scoreB - scoreA;
+                
+                const yearA = a.year || 0;
+                const yearB = b.year || 0;
+                if (yearA !== yearB) return yearA - yearB;
+                
+                const idA = (a.id || "0").toString();
+                const idB = (b.id || "0").toString();
+                return idA.localeCompare(idB, undefined, {numeric: true});
+            });
+
+            this.renderMobileResults(results);
+        });
+
+        // Add click listener for showing details (delegated to the container)
+        // This listener is now INSIDE the class and can safely call this.showStampDetails
+        this.mobileResultsContainer.addEventListener('click', (e) => {
+            const stampElement = e.target.closest('.mobile-stamp');
+            if (!stampElement) return;
+
+            const stampId = stampElement.dataset.id;
+            const stampData = this.stamps.find(s => s.id === stampId);
+            
+            if (stampData) {
+                // SUCCESS: No more fallback, this will work directly.
+                this.showStampDetails(stampData);
+            } else {
+                console.error(`Could not find stamp data for ID: ${stampId}`);
+            }
+        });
+    }
+
+    // ---
+    // === NEW FUNCTION: renderMobileResults() ===
+    // This builds the lightweight HTML grid for mobile.
+    // ---
+    renderMobileResults(stamps) {
+        if (!stamps || stamps.length === 0) {
+            this.mobileResultsContainer.innerHTML = '<p class="info-text">No stamps found.</p>';
+            return;
+        }
+
+        // Create the HTML for each stamp
+        this.mobileResultsContainer.innerHTML = stamps.map(stamp => {
+            
+            const hasImage = (stamp.image && stamp.image.trim().length > 0);
+
+            // IF an image exists, try to show it
+            if (hasImage) {
+                const safeImagePath = encodeURI(stamp.image);
+                return `
+                    <div class="mobile-stamp" data-id="${stamp.id}">
+                        
+                        <!-- This image will try to load -->
+                        <img src="${safeImagePath}" 
+                             alt="${stamp.mainTopic || 'Unknown'}" 
+                             loading="lazy" 
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.add('mobile-placeholder'); this.nextElementSibling.nextElementSibling.style.display='none';">
+                        
+                        <!-- This is the hidden placeholder, shown on error -->
+                        <div class="img-error-placeholder">
+                            <div class="placeholder-text">${stamp.mainTopic || 'Unknown'}</div>
+                            <p class="placeholder-soon">Coming Soon!</p> 
+                        </div>
+
+                        <!-- These are the normal title/ID, hidden on error -->
+                        <div class="stamp-info-bottom">
+                            <p class="stamp-title">${stamp.mainTopic || 'Unknown'} (${stamp.year || 'N/A'})</p>
+                            <p class="stamp-id">#${stamp.id || 'N/A'}</p>
+                        </div>
+                    </div>
+                `;
+            } else {
+                // ELSE, show the placeholder from the start
+                return `
+                    <div class="mobile-stamp mobile-placeholder" data-id="${stamp.id}">
+                        <div class="placeholder-text">
+                            ${stamp.mainTopic || 'Unknown'}
+                        </div>
+                        <p class="placeholder-soon">Coming Soon!</p> 
+                        <p class="stamp-id-placeholder">#${stamp.id || 'N/A'} (${stamp.year || 'N/A'})</p>
+                    </div>
+                `;
+            }
+        }).join('');
+    }
+
+    // ---
+    // === NEW FUNCTION: setupMobileEventListeners() ===
+    // A lightweight event listener setup just for mobile.
+    // ---
+    setupMobileEventListeners() {
+        // Modal closing listeners
+        document.getElementById('stampModal').addEventListener('click', (e) => { 
+            if (e.target.id === 'stampModal') this.closeModal(); 
+        });
+        
+        document.addEventListener('keydown', (e) => { 
+            if (e.key === 'Escape') { 
+                this.closeModal(); 
+            } 
+        });
+    }
+
+
+    // ===============================================
+    //
+    //  ALL YOUR EXISTING DESKTOP CODE IS BELOW
+    //
+    // ===============================================
+
     setupMobileOptimizations() {
-        // Only add mobile-specific memory management
+        // This is no longer the primary mobile strategy,
+        // but it doesn't hurt to leave it.
         document.body.classList.add('mobile-device');
         
         // Aggressive cleanup on mobile only
@@ -87,6 +255,7 @@ class StampIdentifier {
     
     aggressiveMobileCleanup() {
         if (!this.isMobile) return;
+        if (!this.stampGrid) return; // Exit if grid doesn't exist
         
         // Clean up distant images more aggressively on mobile
         const stampElements = this.stampGrid.querySelectorAll('.stamp');
@@ -128,7 +297,7 @@ class StampIdentifier {
         }
         
         if (cleanedCount > 0) {
-            console.log(`Mobile cleanup: unloaded ${cleanedCount} images, cache size: ${this.imageCache.size}`);
+            // console.log(`Mobile cleanup: unloaded ${cleanedCount} images, cache size: ${this.imageCache.size}`);
         }
     }
     
@@ -162,6 +331,9 @@ class StampIdentifier {
             const rect = this.timelineCanvas.getBoundingClientRect();
             const hoverX = e.clientX - rect.left;
             
+            // Ensure grid has dimensions
+            if (!this.stampGrid || this.stampGrid.scrollWidth === 0) return;
+            
             const viewportWidthPercent = (this.canvasContainer.clientWidth / (this.stampGrid.scrollWidth * this.scale)) * 100;
 
             previewElement.style.display = 'block';
@@ -177,6 +349,9 @@ class StampIdentifier {
             const rect = this.timelineCanvas.getBoundingClientRect();
             const clickX = e.clientX - rect.left;
             const clickPercent = clickX / rect.width;
+
+            // Ensure grid has dimensions
+            if (!this.stampGrid || this.stampGrid.scrollWidth === 0) return;
 
             const totalContentWidth = this.stampGrid.scrollWidth * this.scale;
             const visibleWidth = this.canvasContainer.clientWidth;
@@ -195,11 +370,14 @@ class StampIdentifier {
         const container = this.canvasContainer;
         const grid = this.stampGrid;
         
-        if (!container || !grid) return;
+        if (!container || !grid || grid.scrollWidth === 0) return;
         
         const totalContentWidth = grid.scrollWidth * this.scale;
         const visibleWidth = container.clientWidth;
         
+        // Prevent division by zero if totalContentWidth is 0
+        if (totalContentWidth === 0) return;
+
         const viewportLeftPercent = (-this.translateX / totalContentWidth) * 100;
         const viewportWidthPercent = (visibleWidth / totalContentWidth) * 100;
         
@@ -282,8 +460,14 @@ class StampIdentifier {
             this.stamps = data.stamps || [];
             
             this.stamps.sort((a, b) => {
-                if (a.year !== b.year) return a.year - b.year;
-                return parseInt(a.id) - parseInt(b.id);
+                const yearA = a.year || 0;
+                const yearB = b.year || 0;
+                if (yearA !== yearB) return yearA - yearB;
+                
+                // Use localeCompare for robust ID sorting (handles "100" vs "100a")
+                const idA = (a.id || "0").toString();
+                const idB = (b.id || "0").toString();
+                return idA.localeCompare(idB, undefined, {numeric: true});
             });
             
             console.log(`Loaded ${this.stamps.length} stamps`);
@@ -349,12 +533,15 @@ class StampIdentifier {
     
     prioritizeImageLoad(img) {
         const realSrc = img.dataset.src;
-        if (!realSrc || img.src === realSrc) return;
+        if (!realSrc || (img.src && !img.src.startsWith('data:image'))) return;
         
         if (this.imageCache.has(realSrc)) {
             const cachedSrc = this.imageCache.get(realSrc);
             img.src = cachedSrc;
             img.classList.remove('lazy-load');
+            if (this.lazyLoadObserver) {
+                this.lazyLoadObserver.unobserve(img);
+            }
             return;
         }
         
@@ -416,7 +603,7 @@ class StampIdentifier {
     
     loadImage(src) {
         return new Promise((resolve, reject) => {
-            fetch(src, {
+            fetch(encodeURI(src), { // Use encodeURI here
                 headers: {
                     'Cache-Control': 'public, max-age=86400'
                 }
@@ -441,6 +628,10 @@ class StampIdentifier {
                 img.style.display = 'none';
                 stampElement.style.background = this.getColorForDecade(Math.floor(stamp.year / 10) * 10);
                 stampElement.style.color = 'white';
+                // Remove existing placeholder text if any
+                const existingPlaceholder = stampElement.querySelector('.placeholder-text');
+                if (existingPlaceholder) existingPlaceholder.remove();
+                
                 stampElement.innerHTML += `<div class="placeholder-text" style="display: flex; align-items: center; justify-content: center; height: 80%; font-size: 10px; text-align: center; padding: 5px; color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.8);">${stamp.mainTopic}</div>`;
             }
         }
@@ -473,7 +664,6 @@ class StampIdentifier {
         return 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmMGYwZjAiLz48L3N2Zz4=';
     }
     
-    // RESTORED: Original desktop rendering exactly as you had it
     renderStampsVirtual() {
         this.stampGrid.innerHTML = '';
         
@@ -491,7 +681,6 @@ class StampIdentifier {
         document.getElementById('stampCount').textContent = this.stamps.length;
     }
     
-    // RESTORED: Original scheduling exactly as you had it
     scheduleRender() {
         if (this.isRendering || this.renderQueue.length === 0) return;
         
@@ -593,7 +782,8 @@ class StampIdentifier {
         return colors[decade] || 'linear-gradient(45deg, #666, #999)';
     }
     
-    setupEventListeners() {
+    // This function is for DESKTOP listeners
+    setupDesktopEventListeners() {
         this.canvasContainer.addEventListener('mousedown', (e) => this.startDrag(e));
         this.canvasContainer.addEventListener('touchstart', (e) => this.startDrag(e), { passive: false });
         this.canvasContainer.addEventListener('contextmenu', (e) => e.preventDefault());
@@ -718,6 +908,7 @@ class StampIdentifier {
     }
     
     updateTransform() {
+        if(this.isMobile) return; // Don't do this on mobile
         this.stampGrid.style.transform = `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})`;
         document.getElementById('scaleInfo').textContent = Math.round(this.scale * 100) + '%';
     }
@@ -805,6 +996,7 @@ class StampIdentifier {
     
     updateSearchInfo() {
         const info = document.getElementById('searchInfo');
+        if(!info) return; // Exit if desktop search info isn't there
         if (this.currentMatches.length > 0) {
             info.textContent = `${this.currentMatchIndex + 1} of ${this.currentMatches.length}`;
             info.style.display = 'block';
@@ -824,6 +1016,10 @@ class StampIdentifier {
         this.scale = Math.max(1, this.scale);
         const stampRect = element.getBoundingClientRect();
         const gridRect = this.stampGrid.getBoundingClientRect();
+        
+        // Check for valid rects
+        if(!gridRect || gridRect.width === 0 || gridRect.height === 0) return;
+
         const stampX = (stampRect.left - gridRect.left) / this.scale;
         const stampY = (stampRect.top - gridRect.top) / this.scale;
         this.translateX = containerWidth/2 - (stampX * this.scale + (stampRect.width / 2));
@@ -834,17 +1030,29 @@ class StampIdentifier {
     }
     
     showStampDetails(stamp) {
-        document.getElementById('modalId').textContent = stamp.id;
-        document.getElementById('modalYear').textContent = stamp.year;
-        document.getElementById('modalTopic').textContent = stamp.mainTopic + (stamp.subTopic ? ` - ${stamp.subTopic}` : '');
+        document.getElementById('modalId').textContent = stamp.id || 'N/A';
+        document.getElementById('modalYear').textContent = stamp.year || 'N/A';
+        document.getElementById('modalTopic').textContent = (stamp.mainTopic || 'N/A') + (stamp.subTopic ? ` - ${stamp.subTopic}` : '');
         document.getElementById('modalDenomination').textContent = stamp.denomination || 'N/A';
         document.getElementById('modalColor').textContent = stamp.color || 'N/A';
         const notesContainer = document.getElementById('modalNotesContainer');
         if (stamp.notes && stamp.notes.trim()) { document.getElementById('modalNotes').textContent = stamp.notes; notesContainer.style.display = 'block'; } else { notesContainer.style.display = 'none'; }
-        document.getElementById('modalTitle').textContent = `${stamp.year} - ${stamp.mainTopic}`;
+        document.getElementById('modalTitle').textContent = `${stamp.year || '----'} - ${stamp.mainTopic || 'Unknown Topic'}`;
         const modalImage = document.getElementById('modalStampImage');
-        modalImage.src = stamp.image;
-        modalImage.alt = `${stamp.year} ${stamp.mainTopic}`;
+        
+        if (stamp.image && stamp.image.trim().length > 0) {
+            modalImage.src = encodeURI(stamp.image);
+            modalImage.alt = `${stamp.year} ${stamp.mainTopic}`;
+            modalImage.style.display = 'block';
+            modalImage.parentElement.style.display = 'flex'; // Show the frame
+        } else {
+            // Hide image if there isn't one
+            modalImage.src = '';
+            modalImage.alt = 'No image available';
+            modalImage.style.display = 'none';
+            modalImage.parentElement.style.display = 'none'; // Hide the frame
+        }
+        
         document.getElementById('stampModal').style.display = 'flex';
     }
     
@@ -879,6 +1087,9 @@ function closeModal() { if (stampApp) stampApp.closeModal(); }
 
 document.addEventListener('DOMContentLoaded', () => {
     stampApp = new StampIdentifier();
-    window.addEventListener('load', () => { if (stampApp && stampApp.setupDraggableSearch) stampApp.setupDraggableSearch(); });
+    // We only set up desktop-specific listeners if we are NOT on mobile
+    if (!stampApp.isMobile) {
+        window.addEventListener('load', () => { if (stampApp && stampApp.setupDraggableSearch) stampApp.setupDraggableSearch(); });
+    }
     window.addEventListener('beforeunload', () => { if (stampApp && stampApp.destroy) stampApp.destroy(); });
 });

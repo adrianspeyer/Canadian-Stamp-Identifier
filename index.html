@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canadian Stamp Identifier</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
+
+    <!-- 
+      This is UI for mobile. It's hidden by default and only shown by css/style.css on small screens.
+    -->
+    <div id="mobile-view">
+        <header class="mobile-header">
+            <h1>Canadian Stamp Identifier</h1>
+        </header>
+        <input type="search" id="mobile-search-input" placeholder="Search by year, topic, ID...">
+        <div id="mobile-results">
+            <p class="info-text">Loading stamp data...</p>
+        </div>
+    </div>
+  
     <div class="header">
         <div class="header-left">
             <h1>Canadian Stamp Identifier</h1>
@@ -56,7 +71,7 @@
                         <button class="cursor-btn" id="mainNavUp" title="Move Up (Arrow Up)">↑</button>
                         <div class="cursor-row">
                             <button class="cursor-btn" id="mainNavLeft" title="Move Left (Arrow Left)">←</button>
-                            <button class="cursor-btn center-btn" id="mainNavCenter" title="Center View">⌂</button>
+                            <button class="cursor-btn" center-btn" id="mainNavCenter" title="Center View">⌂</button>
                             <button class="cursor-btn" id="mainNavRight" title="Move Right (Arrow Right)">→</button>
                         </div>
                         <button class="cursor-btn" id="mainNavDown" title="Move Down (Arrow Down)">↓</button>
