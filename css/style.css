@@ -833,7 +833,7 @@ body.is-mobile-device {
         padding-top: 20px;
     }
 
-    /* === UPDATED: Mobile Stamp Styles (Spacing Fix) === */
+    /* === REVERTED: Mobile Stamp Styles (to match IMG_7632.jpg) === */
     .mobile-stamp {
         background: #fff;
         border: 1px solid #ddd;
@@ -842,49 +842,44 @@ body.is-mobile-device {
         padding: 10px;
         cursor: pointer;
         text-align: center;
-        
-        /* Flexbox layout for consistent height */
-        /* === REMOVED FIXED HEIGHT === */
-        min-height: 150px; /* Set a minimum height */
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* Space content out */
+        justify-content: flex-start;
+        /* Remove fixed height to allow content to flow */
     }
     
     .mobile-stamp img {
         width: 100%;
-        height: 80px; /* Keep image height */
+        height: 90px; /* Give image a consistent height */
         object-fit: contain;
         border-radius: 4px;
-        margin-bottom: 5px; /* Add space below image */
+        margin-bottom: 8px; /* Space below image */
     }
     
     .mobile-stamp .stamp-info-bottom {
         /* This wrapper holds the title and ID */
-        margin-top: 5px; /* Use margin-top instead of auto */
-        padding-top: 5px; /* Add space above text */
-        border-top: 1px solid #f0f0f0; /* Add a faint separator */
+        margin-top: auto; /* Push this to the bottom */
     }
     
     .mobile-stamp .stamp-title {
-        font-size: 0.8rem; /* Slightly smaller font */
+        font-size: 0.85rem; /* Revert font size */
         font-weight: bold;
-        margin: 0 0 2px 0; /* Reduced margin */
+        margin: 0 0 4px 0; /* Revert margin */
         color: #333;
         line-height: 1.2;
-        /* Prevent long titles from wrapping too much */
+        /* Allow 2 lines */
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 3; /* Allow 3 lines for long topics */
+        -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
-        min-height: 29px; /* min-height instead of fixed height */
+        height: 2.4em; /* 1.2em * 2 lines */
     }
     
     .mobile-stamp .stamp-id {
-        font-size: 0.75rem; /* Slightly smaller font */
+        font-size: 0.8rem; /* Revert font size */
         color: #777;
-        margin: 2px 0 0 0; /* Add a little space above */
+        margin: 0;
     }
     
     /* === Placeholder styles === */
@@ -892,7 +887,7 @@ body.is-mobile-device {
         background: #FF1493; /* Bright pink from your screenshot */
         color: white;
         justify-content: center; /* Center placeholder text vertically */
-        min-height: 150px; /* Match the min-height */
+        min-height: 150px; /* Give placeholders a min-height */
     }
     
     .mobile-placeholder .placeholder-text {
@@ -913,18 +908,13 @@ body.is-mobile-device {
     }
     
     .mobile-placeholder .stamp-id-placeholder {
-        /* We'll hide this, it's redundant with the placeholder */
+        /* This was part of the buggy version, remove it */
         display: none; 
     }
     
-    /* This helper is used by the onerror handler */
+    /* This was part of the buggy version, remove it */
     .mobile-stamp .img-error-placeholder {
-        display: none; /* Hide by default */
-        height: 100%;
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        display: none !important; 
     }
 
     /* 4. RESTYLE THE EXISTING MODAL FOR MOBILE */
@@ -976,4 +966,3 @@ body.is-mobile-device {
         color: #333;
     }
 }
-

@@ -286,28 +286,31 @@ class StampIdentifier {
         this.mobileResultsContainer.innerHTML = stamps.map(stamp => {
             
             const hasImage = (stamp.image && stamp.image.trim().length > 0);
+            const topic = stamp.mainTopic || 'Unknown';
+            const year = stamp.year || 'N/A';
+            const id = stamp.id || 'N/A';
 
             // IF an image exists, show it
             if (hasImage) {
                 const safeImagePath = encodeURI(stamp.image);
                 return `
-                    <div class="mobile-stamp" data-id="${stamp.id}">
+                    <div class="mobile-stamp" data-id="${id}">
                         <img src="${safeImagePath}" 
-                             alt="${stamp.mainTopic || 'Unknown'}" 
+                             alt="${topic}" 
                              loading="lazy">
                         
                         <div class="stamp-info-bottom">
-                            <p class="stamp-title">${stamp.mainTopic || 'Unknown'}</p>
-                            <p class="stamp-id">#${stamp.id || 'N/A'}</p>
+                            <p class="stamp-title">${topic} (${year})</p>
+                            <p class="stamp-id">#${id}</p>
                         </div>
                     </div>
                 `;
             } else {
                 // ELSE, show the placeholder from the start
                 return `
-                    <div class="mobile-stamp mobile-placeholder" data-id="${stamp.id}">
+                    <div class="mobile-stamp mobile-placeholder" data-id="${id}">
                         <div class="placeholder-text">
-                            ${stamp.mainTopic || 'Unknown'}
+                            ${topic}
                         </div>
                         <p class="placeholder-soon">Coming Soon!</p> 
                     </div>
