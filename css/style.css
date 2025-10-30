@@ -756,11 +756,15 @@ body.pan-mode.dragging .canvas-container {
 /* This is the most important part:
   We set a screen width limit (e.g., 1024px for tablets and phones).
 */
+/* === CHANGE THIS LINE === */
 @media (max-width: 1024px) {
+/* === TO THIS === */
+body.is-mobile-device {
 
     /* 1. HIDE ALL DESKTOP ELEMENTS
       These selectors are now CORRECT and match your index.html
-    */
+
+    /* 1. HIDE ALL DESKTOP ELEMENTS */
     .header,
     .search-bar,
     .controls,
@@ -774,7 +778,10 @@ body.pan-mode.dragging .canvas-container {
         display: flex; /* Show our new mobile-friendly UI */
         flex-direction: column;
         width: 100%;
-        height: 100vh;
+        /* Use 100dvh (dynamic viewport height) to account
+          for mobile browser URL bars appearing and disappearing.
+        */
+        height: 100dvh; 
         background-color: #f4f4f4;
     }
 
@@ -820,7 +827,10 @@ body.pan-mode.dragging .canvas-container {
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
         gap: 10px;
         /* === FIX: Add padding at the bottom === */
+        /* === CHANGE THIS LINE === */
         padding-bottom: 90px; /* Space for the pagination bar */
+        /* === TO THIS === */
+        padding-bottom: 120px; /* More space for the pagination bar */
     }
     
     .info-text {

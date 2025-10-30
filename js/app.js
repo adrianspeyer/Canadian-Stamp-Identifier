@@ -37,8 +37,8 @@ class StampIdentifier {
         
         // --- THIS IS THE FINAL UPDATED LINE ---
         // If it's a phone, OR any kind of tablet, OR a modern iPad,
-        // it will be treated as mobile, regardless of screen width or orientation.
-        this.isMobile = isPhone || isTablet || isModernIPad;
+        // OR the screen width is 1366px or less (catches 14" iPad Pro landscape)
+        this.isMobile = isPhone || isTablet || isModernIPad || window.innerWidth <= 1366;
         
         this.isTouch = 'ontouchstart' in window;
 
@@ -95,6 +95,9 @@ class StampIdentifier {
             await this.loadStamps(); 
             
             if (this.isMobile) {
+                // --- ADD THIS LINE ---
+                document.body.classList.add('is-mobile-device');
+
                 // --- MOBILE / TABLET PATH ---
                 console.log("Initializing Mobile/Tablet (Search-First) Experience");
                 
@@ -107,6 +110,9 @@ class StampIdentifier {
                 this.initMobileSearch(); 
                 this.setupMobileEventListeners();
             } else {
+                // --- ADD THIS LINE ---
+                document.body.classList.add('is-desktop-device');
+                
                 // --- DESKTOP PATH ---
                 console.log("Initializing Desktop (Visual-First) Experience");
                 this.setupViewportObserver();
