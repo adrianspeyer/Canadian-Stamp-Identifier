@@ -819,6 +819,8 @@ body.pan-mode.dragging .canvas-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
         gap: 10px;
+        /* === FIX: Add padding at the bottom === */
+        padding-bottom: 90px; /* Space for the pagination bar */
     }
     
     .info-text {
@@ -970,4 +972,3 @@ body.pan-mode.dragging .canvas-container {
         color: #333;
     }
 }
-

@@ -18,15 +18,21 @@ class StampIdentifier {
         this.isShiftPressed = false;
         this.panMode = false;
         
-        // --- KEY CHANGE: Mobile + Tablet detection ---
+        // --- KEY CHANGE: More robust Mobile + Tablet detection ---
         const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        
+        // Check for phones
         const isPhone = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
-        const isTablet = /(ipad|tablet|(android(?!.*mobile))|kindle|playbook|silk)|(trident.*rv:11.0A)/i.test(userAgent);
+        
+        // Check for modern iPads (which identify as Mac)
         const isModernIPad = (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
         
-        // --- THIS IS THE UPDATED LINE ---
-        // If it's a phone, OR a tablet, OR a modern iPad, OR the screen is small... treat as mobile.
-        this.isMobile = isPhone || isTablet || isModernIPad || window.innerWidth <= 1024;
+        // Check for older iPads and other tablets
+        const isTablet = /(ipad|tablet|(android(?!.*mobile))|kindle|playbook|silk)|(trident.*rv:11.0A)/i.test(userAgent);
+        
+        // If it's a phone, OR any kind of tablet... treat as mobile.
+        // This no longer checks window.innerWidth, fixing the landscape bug.
+        this.isMobile = isPhone || isTablet || isModernIPad;
         
         this.isTouch = 'ontouchstart' in window;
 
@@ -1189,4 +1195,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.addEventListener('beforeunload', () => { if (stampApp && stampApp.destroy) stampApp.destroy(); });
 });
-
