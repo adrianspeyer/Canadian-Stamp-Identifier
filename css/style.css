@@ -834,7 +834,6 @@ body.is-mobile-device {
         padding-top: 20px;
     }
 
-    /* === REVERTED: Mobile Stamp Styles (to match IMG_7632.jpg) === */
     .mobile-stamp {
         background: #fff;
         border: 1px solid #ddd;
@@ -846,7 +845,7 @@ body.is-mobile-device {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        /* Remove fixed height to allow content to flow */
+        max-height: 188px !important;
     }
     
     .mobile-stamp img {
