@@ -1,6 +1,5 @@
 // js/app.js
-// FINAL CONSOLIDATED SCRIPT
-// Canadian Stamp Identifier - With Mobile Search Fallback
+// Canadian Stamp Identifier - With Mobile/Tablet Search + Pagination
 
 class StampIdentifier {
     constructor() {
@@ -19,9 +18,23 @@ class StampIdentifier {
         this.isShiftPressed = false;
         this.panMode = false;
         
-        // --- KEY CHANGE: Mobile detection ---
-        this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+        // --- KEY CHANGE: Mobile + Tablet detection ---
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        const isPhone = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+        const isTablet = /(ipad|tablet|(android(?!.*mobile))|kindle|playbook|silk)|(trident.*rv:11.0A)/i.test(userAgent);
+        const isModernIPad = (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        
+        // --- THIS IS THE UPDATED LINE ---
+        // If it's a phone, OR a tablet, OR a modern iPad, OR the screen is small... treat as mobile.
+        this.isMobile = isPhone || isTablet || isModernIPad || window.innerWidth <= 1024;
+        
         this.isTouch = 'ontouchstart' in window;
+
+        // --- NEW: Pagination State ---
+        this.currentPage = 1;
+        this.stampsPerPage = 30; // Show 30 stamps per page
+        this.totalPages = 0;
+        this.mobileViewMode = 'browse'; // 'browse' or 'search'
         
         // DESKTOP: Keep original fast settings
         this.viewportBuffer = 500;
@@ -54,6 +67,7 @@ class StampIdentifier {
         // Mobile elements
         this.mobileSearchInput = document.getElementById('mobile-search-input');
         this.mobileResultsContainer = document.getElementById('mobile-results');
+        this.mobilePaginationControls = document.getElementById('mobile-pagination-controls');
         
         // This starts the app
         this.init();
@@ -69,8 +83,15 @@ class StampIdentifier {
             await this.loadStamps(); 
             
             if (this.isMobile) {
-                // --- MOBILE PATH ---
-                console.log("Initializing Mobile (Search-First) Experience");
+                // --- MOBILE / TABLET PATH ---
+                console.log("Initializing Mobile/Tablet (Search-First) Experience");
+                
+                // Calculate total pages
+                this.totalPages = Math.ceil(this.stamps.length / this.stampsPerPage);
+
+                // Render the first page
+                this.renderMobilePage(1); 
+                
                 this.initMobileSearch(); 
                 this.setupMobileEventListeners();
             } else {
@@ -101,26 +122,25 @@ class StampIdentifier {
     }
 
     // ---
-    // === NEW FUNCTION: initMobileSearch() ===
-    // This powers the new mobile search UI.
+    // === MODIFIED: initMobileSearch() ===
+    // This now handles switching between 'browse' and 'search' modes.
     // ---
     initMobileSearch() {
-        // Show some recent stamps on load
-        this.renderMobileResults(this.stamps.slice(-30).reverse());
-
         // Listen for search input
         this.mobileSearchInput.addEventListener('input', () => {
             const query = this.mobileSearchInput.value.toLowerCase().trim();
 
             if (query.length < 3) {
-                 // If query is cleared, show recent stamps again
-                if (query.length === 0) {
-                     this.renderMobileResults(this.stamps.slice(-30).reverse());
-                } else {
-                    this.mobileResultsContainer.innerHTML = '<p class="info-text">Enter 3 or more characters to search.</p>';
+                 // If query is cleared and we were in search mode, go back to browse
+                if (query.length === 0 && this.mobileViewMode === 'search') {
+                     this.mobileViewMode = 'browse';
+                     this.renderMobilePage(1); // Go back to page 1
                 }
                 return;
             }
+            
+            // --- ENTERING SEARCH MODE ---
+            this.mobileViewMode = 'search';
 
             // Filter stamps using the *exact same* logic as desktop
             const results = this.stamps.filter(stamp => 
@@ -142,11 +162,11 @@ class StampIdentifier {
                 return idA.localeCompare(idB, undefined, {numeric: true});
             });
 
-            this.renderMobileResults(results);
+            this.renderMobileResults(results); // Render just the search results
+            this.renderPaginationControls(0, 0, 'search'); // Hide pagination controls
         });
 
         // Add click listener for showing details (delegated to the container)
-        // This listener is now INSIDE the class and can safely call this.showStampDetails
         this.mobileResultsContainer.addEventListener('click', (e) => {
             const stampElement = e.target.closest('.mobile-stamp');
             if (!stampElement) return;
@@ -164,12 +184,84 @@ class StampIdentifier {
     }
 
     // ---
-    // === NEW FUNCTION: renderMobileResults() ===
-    // This builds the lightweight HTML grid for mobile.
+    // === NEW FUNCTION: renderMobilePage() ===
+    // This function handles rendering a specific "page" of stamps.
+    // ---
+    renderMobilePage(page) {
+        if (page < 1 || page > this.totalPages) {
+            return; // Page out of bounds
+        }
+        
+        this.currentPage = page;
+        this.mobileViewMode = 'browse'; // Ensure we are in browse mode
+
+        // Calculate the slice of stamps to show
+        // We show stamps in REVERSE chronological order (newest first)
+        const totalStamps = this.stamps.length;
+        const startIndex = totalStamps - (page * this.stampsPerPage);
+        const endIndex = totalStamps - ((page - 1) * this.stampsPerPage);
+        
+        // Clamp values to be safe
+        const safeStartIndex = Math.max(0, startIndex);
+        const safeEndIndex = Math.min(totalStamps, endIndex);
+
+        const pageStamps = this.stamps.slice(safeStartIndex, safeEndIndex).reverse();
+
+        this.renderMobileResults(pageStamps);
+        this.renderPaginationControls(this.currentPage, this.totalPages, 'browse');
+        
+        // Scroll to top of results
+        this.mobileResultsContainer.scrollTop = 0;
+    }
+
+    // ---
+    // === NEW FUNCTION: renderPaginationControls() ===
+    // This function draws the "Next" and "Prev" buttons.
+    // ---
+    renderPaginationControls(currentPage, totalPages, mode) {
+        if (mode === 'search' || totalPages <= 1) {
+            this.mobilePaginationControls.innerHTML = ''; // Hide for search or if only one page
+            return;
+        }
+
+        const canGoPrev = currentPage > 1;
+        const canGoNext = currentPage < totalPages;
+
+        this.mobilePaginationControls.innerHTML = `
+            <button class="page-btn" id="page-prev" ${!canGoPrev ? 'disabled' : ''}>
+                &larr; Previous
+            </button>
+            <span class="page-info">
+                Page ${currentPage} of ${totalPages}
+            </span>
+            <button class="page-btn" id="page-next" ${!canGoNext ? 'disabled' : ''}>
+                Next &rarr;
+            </button>
+        `;
+
+        // Add event listeners to the new buttons
+        document.getElementById('page-prev')?.addEventListener('click', () => {
+            this.renderMobilePage(this.currentPage - 1);
+        });
+        
+        document.getElementById('page-next')?.addEventListener('click', () => {
+            this.renderMobilePage(this.currentPage + 1);
+        });
+    }
+
+
+    // ---
+    // === MODIFIED: renderMobileResults() ===
+    // This function just renders the grid of stamps it's given.
     // ---
     renderMobileResults(stamps) {
         if (!stamps || stamps.length === 0) {
-            this.mobileResultsContainer.innerHTML = '<p class="info-text">No stamps found.</p>';
+            // Show a different message for search vs. browse
+            if (this.mobileViewMode === 'search') {
+                this.mobileResultsContainer.innerHTML = '<p class="info-text">No stamps found for your search.</p>';
+            } else {
+                this.mobileResultsContainer.innerHTML = '<p class="info-text">No stamps to display.</p>';
+            }
             return;
         }
 
@@ -219,8 +311,8 @@ class StampIdentifier {
     }
 
     // ---
-    // === NEW FUNCTION: setupMobileEventListeners() ===
-    // A lightweight event listener setup just for mobile.
+    // === MODIFIED: setupMobileEventListeners() ===
+    // No longer needs the click handler, as it's part of initMobileSearch
     // ---
     setupMobileEventListeners() {
         // Modal closing listeners
@@ -910,7 +1002,11 @@ class StampIdentifier {
     updateTransform() {
         if(this.isMobile) return; // Don't do this on mobile
         this.stampGrid.style.transform = `translate(${this.translateX}px, ${this.translateY}px) scale(${this.scale})`;
-        document.getElementById('scaleInfo').textContent = Math.round(this.scale * 100) + '%';
+        
+        const scaleInfo = document.getElementById('scaleInfo');
+        if (scaleInfo) {
+            scaleInfo.textContent = Math.round(this.scale * 100) + '%';
+        }
     }
     
     handleSearch(query) {
@@ -1093,3 +1189,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.addEventListener('beforeunload', () => { if (stampApp && stampApp.destroy) stampApp.destroy(); });
 });
+

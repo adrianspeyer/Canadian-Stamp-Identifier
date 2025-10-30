@@ -754,9 +754,9 @@ body.pan-mode.dragging .canvas-container {
 }
 
 /* This is the most important part:
-  We set a screen width limit (e.g., 768px for tablets and phones).
+  We set a screen width limit (e.g., 1024px for tablets and phones).
 */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
     /* 1. HIDE ALL DESKTOP ELEMENTS
       These selectors are now CORRECT and match your index.html
@@ -768,8 +768,6 @@ body.pan-mode.dragging .canvas-container {
     .info-section {
         display: none !important; /* Hide all desktop stuff */
     }
-    
-  
 
     /* 2. SHOW THE NEW MOBILE VIEW */
     #mobile-view {
@@ -787,6 +785,10 @@ body.pan-mode.dragging .canvas-container {
         color: white;
         text-align: center;
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+        z-index: 10;
     }
     
     .mobile-header h1 {
@@ -803,6 +805,11 @@ body.pan-mode.dragging .canvas-container {
         border-radius: 8px;
         display: block;
         -webkit-appearance: none; /* Fix iOS styling */
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 60px; /* Adjust based on header height */
+        z-index: 9;
+        background: #f4f4f4; /* Match background to hide content scrolling under */
     }
     
     #mobile-results {
@@ -864,6 +871,7 @@ body.pan-mode.dragging .canvas-container {
         display: -webkit-box;
         -webkit-line-clamp: 2; /* Limit to 2 lines */
         -webkit-box-orient: vertical;
+        height: 29px; /* Explicit height for 2 lines (0.8rem * 1.2 * 2 = ~29px) */
     }
     
     .mobile-stamp .stamp-id {
@@ -925,4 +933,41 @@ body.pan-mode.dragging .canvas-container {
         width: 80%;
         margin: 0 auto;
     }
+
+    /* === NEW: PAGINATION STYLES === */
+    #mobile-pagination-controls {
+        padding: 15px;
+        background: #fff;
+        border-top: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        bottom: 0;
+        z-index: 10;
+    }
+
+    .page-btn {
+        padding: 10px 16px;
+        background-color: #A92C2C;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .page-btn:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    .page-info {
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: #333;
+    }
 }
+
