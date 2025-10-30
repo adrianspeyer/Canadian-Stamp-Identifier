@@ -810,7 +810,8 @@ body.is-mobile-device {
         -webkit-appearance: none; /* Fix iOS styling */
         position: -webkit-sticky; /* Safari */
         position: sticky;
-        top: 60px; /* Adjust based on header height */
+        /* Adjust top based on header height + margin */
+        top: 15px; 
         z-index: 9;
         background: #f4f4f4; /* Match background to hide content scrolling under */
     }
@@ -912,9 +913,20 @@ body.is-mobile-device {
         display: none; 
     }
     
-    /* This was part of the buggy version, remove it */
+    /* This helper is used by the onerror handler */
     .mobile-stamp .img-error-placeholder {
-        display: none !important; 
+        display: none; /* Hide by default */
+        /* Make it fill the image area */
+        height: 90px; 
+        margin-bottom: 8px;
+        /* Re-style as a placeholder */
+        background: #FF1493;
+        color: white;
+        border-radius: 4px;
+        /* Flex to center content */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     /* 4. RESTYLE THE EXISTING MODAL FOR MOBILE */
@@ -966,3 +978,4 @@ body.is-mobile-device {
         color: #333;
     }
 }
+

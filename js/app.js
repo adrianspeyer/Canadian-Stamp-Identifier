@@ -269,7 +269,7 @@ class StampIdentifier {
 
     // ---
     // === MODIFIED: renderMobileResults() ===
-    // This function is now simpler and matches your "good" screenshot.
+    // This function now includes the year and the fixed placeholder logic.
     // ---
     renderMobileResults(stamps) {
         if (!stamps || stamps.length === 0) {
@@ -290,15 +290,26 @@ class StampIdentifier {
             const year = stamp.year || 'N/A';
             const id = stamp.id || 'N/A';
 
-            // IF an image exists, show it
+            // IF an image path exists, *try* to show it
             if (hasImage) {
                 const safeImagePath = encodeURI(stamp.image);
+                // We render BOTH the image and the placeholder.
+                // The onerror handler will hide the image and show the placeholder on failure.
                 return `
                     <div class="mobile-stamp" data-id="${id}">
+                        
                         <img src="${safeImagePath}" 
                              alt="${topic}" 
-                             loading="lazy">
+                             loading="lazy"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.nextElementSibling.nextElementSibling.style.display='none'; this.parentElement.classList.add('mobile-placeholder');">
                         
+                        <!-- This is the hidden placeholder, shown on error -->
+                        <div class="img-error-placeholder">
+                            <div class="placeholder-text">${topic}</div>
+                            <p class="placeholder-soon">Coming Soon!</p> 
+                        </div>
+
+                        <!-- These are the normal title/ID, hidden on error -->
                         <div class="stamp-info-bottom">
                             <p class="stamp-title">${topic} (${year})</p>
                             <p class="stamp-id">#${id}</p>
