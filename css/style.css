@@ -753,16 +753,12 @@ body.pan-mode.dragging .canvas-container {
     display: none;
 }
 
-/* This is the most important part:
-  We set a screen width limit (e.g., 1024px for tablets and phones).
+/* This is the fix for the iPad Pro.
+  We now use the .is-mobile-device class (set by app.js)
+  instead of a CSS-only @media query. This respects our
+  robust JavaScript-based device detection.
 */
-/* === CHANGE THIS LINE === */
-@media (max-width: 1024px) {
-/* === TO THIS === */
 body.is-mobile-device {
-
-    /* 1. HIDE ALL DESKTOP ELEMENTS
-      These selectors are now CORRECT and match your index.html
 
     /* 1. HIDE ALL DESKTOP ELEMENTS */
     .header,
@@ -826,11 +822,8 @@ body.is-mobile-device {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
         gap: 10px;
-        /* === FIX: Add padding at the bottom === */
-        /* === CHANGE THIS LINE === */
-        padding-bottom: 90px; /* Space for the pagination bar */
-        /* === TO THIS === */
-        padding-bottom: 120px; /* More space for the pagination bar */
+        /* === FIX: Add padding at the bottom for pagination bar === */
+        padding-bottom: 120px; 
     }
     
     .info-text {

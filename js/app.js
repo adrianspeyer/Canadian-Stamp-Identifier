@@ -25,7 +25,6 @@ class StampIdentifier {
         const isPhone = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
         
         // Check for modern iPads (which identify as Mac)
-        // This is the most reliable check for iPad Pro M-series
         const isModernIPad = (
             navigator.platform === 'MacIntel' && 
             navigator.maxTouchPoints > 1 && 
@@ -37,7 +36,7 @@ class StampIdentifier {
         
         // --- THIS IS THE FINAL UPDATED LINE ---
         // If it's a phone, OR any kind of tablet, OR a modern iPad,
-        // OR the screen width is 1366px or less (catches 14" iPad Pro landscape)
+        // OR the screen width is 1366px or less (catches 13" iPad Pro landscape)
         this.isMobile = isPhone || isTablet || isModernIPad || window.innerWidth <= 1366;
         
         this.isTouch = 'ontouchstart' in window;
@@ -112,7 +111,7 @@ class StampIdentifier {
             } else {
                 // --- ADD THIS LINE ---
                 document.body.classList.add('is-desktop-device');
-                
+
                 // --- DESKTOP PATH ---
                 console.log("Initializing Desktop (Visual-First) Experience");
                 this.setupViewportObserver();
@@ -301,7 +300,7 @@ class StampIdentifier {
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.add('mobile-placeholder'); this.nextElementSibling.nextElementSibling.style.display='none';">
                         
                         <!-- This is the hidden placeholder, shown on error -->
-                        <div class="img-error-placeholder">
+                        <div class.img-error-placeholder">
                             <div class="placeholder-text">${stamp.mainTopic || 'Unknown'}</div>
                             <p class="placeholder-soon">Coming Soon!</p> 
                         </div>
