@@ -25,15 +25,20 @@ class StampIdentifier {
         const isPhone = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
         
         // Check for modern iPads (which identify as Mac)
-        const isModernIPad = (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        // This is the most reliable check for iPad Pro M-series
+        const isModernIPad = (
+            navigator.platform === 'MacIntel' && 
+            navigator.maxTouchPoints > 1 && 
+            !window.MSStream // A check to exclude some Windows touch laptops
+        );
         
         // Check for older iPads and other tablets
         const isTablet = /(ipad|tablet|(android(?!.*mobile))|kindle|playbook|silk)|(trident.*rv:11.0A)/i.test(userAgent);
         
-        // --- THIS IS THE UPDATED LINE ---
+        // --- THIS IS THE FINAL UPDATED LINE ---
         // If it's a phone, OR any kind of tablet, OR a modern iPad,
-        // OR the screen width is 1366px or less (catches 14" iPad Pro landscape)
-        this.isMobile = isPhone || isTablet || isModernIPad || window.innerWidth <= 1366;
+        // it will be treated as mobile, regardless of screen width or orientation.
+        this.isMobile = isPhone || isTablet || isModernIPad;
         
         this.isTouch = 'ontouchstart' in window;
 
