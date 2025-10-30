@@ -844,10 +844,11 @@ body.is-mobile-device {
         text-align: center;
         
         /* Flexbox layout for consistent height */
-        height: 160px; /* Increased height slightly */
+        /* === REMOVED FIXED HEIGHT === */
+        min-height: 150px; /* Set a minimum height */
         display: flex;
         flex-direction: column;
-        justify-content: flex-start; /* Align content to the top */
+        justify-content: space-between; /* Space content out */
     }
     
     .mobile-stamp img {
@@ -860,8 +861,9 @@ body.is-mobile-device {
     
     .mobile-stamp .stamp-info-bottom {
         /* This wrapper holds the title and ID */
-        margin-top: auto; /* Push this to the bottom */
+        margin-top: 5px; /* Use margin-top instead of auto */
         padding-top: 5px; /* Add space above text */
+        border-top: 1px solid #f0f0f0; /* Add a faint separator */
     }
     
     .mobile-stamp .stamp-title {
@@ -874,15 +876,15 @@ body.is-mobile-device {
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 2; /* Limit to 2 lines */
+        -webkit-line-clamp: 3; /* Allow 3 lines for long topics */
         -webkit-box-orient: vertical;
-        height: 29px; /* Explicit height for 2 lines (0.8rem * 1.2 * 2 = ~29px) */
+        min-height: 29px; /* min-height instead of fixed height */
     }
     
     .mobile-stamp .stamp-id {
         font-size: 0.75rem; /* Slightly smaller font */
         color: #777;
-        margin: 0;
+        margin: 2px 0 0 0; /* Add a little space above */
     }
     
     /* === Placeholder styles === */
@@ -890,6 +892,7 @@ body.is-mobile-device {
         background: #FF1493; /* Bright pink from your screenshot */
         color: white;
         justify-content: center; /* Center placeholder text vertically */
+        min-height: 150px; /* Match the min-height */
     }
     
     .mobile-placeholder .placeholder-text {
@@ -910,10 +913,8 @@ body.is-mobile-device {
     }
     
     .mobile-placeholder .stamp-id-placeholder {
-        font-size: 0.9rem;
-        color: white;
-        opacity: 0.9;
-        margin-top: 10px; /* Space between "soon" and ID */
+        /* We'll hide this, it's redundant with the placeholder */
+        display: none; 
     }
     
     /* This helper is used by the onerror handler */
@@ -975,3 +976,4 @@ body.is-mobile-device {
         color: #333;
     }
 }
+

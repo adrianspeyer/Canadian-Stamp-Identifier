@@ -269,7 +269,7 @@ class StampIdentifier {
 
     // ---
     // === MODIFIED: renderMobileResults() ===
-    // This function just renders the grid of stamps it's given.
+    // This function is now simpler and matches your "good" screenshot.
     // ---
     renderMobileResults(stamps) {
         if (!stamps || stamps.length === 0) {
@@ -287,27 +287,17 @@ class StampIdentifier {
             
             const hasImage = (stamp.image && stamp.image.trim().length > 0);
 
-            // IF an image exists, try to show it
+            // IF an image exists, show it
             if (hasImage) {
                 const safeImagePath = encodeURI(stamp.image);
                 return `
                     <div class="mobile-stamp" data-id="${stamp.id}">
-                        
-                        <!-- This image will try to load -->
                         <img src="${safeImagePath}" 
                              alt="${stamp.mainTopic || 'Unknown'}" 
-                             loading="lazy" 
-                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.parentElement.classList.add('mobile-placeholder'); this.nextElementSibling.nextElementSibling.style.display='none';">
+                             loading="lazy">
                         
-                        <!-- This is the hidden placeholder, shown on error -->
-                        <div class.img-error-placeholder">
-                            <div class="placeholder-text">${stamp.mainTopic || 'Unknown'}</div>
-                            <p class="placeholder-soon">Coming Soon!</p> 
-                        </div>
-
-                        <!-- These are the normal title/ID, hidden on error -->
                         <div class="stamp-info-bottom">
-                            <p class="stamp-title">${stamp.mainTopic || 'Unknown'} (${stamp.year || 'N/A'})</p>
+                            <p class="stamp-title">${stamp.mainTopic || 'Unknown'}</p>
                             <p class="stamp-id">#${stamp.id || 'N/A'}</p>
                         </div>
                     </div>
@@ -320,7 +310,6 @@ class StampIdentifier {
                             ${stamp.mainTopic || 'Unknown'}
                         </div>
                         <p class="placeholder-soon">Coming Soon!</p> 
-                        <p class="stamp-id-placeholder">#${stamp.id || 'N/A'} (${stamp.year || 'N/A'})</p>
                     </div>
                 `;
             }
