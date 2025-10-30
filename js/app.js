@@ -30,9 +30,10 @@ class StampIdentifier {
         // Check for older iPads and other tablets
         const isTablet = /(ipad|tablet|(android(?!.*mobile))|kindle|playbook|silk)|(trident.*rv:11.0A)/i.test(userAgent);
         
-        // If it's a phone, OR any kind of tablet... treat as mobile.
-        // This no longer checks window.innerWidth, fixing the landscape bug.
-        this.isMobile = isPhone || isTablet || isModernIPad;
+        // --- THIS IS THE UPDATED LINE ---
+        // If it's a phone, OR any kind of tablet, OR a modern iPad,
+        // OR the screen width is 1366px or less (catches 14" iPad Pro landscape)
+        this.isMobile = isPhone || isTablet || isModernIPad || window.innerWidth <= 1366;
         
         this.isTouch = 'ontouchstart' in window;
 
