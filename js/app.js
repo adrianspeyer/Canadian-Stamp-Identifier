@@ -852,8 +852,8 @@ class StampIdentifier {
         this.grid.setAttribute('aria-label', I18N.t('grid.label'));
 
         // Show/hide language-specific panels
-        document.querySelectorAll('[data-lang]').forEach(el => {
-            el.hidden = el.dataset.lang !== lang;
+        document.querySelectorAll('[data-panel-lang]').forEach(el => {
+            el.hidden = el.dataset.panelLang !== lang;
         });
 
         // Update "All" pill text
