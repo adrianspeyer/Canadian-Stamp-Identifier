@@ -2,7 +2,7 @@
 
 **A comprehensive visual identification tool for Canadian postage stamps (1851–2026)**
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://adrianspeyer.github.io/canadian-stamp-identifier)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://adrianspeyer.github.io/Canadian-Stamp-Identifier)
 [![Contributors Welcome](https://img.shields.io/badge/Contributors-Welcome-green?style=for-the-badge)](#-how-to-contribute)
 [![GitHub Issues](https://img.shields.io/github/issues/adrianspeyer/canadian-stamp-identifier?style=for-the-badge)](https://github.com/adrianspeyer/canadian-stamp-identifier/issues)
 
@@ -41,7 +41,7 @@ This tool makes stamp identification easy through **visual pattern matching** in
 
 ## 🚀 Try It Now
 
-**👆 [Launch the Stamp Identifier](https://adrianspeyer.github.io/canadian-stamp-identifier)**
+**👆 [Launch the Stamp Identifier](https://adrianspeyer.github.io/Canadian-Stamp-Identifier)**
 
 No installation needed — works in any modern web browser. Works offline after first visit.
 
@@ -309,7 +309,7 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 
 *The most comprehensive Canadian stamp identification tool on the web*
 
-[**Try It Now →**](https://adrianspeyer.github.io/canadian-stamp-identifier)
+[**Try It Now →**](https://adrianspeyer.github.io/Canadian-Stamp-Identifier)
 
 [![GitHub Stars](https://img.shields.io/github/stars/adrianspeyer/canadian-stamp-identifier?style=social)](https://github.com/adrianspeyer/canadian-stamp-identifier/stargazers)
 

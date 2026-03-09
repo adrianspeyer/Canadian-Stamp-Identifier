@@ -2,7 +2,7 @@
 
 **Un outil complet d'identification visuelle des timbres-poste canadiens (1851–2026)**
 
-[![Démo en direct](https://img.shields.io/badge/Démo-en_direct-blue?style=for-the-badge)](https://adrianspeyer.github.io/canadian-stamp-identifier)
+[![Démo en direct](https://img.shields.io/badge/Démo-en_direct-blue?style=for-the-badge)](https://adrianspeyer.github.io/Canadian-Stamp-Identifier)
 [![Contributeurs bienvenus](https://img.shields.io/badge/Contributeurs-Bienvenus-green?style=for-the-badge)](#-comment-contribuer)
 [![Problèmes GitHub](https://img.shields.io/github/issues/adrianspeyer/canadian-stamp-identifier?style=for-the-badge)](https://github.com/adrianspeyer/canadian-stamp-identifier/issues)
 
@@ -41,7 +41,7 @@ Cet outil facilite l'identification des timbres grâce à la **correspondance vi
 
 ## 🚀 Essayez maintenant
 
-**👆 [Lancer l'Identificateur de timbres](https://adrianspeyer.github.io/canadian-stamp-identifier)**
+**👆 [Lancer l'Identificateur de timbres](https://adrianspeyer.github.io/Canadian-Stamp-Identifier)**
 
 Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Fonctionne hors ligne après la première visite.
 
@@ -151,48 +151,48 @@ Chaque contribution — une note corrigée, une meilleure description de couleur
 Chaque timbre utilise le format `Catégorie : Sous-catégorie` pour le champ `subTopic`. Les données sont stockées en anglais; l'application traduit automatiquement en français via une table de correspondance. Voici les 15 catégories canoniques :
 
 ### Histoire et patrimoine (916 timbres)
-`Royalty` · `Anniversaries` · `People` · `Indigenous Peoples` · `Millennium` · `War & Military` · `Notable Canadians` · `Exploration` · `Political Leaders` · `Prime Ministers` · `International` · `Civil Rights` · `Black History` · `Confederation` · `Maritime` · `Gold Rush` · `Humanitarian` · `Labour` · `Disasters` · `LGBTQ2+`
+`Royauté` · `Anniversaires` · `Personnalités` · `Peuples autochtones` · `Millénaire` · `Guerre et militaire` · `Canadiens notables` · `Exploration` · `Dirigeants politiques` · `Premiers ministres` · `International` · `Droits civils` · `Histoire des Noirs` · `Confédération` · `Maritime` · `Ruée vers l'or` · `Humanitaire` · `Travail` · `Catastrophes` · `LGBTQ2+`
 
 ### Nature et faune (704 timbres)
-`Animals` · `Plants` · `Flowers` · `Trees` · `Birds` · `Landscapes` · `Parks` · `National Parks` · `Marine Life` · `Mountains` · `Prehistoric` · `Insects` · `Fungi` · `Fossils` · `Weather & Sky` · `Seasons`
+`Animaux` · `Plantes` · `Fleurs` · `Arbres` · `Oiseaux` · `Paysages` · `Parcs` · `Parcs nationaux` · `Vie marine` · `Montagnes` · `Préhistorique` · `Insectes` · `Champignons` · `Fossiles` · `Météo et ciel` · `Saisons`
 
 ### Arts et culture (378 timbres)
-`Visual Arts` · `Music` · `Authors` · `Literature` · `Photography` · `Film` · `Film & Television` · `Comics` · `Science Fiction` · `Opera` · `Dance` · `Theatre` · `Crafts` · `Design` · `Folklore` · `Cultural Artifacts` · `Children's Literature` · `Museums`
+`Arts visuels` · `Musique` · `Auteurs` · `Littérature` · `Photographie` · `Cinéma` · `Cinéma et télévision` · `Bandes dessinées` · `Science-fiction` · `Opéra` · `Danse` · `Théâtre` · `Artisanat` · `Design` · `Folklore` · `Artefacts culturels` · `Littérature jeunesse` · `Musées`
 
 ### Fêtes et événements (302 timbres)
-`Christmas` · `Lunar New Year` · `Halloween` · `Hanukkah` · `Diwali` · `Eid` · `Greetings` · `Celebrations` · `Valentine's Day`
+`Noël` · `Nouvel An lunaire` · `Halloween` · `Hanoukka` · `Divali` · `Aïd` · `Salutations` · `Célébrations` · `Saint-Valentin`
 
 ### Sports et loisirs (303 timbres)
-`Hockey` · `Olympics` · `CFL` · `Motorsport` · `Figure Skating` · `Baseball` · `Football` · `Fishing` · `Racing` · `Paralympics` · `Lacrosse` · `Curling` · `Cycling` · `Rowing`
+`Hockey` · `Olympiques` · `LCF` · `Sport automobile` · `Patinage artistique` · `Baseball` · `Football` · `Pêche` · `Course` · `Paralympiques` · `Crosse` · `Curling` · `Cyclisme` · `Aviron`
 
 ### Transport (205 timbres)
-`Aircraft` · `Airmail` · `Ships & Boats` · `Maritime` · `Trains` · `Railways` · `Automobiles` · `Vehicles` · `Roads` · `Motorcycles` · `Waterways`
+`Aéronefs` · `Poste aérienne` · `Navires et bateaux` · `Maritime` · `Trains` · `Chemins de fer` · `Automobiles` · `Véhicules` · `Routes` · `Motocyclettes` · `Voies navigables`
 
 ### Gouvernement et symboles nationaux (133 timbres)
-`Provinces` · `RCMP` · `Justice` · `Heraldry` · `Military` · `Honours`
+`Provinces` · `GRC` · `Justice` · `Héraldique` · `Militaire` · `Honneurs`
 
 ### Architecture et monuments (133 timbres)
-`Scenic` · `Heritage Buildings` · `Historic Sites` · `Engineering` · `Lighthouses` · `UNESCO` · `Government` · `Cities` · `Religious` · `Memorials`
+`Panoramique` · `Bâtiments patrimoniaux` · `Lieux historiques` · `Ingénierie` · `Phares` · `UNESCO` · `Gouvernement` · `Villes` · `Religieux` · `Mémoriaux`
 
 ### Culture et société (118 timbres)
-`Organizations` · `Education` · `Food & Drink` · `Emergency Services` · `Zodiac` · `Roadside Attractions` · `Heritage` · `Toys & Games` · `Business & Industry` · `Immigration`
+`Organisations` · `Éducation` · `Gastronomie` · `Services d'urgence` · `Zodiaque` · `Attractions routières` · `Patrimoine` · `Jouets et jeux` · `Commerce et industrie` · `Immigration`
 
 ### Histoire postale (114 timbres)
-`Postage Due` · `Special Delivery` · `Registered Mail` · `Coil Stamps` · `Post Offices` · `Definitives` · `Community Foundation` · `Collectibles`
+`Timbre-taxe` · `Livraison spéciale` · `Courrier recommandé` · `Timbres en rouleau` · `Bureaux de poste` · `Timbres courants` · `Fondation communautaire` · `Objets de collection`
 
 ### Science et technologie (89 timbres)
-`Space` · `Inventions` · `Medicine` · `Communications` · `Geology` · `Astronomy` · `Aviation` · `Energy`
+`Espace` · `Inventions` · `Médecine` · `Communications` · `Géologie` · `Astronomie` · `Aviation` · `Énergie`
 
 ### Industrie (39 timbres)
-`Agriculture` · `Resources` · `Manufacturing` · `Energy` · `Commerce`
+`Agriculture` · `Ressources` · `Fabrication` · `Énergie` · `Commerce`
 
 ### Organisations (23 timbres)
-`Scouting & Girl Guides` · `Postal` · `Health` · `United Nations`
+`Scoutisme et guidisme` · `Postal` · `Santé` · `Nations Unies`
 
 ### Sensibilisation publique (16 timbres)
-`Health`
+`Santé`
 
-> **Note** : Les valeurs de sous-catégorie sont stockées en anglais dans `stamps.json` et traduites automatiquement par l'application. Les contributeurs doivent utiliser les valeurs anglaises ci-dessus.
+> **Note** : Les valeurs de sous-catégorie sont stockées en anglais dans `stamps.json` et traduites automatiquement par l'application. Les contributeurs doivent utiliser les valeurs anglaises lors de l'ajout de données. Consultez le [README anglais](README.md) pour les valeurs exactes.
 
 ## 📋 Format JSON de référence
 
@@ -295,7 +295,7 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 
 *L'outil d'identification de timbres canadiens le plus complet sur le Web*
 
-[**Essayez maintenant →**](https://adrianspeyer.github.io/canadian-stamp-identifier)
+[**Essayez maintenant →**](https://adrianspeyer.github.io/Canadian-Stamp-Identifier)
 
 [![Étoiles GitHub](https://img.shields.io/github/stars/adrianspeyer/canadian-stamp-identifier?style=social)](https://github.com/adrianspeyer/canadian-stamp-identifier/stargazers)
 
