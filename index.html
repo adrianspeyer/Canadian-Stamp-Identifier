@@ -3,158 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'">
+    <meta name="referrer" content="no-referrer">
     <title>Canadian Stamp Identifier</title>
-    <!-- The one and only master stylesheet -->
+    <meta name="description" content="Visual identification tool for Canadian stamps 1851–2025. Browse, search, and identify over 3,400 stamps.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- 
-      ============================
-      MOBILE-ONLY VIEW
-      ============================
-    -->
-    <div id="mobile-view">
-        <header class="mobile-header">
-            <h1>Canadian Stamp Identifier</h1>
-        </header>
-        <input type="search" id="mobile-search-input" placeholder="Search by year, topic, ID...">
-        <div id="mobile-results">
-            <!-- Stamps will be rendered here by JavaScript -->
-        </div>
-      
-        <div id="mobile-pagination-controls">
-            <!-- Pagination buttons will be rendered here -->
-        </div>
-    </div>
-
-    <!-- 
-      ============================
-      DESKTOP-ONLY VIEW
-      ============================
-    -->
-    <div class="header">
-        <div class="header-left">
-            <h1>Canadian Stamp Identifier</h1>
-            <p>Visual identification tool for Canadian stamps 1851-2025</p>
-        </div>
-        
-        <div class="header-right">
-            <div class="header-links">
-                <a href="https://github.com/adrianspeyer/canadian-stamp-identifier" target="_blank">GitHub</a>
-                <a href="#about">About</a>
-                <a href="#contribute">Contribute</a>
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <div class="header-brand">
+                <h1 class="header-title">Canadian Stamp Identifier</h1>
+                <p class="header-subtitle">Visual identification tool · <span id="headerYearRange">1851–2025</span></p>
             </div>
+            <nav class="header-nav">
+                <a href="https://github.com/adrianspeyer/canadian-stamp-identifier" target="_blank" rel="noopener" class="nav-link">GitHub</a>
+                <button type="button" class="nav-link" id="aboutBtn">About</button>
+                <button type="button" class="nav-link" id="contributeBtn">Contribute</button>
+            </nav>
         </div>
-    </div>
+    </header>
 
-    <div class="search-bar moveable" id="searchBar">
-        <div class="drag-handle"></div>
-        <input type="text" id="searchInput" placeholder="Search: beaver, 1935, olympics...">
-        <div id="searchInfo"></div>
-        <div class="search-help">Enter: next • Shift+Enter: prev</div>
-    </div>
-
-    <div class="controls">
-        <div class="zoom-controls">
-            <button class="zoom-btn" onclick="zoomIn()">Zoom In</button>
-            <button class="zoom-btn" onclick="zoomOut()">Zoom Out</button>
-            <button class="zoom-btn" onclick="resetView()">Fit All</button>
-            <button class="zoom-btn" onclick="jumpToEra('1900s')">1900s</button>
-            <button class="zoom-btn" onclick="jumpToEra('1930s')">1930s</button>
-            <button class="zoom-btn" onclick="jumpToEra('1960s')">1960s</button>
-            <button class="zoom-btn" onclick="jumpToEra('1990s')">1990s</button>
-            <button class="zoom-btn" onclick="jumpToEra('2020s')">2020s</button>
-            <div class="zoom-info">
-                <div>Scale: <span id="scaleInfo">25%</span></div>
-                <div>Total: <span id="stampCount">0</span> stamps</div>
+    <!-- ============ TOOLBAR ============ -->
+    <div class="toolbar" id="toolbar">
+        <div class="toolbar-inner">
+            <div class="search-row">
+                <div class="search-wrapper">
+                    <svg class="search-icon" viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+                    </svg>
+                    <input type="search" id="searchInput" class="search-input" placeholder="Search: beaver, 1935, olympics..." autocomplete="off" spellcheck="false">
+                    <button type="button" id="clearSearchBtn" class="clear-search-btn" hidden aria-label="Clear search">&times;</button>
+                </div>
             </div>
-            <div class="nav-section">
-                <div class="timeline-overview">
-                    <div class="nav-label">Timeline</div>
-                    <div class="timeline-canvas" id="mainTimelineCanvas">
-                        <div class="timeline-viewport" id="mainTimelineViewport"></div>
+            <div class="decade-scroll-outer" id="decadeScrollOuter">
+                <button type="button" class="decade-arrow decade-arrow--left" id="decadeArrowLeft" aria-label="Scroll decades left" hidden>
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="decade-scroll-wrapper" id="decadeScrollWrapper">
+                    <div class="decade-nav" id="decadeNav" role="tablist" aria-label="Filter by decade">
+                        <!-- JS populates decade pills -->
                     </div>
                 </div>
-                <div class="cursor-controls">
-                    <div class="nav-label">Navigate</div>
-                    <div class="cursor-pad">
-                        <button class="cursor-btn" id="mainNavUp" title="Move Up (Arrow Up)">↑</button>
-                        <div class="cursor-row">
-                            <button class="cursor-btn" id="mainNavLeft" title="Move Left (Arrow Left)">←</button>
-                            <button class="cursor-btn" center-btn" id="mainNavCenter" title="Center View">⌂</button>
-                            <button class="cursor-btn" id="mainNavRight" title="Move Right (Arrow Right)">→</button>
-                        </div>
-                        <button class="cursor-btn" id="mainNavDown" title="Move Down (Arrow Down)">↓</button>
+                <button type="button" class="decade-arrow decade-arrow--right" id="decadeArrowRight" aria-label="Scroll decades right">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                </button>
+            </div>
+            <div class="filter-bar" id="filterBar">
+                <span id="resultsCount" class="results-count"></span>
+                <button type="button" id="clearFiltersBtn" class="clear-filters-btn" hidden>Clear filters</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ LOADING ============ -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loading-maple">🍁</div>
+            <p class="loading-text">Loading stamps<span class="loading-dots"></span></p>
+            <div class="loading-bar">
+                <div class="loading-bar-fill" id="loadingBarFill"></div>
+            </div>
+            <p class="loading-count" id="loadingCount"></p>
+        </div>
+    </div>
+
+    <!-- ============ STAMP GRID ============ -->
+    <main class="stamp-grid" id="stampGrid" role="list" aria-label="Stamp catalogue">
+        <!-- JS populates stamp cards -->
+    </main>
+
+    <!-- ============ EMPTY STATE ============ -->
+    <div class="empty-state" id="emptyState" hidden>
+        <div class="empty-state-icon">🔍</div>
+        <p class="empty-state-title">No stamps match your filters</p>
+        <p class="empty-state-desc">Try different keywords or clear your filters.</p>
+    </div>
+
+    <!-- ============ SCROLL TO TOP ============ -->
+    <button type="button" class="scroll-top-btn" id="scrollTopBtn" hidden aria-label="Scroll to top">
+        <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+    </button>
+
+    <!-- ============ STAMP MODAL ============ -->
+    <div class="modal-backdrop" id="stampModal" hidden>
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Close">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image-frame" id="modalImageFrame">
+                    <img id="modalImage" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle" class="modal-title"></h2>
+                    <div class="modal-meta" id="modalMeta">
+                        <!-- JS populates -->
                     </div>
-                </div>
-            </div>
-            <div class="nav-options">
-                <label class="nav-toggle">
-                    <input type="checkbox" id="panModeToggle">
-                    <span>Pan Mode</span>
-                </label>
-                <div class="nav-help">
-                    Hold Shift to pan
+                    <p class="modal-footer">Use this ID to research varieties in stamp catalogues.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="canvas-container" id="canvasContainer">
-        <div class="stamp-grid" id="stampGrid">
-            <div id="loadingMessage">Loading stamps...</div>
-        </div>
-    </div>
-
-    <div class="modal" id="stampModal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div class="modal-stamp">
-                <img id="modalStampImage" src="" alt="Stamp" />
-            </div>
-            <h2 id="modalTitle">Stamp Details</h2>
-            <div class="stamp-details">
-                <p><strong>ID:</strong> <span id="modalId"></span></p>
-                <p><strong>Year:</strong> <span id="modalYear"></span></p>
-                <p><strong>Topic:</strong> <span id="modalTopic"></span></p>
-                <p><strong>Denomination:</strong> <span id="modalDenomination"></span></p>
-                <p><strong>Color:</strong> <span id="modalColor"></span></p>
-                <p id="modalNotesContainer"><strong>Notes:</strong> <span id="modalNotes"></span></p>
-            </div>
-            <p class="modal-footer">Use this information to research varieties and details in stamp catalogs.</p>
-        </div>
-    </div>
-
-    <div class="info-section" id="about">
-        <div class="info-content">
+    <!-- ============ ABOUT PANEL ============ -->
+    <div class="panel-backdrop" id="aboutPanel" hidden>
+        <div class="panel-content">
+            <button type="button" class="panel-close" data-close-panel aria-label="Close">&times;</button>
             <h2>About This Project</h2>
-            <p>This tool helps identify Canadian stamps from 1851-2025 using visual pattern matching. Simply browse the timeline, zoom into the era that matches your stamp's style, and click to get the identification details.</p>
+            <p>This tool helps identify Canadian stamps from 1851–2025 using visual pattern matching. Browse the catalogue, filter by decade, or search by keyword to find your stamp.</p>
             
             <h3>How to Use</h3>
             <ol>
-                <li><strong>Start zoomed out</strong> - see the entire timeline</li>
-                <li><strong>Navigate to your era</strong> - use visual cues or search</li>
-                <li><strong>Zoom in</strong> - see individual stamps clearly</li>
-                <li><strong>Click to identify</strong> - get ID number and details</li>
-                <li><strong>Research further</strong> - use the ID in stamp catalogs for varieties</li>
+                <li><strong>Browse by era</strong> — tap a decade to filter</li>
+                <li><strong>Search</strong> — type a year, topic, or keyword</li>
+                <li><strong>Compare visually</strong> — scan the grid for your stamp's design</li>
+                <li><strong>Get details</strong> — tap any stamp for its ID and info</li>
+                <li><strong>Research further</strong> — use the ID in stamp catalogues for varieties</li>
             </ol>
 
             <h3>Features</h3>
             <ul>
-                <li>Visual timeline of Canadian stamps 1851-2025</li>
-                <li>Search by year, topic, or keyword</li>
-                <li>Zoomable interface for detailed viewing</li>
-                <li>Focus on main stamp designs (not varieties)</li>
+                <li>Complete visual catalogue of Canadian stamps 1851–2025</li>
+                <li>Instant search by year, topic, colour, or keyword</li>
+                <li>Decade filtering for quick era browsing</li>
+                <li>Responsive design — works on phone, tablet, and desktop</li>
                 <li>Open source and community-driven</li>
             </ul>
         </div>
     </div>
 
-    <div class="info-section" id="contribute">
-        <div class="info-content">
+    <!-- ============ CONTRIBUTE PANEL ============ -->
+    <div class="panel-backdrop" id="contributePanel" hidden>
+        <div class="panel-content">
+            <button type="button" class="panel-close" data-close-panel aria-label="Close">&times;</button>
             <h2>Contribute</h2>
-            <p>Help expand this collection! This is an open source project and we welcome contributions.</p>
+            <p>Help expand this collection! This is an open source project and contributions are welcome.</p>
             
             <h3>How to Add Stamps</h3>
             <ol>
@@ -169,7 +156,7 @@
                 <li>High quality scans (300+ DPI)</li>
                 <li>Square format preferred</li>
                 <li>Main stamp design only (not varieties)</li>
-                <li>File naming: Example: <code>001-beaver-3d-1851.jpg</code></li>
+                <li>File naming: <code>001-beaver-3d-1851.jpg</code></li>
             </ul>
 
             <h3>JSON Format</h3>
@@ -177,7 +164,7 @@
   "id": "001",
   "year": 1851,
   "mainTopic": "Beaver",
-  "subTopic": "Three Pence", 
+  "subTopic": "Nature & Wildlife: Animals",
   "denomination": "3d",
   "color": "red",
   "image": "images/1850s/001-beaver-3d-1851.jpg",
@@ -186,9 +173,6 @@
         </div>
     </div>
 
-    <!-- The one and only master script -->
     <script src="js/app.js"></script>
-    
 </body>
 </html>
-

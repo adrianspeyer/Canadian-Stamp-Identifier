@@ -1,6 +1,6 @@
 # 🍁 Canadian Stamp Identifier
 
-**A comprehensive visual identification tool for Canadian postage stamps (1851-2025)**
+**A comprehensive visual identification tool for Canadian postage stamps (1851–2026)**
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://adrianspeyer.github.io/canadian-stamp-identifier)
 [![Contributors Welcome](https://img.shields.io/badge/Contributors-Welcome-green?style=for-the-badge)](CONTRIBUTING.md)
@@ -10,65 +10,127 @@
 
 ## 🌟 What Makes This Special?
 
-This tool makes stamp identification easy through **visual pattern matching** in a zoomable, interactive interface. Instead of flipping through catalogues:
+This tool makes stamp identification easy through **visual pattern matching** in a responsive, searchable card grid. Instead of flipping through catalogues:
 
-- **Browse 3,400+ stamps** in one massive, zoomable timeline mosaic
-- **Smart search** with fuzzy matching, synonyms, and multi-field queries
-- **Instant visual identification** - zoom, click, get details
-- **Drag & resize interface** - customize your workspace
-- **Era jumping** - instantly navigate to 1900s, 1930s, 1960s, 1990s, 2020s
-- **Mobile responsive** - works perfectly on all devices [work in progress]
+- **Browse 3,470+ stamps** in a responsive grid that works on every device
+- **Filter by decade** with a scrollable pill bar — instantly jump to any era
+- **Smart search** across topics, years, colours, denominations, and notes
+- **Tap for details** — get ID number, denomination, category, and notes
+- **Lazy-loaded images** with visual placeholders — fast on any connection
 
 ## 🚀 Try It Now
 
 **👆 [Launch the Stamp Identifier](https://adrianspeyer.github.io/canadian-stamp-identifier)**
 
-No installation needed - works in any modern web browser!
+No installation needed — works in any modern web browser.
 
 ## ✨ Key Features
 
-### 🔍 Advanced Search
-- **Smart text matching**: "queen red" finds red stamps with queens
-- **Synonym recognition**: "olympics" also finds "games", "sport"
-- **Multi-word search**: "cartier 1935" finds Jacques Cartier from 1935
-- **Fuzzy matching**: handles common misspellings
-- **All field search**: searches topics, colors, denominations, notes, years
+### 🔍 Search & Filter
+- **Instant search**: type a year, topic, colour, or keyword
+- **Decade filtering**: scrollable pill bar with stamp counts per era
+- **Combined filtering**: search within a decade (e.g., "beaver" in the 1850s)
+- **Debounced input**: responsive even with 3,470+ stamps
 
 ### 🖼️ Visual Interface
-- **Million Dollar Homepage style**: 3,400+ stamps in one zoomable grid
-- **Lazy loading**: fast performance with thousands of images
-- **Drag & drop search**: moveable, resizable search box
-- **Era navigation**: quick jump buttons for major time periods
-- **Responsive zoom**: smooth navigation from overview to detail
+- **Responsive card grid**: adapts from 2 columns on phones to 10+ on ultrawide
+- **Decade-coloured placeholders**: loading stamps show topic name on a coloured background with shimmer animation
+- **Error states**: failed images show "Image unavailable" — you always know what's loading vs. broken
+- **Scroll-to-top button**: quick return to the top of long results
 
-### 📱 User Experience
-- **Mobile optimized**: full functionality on phones and tablets
-- **Keyboard shortcuts**: Enter/Shift+Enter to navigate search results
-- **Visual feedback**: highlighted search matches, hover effects
-- **Accessibility**: proper contrast, semantic markup
+### 📱 Cross-Platform
+- **Phone**: 2–3 column grid, touch-friendly cards, sticky search
+- **Tablet**: 4–6 columns, smooth scrolling, no crashes
+- **Desktop**: 8–10+ columns, hover effects, keyboard navigation
+- **One codebase**: no separate mobile/desktop views
+
+### ♿ Accessibility
+- **Keyboard navigable**: Tab through cards, Enter to open details
+- **ARIA labels**: screen reader support for cards, decade filters, and modal
+- **Reduced motion**: respects `prefers-reduced-motion` — disables shimmer and transitions
+- **Focus indicators**: visible focus outlines on all interactive elements
+
+### 🔒 Security
+- **Content Security Policy**: restricts script/image/font sources
+- **No inline handlers**: all events via `addEventListener`
+- **Escaped output**: all stamp data inserted via `textContent`, not `innerHTML`
+- **No external dependencies**: zero third-party JavaScript
 
 ## 📊 Current Statistics
 
-- 🖼️ **Stamps cataloged**: 3,400+ stamps
-- 📅 **Years covered**: 1851-2025 (174 years)
-- 🔍 **Search accuracy**: Multi-field fuzzy matching
-- 📱 **Platforms**: Web (fully responsive)
-- ⚡ **Performance**: Lazy loading, batch rendering
-- 🎯 **Coverage**: Main stamp designs (no varieties,no errors)
+- 🖼️ **Stamps catalogued**: 3,470+ stamps
+- 📅 **Years covered**: 1851–2026 (175 years)
+- 🔍 **Categories**: 15 top-level categories including Nature & Wildlife, History & Heritage, Holidays & Events, Sports & Recreation, Arts & Culture, and more
+- 📱 **Platforms**: Web (fully responsive — phone, tablet, desktop)
+- ⚡ **Performance**: Batched rendering, lazy image loading, `content-visibility` optimisation
+- 🎯 **Coverage**: Main stamp designs (no varieties, no errors)
+
+## 🛠️ Technical Architecture
+
+**Frontend**: Pure HTML5, CSS3, JavaScript (ES2020+)
+- No frameworks or dependencies
+- Single responsive card grid with CSS Grid `auto-fill`
+- `content-visibility: auto` for off-screen rendering optimisation
+
+**Data**: JSON-based catalogue system
+- Simple, human-readable format
+- Easy for contributors to edit
+- Version controlled with Git
+
+**Performance**:
+- Batched card rendering (250 per animation frame with progress bar)
+- IntersectionObserver lazy image loading with concurrency queue (max 6 simultaneous)
+- `decoding="async"` on images to prevent main thread blocking
+- `content-visibility: auto` with `contain-intrinsic-size` for off-screen cards
+- Debounced search (180ms)
+- Show/hide filtering (no DOM recreation)
+
+**Security**:
+- Content Security Policy via `<meta>` tag
+- `no-referrer` policy
+- All stamp data rendered via DOM API (`createElement` + `textContent`)
+- Zero `innerHTML` with user/stamp data
+
+**Hosting**: GitHub Pages
+- Free, reliable hosting
+- Automatic deployment
+- Global CDN distribution
+
+## 🎯 Design Philosophy
+
+### Visual-First Identification
+Traditional catalogues require knowing details to find stamps. This tool reverses that — **see the stamp, get the details**.
+
+### One Codebase, Every Device
+No separate mobile/desktop views. One responsive grid scales from phone to ultrawide. Every feature works the same everywhere.
+
+### Community-Driven
+Open source approach ensures:
+- Community ownership
+- Transparent development
+- Collaborative improvement
+
+### Performance at Scale
+Built to handle thousands of stamps smoothly:
+- Batched initial render with loading progress
+- Concurrency-limited image loading (kind to servers and devices)
+- Native browser image cache (no blob URLs)
+- Off-screen rendering skip via `content-visibility`
 
 ## 🤝 How to Contribute
 
 ### 📝 Data Improvements
 - Correct stamp details
+- Recategorise "Miscellaneous" stamps into proper categories
 - Add missing information
 - Improve descriptions
-- Update color descriptions
+- Update colour descriptions
 
 ### 💻 Technical Contributions
-- Performance optimizations
+- Performance optimisations
 - New search features
 - Accessibility improvements
-- Mobile enhancements
+- Category/filter enhancements
 
 ## 📖 Contributing Guide
 
@@ -86,7 +148,7 @@ No installation needed - works in any modern web browser!
      "id": "001",
      "year": 1851,
      "mainTopic": "Beaver",
-     "subTopic": "Three Pence",
+     "subTopic": "Nature & Wildlife: Animals",
      "denomination": "3d",
      "color": "red",
      "image": "images/1850s/001-beaver-3d-1851.jpg",
@@ -95,46 +157,20 @@ No installation needed - works in any modern web browser!
    ```
 4. **Submit pull request**
 
-## 🛠️ Technical Architecture
-
-**Frontend**: Pure HTML5, CSS3, JavaScript
-- No frameworks or dependencies
-- Canvas-based zoom and pan interactions
-- Responsive flexbox layout
-
-**Data**: JSON-based catalog system
-- Simple, human-readable format
-- Easy for contributors to edit
-- Version controlled with Git
-
-**Performance**: 
-- Lazy image loading
-- Batch rendering (200 stamps at a time)
-- Debounced search with relevance scoring
-- Optimized for 3,000+ stamps
-
-**Hosting**: GitHub Pages
-- Free, reliable hosting
-- Automatic deployment
-- Global CDN distribution
-
-## 🎯 Design Philosophy
-
-### Visual-First Identification
-Traditional catalogs require knowing details to find stamps. This tool reverses that - **see the stamp, get the details**.
-
-### Community-Driven
-Open source approach ensures:
-- Community ownership
-- Transparent development
-- Collaborative improvement
-
-### Performance Focus
-Built to handle thousands of stamps smoothly:
-- Sub-5 second initial load
-- Smooth 60fps zooming
-- Responsive search results
-- Minimal memory usage
+### SubTopic Categories
+When adding stamps, use one of these top-level categories:
+- `History & Heritage` (Royalty, War & Military, Indigenous Peoples, Black History, etc.)
+- `Nature & Wildlife` (Animals, Plants, Natural Phenomena)
+- `Holidays & Events` (Christmas, Lunar New Year, Diwali, Hanukkah, Eid, Greetings)
+- `Arts & Culture` (Authors, Visual Arts, Photography, Comics, Opera, Folklore)
+- `Sports & Recreation` (Hockey, Motorsport, Olympics, etc.)
+- `Transportation` (Ships, Aircraft, Railways, etc.)
+- `Postal History` (Coil Stamps, Community Foundation, etc.)
+- `Government & National Symbols` (Flags, Parliament, Confederation)
+- `Science & Technology` (Industry, Inventions)
+- `Architecture & Landmarks` (UNESCO, Lighthouses, etc.)
+- `Culture & Society` (Organizations, Traditions)
+- `Public Awareness` (Health)
 
 ## 📋 Quality Standards
 
@@ -142,31 +178,42 @@ Built to handle thousands of stamps smoothly:
 - **Resolution**: 300+ DPI minimum
 - **Format**: JPG preferred, PNG accepted
 - **Aspect**: Proper stamp proportions
-- **Quality**: Sharp, well-lit, accurate colors
+- **Quality**: Sharp, well-lit, accurate colours
 
 ### Data
 - **Accuracy**: Verified against reliable sources
 - **Completeness**: All available fields populated
-- **Consistency**: Standardized terminology
+- **Consistency**: Standardised terminology and category format
 
 ### Code
 - **No dependencies**: Pure web technologies
-- **Performance**: Optimized for scale
-- **Documentation**: Comprehensive comments
+- **Performance**: Optimised for 3,000+ stamps
+- **Accessibility**: WCAG-friendly markup and interactions
+- **Security**: CSP, no inline handlers, escaped output
 
 ## 🗺️ Roadmap
 
-### Phase 1: Coverage Completion
-- [x] Fill remaining gaps in 1851-1950
-- [x] Complete commemorative series
-- [x] Add recent definitives (2020-2025)
+### Completed ✅
+- [x] Complete catalogue 1851–2025
+- [x] 2026 stamp schedule added
+- [x] Unified responsive design (phone/tablet/desktop)
+- [x] Decade navigation with counts
+- [x] Performance optimisation (batched rendering, lazy loading, content-visibility)
+- [x] Accessibility (keyboard nav, ARIA, reduced motion)
+- [x] Security hardening (CSP, no innerHTML, no inline handlers)
+- [x] Data enrichment (360+ stamps recategorised from Miscellaneous)
 
-### Phase 2: Enhanced Features  
-- [ ] Mobile enhancements
-- [ ] Advanced filters (denomination, color, era)
+### In Progress 🔄
+- [ ] Continue recategorising remaining Miscellaneous stamps (~1,240)
+- [ ] Add images for 2025 stamps #3441+
+- [ ] Add images for 2026 stamps as issued
+
+### Future 🔮
+- [ ] Advanced filters (denomination, colour, category)
 - [ ] Print-friendly views
-- [ ] Bookmark/favourites 
+- [ ] Bookmark/favourites
 - [ ] Wishlist
+- [ ] Contributor leaderboard
 
 ## 📜 License & Legal
 
