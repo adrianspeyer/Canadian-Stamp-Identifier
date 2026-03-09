@@ -79,7 +79,7 @@ No installation needed — works in any modern web browser. Works offline after 
 - **Complete French UI**: all buttons, labels, filters, panels, and error states
 - **Automatic category translation**: all 15 categories and 100+ subcategories translate via lookup
 - **Colour translation**: all philatelic colour terms translate automatically
-- **French stamp data**: `stamps-fr.json` provides translated mainTopics and notes (incremental — falls back to English for untranslated stamps)
+- **French stamp data**: `stamps-fr.json` provides translated mainTopics and notes for all 3,473 stamps
 - **Persistent**: language preference saved in localStorage
 
 ### Accessibility
@@ -282,9 +282,9 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 - [x] 336 legacy subcategories normalised to canonical format
 - [x] Bilingual UI (EN/FR) with language toggle
 - [x] Automatic category and colour translation
+- [x] Complete French stamp translations (mainTopic + notes for all 3,473 stamps)
 
 ### Future 🔮
-- [ ] Complete French stamp translations (mainTopic + notes for all 3,473 stamps)
 - [ ] Print-friendly views
 - [ ] Bookmark/favourites
 - [ ] Wishlist

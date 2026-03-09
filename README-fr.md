@@ -127,7 +127,6 @@ Chaque contribution — une note corrigée, une meilleure description de couleur
 | **Vous avez une image de timbre** | Téléversez-la dans un ticket — nous nous occupons du reste |
 | **Préciser les couleurs** | Plusieurs timbres modernes sont décrits comme « multicolore » — des descriptions plus précises sont les bienvenues |
 | **Ajouter du contexte historique** | Vous connaissez l'histoire derrière un timbre? Partagez-la dans un ticket |
-| **Traductions françaises** | Aidez à compléter les traductions de `mainTopic` et `notes` dans `stamps-fr.json` |
 
 ### Contributions directes (Pull Request)
 
@@ -223,7 +222,7 @@ Chaque timbre dans `data/stamps.json` a cette structure :
 | `notes` | Contexte historique (en anglais). 1 à 3 phrases. | Oui |
 
 ### Traductions françaises
-Les traductions françaises sont stockées séparément dans `data/stamps-fr.json`. Ce fichier contient uniquement les champs `mainTopic` et `notes` traduits. Tout timbre absent de ce fichier affiche automatiquement le texte anglais.
+Les traductions françaises sont stockées dans `data/stamps-fr.json`. Ce fichier contient les champs `mainTopic` et `notes` traduits pour les 3 473 timbres.
 
 ## 🔢 À propos des numéros
 
@@ -269,9 +268,9 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 - [x] Taux du timbre permanent mis à jour à 1,24 $
 - [x] Interface bilingue (EN/FR) avec sélecteur de langue
 - [x] Traduction automatique des catégories et des couleurs
+- [x] Traductions françaises complètes (mainTopic + notes pour les 3 473 timbres)
 
 ### Futur 🔮
-- [ ] Compléter les traductions françaises (mainTopic + notes pour les 3 473 timbres)
 - [ ] Vues adaptées à l'impression
 - [ ] Signets/favoris
 - [ ] Liste de souhaits
