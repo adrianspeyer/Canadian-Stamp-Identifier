@@ -90,10 +90,10 @@ No installation needed — works in any modern web browser. Works offline after 
 |---|---|
 | Stamps catalogued | 3,473 |
 | Years covered | 1851–2026 (175 years) |
-| Categories | 15 top-level, 80+ subcategories |
+| Categories | 15 top-level, 100+ subcategories, all canonical |
 | Empty notes | 0 — every stamp has historical context |
 | Empty colours | 0 — every stamp has a colour description |
-| Empty categories | 0 — zero Miscellaneous |
+| Non-canonical categories | 0 — every subTopic follows `Category: Subcategory` format |
 | Platforms | Phone, tablet, desktop |
 | Dependencies | 0 |
 | Version | v2.1 |
@@ -119,7 +119,6 @@ Every contribution — a corrected note, a better colour description, a missing 
 | **Have a stamp image** | Upload it in an issue — we'll handle the rest |
 | **Refine colours** | Many modern stamps are "multicoloured" — more specific descriptions welcome |
 | **Add historical context** | Know the story behind a stamp? Share it in an issue |
-| **Improve categories** | ~200 stamps still have legacy subcategories that need normalising |
 
 ### Direct Contributions (Pull Request)
 
@@ -140,48 +139,49 @@ Every contribution — a corrected note, a better colour description, a missing 
 
 ## 📂 Category Reference
 
-When adding or updating stamps, use the `Category: Subcategory` format for the `subTopic` field. Here are the canonical categories:
+Every stamp uses the `Category: Subcategory` format for the `subTopic` field. Here are all 15 canonical categories with their subcategories:
 
-### History & Heritage (809 stamps)
-`Royalty` · `War & Military` · `Indigenous Peoples` · `Black History` · `Civil Rights` · `Political Leaders` · `Prime Ministers` · `Exploration` · `Confederation` · `Anniversaries` · `Notable Canadians` · `International` · `Millennium` · `Maritime` · `Gold Rush` · `Expositions` · `Humanitarian` · `Labour` · `Disasters`
+### History & Heritage (916 stamps)
+`Royalty` · `Anniversaries` · `People` · `Indigenous Peoples` · `Millennium` · `War & Military` · `Notable Canadians` · `Exploration` · `Political Leaders` · `Prime Ministers` · `International` · `Civil Rights` · `Black History` · `Confederation` · `Maritime` · `Gold Rush` · `Humanitarian` · `Labour` · `Disasters` · `LGBTQ2+`
 
-### Nature & Wildlife (611 stamps)
-`Animals` · `Plants` · `Flowers` · `Trees` · `Birds` · `Landscapes` · `Parks` · `Mountains` · `Prehistoric` · `Marine Life` · `Fungi` · `Insects` · `Fossils` · `Weather & Sky` · `Natural Phenomena` · `National Parks` · `Seasons`
+### Nature & Wildlife (704 stamps)
+`Animals` · `Plants` · `Flowers` · `Trees` · `Birds` · `Landscapes` · `Parks` · `National Parks` · `Marine Life` · `Mountains` · `Prehistoric` · `Insects` · `Fungi` · `Fossils` · `Weather & Sky` · `Seasons`
 
-### Arts & Culture (340 stamps)
-`Visual Arts` · `Music` · `Authors` · `Literature` · `Photography` · `Film` · `Film & Television` · `Comics` · `Science Fiction` · `Opera` · `Dance` · `Theatre` · `Crafts` · `Design` · `Folklore` · `Cultural Artifacts` · `Children's Literature`
+### Arts & Culture (378 stamps)
+`Visual Arts` · `Music` · `Authors` · `Literature` · `Photography` · `Film` · `Film & Television` · `Comics` · `Science Fiction` · `Opera` · `Dance` · `Theatre` · `Crafts` · `Design` · `Folklore` · `Cultural Artifacts` · `Children's Literature` · `Museums`
 
-### Holidays & Events (284 stamps)
-`Christmas` · `Lunar New Year` · `Hanukkah` · `Diwali` · `Eid` · `Halloween` · `Valentine's Day` · `Greetings` · `Celebrations`
+### Holidays & Events (302 stamps)
+`Christmas` · `Lunar New Year` · `Halloween` · `Hanukkah` · `Diwali` · `Eid` · `Greetings` · `Celebrations` · `Valentine's Day`
 
-### Sports & Recreation (283 stamps)
-`Hockey` · `Olympics` · `CFL` · `Football` · `Motorsport` · `Figure Skating` · `Baseball` · `Fishing` · `Racing` · `Swimming` · `Skiing` · `Lacrosse` · `Curling` · `Paralympics`
+### Sports & Recreation (303 stamps)
+`Hockey` · `Olympics` · `CFL` · `Motorsport` · `Figure Skating` · `Baseball` · `Football` · `Fishing` · `Racing` · `Paralympics` · `Lacrosse` · `Curling` · `Cycling` · `Rowing`
 
-### Transportation (199 stamps)
+### Transportation (205 stamps)
 `Aircraft` · `Airmail` · `Ships & Boats` · `Maritime` · `Trains` · `Railways` · `Automobiles` · `Vehicles` · `Roads` · `Motorcycles` · `Waterways`
 
-### Government & National Symbols (132 stamps)
-`Provinces` · `RCMP` · `Justice` · `Heraldry` · `Military` · `Honours` · `Maps`
+### Government & National Symbols (133 stamps)
+`Provinces` · `RCMP` · `Justice` · `Heraldry` · `Military` · `Honours`
 
-### Architecture & Landmarks (125 stamps)
-`Scenic` · `Heritage Buildings` · `Historic Sites` · `Engineering` · `Lighthouses` · `UNESCO` · `Government` · `Religious` · `Memorials`
+### Architecture & Landmarks (133 stamps)
+`Scenic` · `Heritage Buildings` · `Historic Sites` · `Engineering` · `Lighthouses` · `UNESCO` · `Government` · `Cities` · `Religious` · `Memorials`
 
-### Postal History (106 stamps)
+### Culture & Society (118 stamps)
+`Organizations` · `Education` · `Food & Drink` · `Emergency Services` · `Zodiac` · `Roadside Attractions` · `Heritage` · `Toys & Games` · `Business & Industry` · `Immigration`
+
+### Postal History (114 stamps)
 `Postage Due` · `Special Delivery` · `Registered Mail` · `Coil Stamps` · `Post Offices` · `Definitives` · `Community Foundation` · `Collectibles`
 
-### Culture & Society (92 stamps)
-`Organizations` · `Education` · `Food & Drink` · `Emergency Services` · `Business & Industry` · `Toys & Games` · `Immigration` · `Youth` · `Traditions`
-
-### Science & Technology (81 stamps)
+### Science & Technology (89 stamps)
 `Space` · `Inventions` · `Medicine` · `Communications` · `Geology` · `Astronomy` · `Aviation` · `Energy`
 
-### Industry (37 stamps)
+### Industry (39 stamps)
 `Agriculture` · `Resources` · `Manufacturing` · `Energy` · `Commerce`
 
-### Public Awareness (15 stamps)
-`Health` · `Environment`
+### Organizations (23 stamps)
+`Scouting & Girl Guides` · `Postal` · `Health` · `United Nations`
 
-> **Note**: ~200 stamps still carry legacy subcategories from the original dataset (Latin species names, specific series titles, etc.). These are valid data but don't follow the standardised format above. Normalising them is an open contribution opportunity.
+### Public Awareness (16 stamps)
+`Health`
 
 ## 📋 JSON Format Reference
 
@@ -243,7 +243,7 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 | Filtering | Show/hide existing DOM (no recreation), queue flush on filter change |
 | Data | localStorage cache, `<link rel="preload">` hint |
 | Repeat visits | Service worker: cache-first for images, network-first for data |
-| Search | 180ms debounce, indexes all fields |
+| Search | 180ms debounce, indexes all fields including notes |
 
 ### Security
 - Content Security Policy via `<meta>` tag (`script-src 'self'`, `img-src 'self' data:`, etc.)
@@ -263,21 +263,19 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 - [x] localStorage + sessionStorage caching
 - [x] Accessibility (keyboard nav, ARIA, reduced motion)
 - [x] Security (CSP, no innerHTML, no inline handlers)
-- [x] Zero Miscellaneous — all stamps categorised
-- [x] Zero empty notes — historical context on every stamp
-- [x] Zero empty colours — colour on every stamp
+- [x] All stamps categorised — zero Miscellaneous, zero non-canonical subcategories
+- [x] All stamps have historical notes — zero empty
+- [x] All stamps have colour descriptions — zero empty
+- [x] 561 stamps enriched with historical context and notable varieties
 - [x] Permanent stamp rate updated to $1.24
-- [x] 561 stamps enriched with historical notes
-- [x] 9 incorrect colour values fixed
 - [x] Duplicate IDs and image path mismatches corrected
+- [x] 336 legacy subcategories normalised to canonical format
 
 ### Future 🔮
-- [ ] Normalise ~200 legacy subcategories
-- [ ] Advanced filters (denomination, colour, category dropdowns)
-- [ ] Thumbnail generation for faster grid loading
 - [ ] Print-friendly views
 - [ ] Bookmark/favourites
-- [ ] Contributor leaderboard
+- [ ] Wishlist
+- [ ] Refine "multicoloured" with more specific descriptions (community)
 
 ## 📜 License & Legal
 
