@@ -14,6 +14,7 @@ class StampIdentifier {
     static IMAGE_OBSERVER_MARGIN = '600px'; // Load images this far outside viewport
     static SCROLL_TOP_THRESHOLD = 800;  // px scrolled before showing scroll-to-top
     static MAX_CONCURRENT_LOADS = 6;    // Max simultaneous image fetches (kind to server + device)
+    static IMAGE_LOAD_TIMEOUT = 15000;  // 15s timeout per image — prevents queue freeze on iPad
 
     /* ──────────────────────────────────────────────
        CONSTRUCTOR
@@ -211,35 +212,48 @@ class StampIdentifier {
         }
     }
 
-    /** Load a single image with cache-friendly fetch, proper error handling */
+    /** Load a single image with timeout protection and proper error handling */
     loadImage(img, src) {
         this.activeLoads++;
+        let settled = false;
+
+        const settle = () => {
+            if (settled) return;
+            settled = true;
+            clearTimeout(timer);
+            this.activeLoads--;
+            this.processImageQueue();
+        };
 
         const encodedSrc = encodeURI(src);
-        img.decoding = 'async';           // Don't block main thread for decode
-        img.removeAttribute('data-src');   // Mark as in-progress so we don't double-queue
+        img.decoding = 'async';
+        img.removeAttribute('data-src');
 
         img.addEventListener('load', () => {
             img.classList.add('loaded');
             const placeholder = img.parentElement?.querySelector('.stamp-card-placeholder');
             if (placeholder) placeholder.classList.add('hidden');
-            this.activeLoads--;
-            this.processImageQueue();
+            settle();
         }, { once: true });
 
         img.addEventListener('error', () => {
-            // Show error state on placeholder — stops shimmer, shows "Image unavailable"
             img.style.display = 'none';
             const placeholder = img.parentElement?.querySelector('.stamp-card-placeholder');
             if (placeholder) placeholder.classList.add('load-error');
-            this.activeLoads--;
-            this.processImageQueue();
+            settle();
         }, { once: true });
 
-        // Set src — browser handles caching via standard HTTP cache headers.
-        // Using the img element directly (not fetch+blob) means the browser's
-        // native disk cache and memory cache work optimally. Revisits to the
-        // same image (e.g. after filtering) serve from cache instantly.
+        // Timeout: if neither load nor error fires, free the slot and move on.
+        // This prevents a hung request from freezing the entire queue on iPad Safari.
+        const timer = setTimeout(() => {
+            if (!settled) {
+                console.warn(`Image load timeout: ${src}`);
+                // Don't mark as error — it might still load later in the background.
+                // Just free the queue slot so other images can proceed.
+                settle();
+            }
+        }, StampIdentifier.IMAGE_LOAD_TIMEOUT);
+
         img.src = encodedSrc;
     }
 
