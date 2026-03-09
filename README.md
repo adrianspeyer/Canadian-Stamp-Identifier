@@ -279,8 +279,8 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 
 ## 📜 License & Legal
 
-**License**: [GNU General Public License v3.0](LICENSE)
-- Ensures this remains open source forever
+**License**: [GNU Affero General Public License v3.0](LICENSE)
+- Ensures this remains open source forever — including network/server use
 - All improvements benefit the community
 - Commercial use allowed with attribution
 
