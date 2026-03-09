@@ -380,6 +380,13 @@ class StampIdentifier {
             }
         }
 
+        // Flush queued images for now-hidden cards so visible stamps load first.
+        // The IntersectionObserver will re-queue visible cards as they enter the viewport.
+        this.imageQueue = this.imageQueue.filter(item => {
+            const card = item.img.closest('.stamp-card');
+            return card && !card.hasAttribute('hidden');
+        });
+
         this.visibleCount = count;
         this.updateFilterInfo();
     }
