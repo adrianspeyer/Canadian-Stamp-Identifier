@@ -421,11 +421,22 @@ class StampIdentifier {
         }
 
         // Flush queued images for now-hidden cards so visible stamps load first.
-        // The IntersectionObserver will re-queue visible cards as they enter the viewport.
         this.imageQueue = this.imageQueue.filter(item => {
             const card = item.img.closest('.stamp-card');
             return card && !card.hasAttribute('hidden');
         });
+
+        // Re-observe visible cards that still have unloaded images.
+        // These are cards that were queued, flushed by a previous filter change,
+        // and are now visible again. Without re-observing, they'd stay as shimmer forever.
+        if (this.imageObserver) {
+            for (let i = 0; i < len; i++) {
+                const card = cards[i];
+                if (!card.hasAttribute('hidden') && card.querySelector('img[data-src]')) {
+                    this.imageObserver.observe(card);
+                }
+            }
+        }
 
         this.visibleCount = count;
         this.updateFilterInfo();
