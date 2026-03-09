@@ -362,14 +362,20 @@ const I18N = {
         try { localStorage.setItem('csi_lang', lang); } catch (e) { /* ok */ }
     },
 
-    /** Load saved language preference */
+    /** Load saved language preference, or detect from browser */
     loadSavedLang() {
         try {
             const saved = localStorage.getItem('csi_lang');
             if (saved === 'fr' || saved === 'en') {
                 this._lang = saved;
+                document.documentElement.lang = this._lang;
+                return this._lang;
             }
-        } catch (e) { /* default to en */ }
+        } catch (e) { /* ok */ }
+
+        // Auto-detect from browser language
+        const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        this._lang = browserLang.startsWith('fr') ? 'fr' : 'en';
         document.documentElement.lang = this._lang;
         return this._lang;
     },
