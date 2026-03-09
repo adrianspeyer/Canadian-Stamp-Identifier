@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; worker-src 'self'">
     <meta name="referrer" content="no-referrer">
     <title>Canadian Stamp Identifier</title>
-    <meta name="description" content="Visual identification tool for Canadian stamps 1851–2025. Browse, search, and identify over 3,400 stamps.">
+    <meta name="description" content="Visual identification tool for Canadian stamps 1851–2026. Browse, search, and identify over 3,470 stamps.">
     <link rel="preload" href="data/stamps.json" as="fetch" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
         <div class="header-inner">
             <div class="header-brand">
                 <h1 class="header-title">Canadian Stamp Identifier</h1>
-                <p class="header-subtitle">Visual identification tool · <span id="headerYearRange">1851–2025</span></p>
+                <p class="header-subtitle">Visual identification tool · <span id="headerYearRange">1851–2026</span> · v2.1</p>
             </div>
             <nav class="header-nav">
                 <a href="https://github.com/adrianspeyer/canadian-stamp-identifier" target="_blank" rel="noopener" class="nav-link">GitHub</a>
@@ -115,25 +115,35 @@
         <div class="panel-content">
             <button type="button" class="panel-close" data-close-panel aria-label="Close">&times;</button>
             <h2>About This Project</h2>
-            <p>This tool helps identify Canadian stamps from 1851–2025 using visual pattern matching. Browse the catalogue, filter by decade, or search by keyword to find your stamp.</p>
+            <p>The Canadian Stamp Identifier is an open source visual identification tool covering 3,473 Canadian stamps from 1851 to 2026. Browse the grid, filter by decade, or search by keyword to find your stamp.</p>
             
             <h3>How to Use</h3>
             <ol>
-                <li><strong>Browse by era</strong> — tap a decade to filter</li>
-                <li><strong>Search</strong> — type a year, topic, or keyword</li>
+                <li><strong>Browse by era</strong> — tap a decade pill to filter, tap again to show all</li>
+                <li><strong>Search</strong> — type a year, topic, colour, or keyword (searches notes too)</li>
+                <li><strong>Combine filters</strong> — search within a decade for precise results</li>
                 <li><strong>Compare visually</strong> — scan the grid for your stamp's design</li>
-                <li><strong>Get details</strong> — tap any stamp for its ID and info</li>
-                <li><strong>Research further</strong> — use the year, topic, and denomination to cross-reference in stamp catalogues for varieties</li>
+                <li><strong>Get details</strong> — tap any stamp for ID, denomination, category, and historical notes</li>
+                <li><strong>Research further</strong> — use the year, topic, and denomination to cross-reference in official stamp catalogues for varieties and pricing</li>
             </ol>
 
-            <h3>Features</h3>
+            <h3>What's Included</h3>
             <ul>
-                <li>Complete visual catalogue of Canadian stamps 1851–2025</li>
-                <li>Instant search by year, topic, colour, or keyword</li>
-                <li>Decade filtering for quick era browsing</li>
+                <li>3,473 stamps across 175 years of Canadian postal history</li>
+                <li>Every stamp categorised — 15+ categories from Nature &amp; Wildlife to History &amp; Heritage</li>
+                <li>Historical notes on every stamp — context, series info, and notable varieties</li>
+                <li>Colour descriptions for every stamp</li>
                 <li>Responsive design — works on phone, tablet, and desktop</li>
-                <li>Open source and community-driven</li>
+                <li>Works offline after first visit (service worker caching)</li>
             </ul>
+
+            <h3>What's Not Included</h3>
+            <p>This tool covers main stamp designs only. Varieties, errors, plate blocks, first day covers, and other specialist items are not catalogued — but notes may reference notable varieties where they exist.</p>
+
+            <h3>About the IDs</h3>
+            <p>The stamp IDs (#001, #002, etc.) are proprietary reference numbers created for this project. They are not Scott catalogue numbers.</p>
+
+            <p style="margin-top: 16px; font-size: 0.85rem; color: #78716C;">Open source · GPL v3.0 · Not affiliated with Canada Post · <a href="https://github.com/adrianspeyer/canadian-stamp-identifier" target="_blank" rel="noopener" style="color: #B91C1C;">View on GitHub</a></p>
         </div>
     </div>
 
@@ -142,23 +152,34 @@
         <div class="panel-content">
             <button type="button" class="panel-close" data-close-panel aria-label="Close">&times;</button>
             <h2>Contribute</h2>
-            <p>Help expand this collection! This is an open source project and contributions are welcome.</p>
+            <p>This is an open source, community-driven project. Every contribution — a single corrected note, a better colour description, or a missing image — makes the tool better for collectors everywhere.</p>
             
-            <h3>How to Add Stamps</h3>
+            <h3>Easy Contributions (No Code)</h3>
+            <ul>
+                <li><strong>Spot an error?</strong> Open a <a href="https://github.com/adrianspeyer/canadian-stamp-identifier/issues" target="_blank" rel="noopener">GitHub Issue</a> with the stamp ID and correction</li>
+                <li><strong>Have a stamp image?</strong> Upload it in an issue — we'll handle the rest</li>
+                <li><strong>Refine colours</strong> — many modern stamps are listed as "multicoloured" and could use more specific descriptions</li>
+                <li><strong>Add context</strong> — know the story behind a stamp? Share it</li>
+            </ul>
+
+            <h3>Direct Contributions (Pull Request)</h3>
             <ol>
                 <li>Fork the repository on GitHub</li>
-                <li>Add your stamp image to the appropriate decade folder</li>
+                <li>Add your stamp image to <code>images/[decade]/</code></li>
                 <li>Update <code>data/stamps.json</code> with the stamp details</li>
                 <li>Submit a pull request</li>
             </ol>
 
             <h3>Image Guidelines</h3>
             <ul>
-                <li>High quality scans (300+ DPI)</li>
-                <li>Square format preferred</li>
+                <li>300+ DPI scans, JPG preferred</li>
                 <li>Main stamp design only (not varieties)</li>
-                <li>File naming: <code>001-beaver-3d-1851.jpg</code></li>
+                <li>Naming: <code>[id]-[topic]-[denomination]-[year].jpg</code></li>
+                <li>Example: <code>001-beaver-3d-1851.jpg</code></li>
             </ul>
+
+            <h3>Category Format</h3>
+            <p>Use the <code>Category: Subcategory</code> format for subTopic. Examples: <code>Nature &amp; Wildlife: Animals</code>, <code>History &amp; Heritage: War &amp; Military</code>, <code>Arts &amp; Culture: Music</code>.</p>
 
             <h3>JSON Format</h3>
             <pre><code>{
@@ -169,8 +190,10 @@
   "denomination": "3d",
   "color": "red",
   "image": "images/1850s/001-beaver-3d-1851.jpg",
-  "notes": "First Canadian stamp"
+  "notes": "Canada's first stamp, depicting a beaver."
 }</code></pre>
+
+            <p style="margin-top: 16px; font-size: 0.85rem; color: #78716C;">Questions? <a href="https://github.com/adrianspeyer/canadian-stamp-identifier/issues" target="_blank" rel="noopener" style="color: #B91C1C;">Open an issue</a> — we're happy to help.</p>
         </div>
     </div>
 
