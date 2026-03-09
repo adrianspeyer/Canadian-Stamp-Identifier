@@ -1,0 +1,24 @@
+{
+  "stamps": {
+    "001": { "mainTopic": "Castor" },
+    "002": { "mainTopic": "Prince Albert" },
+    "003": { "mainTopic": "Reine Victoria" },
+    "004": { "mainTopic": "Castor" },
+    "005": { "mainTopic": "Jacques Cartier" },
+    "006": { "mainTopic": "Prince Albert" },
+    "007": { "mainTopic": "Reine Victoria" },
+    "008": { "mainTopic": "Reine Victoria" },
+    "009": { "mainTopic": "Reine Victoria" },
+    "010": { "mainTopic": "Castor" },
+    "011": { "mainTopic": "Prince Albert" },
+    "012": { "mainTopic": "Reine Victoria" },
+    "013": { "mainTopic": "Castor" },
+    "014": { "mainTopic": "Prince Albert (dernier tirage)" },
+    "015": { "mainTopic": "Reine Victoria" },
+    "015a": { "mainTopic": "Reine Victoria" },
+    "017": { "mainTopic": "Prince Albert (premier tirage)" },
+    "019": { "mainTopic": "Reine Victoria" },
+    "019a": { "mainTopic": "Reine Victoria" },
+    "140": { "mainTopic": "Bluenose" }
+  }
+}

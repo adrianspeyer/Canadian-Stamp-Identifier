@@ -53,14 +53,20 @@ class StampIdentifier {
        ────────────────────────────────────────────── */
     async init() {
         try {
+            // Load language preference before anything renders
+            I18N.loadSavedLang();
+            if (I18N.getLang() === 'fr') await I18N.loadFrenchStamps();
+
             await this.loadStamps();
             this.preprocessSearch();
+            if (I18N.getLang() === 'fr') this.preprocessSearchI18N();
             this.buildDecadeNav();
             this.setupImageObserver();
             await this.renderAllCards();
             this.restoreFilterState();
             this.applyFilters();
             this.bindEvents();
+            this.applyLanguage(); // Translate all static UI elements
             this.dismissLoading();
         } catch (err) {
             console.error('Failed to initialise:', err);
@@ -156,7 +162,7 @@ class StampIdentifier {
         const decades = [...decadeCounts.keys()].sort((a, b) => a - b);
 
         // "All" pill
-        const allPill = this.createDecadePill('All', total, null);
+        const allPill = this.createDecadePill(I18N.t('decades.all'), total, null);
         allPill.setAttribute('aria-selected', 'true');
         this.decadeNav.appendChild(allPill);
 
@@ -321,7 +327,7 @@ class StampIdentifier {
             // Update loading progress
             const pct = Math.round((rendered / total) * 100);
             this.loadingBarFill.style.width = pct + '%';
-            this.loadingCountEl.textContent = `${rendered.toLocaleString()} of ${total.toLocaleString()}`;
+            this.loadingCountEl.textContent = `${rendered.toLocaleString()} ${I18N.t('loading.of')} ${total.toLocaleString()}`;
 
             // Yield to browser for paint between batches
             if (rendered < total) {
@@ -335,7 +341,7 @@ class StampIdentifier {
         card.className = 'stamp-card';
         card.setAttribute('role', 'listitem');
         card.setAttribute('tabindex', '0');
-        card.setAttribute('aria-label', `${stamp.year} ${stamp.mainTopic} — #${stamp.id}`);
+        card.setAttribute('aria-label', `${stamp.year} ${I18N.getStampField(stamp, 'mainTopic')} — #${stamp.id}`);
 
         // Store data on the element for fast filtering
         card._stamp = stamp;
@@ -350,12 +356,12 @@ class StampIdentifier {
         const placeholder = document.createElement('div');
         placeholder.className = 'stamp-card-placeholder';
         placeholder.style.background = this.getDecadeColour(stamp._decade);
-        placeholder.textContent = stamp.mainTopic || 'Stamp';
+        placeholder.textContent = I18N.getStampField(stamp, 'mainTopic') || 'Stamp';
         imageArea.appendChild(placeholder);
 
         // Lazy image
         const img = document.createElement('img');
-        img.alt = `${stamp.year} ${stamp.mainTopic}`;
+        img.alt = `${stamp.year} ${I18N.getStampField(stamp, 'mainTopic')}`;
         img.dataset.src = stamp.image || '';
         img.loading = 'lazy';
         // Start with transparent placeholder so we can transition opacity
@@ -375,8 +381,9 @@ class StampIdentifier {
 
         const topic = document.createElement('span');
         topic.className = 'stamp-card-topic';
-        topic.textContent = stamp.mainTopic || 'Unknown';
-        topic.title = stamp.mainTopic || '';
+        const topicText = I18N.getStampField(stamp, 'mainTopic') || 'Unknown';
+        topic.textContent = topicText;
+        topic.title = topicText;
         info.appendChild(topic);
 
         const id = document.createElement('span');
@@ -448,9 +455,9 @@ class StampIdentifier {
         const hasFilters = this.activeDecade !== null || this.searchTerm !== '';
 
         if (hasFilters) {
-            this.resultsCount.textContent = `${count.toLocaleString()} of ${total.toLocaleString()} stamps`;
+            this.resultsCount.textContent = `${count.toLocaleString()} ${I18N.t('filter.of')} ${total.toLocaleString()} ${I18N.t('filter.stamps')}`;
         } else {
-            this.resultsCount.textContent = `${total.toLocaleString()} stamps`;
+            this.resultsCount.textContent = `${total.toLocaleString()} ${I18N.t('filter.stamps')}`;
         }
 
         this.clearFiltersBtn.hidden = !hasFilters;
@@ -529,13 +536,15 @@ class StampIdentifier {
         const title = document.getElementById('modalTitle');
         const meta = document.getElementById('modalMeta');
 
+        const mainTopic = I18N.getStampField(stamp, 'mainTopic') || 'Unknown';
+
         // Title
-        title.textContent = `${stamp.year || '—'} — ${stamp.mainTopic || 'Unknown'}`;
+        title.textContent = `${stamp.year || '—'} — ${mainTopic}`;
 
         // Image
         if (stamp.image && stamp.image.trim()) {
             img.src = encodeURI(stamp.image);
-            img.alt = `${stamp.year} ${stamp.mainTopic}`;
+            img.alt = `${stamp.year} ${mainTopic}`;
             img.style.display = '';
             frame.style.display = '';
         } else {
@@ -546,14 +555,15 @@ class StampIdentifier {
 
         // Metadata
         const fields = [
-            { label: 'ID', value: stamp.id },
-            { label: 'Year', value: stamp.year },
-            { label: 'Denomination', value: stamp.denomination },
-            { label: 'Colour', value: stamp.color },
+            { label: I18N.t('modal.id'), value: stamp.id },
+            { label: I18N.t('modal.year'), value: stamp.year },
+            { label: I18N.t('modal.denomination'), value: stamp.denomination },
+            { label: I18N.t('modal.colour'), value: I18N.translateColour(stamp.color) },
         ];
 
-        const subTopic = stamp.subTopic ? { label: 'Category', value: stamp.subTopic } : null;
-        const notes = stamp.notes && stamp.notes.trim() ? { label: 'Notes', value: stamp.notes } : null;
+        const subTopic = stamp.subTopic ? { label: I18N.t('modal.category'), value: I18N.translateCategory(stamp.subTopic) } : null;
+        const notesText = I18N.getStampField(stamp, 'notes');
+        const notes = notesText && notesText.trim() ? { label: I18N.t('modal.notes'), value: notesText } : null;
 
         meta.innerHTML = '';
 
@@ -694,8 +704,9 @@ class StampIdentifier {
             panel.addEventListener('click', (e) => {
                 if (e.target === panel) this.closePanel(panel);
             });
-            const closeBtn = panel.querySelector('[data-close-panel]');
-            if (closeBtn) closeBtn.addEventListener('click', () => this.closePanel(panel));
+            panel.querySelectorAll('[data-close-panel]').forEach(closeBtn => {
+                closeBtn.addEventListener('click', () => this.closePanel(panel));
+            });
         });
 
         // --- Keyboard ---
@@ -723,6 +734,11 @@ class StampIdentifier {
 
         this.scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- Language toggle ---
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => this.setLanguage(btn.dataset.lang));
         });
 
         // --- Decade scroll arrows ---
@@ -781,6 +797,115 @@ class StampIdentifier {
     }
 
     /* ──────────────────────────────────────────────
+       LANGUAGE SWITCHING (EN / FR)
+       ────────────────────────────────────────────── */
+
+    /** Switch language and refresh all visible text */
+    async setLanguage(lang) {
+        if (lang === I18N.getLang()) return;
+        I18N.setLang(lang);
+
+        // Load French stamp data on first switch to FR
+        if (lang === 'fr') await I18N.loadFrenchStamps();
+
+        // Update toggle button state
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+
+        // Rebuild search index with translated text
+        this.preprocessSearchI18N();
+
+        // Refresh all visible text
+        this.applyLanguage();
+        this.updateCardText();
+        this.updateFilterInfo();
+
+        // Re-apply search with new language data
+        if (this.searchTerm) this.applyFilters();
+    }
+
+    /** Translate all static UI elements marked with data-i18n */
+    applyLanguage() {
+        const lang = I18N.getLang();
+
+        // Update toggle button state
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.dataset.i18n;
+            if (el.tagName === 'INPUT') {
+                el.placeholder = I18N.t(key);
+            } else {
+                el.textContent = I18N.t(key);
+            }
+        });
+
+        // Update ARIA labels
+        document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+            el.setAttribute('aria-label', I18N.t(el.dataset.i18nAria));
+        });
+
+        // Update grid ARIA label
+        this.grid.setAttribute('aria-label', I18N.t('grid.label'));
+
+        // Show/hide language-specific panels
+        document.querySelectorAll('[data-lang]').forEach(el => {
+            el.hidden = el.dataset.lang !== lang;
+        });
+
+        // Update "All" pill text
+        const allPill = this.decadeNav.querySelector('[data-decade="all"]');
+        if (allPill) {
+            const countSpan = allPill.querySelector('.decade-count');
+            const count = countSpan ? countSpan.textContent : '';
+            allPill.firstChild.textContent = I18N.t('decades.all') + ' ';
+        }
+    }
+
+    /** Update all card text with current language */
+    updateCardText() {
+        for (const card of this.cardElements) {
+            const stamp = card._stamp;
+            if (!stamp) continue;
+            const topicText = I18N.getStampField(stamp, 'mainTopic') || 'Unknown';
+            const topicEl = card.querySelector('.stamp-card-topic');
+            if (topicEl) {
+                topicEl.textContent = topicText;
+                topicEl.title = topicText;
+            }
+            const placeholder = card.querySelector('.stamp-card-placeholder');
+            if (placeholder) placeholder.textContent = topicText;
+            card.setAttribute('aria-label', `${stamp.year} ${topicText} — #${stamp.id}`);
+        }
+    }
+
+    /** Build search index including translated fields */
+    preprocessSearchI18N() {
+        this.stamps.forEach(stamp => {
+            const topic = I18N.getStampField(stamp, 'mainTopic') || '';
+            const notes = I18N.getStampField(stamp, 'notes') || '';
+            const cat = I18N.translateCategory(stamp.subTopic || '');
+            const colour = I18N.translateColour(stamp.color || '');
+            stamp._searchText = [
+                stamp.mainTopic || '',    // Always include English for search
+                topic,                    // French topic (if available)
+                stamp.subTopic || '',     // English category
+                cat,                      // French category
+                stamp.color || '',        // English colour
+                colour,                   // French colour
+                stamp.denomination || '',
+                stamp.notes || '',        // English notes
+                notes,                    // French notes
+                stamp.year != null ? String(stamp.year) : '',
+                stamp.id || ''
+            ].join(' ').toLowerCase();
+        });
+    }
+
+    /* ──────────────────────────────────────────────
        CLEANUP
        ────────────────────────────────────────────── */
     destroy() {
@@ -797,3 +922,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const app = new StampIdentifier();
     window.addEventListener('beforeunload', () => app.destroy());
 });
+
+/* Register service worker for offline caching (especially iOS) */
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {
+            /* Service worker not supported or blocked — app works fine without it */
+        });
+    });
+}

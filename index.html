@@ -19,13 +19,17 @@
     <header class="site-header" id="siteHeader">
         <div class="header-inner">
             <div class="header-brand">
-                <h1 class="header-title">Canadian Stamp Identifier</h1>
-                <p class="header-subtitle">Visual identification tool · <span id="headerYearRange">1851–2026</span> · v2.1</p>
+                <h1 class="header-title" data-i18n="site.title">Canadian Stamp Identifier</h1>
+                <p class="header-subtitle"><span data-i18n="site.subtitle">Visual identification tool</span> · <span id="headerYearRange">1851–2026</span> · v2.2</p>
             </div>
             <nav class="header-nav">
+                <div class="lang-toggle">
+                    <button type="button" class="lang-btn active" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                </div>
                 <a href="https://github.com/adrianspeyer/canadian-stamp-identifier" target="_blank" rel="noopener" class="nav-link">GitHub</a>
-                <button type="button" class="nav-link" id="aboutBtn">About</button>
-                <button type="button" class="nav-link" id="contributeBtn">Contribute</button>
+                <button type="button" class="nav-link" id="aboutBtn" data-i18n="nav.about">About</button>
+                <button type="button" class="nav-link" id="contributeBtn" data-i18n="nav.contribute">Contribute</button>
             </nav>
         </div>
     </header>
@@ -38,8 +42,8 @@
                     <svg class="search-icon" viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
                         <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
                     </svg>
-                    <input type="search" id="searchInput" class="search-input" placeholder="Search: beaver, 1935, olympics..." autocomplete="off" spellcheck="false">
-                    <button type="button" id="clearSearchBtn" class="clear-search-btn" hidden aria-label="Clear search">&times;</button>
+                    <input type="search" id="searchInput" class="search-input" data-i18n="search.placeholder" placeholder="Search: beaver, 1935, olympics..." autocomplete="off" spellcheck="false">
+                    <button type="button" id="clearSearchBtn" class="clear-search-btn" hidden data-i18n-aria="search.clear" aria-label="Clear search">&times;</button>
                 </div>
             </div>
             <div class="decade-scroll-outer" id="decadeScrollOuter">
@@ -57,7 +61,7 @@
             </div>
             <div class="filter-bar" id="filterBar">
                 <span id="resultsCount" class="results-count"></span>
-                <button type="button" id="clearFiltersBtn" class="clear-filters-btn" hidden>Clear filters</button>
+                <button type="button" id="clearFiltersBtn" class="clear-filters-btn" hidden data-i18n="filter.clear">Clear filters</button>
             </div>
         </div>
     </div>
@@ -66,7 +70,7 @@
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-content">
             <div class="loading-maple">🍁</div>
-            <p class="loading-text">Loading stamps<span class="loading-dots"></span></p>
+            <p class="loading-text"><span data-i18n="loading.text">Loading stamps</span><span class="loading-dots"></span></p>
             <div class="loading-bar">
                 <div class="loading-bar-fill" id="loadingBarFill"></div>
             </div>
@@ -82,12 +86,12 @@
     <!-- ============ EMPTY STATE ============ -->
     <div class="empty-state" id="emptyState" hidden>
         <div class="empty-state-icon">🔍</div>
-        <p class="empty-state-title">No stamps match your filters</p>
-        <p class="empty-state-desc">Try different keywords or clear your filters.</p>
+        <p class="empty-state-title" data-i18n="empty.title">No stamps match your filters</p>
+        <p class="empty-state-desc" data-i18n="empty.desc">Try different keywords or clear your filters.</p>
     </div>
 
     <!-- ============ SCROLL TO TOP ============ -->
-    <button type="button" class="scroll-top-btn" id="scrollTopBtn" hidden aria-label="Scroll to top">
+    <button type="button" class="scroll-top-btn" id="scrollTopBtn" hidden data-i18n-aria="scroll.top" aria-label="Scroll to top">
         <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
     </button>
 
@@ -104,7 +108,7 @@
                     <div class="modal-meta" id="modalMeta">
                         <!-- JS populates -->
                     </div>
-                    <p class="modal-footer">This is a Canadian Stamp Identifier reference number. For varieties and detailed pricing, cross-reference the year, topic, and denomination in official stamp catalogues.</p>
+                    <p class="modal-footer" data-i18n="modal.footer">This is a Canadian Stamp Identifier reference number. For varieties and detailed pricing, cross-reference the year, topic, and denomination in official stamp catalogues.</p>
                 </div>
             </div>
         </div>
@@ -112,7 +116,8 @@
 
     <!-- ============ ABOUT PANEL ============ -->
     <div class="panel-backdrop" id="aboutPanel" hidden>
-        <div class="panel-content">
+        <!-- English -->
+        <div class="panel-content" data-lang="en">
             <button type="button" class="panel-close" data-close-panel aria-label="Close">&times;</button>
             <h2>About This Project</h2>
             <p>The Canadian Stamp Identifier is an open source visual identification tool covering 3,473 Canadian stamps from 1851 to 2026. Browse the grid, filter by decade, or search by keyword to find your stamp.</p>
@@ -145,11 +150,46 @@
 
             <p style="margin-top: 16px; font-size: 0.85rem; color: #78716C;">Open source · AGPL-3.0 · Not affiliated with Canada Post · <a href="https://github.com/adrianspeyer/canadian-stamp-identifier" target="_blank" rel="noopener" style="color: #B91C1C;">View on GitHub</a></p>
         </div>
+        <!-- French -->
+        <div class="panel-content" data-lang="fr" hidden>
+            <button type="button" class="panel-close" data-close-panel aria-label="Fermer">&times;</button>
+            <h2>À propos de ce projet</h2>
+            <p>L'Identificateur de timbres canadiens est un outil d'identification visuelle à code source ouvert couvrant 3 473 timbres canadiens de 1851 à 2026. Parcourez la grille, filtrez par décennie ou recherchez par mot-clé pour trouver votre timbre.</p>
+            
+            <h3>Comment utiliser</h3>
+            <ol>
+                <li><strong>Parcourir par époque</strong> — touchez une pastille de décennie pour filtrer, touchez à nouveau pour tout afficher</li>
+                <li><strong>Rechercher</strong> — tapez une année, un sujet, une couleur ou un mot-clé (recherche aussi dans les notes)</li>
+                <li><strong>Combiner les filtres</strong> — recherchez dans une décennie pour des résultats précis</li>
+                <li><strong>Comparer visuellement</strong> — balayez la grille pour trouver le motif de votre timbre</li>
+                <li><strong>Obtenir les détails</strong> — touchez un timbre pour voir son no., sa valeur faciale, sa catégorie et ses notes historiques</li>
+                <li><strong>Approfondir</strong> — utilisez l'année, le sujet et la valeur faciale pour consulter les catalogues officiels pour les variétés et les prix</li>
+            </ol>
+
+            <h3>Ce qui est inclus</h3>
+            <ul>
+                <li>3 473 timbres couvrant 175 ans d'histoire postale canadienne</li>
+                <li>Chaque timbre est catégorisé — plus de 15 catégories, de Nature et faune à Histoire et patrimoine</li>
+                <li>Notes historiques sur chaque timbre — contexte, séries et variétés notables</li>
+                <li>Descriptions de couleur pour chaque timbre</li>
+                <li>Design adaptatif — fonctionne sur téléphone, tablette et ordinateur</li>
+                <li>Fonctionne hors ligne après la première visite</li>
+            </ul>
+
+            <h3>Ce qui n'est pas inclus</h3>
+            <p>Cet outil couvre les motifs principaux des timbres uniquement. Les variétés, erreurs, blocs de planche, plis premier jour et autres articles spécialisés ne sont pas catalogués — mais les notes peuvent mentionner les variétés notables lorsqu'elles existent.</p>
+
+            <h3>À propos des numéros</h3>
+            <p>Les numéros de timbres (#001, #002, etc.) sont des numéros de référence exclusifs créés pour ce projet. Ce ne sont pas des numéros de catalogue Scott.</p>
+
+            <p style="margin-top: 16px; font-size: 0.85rem; color: #78716C;">Code source ouvert · AGPL-3.0 · Non affilié à Postes Canada · <a href="https://github.com/adrianspeyer/canadian-stamp-identifier" target="_blank" rel="noopener" style="color: #B91C1C;">Voir sur GitHub</a></p>
+        </div>
     </div>
 
     <!-- ============ CONTRIBUTE PANEL ============ -->
     <div class="panel-backdrop" id="contributePanel" hidden>
-        <div class="panel-content">
+        <!-- English -->
+        <div class="panel-content" data-lang="en">
             <button type="button" class="panel-close" data-close-panel aria-label="Close">&times;</button>
             <h2>Contribute</h2>
             <p>This is an open source, community-driven project. Every contribution — a single corrected note, a better colour description, or a missing image — makes the tool better for collectors everywhere.</p>
@@ -195,8 +235,44 @@
 
             <p style="margin-top: 16px; font-size: 0.85rem; color: #78716C;">Questions? <a href="https://github.com/adrianspeyer/canadian-stamp-identifier/issues" target="_blank" rel="noopener" style="color: #B91C1C;">Open an issue</a> — we're happy to help.</p>
         </div>
+        <!-- French -->
+        <div class="panel-content" data-lang="fr" hidden>
+            <button type="button" class="panel-close" data-close-panel aria-label="Fermer">&times;</button>
+            <h2>Contribuer</h2>
+            <p>Ceci est un projet communautaire à code source ouvert. Chaque contribution — une note corrigée, une meilleure description de couleur ou une image manquante — améliore l'outil pour les collectionneurs partout.</p>
+            
+            <h3>Contributions faciles (sans code)</h3>
+            <ul>
+                <li><strong>Vous avez trouvé une erreur?</strong> Ouvrez un <a href="https://github.com/adrianspeyer/canadian-stamp-identifier/issues" target="_blank" rel="noopener">ticket GitHub</a> avec le numéro du timbre et la correction</li>
+                <li><strong>Vous avez une image de timbre?</strong> Téléversez-la dans un ticket — nous nous occupons du reste</li>
+                <li><strong>Préciser les couleurs</strong> — plusieurs timbres modernes sont décrits comme « multicolore » et pourraient avoir des descriptions plus précises</li>
+                <li><strong>Ajouter du contexte</strong> — vous connaissez l'histoire derrière un timbre? Partagez-la</li>
+            </ul>
+
+            <h3>Contributions directes (Pull Request)</h3>
+            <ol>
+                <li>Fourchez (fork) le dépôt sur GitHub</li>
+                <li>Ajoutez votre image dans <code>images/[décennie]/</code></li>
+                <li>Mettez à jour <code>data/stamps.json</code> avec les détails du timbre</li>
+                <li>Soumettez un pull request</li>
+            </ol>
+
+            <h3>Directives pour les images</h3>
+            <ul>
+                <li>Numérisations 300+ DPI, JPG préféré</li>
+                <li>Motif principal du timbre uniquement (pas de variétés)</li>
+                <li>Nommage : <code>[no]-[sujet]-[valeur]-[année].jpg</code></li>
+                <li>Exemple : <code>001-beaver-3d-1851.jpg</code></li>
+            </ul>
+
+            <h3>Format de catégorie</h3>
+            <p>Utilisez le format <code>Catégorie : Sous-catégorie</code> pour subTopic. Exemples : <code>Nature &amp; Wildlife: Animals</code>, <code>History &amp; Heritage: War &amp; Military</code>.</p>
+
+            <p style="margin-top: 16px; font-size: 0.85rem; color: #78716C;">Questions? <a href="https://github.com/adrianspeyer/canadian-stamp-identifier/issues" target="_blank" rel="noopener" style="color: #B91C1C;">Ouvrir un ticket</a> — nous sommes là pour aider.</p>
+        </div>
     </div>
 
+    <script src="js/i18n.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

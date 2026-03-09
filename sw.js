@@ -4,9 +4,9 @@
  * Especially important on iOS where Safari aggressively evicts HTTP cache.
  */
 
-const CACHE_NAME = 'csi-v2';
-const DATA_CACHE = 'csi-data-v2';
-const IMAGE_CACHE = 'csi-images-v2';
+const CACHE_NAME = 'csi-v4';
+const DATA_CACHE = 'csi-data-v4';
+const IMAGE_CACHE = 'csi-images-v4';
 const MAX_CACHED_IMAGES = 500; // Cap image cache to ~50MB (avg ~100KB each)
 
 // Core app files — cached on install
@@ -14,8 +14,10 @@ const CORE_FILES = [
     './',
     './index.html',
     './css/style.css',
+    './js/i18n.js',
     './js/app.js',
-    './data/stamps.json'
+    './data/stamps.json',
+    './data/stamps-fr.json'
 ];
 
 // Install: cache core files

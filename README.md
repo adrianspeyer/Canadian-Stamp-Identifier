@@ -72,6 +72,14 @@ No installation needed — works in any modern web browser. Works offline after 
 - **Session persistence**: decade and search filters survive page refresh
 - **JSON preload**: browser starts fetching data before JS parses
 
+### Bilingual (EN / FR)
+- **Language toggle** in the header — switches instantly between English and French
+- **Complete French UI**: all buttons, labels, filters, panels, and error states
+- **Automatic category translation**: all 15 categories and 100+ subcategories translate via lookup
+- **Colour translation**: all philatelic colour terms translate automatically
+- **French stamp data**: `stamps-fr.json` provides translated mainTopics and notes (incremental — falls back to English for untranslated stamps)
+- **Persistent**: language preference saved in localStorage
+
 ### Accessibility
 - Keyboard navigable (Tab + Enter/Space)
 - ARIA labels on all interactive elements
@@ -96,7 +104,7 @@ No installation needed — works in any modern web browser. Works offline after 
 | Non-canonical categories | 0 — every subTopic follows `Category: Subcategory` format |
 | Platforms | Phone, tablet, desktop |
 | Dependencies | 0 |
-| Version | v2.1 |
+| Version | v2.2 |
 
 ## 📖 How to Use
 
@@ -270,8 +278,11 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 - [x] Permanent stamp rate updated to $1.24
 - [x] Duplicate IDs and image path mismatches corrected
 - [x] 336 legacy subcategories normalised to canonical format
+- [x] Bilingual UI (EN/FR) with language toggle
+- [x] Automatic category and colour translation
 
 ### Future 🔮
+- [ ] Complete French stamp translations (mainTopic + notes for all 3,473 stamps)
 - [ ] Print-friendly views
 - [ ] Bookmark/favourites
 - [ ] Wishlist

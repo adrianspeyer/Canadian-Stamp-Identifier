@@ -126,6 +126,34 @@ body {
     background: rgba(255, 255, 255, 0.2);
 }
 
+.lang-toggle {
+    display: flex;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lang-btn {
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: inherit;
+    padding: 5px 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 0.03em;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.lang-btn.active {
+    background: rgba(255, 255, 255, 0.25);
+}
+
 /* ============================================================
    TOOLBAR (Search + Decades + Filter info)
    ============================================================ */
