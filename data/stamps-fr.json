@@ -1,24 +1,2032 @@
 {
   "stamps": {
-    "001": { "mainTopic": "Castor" },
-    "002": { "mainTopic": "Prince Albert" },
-    "003": { "mainTopic": "Reine Victoria" },
-    "004": { "mainTopic": "Castor" },
-    "005": { "mainTopic": "Jacques Cartier" },
-    "006": { "mainTopic": "Prince Albert" },
-    "007": { "mainTopic": "Reine Victoria" },
-    "008": { "mainTopic": "Reine Victoria" },
-    "009": { "mainTopic": "Reine Victoria" },
-    "010": { "mainTopic": "Castor" },
-    "011": { "mainTopic": "Prince Albert" },
-    "012": { "mainTopic": "Reine Victoria" },
-    "013": { "mainTopic": "Castor" },
-    "014": { "mainTopic": "Prince Albert (dernier tirage)" },
-    "015": { "mainTopic": "Reine Victoria" },
-    "015a": { "mainTopic": "Reine Victoria" },
-    "017": { "mainTopic": "Prince Albert (premier tirage)" },
-    "019": { "mainTopic": "Reine Victoria" },
-    "019a": { "mainTopic": "Reine Victoria" },
-    "140": { "mainTopic": "Bluenose" }
+    "001": {
+      "mainTopic": "Castor",
+      "notes": "Émis le 23 avril 1851; Qté : 250 200; Dentelure : non dentelé; Imprimeur : Rawdon, Wright, Hatch & Edson. Premier timbre-poste du Canada, conçu par Sir Sandford Fleming. Le castor a été choisi comme symbole de l'ardeur au travail — premier timbre au monde à représenter un animal plutôt qu'un chef d'État. Les variétés sur papier vergé (vertical et horizontal) sont très recherchées."
+    },
+    "002": {
+      "mainTopic": "Prince Albert",
+      "notes": "Émis le 12 mai 1851; Qté : 100 400; Dentelure : non dentelé; Imprimeur : Rawdon, Wright, Hatch & Edson. Époux de la Reine Victoria; le tarif de 6d couvrait l'envoi d'une lettre vers la Grande-Bretagne. Existe sur papier vergé et vélin, la version sur papier vergé étant considérablement plus rare."
+    },
+    "003": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 14 juin 1851; Qté : 51 000; Dentelure : non dentelé; Imprimeur : Rawdon, Wright, Hatch & Edson. Le timbre classique le plus rare du Canada — le 12d noir couvrait l'envoi d'une lettre à triple poids vers la Grande-Bretagne. Environ 100 exemplaires oblitérés subsistent. Une paire notable s'est vendue plus de 500 000 $, ce qui en fait l'un des timbres canadiens les plus précieux."
+    },
+    "004": {
+      "mainTopic": "Castor",
+      "notes": "Émis le 1er avril 1852; Qté : 2 850 300; Dentelure : non dentelé; Imprimeur : Rawdon, Wright, Hatch & Edson. Deuxième tirage du motif du castor sur papier vélin au lieu du papier vergé. De multiples nuances existent, du vermillon au rouge orangé, et les collectionneurs distinguent de nombreuses variétés de planche."
+    },
+    "005": {
+      "mainTopic": "Jacques Cartier",
+      "notes": "Émis le 1er janvier 1855; Qté : 172 200; Dentelure : non dentelé; Imprimeur : Rawdon, Wright, Hatch & Edson. Cartier est représenté comme le premier Européen à explorer le fleuve Saint-Laurent de 1534 à 1542. La double valeur faciale (10d colonial / 8d sterling) reflète les systèmes monétaires en vigueur à l'époque."
+    },
+    "006": {
+      "mainTopic": "Prince Albert",
+      "notes": "Émis le 1er mars 1855; Qté : 250 078; Dentelure : non dentelé; Imprimeur : Rawdon, Wright, Hatch & Edson. Version regravée du timbre sur papier vélin plus épais. La nuance pourpre rougeâtre le distingue du premier tirage en violet ardoise."
+    },
+    "007": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er août 1857; Qté : 2 600 520; Dentelure : non dentelé; Imprimeur : Rawdon, Wright, Hatch & Edson. Le tarif de 7½d (équivalent de 6d sterling) couvrait l'envoi d'une lettre simple vers la Grande-Bretagne par paquebot canadien. La couleur verte en fait l'une des émissions les plus distinctives de l'ère des Pence."
+    },
+    "008": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er août 1857; Qté : 2 600 520; Dentelure : non dentelé; Imprimeur : Rawdon, Wright, Hatch & Edson. Le ½d rose servait à l'affranchissement des journaux et circulaires. Étant l'émission de plus faible valeur de l'ère des Pence, ce timbre a été très utilisé et les exemplaires en bon état sont peu courants."
+    },
+    "009": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er novembre 1858; Qté : 850 100; Dentelure : 11,75; Imprimeur : Rawdon, Wright, Hatch & Edson. Premier timbre dentelé du Canada, marquant la transition depuis les émissions non dentelées. La nuance pourpre rougeâtre et la nouvelle dentelure le distinguent des tirages antérieurs du ½d."
+    },
+    "010": {
+      "mainTopic": "Castor",
+      "notes": "Émis le 1er janvier 1859; Qté : 449 900; Dentelure : 11,75; Imprimeur : Rawdon, Wright, Hatch & Edson. Version dentelée du célèbre motif du castor. Ce timbre fait partie des dernières émissions avant le passage du Canada à la monnaie décimale plus tard en 1859."
+    },
+    "011": {
+      "mainTopic": "Prince Albert",
+      "notes": "Émis le 1er janvier 1859; Qté : 70 000; Dentelure : 11,75; Imprimeur : Rawdon, Wright, Hatch & Edson. Dernière émission dentelée en Pence de Prince Albert. Avec seulement 70 000 exemplaires imprimés, c'est l'un des plus rares de la série dentelée en Pence."
+    },
+    "012": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er juillet 1859; Qté : 26 725 450; Dentelure : 11,75, 12 x 11,75, 12; Imprimeur : American Bank Note Company, New York. Premier timbre canadien en monnaie décimale. Plusieurs dentelures existent, et la nuance rose varie considérablement — les collectionneurs répertorient de nombreuses teintes distinctes."
+    },
+    "013": {
+      "mainTopic": "Castor",
+      "notes": "Émis le 1er janvier 1859; Qté : 449 900; Dentelure : 11,75; Imprimeur : Rawdon, Wright, Hatch & Edson. Dernier timbre-castor de l'ère des Pence avant la décimalisation. La couleur rose foncé le distingue des émissions antérieures du castor à 3d."
+    },
+    "014": {
+      "mainTopic": "Prince Albert (dernier tirage)",
+      "notes": "Émis le 1er juillet 1859; Qté : 5 700 000; Dentelure : 12; Imprimeur : American Bank Note Company, New York. Prince Albert de l'ère décimale en brun, contrastant avec le premier tirage en rose. Utilisé pour le tarif de lettre recommandée. Plusieurs variétés de nuances existent."
+    },
+    "015": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er juillet 1859; Qté : 26 725 450; Dentelure : 11,75, 12 x 11,75, 12; Imprimeur : American Bank Note Company, New York."
+    },
+    "015a": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er juillet 1859; Qté : 26 725 450; Dentelure : 11,75, 12 x 11,75, 12; Imprimeur : American Bank Note Company, New York."
+    },
+    "016": {
+      "mainTopic": "Jacques Cartier",
+      "notes": "Émis le 1er juillet 1859; Qté : 599 999; Dentelure : 11,75, 12 x 11,75, 12; Imprimeur : American Bank Note Company, New York."
+    },
+    "017": {
+      "mainTopic": "Prince Albert (premier tirage)",
+      "notes": "Émis le 1er juillet 1859; Dentelure : 12; Imprimeur : American Bank Note Company, New York. Premier tirage du 10¢ décimal Prince Albert en rose, remplacé ensuite par la nuance brune. La couleur rose est considérablement plus rare et très prisée des collectionneurs."
+    },
+    "018": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er août 1864; Qté : 910 500; Dentelure : 11,75, 12 x 11,75, 12; Imprimeur : American Bank Note Company, New York."
+    },
+    "019": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er avril 1868; Qté : 6 700 000; Dentelure : 12, 11,5 x 12; Imprimeur : British American Bank Note Company. Fait partie de la série des Grandes Reines — premiers timbres du Canada après la Confédération. La nuance jaune-vert existe sur papier filigrané et non filigrané."
+    },
+    "019a": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er avril 1868; Qté : 6 700 000; Dentelure : 12, 11,5 x 12; Imprimeur : British American Bank Note Company. Variante de nuance bleu-vert de la Grande Reine à ½¢. Fait partie des premiers timbres émis après la Confédération de 1867."
+    },
+    "020": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er avril 1868; Qté : 6 700 000; Dentelure : 12, 11,5 x 12; Imprimeur : British American Bank Note Company."
+    },
+    "021": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er avril 1868; Qté : 6 700 000; Dentelure : 12, 11,5 x 12; Imprimeur : British American Bank Note Company."
+    },
+    "022": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er avril 1868; Qté : 6 700 000; Dentelure : 12, 11,5 x 12; Imprimeur : British American Bank Note Company."
+    },
+    "023": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er avril 1868; Qté : 6 700 000; Dentelure : 12, 11,5 x 12; Imprimeur : British American Bank Note Company."
+    },
+    "024": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er avril 1868; Qté : 6 700 000; Dentelure : 12, 11,5 x 12; Imprimeur : British American Bank Note Company."
+    },
+    "025": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er avril 1868; Qté : 6 700 000; Dentelure : 12, 11,5 x 12; Imprimeur : British American Bank Note Company."
+    },
+    "026": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 15 janvier 1870; Dentelure : 12; Imprimeur : British American Bank Note Company."
+    },
+    "027": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 15 janvier 1870; Dentelure : 12; Imprimeur : British American Bank Note Company."
+    },
+    "028": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er janvier 1872; Dentelure : 12; Imprimeur : British American Bank Note Company. Fait partie de la série des Petites Reines, qui a remplacé les Grandes Reines afin de réduire les coûts de production. Les Petites Reines ont été en usage pendant plus de 25 ans, ce qui en fait la plus longue série courante du Canada."
+    },
+    "029": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er janvier 1872; Dentelure : 12; Imprimeur : British American Bank Note Company. Émission des Petites Reines sur divers types de papier — les collectionneurs distinguent les tirages d'Ottawa et de Montréal selon la qualité du papier et les différences de nuances."
+    },
+    "030": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er novembre 1874; Dentelure : 12; Imprimeur : British American Bank Note Company."
+    },
+    "031": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er octobre 1875; Dentelure : 12; Imprimeur : British American Bank Note Company. Fait partie de la série des Petites Reines. La valeur de 5¢ couvrait le tarif de lettre domestique à taux simple. De nombreuses variétés de nuances et de types de papier existent."
+    },
+    "032": {
+      "mainTopic": "Timbre de lettre recommandée",
+      "notes": "Émis le 15 novembre 1875; Qté : 29 387 500; Dentelure : 12, 12,25 x 12, 12 x 11,75, 12 x 11,5; Imprimeur : British American Bank Note Company."
+    },
+    "033": {
+      "mainTopic": "Timbre de lettre recommandée",
+      "notes": "Émis le 15 novembre 1875; Qté : 29 387 500; Dentelure : 12, 12,25 x 12, 12 x 11,75, 12 x 11,5; Imprimeur : British American Bank Note Company."
+    },
+    "034": {
+      "mainTopic": "Timbre de lettre recommandée",
+      "notes": "Émis le 15 novembre 1875; Qté : 29 387 500; Dentelure : 12, 12,25 x 12, 12 x 11,75, 12 x 11,5; Imprimeur : British American Bank Note Company."
+    },
+    "035": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er février 1876; Dentelure : 12; Imprimeur : British American Bank Note Company."
+    },
+    "036": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 12 juillet 1882; Dentelure : 12; Imprimeur : British American Bank Note Company. Fait partie de la série des Petites Reines. La valeur de 1¢, principalement utilisée pour les imprimés et les lettres locales, se trouve dans une vaste gamme de nuances, du jaune à l'orange foncé."
+    },
+    "037": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er août 1893; Dentelure : 12; Imprimeur : British American Bank Note Company. Le 20¢ Widow Weeds, ainsi nommé parce qu'il représente la Reine Victoria en tenue de deuil à la suite du décès du Prince Albert en 1861."
+    },
+    "038": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er août 1893; Dentelure : 12; Imprimeur : British American Bank Note Company. La valeur de 50¢ de la série des Petites Reines. Principalement utilisée pour les colis plus lourds et les lettres recommandées vers des destinations étrangères."
+    },
+    "039": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 1er août 1893; Dentelure : 12; Imprimeur : British American Bank Note Company. Fait partie de la série des Petites Reines. Ces tirages tardifs sur papier plus blanc se distinguent des tirages antérieurs de Montréal et d'Ottawa."
+    },
+    "040": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "041": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "042": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "043": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "044": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "045": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "046": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "047": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "048": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "049": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "050": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "051": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "052": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "053": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "054": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "055": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "056": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "057": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "058": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "059": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "060": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "061": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 19 juin 1897; Qté : 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : émission du Jubilé."
+    },
+    "062": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 15 janvier 1898; Qté : 44 000 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "063": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 15 janvier 1898; Qté : 44 000 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "064": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 15 janvier 1898; Qté : 44 000 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "065": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 15 janvier 1898; Qté : 44 000 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "066": {
+      "mainTopic": "Timbre exprès, livraison spéciale en zone urbaine",
+      "notes": "Émis le 28 juin 1898; Qté : 3 667 500; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "067": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 15 janvier 1898; Qté : 44 000 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "068": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 15 janvier 1898; Qté : 44 000 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "069": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 15 janvier 1898; Qté : 44 000 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "070": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 15 janvier 1898; Qté : 44 000 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "071": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 15 janvier 1898; Qté : 44 000 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "072": {
+      "mainTopic": "Timbre impérial canadien, Noël 1898, « We hold a vaster Empire than has been »",
+      "notes": "Émis le 7 décembre 1898; Qté : 19 927 500; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "073": {
+      "mainTopic": "Timbre impérial canadien, Noël 1898, « We hold a vaster Empire than has been »",
+      "notes": "Émis le 7 décembre 1898; Qté : 19 927 500; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "074": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 3 juillet 1899; Qté : 22 070 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "075": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 3 juillet 1899; Qté : 22 070 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "076": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 3 juillet 1899; Qté : 22 070 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "077": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 3 juillet 1899; Qté : 22 070 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "078": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 29 décembre 1900; Qté : 540 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "079": {
+      "mainTopic": "Reine Victoria",
+      "notes": "Émis le 23 décembre 1902; Qté : 1 515 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "080": {
+      "mainTopic": "Roi Édouard VII",
+      "notes": "Émis le 1er juillet 1903; Qté : 1 470 000 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "081": {
+      "mainTopic": "Roi Édouard VII",
+      "notes": "Émis le 1er juillet 1903; Qté : 1 470 000 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "082": {
+      "mainTopic": "Roi Édouard VII",
+      "notes": "Émis le 1er juillet 1903; Qté : 1 470 000 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "083": {
+      "mainTopic": "Roi Édouard VII",
+      "notes": "Émis le 1er juillet 1903; Qté : 1 470 000 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "084": {
+      "mainTopic": "Roi Édouard VII",
+      "notes": "Émis le 1er juillet 1903; Qté : 1 470 000 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "085": {
+      "mainTopic": "Roi Édouard VII",
+      "notes": "Émis le 27 septembre 1904; Qté : 3 150 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "086": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 1er juillet 1906; Qté : 18 870 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : Timbres-taxe."
+    },
+    "087": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 1er juillet 1906; Qté : 18 870 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : Timbres-taxe."
+    },
+    "088": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 1er juillet 1906; Qté : 18 870 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : Timbres-taxe."
+    },
+    "089": {
+      "mainTopic": "Prince et Princesse de Galles",
+      "notes": "Émis le 16 juillet 1908; Qté : 2 000 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : Tricentenaire."
+    },
+    "090": {
+      "mainTopic": "Cartier et Champlain",
+      "notes": "Émis le 16 juillet 1908; Qté : 22 530 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : Tricentenaire."
+    },
+    "091": {
+      "mainTopic": "Roi Édouard VII et Reine Alexandra",
+      "notes": "Émis le 16 juillet 1908; Qté : 35 100 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : Tricentenaire."
+    },
+    "092": {
+      "mainTopic": "Habitation de Champlain",
+      "notes": "Émis le 16 juillet 1908; Qté : 1 200 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : Tricentenaire."
+    },
+    "093": {
+      "mainTopic": "Montcalm et Wolfe",
+      "notes": "Émis le 16 juillet 1908; Qté : 700 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : Tricentenaire."
+    },
+    "094": {
+      "mainTopic": "Québec en 1700",
+      "notes": "Émis le 16 juillet 1908; Qté : 500 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : Tricentenaire."
+    },
+    "095": {
+      "mainTopic": "Départ de Champlain vers l'Ouest",
+      "notes": "Émis le 16 juillet 1908; Qté : 300 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : Tricentenaire."
+    },
+    "096": {
+      "mainTopic": "Arrivée de Cartier",
+      "notes": "Émis le 16 juillet 1908; Qté : 304 200; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa. Série : Tricentenaire."
+    },
+    "097": {
+      "mainTopic": "Roi Édouard VII",
+      "notes": "Émis le 19 novembre 1908; Qté : 500 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "098": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 22 décembre 1911; Qté : 3 541 234 000; Dentelure : 12, 8 horizontal, 8 vertical, 12 horizontal; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "099": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 22 décembre 1911; Qté : 3 541 234 000; Dentelure : 12, 8 horizontal, 8 vertical, 12 horizontal; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "100": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 22 décembre 1911; Qté : 3 541 234 000; Dentelure : 12, 8 horizontal, 8 vertical, 12 horizontal; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "101": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 12 janvier 1912; Qté : 103 200 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "102": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 12 janvier 1912; Qté : 103 200 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "103": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 12 janvier 1912; Qté : 103 200 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "104": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 12 janvier 1912; Qté : 103 200 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "105": {
+      "mainTopic": "Confédération, 1867-1917",
+      "notes": "Émis le 15 septembre 1917; Qté : 98 650 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "106": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 6 août 1918; Qté : 2 187 600 000; Dentelure : 12, 8 vertical, 12 horizontal; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "107": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 2 février 1922; Qté : 184 650 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "108": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 2 février 1922; Qté : 184 650 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "109": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 2 février 1922; Qté : 184 650 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "110": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 2 février 1922; Qté : 184 650 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "111": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 2 février 1922; Qté : 184 650 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "112": {
+      "mainTopic": "Timbre exprès, livraison spéciale du courrier de première classe en zone urbaine",
+      "notes": "Émis le 21 août 1922; Qté : 2 300 000; Dentelure : 12; Imprimeur : American Bank Note Company, Ottawa."
+    },
+    "113": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 14 décembre 1923; Qté : 1 165 342 300; Dentelure : 12, 8 vertical, non dentelé, 12 x 8; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "114": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 14 décembre 1923; Qté : 1 165 342 300; Dentelure : 12, 8 vertical, non dentelé, 12 x 8; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "115": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 12 décembre 1924; Qté : 16 280 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "116": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 1er septembre 1925; Qté : 25 350 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "117": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 1er septembre 1925; Qté : 25 350 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "118": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 12 octobre 1926; Qté : 50 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "119": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 12 octobre 1926; Qté : 50 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "120": {
+      "mainTopic": "Macdonald",
+      "notes": "Émis le 29 juin 1927; Qté : 148 034 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Confédération, 1867-1927."
+    },
+    "121": {
+      "mainTopic": "Les Pères de la Confédération",
+      "notes": "Émis le 29 juin 1927; Qté : 333 757 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Confédération, 1867-1927."
+    },
+    "122": {
+      "mainTopic": "Édifice du Centre du Parlement",
+      "notes": "Émis le 29 juin 1927; Qté : 15 431 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Confédération, 1867-1927."
+    },
+    "123": {
+      "mainTopic": "Laurier",
+      "notes": "Émis le 29 juin 1927; Qté : 26 627 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Confédération, 1867-1927."
+    },
+    "124": {
+      "mainTopic": "Carte du Canada",
+      "notes": "Émis le 29 juin 1927; Qté : 7 492 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Confédération, 1867-1927."
+    },
+    "125": {
+      "mainTopic": "Cinq étapes du transport postal au Canada, livraison spéciale",
+      "notes": "Émis le 29 juin 1927; Qté : 671 400; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Confédération, 1867-1927."
+    },
+    "126": {
+      "mainTopic": "Thomas D'Arcy McGee",
+      "notes": "Émis le 29 juin 1927; Qté : 20 349 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "127": {
+      "mainTopic": "Sir Wilfrid Laurier et Sir John A. Macdonald",
+      "notes": "Émis le 29 juin 1927; Qté : 5 273 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "128": {
+      "mainTopic": "Robert Baldwin et Sir Louis-Hippolyte Lafontaine",
+      "notes": "Émis le 29 juin 1927; Qté : 7 632 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "129": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 3 juillet 1928; Qté : 14 487 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "130": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 3 juillet 1928; Qté : 14 487 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "131": {
+      "mainTopic": "Poste aérienne",
+      "notes": "Émis le 21 septembre 1928; Qté : 5 050 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "132": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 17 octobre 1928; Qté : 1 268 920 700; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "133": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 17 octobre 1928; Qté : 1 268 920 700; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "134": {
+      "mainTopic": "Mont Hurd et le mât totémique Spesanish (Half-Bear Den)",
+      "notes": "Émis le 5 décembre 1928; Qté : 36 077 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "135": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 17 octobre 1928; Qté : 1 268 920 700; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "136": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 17 octobre 1928; Qté : 1 268 920 700; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "137": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 17 octobre 1928; Qté : 1 268 920 700; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "138": {
+      "mainTopic": "Pont cantilever de Québec",
+      "notes": "Émis le 8 janvier 1929; Qté : 4 330 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "139": {
+      "mainTopic": "Récolte du blé",
+      "notes": "Émis le 8 janvier 1929; Qté : 7 008 600; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "140": {
+      "mainTopic": "Bluenose",
+      "notes": "Émis le 8 janvier 1929; Qté : 1 044 900; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. L'un des timbres les plus emblématiques du Canada, représentant la goélette de pêche Bluenose, invaincue aux courses du International Fishermen's Trophy. Le 50¢ Bluenose est très prisé et considéré comme l'un des plus beaux timbres au monde."
+    },
+    "141": {
+      "mainTopic": "Édifice du Centre du Parlement",
+      "notes": "Émis le 8 janvier 1929; Qté : 560 950; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "142": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 16 août 1929; Qté : 10 020 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "143": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 6 juin 1930; Qté : 352 224 000; Dentelure : 11, 8,5 vertical; Imprimeur : British American Bank Note Company."
+    },
+    "144": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 6 juin 1930; Qté : 352 224 000; Dentelure : 11, 8,5 vertical; Imprimeur : British American Bank Note Company."
+    },
+    "145": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 14 juillet 1930; Qté : 5 334 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Timbres-taxe."
+    },
+    "146": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 6 juin 1930; Qté : 352 224 000; Dentelure : 11, 8,5 vertical; Imprimeur : British American Bank Note Company."
+    },
+    "147": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 6 juin 1930; Qté : 352 224 000; Dentelure : 11, 8,5 vertical; Imprimeur : British American Bank Note Company."
+    },
+    "148": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 14 juillet 1930; Qté : 5 334 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Timbres-taxe."
+    },
+    "149": {
+      "mainTopic": "Livraison spéciale",
+      "notes": "Émis le 2 septembre 1930; Qté : 950 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "150": {
+      "mainTopic": "Bibliothèque du Parlement",
+      "notes": "Émis le 15 septembre 1930; Qté : 21 100 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "151": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 14 juillet 1930; Qté : 5 334 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Timbres-taxe."
+    },
+    "152": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 6 juin 1930; Qté : 352 224 000; Dentelure : 11, 8,5 vertical; Imprimeur : British American Bank Note Company."
+    },
+    "153": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 6 juin 1930; Qté : 352 224 000; Dentelure : 11, 8,5 vertical; Imprimeur : British American Bank Note Company."
+    },
+    "154": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 6 juin 1930; Qté : 352 224 000; Dentelure : 11, 8,5 vertical; Imprimeur : British American Bank Note Company."
+    },
+    "155": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 6 juin 1930; Qté : 352 224 000; Dentelure : 11, 8,5 vertical; Imprimeur : British American Bank Note Company."
+    },
+    "156": {
+      "mainTopic": "Citadelle de Québec",
+      "notes": "Émis le 4 décembre 1930; Qté : 6 975 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "157": {
+      "mainTopic": "Moisson",
+      "notes": "Émis le 4 décembre 1930; Qté : 21 000 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "158": {
+      "mainTopic": "Grand-Pré",
+      "notes": "Émis le 4 décembre 1930; Qté : 2 811 400; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "159": {
+      "mainTopic": "Mont Edith Cavell",
+      "notes": "Émis le 4 décembre 1930; Qté : 606 350; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "160": {
+      "mainTopic": "Mercure, poste aérienne",
+      "notes": "Émis le 4 décembre 1930; Qté : 400 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "161": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 6 juin 1930; Qté : 352 224 000; Dentelure : 11, 8,5 vertical; Imprimeur : British American Bank Note Company."
+    },
+    "162": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 4 juillet 1931; Qté : 384 367 000; Dentelure : 11, 8,5 vertical; Imprimeur : British American Bank Note Company."
+    },
+    "163": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 4 juillet 1931; Qté : 384 367 000; Dentelure : 11, 8,5 vertical; Imprimeur : British American Bank Note Company."
+    },
+    "164": {
+      "mainTopic": "Cartier",
+      "notes": "Émis le 30 septembre 1931; Qté : 64 300 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "165": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 12 décembre 1931; Qté : 523 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Timbres-taxe."
+    },
+    "166": {
+      "mainTopic": "Poste aérienne",
+      "notes": "Émission surchargée de la Conférence d'Ottawa — le timbre de poste aérienne de 6¢ surchargé à 5¢ pour correspondre au tarif aérien réduit. Émis pour la Conférence économique impériale de 1932 tenue à Ottawa."
+    },
+    "167": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 12 juillet 1932; Qté : 100 700 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Conférence d'Ottawa, 1932."
+    },
+    "168": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 12 juillet 1932; Qté : 100 700 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Conférence d'Ottawa, 1932."
+    },
+    "169": {
+      "mainTopic": "Prince de Galles",
+      "notes": "Émis le 12 juillet 1932; Qté : 8 300 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Conférence d'Ottawa, 1932."
+    },
+    "170": {
+      "mainTopic": "Allégorie impériale",
+      "notes": "Émis le 12 juillet 1932; Qté : 2 000 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Conférence d'Ottawa, 1932."
+    },
+    "171": {
+      "mainTopic": "Poste aérienne, Mercure",
+      "notes": "Émis le 12 juillet 1932; Qté : 500 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Conférence d'Ottawa, 1932."
+    },
+    "172": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 24 août 1932; Qté : 309 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Timbres-taxe."
+    },
+    "173": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 12 juillet 1932; Qté : 100 700 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Conférence d'Ottawa, 1932."
+    },
+    "174": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 12 juillet 1932; Qté : 100 700 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Conférence d'Ottawa, 1932."
+    },
+    "175": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 12 juillet 1932; Qté : 100 700 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Conférence d'Ottawa, 1932."
+    },
+    "176": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 12 juillet 1932; Qté : 100 700 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Conférence d'Ottawa, 1932."
+    },
+    "177": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 12 juillet 1932; Qté : 100 700 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Conférence d'Ottawa, 1932."
+    },
+    "178": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 12 juillet 1932; Qté : 100 700 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Conférence d'Ottawa, 1932."
+    },
+    "179": {
+      "mainTopic": "Citadelle de Québec",
+      "notes": "Émis le 1er décembre 1932; Qté : 5 016 500; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "180": {
+      "mainTopic": "Livraison spéciale",
+      "notes": "Émis le 24 décembre 1932; Qté : 600 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "181": {
+      "mainTopic": "Union postale, Ottawa, 1933",
+      "notes": "Émis le 18 mai 1933; Qté : 5 100 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "182": {
+      "mainTopic": "Exposition et conférence mondiale sur le grain, Regina, 1933",
+      "notes": "Émis le 24 juillet 1933; Qté : 1 560 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "183": {
+      "mainTopic": "Royal William, 1833-1933",
+      "notes": "Émis le 17 août 1933; Qté : 4 854 200; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "184": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 12 décembre 1933; Qté : 1 900 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Timbres-taxe."
+    },
+    "185": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 12 décembre 1933; Qté : 1 900 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Timbres-taxe."
+    },
+    "186": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 12 décembre 1933; Qté : 1 900 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Timbres-taxe."
+    },
+    "187": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 5 mai 1934; Qté : 2 070 000; Dentelure : 11; Imprimeur : British American Bank Note Company. Série : Timbres-taxe."
+    },
+    "188": {
+      "mainTopic": "Jacques Cartier, 1534-1934",
+      "notes": "Émis le 1er juillet 1934; Qté : 12 370 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "189": {
+      "mainTopic": "Loyalistes de l'Empire-Uni, 1776-1784",
+      "notes": "Émis le 1er juillet 1934; Qté : 3 000 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "190": {
+      "mainTopic": "Nouveau-Brunswick, 1784-1934",
+      "notes": "Émis le 16 août 1934; Qté : 5 050 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "191": {
+      "mainTopic": "Princesse Elizabeth",
+      "notes": "Émis le 4 mai 1935; Qté : 30 050 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "192": {
+      "mainTopic": "Duc de York",
+      "notes": "Émis le 4 mai 1935; Qté : 31 000 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "193": {
+      "mainTopic": "S.M. George V et S.M. la Reine Mary",
+      "notes": "Émis le 4 mai 1935; Qté : 60 425 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "194": {
+      "mainTopic": "Prince de Galles",
+      "notes": "Émis le 4 mai 1935; Qté : 3 050 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "195": {
+      "mainTopic": "Château de Windsor",
+      "notes": "Émis le 4 mai 1935; Qté : 3 125 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "196": {
+      "mainTopic": "Britannia",
+      "notes": "Émis le 4 mai 1935; Qté : 1 100 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "197": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 1er juin 1935; Qté : 372 390 400; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "198": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 1er juin 1935; Qté : 372 390 400; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "199": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 1er juin 1935; Qté : 372 390 400; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "200": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 1er juin 1935; Qté : 372 390 400; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "201": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 1er juin 1935; Qté : 372 390 400; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "202": {
+      "mainTopic": "Confédération, Charlottetown, 1864",
+      "notes": "Émis le 1er juin 1935; Qté : 8 035 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "203": {
+      "mainTopic": "Roi George V",
+      "notes": "Émis le 1er juin 1935; Qté : 372 390 400; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "204": {
+      "mainTopic": "Gendarme de la Gendarmerie royale du Canada à cheval",
+      "notes": "Émis le 1er juin 1935; Qté : 4 085 500; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "205": {
+      "mainTopic": "Chutes Niagara",
+      "notes": "Émis le 1er juin 1935; Qté : 13 512 841; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "206": {
+      "mainTopic": "Édifices du Parlement, Victoria, C.-B.",
+      "notes": "Émis le 1er juin 1935; Qté : 2 416 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "207": {
+      "mainTopic": "Monument Champlain",
+      "notes": "Émis le 1er juin 1935; Qté : 818 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "208": {
+      "mainTopic": "Dédale en vol, poste aérienne",
+      "notes": "Émis le 1er juin 1935; Qté : 5 000 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "209": {
+      "mainTopic": "Allégorie du progrès, livraison spéciale",
+      "notes": "Émis le 1er juin 1935; Qté : 883 814; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "210": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 2 juillet 1935; Qté : 61 502 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "211": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 2 juillet 1935; Qté : 61 502 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "212": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 2 juillet 1935; Qté : 61 502 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "213": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 2 juillet 1935; Qté : 61 502 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "214": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 1er avril 1937; Qté : 1 444 776 572; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited. Série : émission Mufti."
+    },
+    "215": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 1er avril 1937; Qté : 1 444 776 572; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited. Série : émission Mufti."
+    },
+    "216": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 1er avril 1937; Qté : 1 444 776 572; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited. Série : émission Mufti."
+    },
+    "217": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 1er avril 1937; Qté : 1 444 776 572; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited. Série : émission Mufti."
+    },
+    "218": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 1er avril 1937; Qté : 1 444 776 572; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited. Série : émission Mufti."
+    },
+    "219": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 1er avril 1937; Qté : 1 444 776 572; Dentelure : 12, 8 vertical; Imprimeur : Canadian Bank Note Company, Limited. Série : émission Mufti."
+    },
+    "220": {
+      "mainTopic": "S.M. George VI et S.M. la Reine Elizabeth",
+      "notes": "Émis le 10 mai 1937; Qté : 51 400 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "221": {
+      "mainTopic": "Chapelle du Souvenir, édifices du Parlement, Ottawa",
+      "notes": "Émis le 15 juin 1938; Qté : 64 206 213; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "222": {
+      "mainTopic": "Porte de Fort Garry, Winnipeg",
+      "notes": "Émis le 15 juin 1938; Qté : 30 499 240; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "223": {
+      "mainTopic": "Entrée du port de Vancouver",
+      "notes": "Émis le 15 juin 1938; Qté : 4 924 100; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "224": {
+      "mainTopic": "Château de Ramezay, Montréal",
+      "notes": "Émis le 15 juin 1938; Qté : 2 210 219; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "225": {
+      "mainTopic": "Fleuve Mackenzie, Territoires du Nord-Ouest, poste aérienne",
+      "notes": "Émis le 15 juin 1938; Qté : 29 008 650; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "226": {
+      "mainTopic": "Armoiries du Canada, livraison spéciale",
+      "notes": "Émis le 15 juin 1938; Qté : 200 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "227": {
+      "mainTopic": "Entrée du port de Halifax",
+      "notes": "Émis le 15 novembre 1938; Qté : 13 028 291; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "228": {
+      "mainTopic": "Armoiries du Canada, livraison spéciale",
+      "notes": "Émis le 1er avril 1939; Qté : 2 305 450; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "229": {
+      "mainTopic": "Armoiries du Canada, livraison spéciale",
+      "notes": "Émis le 1er avril 1939; Qté : 2 305 450; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "230": {
+      "mainTopic": "Princesse Elizabeth et Princesse Margaret Rose",
+      "notes": "Émis le 15 mai 1939; Qté : 50 043 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "231": {
+      "mainTopic": "Monument commémoratif national, Ottawa",
+      "notes": "Émis le 15 mai 1939; Qté : 50 224 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "232": {
+      "mainTopic": "S.M. George VI et S.M. la Reine Elizabeth",
+      "notes": "Émis le 15 mai 1939; Qté : 100 000 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "233": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 1er juillet 1942; Qté : 2 634 596 000; Dentelure : 12, 8 vertical, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited. Série : émission de guerre."
+    },
+    "234": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 1er juillet 1942; Qté : 2 634 596 000; Dentelure : 12, 8 vertical, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited. Série : émission de guerre."
+    },
+    "235": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 1er juillet 1942; Qté : 2 634 596 000; Dentelure : 12, 8 vertical, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited. Série : émission de guerre."
+    },
+    "236": {
+      "mainTopic": "Élévateur à grain canadien",
+      "notes": "Émis le 1er juillet 1942; Qté : 7 900 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "237": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 1er juillet 1942; Qté : 2 634 596 000; Dentelure : 12, 8 vertical, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited. Série : émission de guerre."
+    },
+    "238": {
+      "mainTopic": "Scène de ferme canadienne",
+      "notes": "Émis le 1er juillet 1942; Qté : 22 978 621; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "239": {
+      "mainTopic": "Édifices du Parlement, Ottawa",
+      "notes": "Émis le 1er juillet 1942; Qté : 157 680 577; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "240": {
+      "mainTopic": "Char Ram, Armée canadienne",
+      "notes": "Émis le 1er juillet 1942; Qté : 4 000 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "241": {
+      "mainTopic": "Corvette prête au lancement",
+      "notes": "Émis le 1er juillet 1942; Qté : 62 028 166; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "242": {
+      "mainTopic": "Usine de munitions canadienne",
+      "notes": "Émis le 1er juillet 1942; Qté : 16 486 515; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "243": {
+      "mainTopic": "Destroyer, Marine royale canadienne",
+      "notes": "Émis le 1er juillet 1942; Qté : 6 195 600; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : émission de guerre."
+    },
+    "244": {
+      "mainTopic": "Programme d'entraînement aérien du Commonwealth britannique, poste aérienne",
+      "notes": "Émis le 1er juillet 1942; Qté : 14 990 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "245": {
+      "mainTopic": "Avion transcanadien, poste aérienne, livraison spéciale",
+      "notes": "Émis le 1er juillet 1942; Qté : 814 841; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "246": {
+      "mainTopic": "Armoiries du Canada, livraison spéciale",
+      "notes": "Émis le 1er juillet 1942; Qté : 3 276 404; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "247": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 9 avril 1943; Qté : 3 397 072 000; Dentelure : 12, 8 vertical, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited. Série : émission de guerre."
+    },
+    "248": {
+      "mainTopic": "Char Ram, Armée canadienne",
+      "notes": "Émis le 16 avril 1943; Qté : 14 878 673; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "249": {
+      "mainTopic": "Programme d'entraînement aérien du Commonwealth britannique, poste aérienne",
+      "notes": "Émis le 16 avril 1943; Qté : 97 793 352; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "250": {
+      "mainTopic": "Avion transcanadien, poste aérienne, livraison spéciale",
+      "notes": "Émis le 16 avril 1943; Qté : 868 689; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "251": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 9 avril 1943; Qté : 3 397 072 000; Dentelure : 12, 8 vertical, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited. Série : émission de guerre."
+    },
+    "252": {
+      "mainTopic": "Scène de ferme canadienne, Ontario",
+      "notes": "Émis le 16 septembre 1946; Qté : 15 100 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "253": {
+      "mainTopic": "Grand lac de l'Ours, Territoires du Nord-Ouest",
+      "notes": "Émis le 16 septembre 1946; Qté : 120 225 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "254": {
+      "mainTopic": "Centrale hydroélectrique, Québec",
+      "notes": "Émis le 16 septembre 1946; Qté : 23 100 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "255": {
+      "mainTopic": "Moissonneuse-batteuse, Prairies canadiennes",
+      "notes": "Émis le 16 septembre 1946; Qté : 85 450 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "256": {
+      "mainTopic": "Exploitation forestière",
+      "notes": "Émis le 16 septembre 1946; Qté : 14 000 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "257": {
+      "mainTopic": "Traversier ferroviaire, Île-du-Prince-Édouard",
+      "notes": "Émis le 16 septembre 1946; Qté : 15 500 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "258": {
+      "mainTopic": "Bernaches du Canada près de Sudbury, Ontario, poste aérienne",
+      "notes": "Émis le 16 septembre 1946; Qté : 77 186 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "259": {
+      "mainTopic": "Avion postal au-dessus de Québec, poste aérienne, livraison spéciale",
+      "notes": "Émis le 16 septembre 1946; Qté : 300 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "260": {
+      "mainTopic": "Armoiries du Canada, livraison spéciale",
+      "notes": "Émis le 16 septembre 1946; Qté : 4 500 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "261": {
+      "mainTopic": "Avion postal au-dessus de Québec, poste aérienne, livraison spéciale",
+      "notes": "Émis le 16 septembre 1946; Qté : 300 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "262": {
+      "mainTopic": "Alexander Graham Bell, 1847-1947",
+      "notes": "Émis le 3 mars 1947; Qté : 25 050 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "263": {
+      "mainTopic": "Citoyen",
+      "notes": "Émis le 1er juillet 1947; Qté : 25 100 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "264": {
+      "mainTopic": "Mariage de S.A.R. la Princesse Elizabeth",
+      "notes": "Émis le 16 février 1948; Qté : 50 010 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "265": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 11 août 1948; Qté : 20 666 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "266": {
+      "mainTopic": "Gouvernement responsable, 1848-1948",
+      "notes": "Émis le 1er octobre 1948; Qté : 50 300 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "267": {
+      "mainTopic": "Le « Matthew » de Cabot, Terre-Neuve, 1497-1949",
+      "notes": "Émis le 1er avril 1949; Qté : 50 850 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "268": {
+      "mainTopic": "Halifax, 1749-1949",
+      "notes": "Émis le 21 juin 1949; Qté : 25 450 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "269": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 15 novembre 1949; Qté : 832 322 475; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "270": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 15 novembre 1949; Qté : 832 322 475; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "271": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 15 novembre 1949; Qté : 832 322 475; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "272": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 15 novembre 1949; Qté : 832 322 475; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "273": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 15 novembre 1949; Qté : 832 322 475; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "274": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 19 janvier 1950; Qté : 88 200 000; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "275": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 19 janvier 1950; Qté : 88 200 000; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "276": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 19 janvier 1950; Qté : 88 200 000; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "277": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 19 janvier 1950; Qté : 88 200 000; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "278": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 19 janvier 1950; Qté : 88 200 000; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "279": {
+      "mainTopic": "Exploitation pétrolière, Ouest canadien",
+      "notes": "Émis le 1er mars 1950; Qté : 10 500 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "280": {
+      "mainTopic": "Ressources en fourrures du Canada",
+      "notes": "Émis le 2 octobre 1950; Qté : 117 200 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "281": {
+      "mainTopic": "Ressources halieutiques du Canada",
+      "notes": "Émis le 1er février 1951; Qté : 4 500 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "282": {
+      "mainTopic": "Sir R.L. Borden",
+      "notes": "Émis le 25 juin 1951; Qté : 50 800 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Premiers ministres."
+    },
+    "283": {
+      "mainTopic": "W.L.M. King",
+      "notes": "Émis le 25 juin 1951; Qté : 49 953 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Premiers ministres."
+    },
+    "284": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 25 juillet 1951; Qté : 674 954 400; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "285": {
+      "mainTopic": "Roi George VI",
+      "notes": "Émis le 25 juillet 1951; Qté : 674 954 400; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "286": {
+      "mainTopic": "Trains de 1851 et 1951",
+      "notes": "Émis le 24 septembre 1951; Qté : 49 750 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Centenaire de l'administration postale de l'Amérique du Nord britannique."
+    },
+    "287": {
+      "mainTopic": "Navires de 1851 et 1951",
+      "notes": "Émis le 24 septembre 1951; Qté : 5 050 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Centenaire de l'administration postale de l'Amérique du Nord britannique."
+    },
+    "288": {
+      "mainTopic": "Diligence de 1851 et avion de 1951",
+      "notes": "Émis le 24 septembre 1951; Qté : 19 900 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Centenaire de l'administration postale de l'Amérique du Nord britannique."
+    },
+    "289": {
+      "mainTopic": "Castor à trois pence",
+      "notes": "Émis le 24 septembre 1951; Qté : 54 035 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Centenaire de l'administration postale de l'Amérique du Nord britannique."
+    },
+    "290": {
+      "mainTopic": "Leurs Altesses Royales la Princesse Elizabeth, Duchesse d'Édimbourg, et le Duc d'Édimbourg",
+      "notes": "Émis le 26 octobre 1951; Qté : 50 300 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "291": {
+      "mainTopic": "Produits forestiers du Canada",
+      "notes": "Émis le 1er avril 1952; Qté : 108 275 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "292": {
+      "mainTopic": "Conférence internationale de la Croix-Rouge",
+      "notes": "Émis le 26 juillet 1952; Qté : 50 000 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "293": {
+      "mainTopic": "Abbott",
+      "notes": "Émis le 3 novembre 1952; Qté : 50 365 300; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Premiers ministres."
+    },
+    "294": {
+      "mainTopic": "Mackenzie",
+      "notes": "Émis le 3 novembre 1952; Qté : 50 868 100; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Premiers ministres."
+    },
+    "295": {
+      "mainTopic": "Bernache du Canada, Branta canadensis",
+      "notes": "Émis le 3 novembre 1952; Qté : 163 120 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "296": {
+      "mainTopic": "Le mât totémique",
+      "notes": "Émis le 2 février 1953; Qté : 28 950 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "297": {
+      "mainTopic": "Ours polaire",
+      "notes": "Émis le 1er avril 1953; Qté : 50 900 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Faune nationale."
+    },
+    "298": {
+      "mainTopic": "Orignal",
+      "notes": "Émis le 1er avril 1953; Qté : 51 100 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Faune nationale."
+    },
+    "299": {
+      "mainTopic": "Mouflon d'Amérique",
+      "notes": "Émis le 1er avril 1953; Qté : 51 100 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Faune nationale."
+    },
+    "300": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 1er mai 1953; Qté : 176 928 800; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "301": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 1er mai 1953; Qté : 176 928 800; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "302": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 1er mai 1953; Qté : 176 928 800; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "303": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 1er mai 1953; Qté : 176 928 800; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "304": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 1er mai 1953; Qté : 176 928 800; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "305": {
+      "mainTopic": "S.M. la Reine Elizabeth II, couronnement",
+      "notes": "Émis le 1er juin 1953; Qté : 100 127 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "306": {
+      "mainTopic": "Industrie textile du Canada",
+      "notes": "Émis le 2 novembre 1953; Qté : 65 182 100; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "307": {
+      "mainTopic": "Morse",
+      "notes": "Émis le 1er avril 1954; Qté : 50 630 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Faune nationale."
+    },
+    "308": {
+      "mainTopic": "Castor",
+      "notes": "Émis le 1er avril 1954; Qté : 61 978 500; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Faune nationale."
+    },
+    "309": {
+      "mainTopic": "Fou de Bassan, Morus bassanus",
+      "notes": "Émis le 1er avril 1954; Qté : 262 100 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "310": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 1er avril 1954; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "311": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 1er avril 1954; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "312": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 1er avril 1954; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "313": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 1er avril 1954; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "314": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 1er avril 1954; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "315": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 1er avril 1954; Dentelure : 12, 9,5 vertical; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "316": {
+      "mainTopic": "Thompson",
+      "notes": "Émis le 1er novembre 1954; Qté : 50 500 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Premiers ministres."
+    },
+    "317": {
+      "mainTopic": "Bowell",
+      "notes": "Émis le 1er novembre 1954; Qté : 50 800 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Premiers ministres."
+    },
+    "318": {
+      "mainTopic": "Chasseur inuit",
+      "notes": "Émis le 21 février 1955; Qté : 313 525 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "319": {
+      "mainTopic": "Bœuf musqué",
+      "notes": "Émis le 4 avril 1955; Qté : 51 200 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Faune nationale."
+    },
+    "320": {
+      "mainTopic": "Grue blanche",
+      "notes": "Émis le 4 avril 1955; Qté : 50 950 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Faune nationale."
+    },
+    "321": {
+      "mainTopic": "Organisation de l'aviation civile internationale, 1945-1955",
+      "notes": "Émis le 1er juin 1955; Qté : 25 000 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "322": {
+      "mainTopic": "Alberta et Saskatchewan, 1905-1955",
+      "notes": "Émis le 30 juin 1955; Qté : 25 100 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "323": {
+      "mainTopic": "Jamboree mondial, 1955",
+      "notes": "Émis le 20 août 1955; Qté : 51 350 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "324": {
+      "mainTopic": "Bennett",
+      "notes": "Émis le 8 novembre 1955; Qté : 49 855 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Premiers ministres."
+    },
+    "325": {
+      "mainTopic": "Tupper",
+      "notes": "Émis le 8 novembre 1955; Qté : 50 480 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Premiers ministres."
+    },
+    "326": {
+      "mainTopic": "Hockey",
+      "notes": "Émis le 23 janvier 1956; Qté : 30 300 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "327": {
+      "mainTopic": "Caribou",
+      "notes": "Émis le 12 avril 1956; Qté : 50 900 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Faune nationale."
+    },
+    "328": {
+      "mainTopic": "Chèvre de montagne",
+      "notes": "Émis le 12 avril 1956; Qté : 51 100 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Faune nationale."
+    },
+    "329": {
+      "mainTopic": "Pâtes et papiers",
+      "notes": "Émis le 7 juin 1956; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Fait partie de la série Industrie mettant en valeur les secteurs économiques du Canada. L'industrie canadienne des pâtes et papiers était à l'époque le plus grand producteur mondial de papier journal."
+    },
+    "330": {
+      "mainTopic": "Industrie chimique canadienne",
+      "notes": "Émis le 7 juin 1956; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Fait partie de la série Industrie. Célèbre l'essor de l'industrie chimique canadienne, qui a connu une croissance rapide pendant le boom industriel de l'après-guerre."
+    },
+    "331": {
+      "mainTopic": "Prévenons les incendies",
+      "notes": "Émis le 9 octobre 1956; Qté : 50 750 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "332": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 16 janvier 1957; Qté : 9 500 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "333": {
+      "mainTopic": "Pêche",
+      "notes": "Émis le 7 mars 1957; Qté : 12 550 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Canada — terrain de jeux toutes saisons."
+    },
+    "334": {
+      "mainTopic": "Natation",
+      "notes": "Émis le 7 mars 1957; Qté : 12 550 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Canada — terrain de jeux toutes saisons."
+    },
+    "335": {
+      "mainTopic": "Chasse",
+      "notes": "Émis le 7 mars 1957; Qté : 12 550 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Canada — terrain de jeux toutes saisons."
+    },
+    "336": {
+      "mainTopic": "Ski",
+      "notes": "Émis le 7 mars 1957; Qté : 12 550 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Canada — terrain de jeux toutes saisons."
+    },
+    "337": {
+      "mainTopic": "Huard à collier",
+      "notes": "Émis le 10 avril 1957; Qté : 51 000 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Faune nationale."
+    },
+    "338": {
+      "mainTopic": "David Thompson, 1770-1857",
+      "notes": "Émis le 5 juin 1957; Qté : 29 250 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "339": {
+      "mainTopic": "Congrès de l'Union postale universelle (UPU), Ottawa, 1957",
+      "notes": "Émis le 14 août 1957; Qté : 74 700 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "340": {
+      "mainTopic": "Congrès de l'Union postale universelle (UPU), Ottawa, 1957",
+      "notes": "Émis le 14 août 1957; Qté : 74 700 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "341": {
+      "mainTopic": "Industries minières du Canada",
+      "notes": "Émis le 5 septembre 1957; Qté : 25 600 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "342": {
+      "mainTopic": "Reine Elizabeth II et Prince Philip",
+      "notes": "Émis le 10 octobre 1957; Qté : 51 260 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "343": {
+      "mainTopic": "Liberté de la presse",
+      "notes": "Émis le 22 janvier 1958; Qté : 15 300 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "344": {
+      "mainTopic": "Année géophysique internationale, 1957-1958",
+      "notes": "Émis le 5 mars 1958; Qté : 25 200 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "345": {
+      "mainTopic": "Colombie-Britannique, 1858-1958",
+      "notes": "Émis le 8 mai 1958; Qté : 20 350 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "346": {
+      "mainTopic": "La Vérendrye",
+      "notes": "Émis le 4 juin 1958; Qté : 20 320 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "347": {
+      "mainTopic": "Québec, 1608-1958",
+      "notes": "Émis le 26 juin 1958; Qté : 19 910 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "348": {
+      "mainTopic": "La santé protège la nation",
+      "notes": "Émis le 30 juillet 1958; Qté : 24 600 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "349": {
+      "mainTopic": "Pétrole, 1858-1958",
+      "notes": "Émis le 10 septembre 1958; Qté : 24 660 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "350": {
+      "mainTopic": "La première assemblée élue de la Nouvelle-Écosse, 1758, a marqué le début de notre gouvernement démocratique",
+      "notes": "Émis le 2 octobre 1958; Qté : 25 360 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "351": {
+      "mainTopic": "Jubilé d'or de l'aviation, 1909-1959",
+      "notes": "Émis le 23 février 1959; Qté : 29 760 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "352": {
+      "mainTopic": "OTAN, dixième anniversaire",
+      "notes": "Émis le 2 avril 1959; Qté : 32 760 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "353": {
+      "mainTopic": "Associated Country Women of the World",
+      "notes": "Émis le 13 mai 1959; Qté : 32 200 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "354": {
+      "mainTopic": "Visite royale, 1959",
+      "notes": "Émis le 18 juin 1959; Qté : 40 360 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "355": {
+      "mainTopic": "Voie maritime du Saint-Laurent",
+      "notes": "Émis le 26 juin 1959; Qté : 40 110 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Marque l'ouverture de la Voie maritime du Saint-Laurent, un exploit d'ingénierie canado-américain reliant les Grands Lacs à l'Atlantique. Il existe une variété notable avec le centre imprimé à l'envers — le « Seaway Invert » est l'une des erreurs modernes les plus précieuses du Canada."
+    },
+    "356": {
+      "mainTopic": "Plaines d'Abraham, 1759-1959",
+      "notes": "Émis le 10 septembre 1959; Qté : 29 410 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "357": {
+      "mainTopic": "Association des Guides, 1910-1960, Toujours prête",
+      "notes": "Émis le 20 avril 1960; Qté : 31 360 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "358": {
+      "mainTopic": "Dollard des Ormeaux, 1660",
+      "notes": "Émis le 19 mai 1960; Qté : 30 960 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "359": {
+      "mainTopic": "Développement du Nord",
+      "notes": "Émis le 8 février 1961; Qté : 30 055 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "360": {
+      "mainTopic": "E. Pauline Johnson, 1861",
+      "notes": "Émis le 10 mars 1961; Qté : 35 450 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "361": {
+      "mainTopic": "Arthur Meighen",
+      "notes": "Émis le 19 avril 1961; Qté : 35 560 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Premiers ministres."
+    },
+    "362": {
+      "mainTopic": "Plan de Colombo",
+      "notes": "Émis le 28 juin 1961; Qté : 32 010 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "363": {
+      "mainTopic": "Des ressources pour demain",
+      "notes": "Émis le 12 octobre 1961; Qté : 36 160 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "364": {
+      "mainTopic": "La force par l'éducation",
+      "notes": "Émis le 28 février 1962; Qté : 33 260 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "365": {
+      "mainTopic": "Colonie de la rivière Rouge, 1812, Selkirk",
+      "notes": "Émis le 3 mai 1962; Qté : 25 910 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "366": {
+      "mainTopic": "Jean Talon",
+      "notes": "Émis le 13 juin 1962; Qté : 31 920 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "367": {
+      "mainTopic": "Victoria, 1862-1962",
+      "notes": "Émis le 22 août 1962; Qté : 35 170 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "368": {
+      "mainTopic": "Route transcanadienne",
+      "notes": "Émis le 31 août 1962; Qté : 25 570 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "369": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 3 octobre 1962; Qté : 1 489 464 000; Dentelure : 12, 9,5 horizontal; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "370": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 4 février 1963; Qté : 478 556 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "371": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 4 février 1963; Qté : 478 556 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "372": {
+      "mainTopic": "Sir Casimir Stanislaus Gzowski, 1813-1963",
+      "notes": "Émis le 5 mars 1963; Qté : 27 820 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "373": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 4 février 1963; Qté : 478 556 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "374": {
+      "mainTopic": "Reine Elizabeth II",
+      "notes": "Émis le 4 février 1963; Qté : 478 556 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "375": {
+      "mainTopic": "Commerce d'exportation",
+      "notes": "Émis le 14 juin 1963; Qté : 19 360 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "376": {
+      "mainTopic": "Martin Frobisher, 1535-1594",
+      "notes": "Émis le 21 août 1963; Qté : 27 020 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "377": {
+      "mainTopic": "Première route terrestre, 1763",
+      "notes": "Émis le 25 septembre 1963; Qté : 27 860 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "378": {
+      "mainTopic": "Bernaches du Canada",
+      "notes": "Émis le 30 octobre 1963; Qté : 106 260 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "379": {
+      "mainTopic": "Avion à réaction",
+      "notes": "Émis le 11 mars 1964; Qté : 26 420 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "380": {
+      "mainTopic": "Pacem in Terris, Paix sur Terre",
+      "notes": "Émis le 8 avril 1964; Qté : 28 870 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "381": {
+      "mainTopic": "Unis",
+      "notes": "Émis le 14 mai 1964; Qté : 36 870 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Emblèmes floraux."
+    },
+    "382": {
+      "mainTopic": "Trille blanc, Ontario",
+      "notes": "Émis le 30 juin 1964; Qté : 19 360 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Emblèmes floraux."
+    },
+    "383": {
+      "mainTopic": "Lis blanc, Québec",
+      "notes": "Émis le 30 juin 1964; Qté : 19 710 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Emblèmes floraux."
+    },
+    "384": {
+      "mainTopic": "Avion à réaction",
+      "notes": "Émis le 11 mars 1964; Qté : 26 420 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "385": {
+      "mainTopic": "Conférence de Charlottetown, 1864-1964",
+      "notes": "Émis le 29 juillet 1964; Qté : 29 310 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "386": {
+      "mainTopic": "Conférence de Québec, 1864",
+      "notes": "Émis le 9 septembre 1964; Qté : 28 510 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "387": {
+      "mainTopic": "Visite royale, 1964",
+      "notes": "Émis le 5 octobre 1964; Qté : 38 410 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "388": {
+      "mainTopic": "Famille",
+      "notes": "Émis le 14 octobre 1964; Qté : 308 020 000; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "389": {
+      "mainTopic": "Famille",
+      "notes": "Émis le 14 octobre 1964; Qté : 308 020 000; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "390": {
+      "mainTopic": "Avion à réaction",
+      "notes": "Émis le 11 mars 1964; Qté : 26 420 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "391": {
+      "mainTopic": "Fleur de mai, Nouvelle-Écosse",
+      "notes": "Émis le 3 février 1965; Qté : 18 360 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Emblèmes floraux."
+    },
+    "392": {
+      "mainTopic": "Violette cucullée, Nouveau-Brunswick",
+      "notes": "Émis le 3 février 1965; Qté : 18 760 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Emblèmes floraux."
+    },
+    "393": {
+      "mainTopic": "Année de la coopération internationale, 1965",
+      "notes": "Émis le 3 mars 1965; Qté : 26 660 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "394": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 1er avril 1965; Qté : 3 020 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "395": {
+      "mainTopic": "Anémone pulsatille, Manitoba",
+      "notes": "Émis le 28 avril 1965; Qté : 15 820 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Emblèmes floraux."
+    },
+    "396": {
+      "mainTopic": "Cornouiller fleuri, Colombie-Britannique",
+      "notes": "Émis le 28 avril 1965; Qté : 17 360 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Emblèmes floraux."
+    },
+    "397": {
+      "mainTopic": "Sir Wilfred Grenfell",
+      "notes": "Émis le 9 juin 1965; Qté : 26 610 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "398": {
+      "mainTopic": "Le drapeau national",
+      "notes": "Émis le 30 juin 1965; Qté : 37 360 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "399": {
+      "mainTopic": "Sabot de la Vierge, Île-du-Prince-Édouard",
+      "notes": "Émis le 21 juillet 1965; Qté : 26 510 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Emblèmes floraux."
+    },
+    "400": {
+      "mainTopic": "Churchill",
+      "notes": "Émis le 12 août 1965; Qté : 35 000 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "401": {
+      "mainTopic": "Union interparlementaire, 1965",
+      "notes": "Émis le 8 septembre 1965; Qté : 16 820 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "402": {
+      "mainTopic": "Ottawa, 1865-1965",
+      "notes": "Émis le 8 septembre 1965; Qté : 14 810 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "403": {
+      "mainTopic": "Offrandes des Rois mages",
+      "notes": "Émis le 13 octobre 1965; Qté : 292 920 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "404": {
+      "mainTopic": "Offrandes des Rois mages",
+      "notes": "Émis le 13 octobre 1965; Qté : 292 920 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "405": {
+      "mainTopic": "Alouette II",
+      "notes": "Émis le 5 janvier 1966; Qté : 26 370 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "406": {
+      "mainTopic": "Lis des prairies, Saskatchewan",
+      "notes": "Émis le 19 janvier 1966; Qté : 15 310 000; Imprimeur : Canadian Bank Note Company, Limited. Série : Emblèmes floraux."
+    },
+    "407": {
+      "mainTopic": "Rose sauvage, Alberta",
+      "notes": "Émis le 19 janvier 1966; Qté : 16 160 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Emblèmes floraux."
+    },
+    "408": {
+      "mainTopic": "Sarracénie pourpre, Terre-Neuve",
+      "notes": "Émis le 23 février 1966; Qté : 25 660 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Emblèmes floraux."
+    },
+    "409": {
+      "mainTopic": "Épilobe à feuilles étroites, Yukon",
+      "notes": "Émis le 23 mars 1966; Qté : 15 110 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Emblèmes floraux."
+    },
+    "410": {
+      "mainTopic": "Dryade à feuilles entières, Territoires du Nord-Ouest",
+      "notes": "Émis le 23 mars 1966; Qté : 15 010 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Emblèmes floraux."
+    },
+    "411": {
+      "mainTopic": "Cavelier de La Salle, 300e anniversaire",
+      "notes": "Émis le 13 avril 1966; Qté : 25 160 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "412": {
+      "mainTopic": "Sécurité routière",
+      "notes": "Émis le 2 mai 1966; Qté : 27 220 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "413": {
+      "mainTopic": "Conférence de Londres, 1866",
+      "notes": "Émis le 26 mai 1966; Qté : 25 310 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "414": {
+      "mainTopic": "Armoiries du Canada",
+      "notes": "Émis le 30 juin 1966; Qté : 25 410 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Emblèmes floraux."
+    },
+    "415": {
+      "mainTopic": "Utilisations pacifiques de l'énergie atomique",
+      "notes": "Émis le 27 juillet 1966; Qté : 25 360 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "416": {
+      "mainTopic": "Association parlementaire du Commonwealth, 12e conférence générale",
+      "notes": "Émis le 8 septembre 1966; Qté : 27 320 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "417": {
+      "mainTopic": "Mains en prière",
+      "notes": "Émis le 12 octobre 1966; Qté : 237 780 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "418": {
+      "mainTopic": "Mains en prière",
+      "notes": "Émis le 12 octobre 1966; Qté : 237 780 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "419": {
+      "mainTopic": "Centenaire, 1867-1967",
+      "notes": "Émis le 11 janvier 1967; Qté : 105 100 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "420": {
+      "mainTopic": "Reine Elizabeth II, régions nordiques",
+      "notes": "Émis le 8 février 1967; Dentelure : 12, 10, 12,5 x 12; Imprimeur : British American Bank Note Company. Série : émission du Centenaire."
+    },
+    "421": {
+      "mainTopic": "Reine Elizabeth II, côte du Pacifique",
+      "notes": "Émis le 8 février 1967; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : émission du Centenaire."
+    },
+    "422": {
+      "mainTopic": "Reine Elizabeth II, scène des Prairies",
+      "notes": "Émis le 8 février 1967; Dentelure : 12, 12,5 x 12, 9,5 horizontal; Imprimeur : British American Bank Note Company. Série : émission du Centenaire."
+    },
+    "423": {
+      "mainTopic": "Reine Elizabeth II, vue de la voie maritime du Centre-du-Canada",
+      "notes": "Émis le 8 février 1967; Dentelure : 12, 10, 9,5 horizontal; Imprimeur : British American Bank Note Company. Série : émission du Centenaire."
+    },
+    "424": {
+      "mainTopic": "Reine Elizabeth II, côte atlantique",
+      "notes": "Émis le 8 février 1967; Dentelure : 12, 10, 9,5 horizontal; Imprimeur : British American Bank Note Company. Série : émission du Centenaire."
+    },
+    "425": {
+      "mainTopic": "Route de l'Alaska entre Watson Lake et Nelson",
+      "notes": "Émis le 8 février 1967; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : émission du Centenaire."
+    },
+    "426": {
+      "mainTopic": "Le pin gris",
+      "notes": "Émis le 8 février 1967; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : émission du Centenaire."
+    },
+    "427": {
+      "mainTopic": "Montagnes du Groenland",
+      "notes": "Émis le 8 février 1967; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : émission du Centenaire."
+    },
+    "428": {
+      "mainTopic": "Le traversier, Québec",
+      "notes": "Émis le 8 février 1967; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : émission du Centenaire."
+    },
+    "429": {
+      "mainTopic": "La terre solennelle",
+      "notes": "Émis le 8 février 1967; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : émission du Centenaire."
+    },
+    "430": {
+      "mainTopic": "Réserves de l'été",
+      "notes": "Émis le 8 février 1967; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : émission du Centenaire."
+    },
+    "431": {
+      "mainTopic": "Imperial Wildcat No. 3, champ pétrolifère Excelsior, près d'Edmonton",
+      "notes": "Émis le 8 février 1967; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : émission du Centenaire."
+    },
+    "432": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 8 février 1967; Qté : 3 603 000; Dentelure : 12, 12,5 x 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "433": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 8 février 1967; Qté : 3 603 000; Dentelure : 12, 12,5 x 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "434": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 8 février 1967; Qté : 3 603 000; Dentelure : 12, 12,5 x 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "435": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 8 février 1967; Qté : 3 603 000; Dentelure : 12, 12,5 x 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "436": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 8 février 1967; Qté : 3 603 000; Dentelure : 12, 12,5 x 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "437": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 8 février 1967; Qté : 3 603 000; Dentelure : 12, 12,5 x 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "438": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 8 février 1967; Qté : 3 603 000; Dentelure : 12, 12,5 x 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "439": {
+      "mainTopic": "Expo 67",
+      "notes": "Émis le 28 avril 1967; Qté : 42 360 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "440": {
+      "mainTopic": "Le droit de vote des femmes, 1917-1967",
+      "notes": "Émis le 24 mai 1967; Qté : 25 780 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "441": {
+      "mainTopic": "Visite royale, 1967",
+      "notes": "Émis le 30 juin 1967; Qté : 28 530 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "442": {
+      "mainTopic": "Jeux panaméricains, Winnipeg, 1967",
+      "notes": "Émis le 19 juillet 1967; Qté : 28 060 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "443": {
+      "mainTopic": "La Presse canadienne, 50e anniversaire",
+      "notes": "Émis le 31 août 1967; Qté : 27 460 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "444": {
+      "mainTopic": "Georges Philias Vanier, gouverneur général, 1959-1967",
+      "notes": "Émis le 15 septembre 1967; Qté : 25 310 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "445": {
+      "mainTopic": "Toronto, 1867-1967",
+      "notes": "Émis le 28 septembre 1967; Qté : 27 960 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "446": {
+      "mainTopic": "Enfants chantant des cantiques",
+      "notes": "Émis le 11 octobre 1967; Qté : 255 000 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "447": {
+      "mainTopic": "Enfants chantant des cantiques",
+      "notes": "Émis le 11 octobre 1967; Qté : 255 000 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "448": {
+      "mainTopic": "Mésangeai du Canada, Perisoreus canadensis",
+      "notes": "Émis le 15 février 1968; Qté : 24 300 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Oiseaux."
+    },
+    "449": {
+      "mainTopic": "Météorologie, 1768-1968",
+      "notes": "Émis le 13 mars 1968; Qté : 24 600 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "450": {
+      "mainTopic": "Narval, Monodon monoceros",
+      "notes": "Émis le 10 avril 1968; Qté : 24 150 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "451": {
+      "mainTopic": "Décennie hydrologique internationale, 1965-1974",
+      "notes": "Émis le 8 mai 1968; Qté : 24 000 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "452": {
+      "mainTopic": "Voyage du Nonsuch, 1668",
+      "notes": "Émis le 5 juin 1968; Qté : 24 560 000; Dentelure : 10; Imprimeur : British American Bank Note Company."
+    },
+    "453": {
+      "mainTopic": "Crosse",
+      "notes": "Émis le 3 juillet 1968; Qté : 24 560 000; Dentelure : 10; Imprimeur : British American Bank Note Company."
+    },
+    "454": {
+      "mainTopic": "L'hon. George Brown, 1818-1880",
+      "notes": "Émis le 21 août 1968; Qté : 24 000 000; Dentelure : 10; Imprimeur : British American Bank Note Company."
+    },
+    "455": {
+      "mainTopic": "Henri Bourassa, 1868-1952",
+      "notes": "Émis le 4 septembre 1968; Qté : 24 350 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "456": {
+      "mainTopic": "Armistice, 1918-1968",
+      "notes": "Émis le 15 octobre 1968; Qté : 18 250 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "457": {
+      "mainTopic": "John McCrae, 1872-1918, Au champ d'honneur",
+      "notes": "Émis le 15 octobre 1968; Qté : 24 000 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "458": {
+      "mainTopic": "Reine Elizabeth II, transports et communications",
+      "notes": "Émis le 1er novembre 1968; Dentelure : 10, 12,5 x 12, 10 horizontal; Imprimeur : Canadian Bank Note Company, Limited. Série : émission du Centenaire."
+    },
+    "459": {
+      "mainTopic": "Groupe familial",
+      "notes": "Émis le 1er novembre 1968; Qté : 157 600 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "460": {
+      "mainTopic": "Mère et enfant",
+      "notes": "Émis le 15 novembre 1968; Qté : 74 000 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "461": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 1er janvier 1969; Qté : 4 843 000; Dentelure : 12, 12,5 x 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "462": {
+      "mainTopic": "Timbre-taxe",
+      "notes": "Émis le 1er janvier 1969; Qté : 4 843 000; Dentelure : 12, 12,5 x 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Timbres-taxe."
+    },
+    "463": {
+      "mainTopic": "Curling",
+      "notes": "Émis le 15 janvier 1969; Qté : 25 200 000; Dentelure : 10; Imprimeur : British American Bank Note Company."
+    },
+    "464": {
+      "mainTopic": "Vincent Massey, 1887-1967, gouverneur général, 1952-1959",
+      "notes": "Émis le 20 février 1969; Qté : 25 100 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "465": {
+      "mainTopic": "Suzor-Coté, 1869-1937",
+      "notes": "Émis le 14 mars 1969; Qté : 6 300 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "466": {
+      "mainTopic": "Organisation internationale du Travail, 1919-1969",
+      "notes": "Émis le 21 mai 1969; Qté : 30 700 000; Dentelure : 12 x 12,5; Imprimeur : British American Bank Note Company."
+    },
+    "467": {
+      "mainTopic": "Première traversée transatlantique sans escale, 1919",
+      "notes": "Émis le 13 juin 1969; Qté : 15 170 000; Dentelure : 12 x 12,5; Imprimeur : British American Bank Note Company."
+    },
+    "468": {
+      "mainTopic": "Sir William Osler, 1849-1919, The System of Medicine",
+      "notes": "Émis le 23 juin 1969; Qté : 36 060 000; Dentelure : 12,5 x 12; Imprimeur : British American Bank Note Company."
+    },
+    "469": {
+      "mainTopic": "Bruant à gorge blanche, Zonotrichia albicollis",
+      "notes": "Émis le 23 juillet 1969; Qté : 36 350 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Oiseaux."
+    },
+    "470": {
+      "mainTopic": "Bruant d'Ipswich, Passerculus princeps",
+      "notes": "Émis le 23 juillet 1969; Qté : 12 950 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Oiseaux."
+    },
+    "471": {
+      "mainTopic": "Grive solitaire, Hylocichla guttata",
+      "notes": "Émis le 23 juillet 1969; Qté : 6 700 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Oiseaux."
+    },
+    "472": {
+      "mainTopic": "Jeux du Canada",
+      "notes": "Émis le 15 août 1969; Qté : 24 250 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "473": {
+      "mainTopic": "Charlottetown, 1769-1969",
+      "notes": "Émis le 15 août 1969; Qté : 16 400 000; Dentelure : 12 x 12,5; Imprimeur : British American Bank Note Company."
+    },
+    "474": {
+      "mainTopic": "Sir Isaac Brock, 1769-1812, 200e anniversaire",
+      "notes": "Émis le 12 septembre 1969; Qté : 35 100 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "475": {
+      "mainTopic": "Visages d'enfants",
+      "notes": "Émis le 8 octobre 1969; Qté : 176 250 100; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "476": {
+      "mainTopic": "Visages d'enfants",
+      "notes": "Émis le 8 octobre 1969; Qté : 176 250 100; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "477": {
+      "mainTopic": "Stephen Leacock, 1869-1944",
+      "notes": "Émis le 12 novembre 1969; Qté : 35 500 000; Dentelure : 12 x 12,5; Imprimeur : British American Bank Note Company."
+    },
+    "478": {
+      "mainTopic": "Reine Elizabeth II, transports et communications",
+      "notes": "Émis le 7 janvier 1970; Dentelure : 12,5 x 12, 10, 12, 10 horizontal; Imprimeur : Canadian Bank Note Company, Limited. Série : émission du Centenaire."
+    },
+    "479": {
+      "mainTopic": "Centenaire du Manitoba, 1870-1970",
+      "notes": "Émis le 27 janvier 1970; Qté : 36 975 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "480": {
+      "mainTopic": "Centenaire des Territoires du Nord-Ouest, 1970",
+      "notes": "Émis le 27 janvier 1970; Qté : 27 600 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "481": {
+      "mainTopic": "Programme biologique international",
+      "notes": "Émis le 18 février 1970; Qté : 34 155 000; Dentelure : 12 x 12,5; Imprimeur : British American Bank Note Company."
+    },
+    "482": {
+      "mainTopic": "I Remember, 1967, 1970",
+      "notes": "Émis le 18 mars 1970; Qté : 3 080 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Expo 70 au Japon."
+    },
+    "483": {
+      "mainTopic": "Colombie-Britannique",
+      "notes": "Émis le 18 mars 1970; Qté : 2 640 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Expo 70 au Japon."
+    },
+    "484": {
+      "mainTopic": "Québec",
+      "notes": "Émis le 18 mars 1970; Qté : 2 640 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Expo 70 au Japon."
+    },
+    "485": {
+      "mainTopic": "Ontario",
+      "notes": "Émis le 18 mars 1970; Qté : 2 640 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Expo 70 au Japon."
+    },
+    "486": {
+      "mainTopic": "Henry Kelsey, premier explorateur des Plaines",
+      "notes": "Émis le 15 avril 1970; Qté : 36 450 000; Dentelure : 12 x 12,5; Imprimeur : British American Bank Note Company."
+    },
+    "487": {
+      "mainTopic": "Anniversaire des Nations Unies, 25e",
+      "notes": "Émis le 13 mai 1970; Qté : 12 900 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "488": {
+      "mainTopic": "Anniversaire des Nations Unies, 25e",
+      "notes": "Émis le 13 mai 1970; Qté : 12 900 000; Dentelure : 11; Imprimeur : British American Bank Note Company."
+    },
+    "489": {
+      "mainTopic": "Louis Riel",
+      "notes": "Émis le 19 juin 1970; Qté : 37 000 000; Dentelure : 12,5 x 12; Imprimeur : British American Bank Note Company."
+    },
+    "490": {
+      "mainTopic": "Alex MacKenzie from Canada by land 22nd July 1793",
+      "notes": "Émis le 25 juin 1970; Qté : 35 500 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    },
+    "491": {
+      "mainTopic": "Sir Oliver Mowat, 1820-1903",
+      "notes": "Émis le 12 août 1970; Qté : 35 200 000; Dentelure : 12 x 12,5; Imprimeur : British American Bank Note Company."
+    },
+    "492": {
+      "mainTopic": "Le Groupe des Sept",
+      "notes": "Émis le 18 septembre 1970; Qté : 36 203 000; Dentelure : 11; Imprimeur : Ashton-Potter Limited."
+    },
+    "493": {
+      "mainTopic": "Père Noël",
+      "notes": "Émis le 7 octobre 1970; Qté : 46 560 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "494": {
+      "mainTopic": "Traîneau",
+      "notes": "Émis le 7 octobre 1970; Qté : 46 560 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "495": {
+      "mainTopic": "Nativité",
+      "notes": "Émis le 7 octobre 1970; Qté : 46 560 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "496": {
+      "mainTopic": "Ski",
+      "notes": "Émis le 7 octobre 1970; Qté : 46 560 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "497": {
+      "mainTopic": "Bonshommes de neige",
+      "notes": "Émis le 7 octobre 1970; Qté : 46 560 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "498": {
+      "mainTopic": "Enfant Jésus",
+      "notes": "Émis le 7 octobre 1970; Qté : 28 380 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "499": {
+      "mainTopic": "Sapin de Noël",
+      "notes": "Émis le 7 octobre 1970; Qté : 28 380 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "500": {
+      "mainTopic": "Magasin de jouets",
+      "notes": "Émis le 7 octobre 1970; Qté : 28 380 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "501": {
+      "mainTopic": "Père Noël",
+      "notes": "Émis le 7 octobre 1970; Qté : 46 560 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "502": {
+      "mainTopic": "Église",
+      "notes": "Émis le 7 octobre 1970; Qté : 28 380 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "503": {
+      "mainTopic": "Enfant Jésus",
+      "notes": "Émis le 7 octobre 1970; Qté : 28 380 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "504": {
+      "mainTopic": "Motoneige",
+      "notes": "Émis le 7 octobre 1970; Qté : 22 000 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited. Série : Noël."
+    },
+    "505": {
+      "mainTopic": "Sir Donald Alexander Smith, 1820-1914",
+      "notes": "Émis le 4 novembre 1970; Qté : 35 400 000; Dentelure : 12; Imprimeur : Canadian Bank Note Company, Limited."
+    }
   }
 }

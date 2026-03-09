@@ -8,6 +8,8 @@
 
 > **🎯 Mission**: The most comprehensive visual identification tool for Canadian stamps, making stamp identification accessible to collectors worldwide.
 
+🇫🇷 [Version française](README-fr.md)
+
 ---
 
 ## Table of Contents
