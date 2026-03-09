@@ -58,6 +58,7 @@ class StampIdentifier {
             this.buildDecadeNav();
             this.setupImageObserver();
             await this.renderAllCards();
+            this.restoreFilterState();
             this.applyFilters();
             this.bindEvents();
             this.dismissLoading();
@@ -68,22 +69,60 @@ class StampIdentifier {
     }
 
     /* ──────────────────────────────────────────────
-       DATA LOADING
+       DATA LOADING (with localStorage cache)
        ────────────────────────────────────────────── */
     async loadStamps() {
+        const CACHE_KEY = 'csi_stamps';
+        const VERSION_KEY = 'csi_stamps_ver';
         const cacheBust = location.hostname === 'localhost' ? `?v=${Date.now()}` : '';
-        const response = await fetch(`data/stamps.json${cacheBust}`);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const data = await response.json();
-        this.stamps = data.stamps || [];
+
+        try {
+            // Try to use cached data while checking for updates
+            const cached = localStorage.getItem(CACHE_KEY);
+            const cachedVersion = localStorage.getItem(VERSION_KEY);
+
+            // Fetch with cache headers — browser may return 304 Not Modified
+            const response = await fetch(`data/stamps.json${cacheBust}`);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+            // Use ETag or Content-Length as a version fingerprint
+            const etag = response.headers.get('ETag') || response.headers.get('Content-Length') || '';
+
+            if (cached && cachedVersion === etag && etag) {
+                // Data hasn't changed — use cached version (skips parsing the response)
+                this.stamps = JSON.parse(cached);
+                console.log(`Loaded ${this.stamps.length} stamps (from cache)`);
+            } else {
+                // New data — parse, store, and use
+                const data = await response.json();
+                this.stamps = data.stamps || [];
+
+                // Cache for next visit (try/catch in case storage is full)
+                try {
+                    localStorage.setItem(CACHE_KEY, JSON.stringify(this.stamps));
+                    if (etag) localStorage.setItem(VERSION_KEY, etag);
+                } catch (e) {
+                    // Storage full or unavailable — not critical, just skip caching
+                    console.warn('Could not cache stamps data:', e.message);
+                }
+                console.log(`Loaded ${this.stamps.length} stamps (from network)`);
+            }
+        } catch (err) {
+            // Network failed — try cache as fallback
+            const cached = localStorage.getItem(CACHE_KEY);
+            if (cached) {
+                this.stamps = JSON.parse(cached);
+                console.log(`Loaded ${this.stamps.length} stamps (offline, from cache)`);
+            } else {
+                throw err; // No cache, no network — real failure
+            }
+        }
 
         // Sort chronologically, then by ID within each year
         this.stamps.sort((a, b) => {
             if (a.year !== b.year) return a.year - b.year;
             return String(a.id).localeCompare(String(b.id), undefined, { numeric: true });
         });
-
-        console.log(`Loaded ${this.stamps.length} stamps`);
     }
 
     preprocessSearch() {
@@ -174,6 +213,7 @@ class StampIdentifier {
         });
 
         this.applyFilters();
+        this.saveFilterState();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -418,6 +458,42 @@ class StampIdentifier {
         });
 
         this.applyFilters();
+        this.saveFilterState();
+    }
+
+    /* ──────────────────────────────────────────────
+       FILTER STATE PERSISTENCE (sessionStorage)
+       ────────────────────────────────────────────── */
+    saveFilterState() {
+        try {
+            sessionStorage.setItem('csi_decade', this.activeDecade != null ? String(this.activeDecade) : '');
+            sessionStorage.setItem('csi_search', this.searchTerm);
+        } catch (e) { /* storage unavailable — no problem */ }
+    }
+
+    restoreFilterState() {
+        try {
+            const decade = sessionStorage.getItem('csi_decade');
+            const search = sessionStorage.getItem('csi_search');
+
+            if (decade) {
+                this.activeDecade = Number(decade);
+                this.decadeNav.querySelectorAll('.decade-pill').forEach(pill => {
+                    const pillDecade = pill.dataset.decade === 'all' ? null : Number(pill.dataset.decade);
+                    const isActive = pillDecade === this.activeDecade;
+                    pill.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                    if (isActive) {
+                        pill.scrollIntoView({ behavior: 'instant', inline: 'center', block: 'nearest' });
+                    }
+                });
+            }
+
+            if (search) {
+                this.searchTerm = search;
+                this.searchInput.value = search;
+                this.clearSearchBtn.hidden = false;
+            }
+        } catch (e) { /* storage unavailable — start fresh */ }
     }
 
     /* ──────────────────────────────────────────────
@@ -428,6 +504,7 @@ class StampIdentifier {
         this.searchTerm = term;
         this.clearSearchBtn.hidden = term.length === 0;
         this.applyFilters();
+        this.saveFilterState();
     }
 
     /* ──────────────────────────────────────────────
