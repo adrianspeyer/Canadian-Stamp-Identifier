@@ -79,7 +79,7 @@ No installation needed — works in any modern web browser. Works offline after 
 - **Complete French UI**: all buttons, labels, filters, panels, and error states
 - **Automatic category translation**: all 15 categories and 100+ subcategories translate via lookup
 - **Colour translation**: all philatelic colour terms translate automatically
-- **French stamp data**: `stamps-fr.json` provides translated mainTopics and notes for all 3,473 stamps
+- **French stamp data**: `stamps-fr.json` provides translated mainTopics and notes for all 3,475 stamps
 - **Persistent**: language preference saved in localStorage
 
 ### Accessibility
@@ -98,7 +98,7 @@ No installation needed — works in any modern web browser. Works offline after 
 
 | Metric | Value |
 |---|---|
-| Stamps catalogued | 3,473 |
+| Stamps catalogued | 3,475 |
 | Years covered | 1851–2026 (175 years) |
 | Categories | 15 top-level, 100+ subcategories, all canonical |
 | Empty notes | 0 — every stamp has historical context |
@@ -265,7 +265,7 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 ## 🗺️ Roadmap
 
 ### Completed ✅
-- [x] Complete catalogue 1851–2026 (3,473 stamps)
+- [x] Complete catalogue 1851–2026 (3,475 stamps)
 - [x] Unified responsive design (phone → desktop)
 - [x] Decade navigation with chevron arrows
 - [x] Service worker, batched rendering, lazy loading, content-visibility
@@ -282,7 +282,7 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 - [x] 336 legacy subcategories normalised to canonical format
 - [x] Bilingual UI (EN/FR) with language toggle
 - [x] Automatic category and colour translation
-- [x] Complete French stamp translations (mainTopic + notes for all 3,473 stamps)
+- [x] Complete French stamp translations (mainTopic + notes for all 3,475 stamps)
 
 ### Future 🔮
 - [ ] Print-friendly views
