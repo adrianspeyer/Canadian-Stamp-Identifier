@@ -24,6 +24,7 @@ class StampIdentifier {
         this.cardElements = [];              // every card DOM element (handles duplicate stamp IDs)
         this.activeDecade = null;        // null = show all
         this.searchTerm = '';
+        this.searchRegex = null;
         this.visibleCount = 0;
         this.imageObserver = null;
 
@@ -417,7 +418,7 @@ class StampIdentifier {
         for (let i = 0; i < len; i++) {
             const card = cards[i];
             const matchesDecade = decade === null || card._decade === decade;
-            const matchesSearch = !term || card._searchText.includes(term);
+            const matchesSearch = !term || this.searchRegex.test(card._searchText);
 
             if (matchesDecade && matchesSearch) {
                 card.removeAttribute('hidden');
@@ -467,6 +468,7 @@ class StampIdentifier {
 
     clearAllFilters() {
         this.searchTerm = '';
+        this.searchRegex = null;
         this.searchInput.value = '';
         this.clearSearchBtn.hidden = true;
         this.activeDecade = null;
@@ -508,6 +510,8 @@ class StampIdentifier {
 
             if (search) {
                 this.searchTerm = search;
+                const escaped = search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                this.searchRegex = new RegExp('\\b' + escaped);
                 this.searchInput.value = search;
                 this.clearSearchBtn.hidden = false;
             }
@@ -520,6 +524,9 @@ class StampIdentifier {
     handleSearchInput(value) {
         const term = value.toLowerCase().trim();
         this.searchTerm = term;
+        // Word-boundary match: "eid" matches "Eid al-Fitr" but not "apartheid"
+        const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        this.searchRegex = term ? new RegExp('\\b' + escaped) : null;
         this.clearSearchBtn.hidden = term.length === 0;
         this.applyFilters();
         this.saveFilterState();
