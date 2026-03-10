@@ -33,7 +33,7 @@
 
 Cet outil facilite l'identification des timbres grâce à la **correspondance visuelle** dans une grille de cartes adaptative et recherchable. Au lieu de feuilleter des catalogues :
 
-- **Parcourez plus de 3 470 timbres** dans une grille adaptative qui fonctionne sur tous les appareils
+- **Parcourez plus de 3 475 timbres** dans une grille adaptative qui fonctionne sur tous les appareils
 - **Filtrez par décennie** avec une barre de pastilles défilante — sautez instantanément à n'importe quelle époque
 - **Recherche intelligente** par sujet, année, couleur, valeur faciale et notes historiques
 - **Touchez pour les détails** — numéro, valeur faciale, catégorie, couleur et contexte historique
@@ -51,7 +51,7 @@ Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Fon
 - **Recherche instantanée** : tapez une année, un sujet, une couleur ou un mot-clé — recherche aussi dans les notes
 - **Filtrage par décennie** : barre de pastilles défilante avec le nombre de timbres par époque
 - **Filtres combinés** : recherchez dans une décennie (p. ex. « castor » dans les années 1850)
-- **Saisie avec rebond** : réactif même avec plus de 3 470 timbres
+- **Saisie avec rebond** : réactif même avec plus de 3 475 timbres
 
 ### Interface visuelle
 - **Grille de cartes adaptative** : de 2 colonnes sur téléphone à 10+ sur écran ultralarge
@@ -96,7 +96,7 @@ Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Fon
 
 | Métrique | Valeur |
 |---|---|
-| Timbres catalogués | 3 473 |
+| Timbres catalogués | 3 475 |
 | Années couvertes | 1851–2026 (175 ans) |
 | Catégories | 15 de premier niveau, 100+ sous-catégories, toutes canoniques |
 | Notes vides | 0 — chaque timbre a un contexte historique |
@@ -222,7 +222,7 @@ Chaque timbre dans `data/stamps.json` a cette structure :
 | `notes` | Contexte historique (en anglais). 1 à 3 phrases. | Oui |
 
 ### Traductions françaises
-Les traductions françaises sont stockées dans `data/stamps-fr.json`. Ce fichier contient les champs `mainTopic` et `notes` traduits pour les 3 473 timbres.
+Les traductions françaises sont stockées dans `data/stamps-fr.json`. Ce fichier contient les champs `mainTopic` et `notes` traduits pour les 3 475 timbres.
 
 ## 🔢 À propos des numéros
 
@@ -254,7 +254,7 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 ## 🗺️ Feuille de route
 
 ### Complété ✅
-- [x] Catalogue complet 1851–2026 (3 473 timbres)
+- [x] Catalogue complet 1851–2026 (3 475 timbres)
 - [x] Design adaptatif unifié (téléphone → ordinateur)
 - [x] Navigation par décennie avec flèches
 - [x] Service worker, rendu par lots, chargement progressif, content-visibility
@@ -268,7 +268,7 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 - [x] Taux du timbre permanent mis à jour à 1,24 $
 - [x] Interface bilingue (EN/FR) avec sélecteur de langue
 - [x] Traduction automatique des catégories et des couleurs
-- [x] Traductions françaises complètes (mainTopic + notes pour les 3 473 timbres)
+- [x] Traductions françaises complètes (mainTopic + notes pour les 3 475 timbres)
 
 ### Futur 🔮
 - [ ] Vues adaptées à l'impression

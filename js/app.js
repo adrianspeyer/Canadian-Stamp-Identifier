@@ -1,6 +1,6 @@
 /**
  * Canadian Stamp Identifier — app.js
- * Unified responsive catalogue for 3,400+ stamps.
+ * Unified responsive catalogue for 3,475+ stamps.
  * One codebase, one render path, phone → desktop.
  */
 
