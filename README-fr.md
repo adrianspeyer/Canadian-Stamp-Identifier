@@ -158,7 +158,7 @@ Chaque timbre utilise le format `Catégorie : Sous-catégorie` pour le champ `su
 ### Arts et culture (378 timbres)
 `Arts visuels` · `Musique` · `Auteurs` · `Littérature` · `Photographie` · `Cinéma` · `Cinéma et télévision` · `Bandes dessinées` · `Science-fiction` · `Opéra` · `Danse` · `Théâtre` · `Artisanat` · `Design` · `Folklore` · `Artefacts culturels` · `Littérature jeunesse` · `Musées`
 
-### Fêtes et événements (302 timbres)
+### Fêtes et événements (304 timbres)
 `Noël` · `Nouvel An lunaire` · `Halloween` · `Hanoukka` · `Divali` · `Aïd` · `Salutations` · `Célébrations` · `Saint-Valentin`
 
 ### Sports et loisirs (303 timbres)

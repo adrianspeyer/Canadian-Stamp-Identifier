@@ -160,7 +160,7 @@ Every stamp uses the `Category: Subcategory` format for the `subTopic` field. He
 ### Arts & Culture (378 stamps)
 `Visual Arts` · `Music` · `Authors` · `Literature` · `Photography` · `Film` · `Film & Television` · `Comics` · `Science Fiction` · `Opera` · `Dance` · `Theatre` · `Crafts` · `Design` · `Folklore` · `Cultural Artifacts` · `Children's Literature` · `Museums`
 
-### Holidays & Events (302 stamps)
+### Holidays & Events (304 stamps)
 `Christmas` · `Lunar New Year` · `Halloween` · `Hanukkah` · `Diwali` · `Eid` · `Greetings` · `Celebrations` · `Valentine's Day`
 
 ### Sports & Recreation (303 stamps)
