@@ -34603,15 +34603,35 @@
     {
       "id": "3462",
       "year": 2026,
-      "mainTopic": "Eid",
+      "mainTopic": "Eid (Green)",
       "subTopic": "Holidays & Events: Eid",
       "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
-      "color": "multicoloured",
-      "image": "images/2020s/3462-eid-2026.jpg",
-      "notes": "Expected: March 2026. Series: Eid. Annual issue celebrating Eid al-Fitr and Eid al-Adha."
+      "color": "green, gold, grey and white",
+      "image": "images/2020s/3462-eid-green-2026.jpg",
+      "notes": "Issued: March 10, 2026; Printer: Colour Innovations; Designer: Paprika; OFDC: Vancouver, BC. Series: Eid. Canada Post's eighth Eid stamp issue, and the first with three designs. The octagonal stamps incorporate stylized maple leaves into a traditional Islamic geometric pattern, reflecting Canada's cultural diversity. The interlacing circles and polygons are inspired by the mathematical and natural motifs that are a hallmark of Islamic ornamentation. Celebrates Eid al-Fitr and Eid al-Adha, observed by more than 1.5 million Muslims in Canada. See also #3035, #3215, #3265, #3296, #3341, #3378, #3421, #3463, #3464."
     },
     {
       "id": "3463",
+      "year": 2026,
+      "mainTopic": "Eid (Pink)",
+      "subTopic": "Holidays & Events: Eid",
+      "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+      "color": "pink, magenta, grey and white",
+      "image": "images/2020s/3463-eid-pink-2026.jpg",
+      "notes": "Issued: March 10, 2026; Printer: Colour Innovations; Designer: Paprika; OFDC: Vancouver, BC. Series: Eid. Same octagonal Islamic geometric pattern with stylized maple leaves as the green (#3462) and blue (#3464) variants, in a pink and magenta palette. Part of a booklet of six Permanent™ stamps. Eighth annual Eid issue."
+    },
+    {
+      "id": "3464",
+      "year": 2026,
+      "mainTopic": "Eid (Blue)",
+      "subTopic": "Holidays & Events: Eid",
+      "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+      "color": "blue, navy, grey and white",
+      "image": "images/2020s/3464-eid-blue-2026.jpg",
+      "notes": "Issued: March 10, 2026; Printer: Colour Innovations; Designer: Paprika; OFDC: Vancouver, BC. Series: Eid. Same octagonal Islamic geometric pattern with stylized maple leaves as the green (#3462) and pink (#3463) variants, in a blue and navy palette. Part of a booklet of six Permanent™ stamps. Eighth annual Eid issue."
+    },
+    {
+      "id": "3465",
       "year": 2026,
       "mainTopic": "Maple Syrup Season",
       "subTopic": "Culture & Society: Traditions",
@@ -34621,7 +34641,7 @@
       "notes": "Expected: Winter/Spring 2026. Celebrates maple syrup season — Canada produces approximately 75% of the world's maple syrup, predominantly in Quebec, Ontario, and New Brunswick."
     },
     {
-      "id": "3464",
+      "id": "3466",
       "year": 2026,
       "mainTopic": "Places of Pride",
       "subTopic": "History & Heritage: LGBTQ2+",
@@ -34631,7 +34651,7 @@
       "notes": "Expected: Spring 2026; Series: Places of Pride. Continuing the series honouring significant places in Canadian LGBTQ2+ history."
     },
     {
-      "id": "3465",
+      "id": "3467",
       "year": 2026,
       "mainTopic": "Royal Canadian Legion",
       "subTopic": "History & Heritage: Organizations",
@@ -34641,7 +34661,7 @@
       "notes": "Expected: July 2026. Marks the centennial of the Royal Canadian Legion, founded in 1926 to support veterans and their families and to keep alive the tradition of remembrance."
     },
     {
-      "id": "3466",
+      "id": "3468",
       "year": 2026,
       "mainTopic": "National Day for Truth and Reconciliation",
       "subTopic": "History & Heritage: Indigenous Peoples",
@@ -34651,7 +34671,7 @@
       "notes": "Expected: September 2026. National Day for Truth and Reconciliation — established as a federal statutory holiday on September 30 in 2021, honouring residential school survivors, their families, and their communities."
     },
     {
-      "id": "3467",
+      "id": "3469",
       "year": 2026,
       "mainTopic": "Jack-O'-Lanterns",
       "subTopic": "Holidays & Events: Halloween",
@@ -34661,7 +34681,7 @@
       "notes": "Expected: Fall 2026. Jack-o'-lanterns for the Halloween season — continuing Canada Post's tradition of festive seasonal stamps."
     },
     {
-      "id": "3468",
+      "id": "3470",
       "year": 2026,
       "mainTopic": "Remembrance Day",
       "subTopic": "History & Heritage: War/military",
@@ -34671,7 +34691,7 @@
       "notes": "Expected: November 2026. Series: Remembrance Day. Honouring the sacrifices of Canadian servicemen and servicewomen in conflicts from WWI to modern peacekeeping missions."
     },
     {
-      "id": "3469",
+      "id": "3471",
       "year": 2026,
       "mainTopic": "Canada Post Community Foundation",
       "subTopic": "Culture & Society: Community",
@@ -34681,7 +34701,7 @@
       "notes": "Expected: 2026; Semipostal stamp. Annual Canada Post Community Foundation semipostal supporting programs for children and youth."
     },
     {
-      "id": "3470",
+      "id": "3472",
       "year": 2026,
       "mainTopic": "Wolves",
       "subTopic": "Nature & Wildlife: Animals",
@@ -34691,7 +34711,7 @@
       "notes": "Expected: 2026. Wolves — the grey wolf (Canis lupus) remains widespread across Canada's boreal forests, tundra, and Rocky Mountains, playing a vital role as an apex predator."
     },
     {
-      "id": "3471",
+      "id": "3473",
       "year": 2026,
       "mainTopic": "Blood Donation",
       "subTopic": "Culture & Society: Health",
@@ -34701,7 +34721,7 @@
       "notes": "Expected: 2026. Promotes blood donation awareness in Canada. Canadian Blood Services relies on voluntary donors to maintain the national blood supply."
     },
     {
-      "id": "3472",
+      "id": "3474",
       "year": 2026,
       "mainTopic": "Diwali",
       "subTopic": "Holidays & Events: Diwali",
@@ -34711,7 +34731,7 @@
       "notes": "Expected: 2026. Series: Diwali. Annual issue celebrating the festival of lights."
     },
     {
-      "id": "3473",
+      "id": "3475",
       "year": 2026,
       "mainTopic": "Hanukkah",
       "subTopic": "Holidays & Events: Hanukkah",
@@ -34721,7 +34741,7 @@
       "notes": "Expected: 2026. Series: Hanukkah. Annual issue celebrating the Jewish festival of lights."
     },
     {
-      "id": "3474",
+      "id": "3476",
       "year": 2026,
       "mainTopic": "Christmas",
       "subTopic": "Holidays & Events: Christmas",
