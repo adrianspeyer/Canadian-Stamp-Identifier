@@ -106,7 +106,7 @@ No installation needed — works in any modern web browser. Works offline after 
 | Non-canonical categories | 0 — every subTopic follows `Category: Subcategory` format |
 | Platforms | Phone, tablet, desktop |
 | Dependencies | 0 |
-| Version | v2.2 |
+| Version | v2.3 |
 
 ## 📖 How to Use
 

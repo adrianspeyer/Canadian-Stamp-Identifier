@@ -104,7 +104,7 @@ Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Fon
 | Catégories non canoniques | 0 — chaque sous-catégorie suit le format `Catégorie : Sous-catégorie` |
 | Plateformes | Téléphone, tablette, ordinateur |
 | Dépendances | 0 |
-| Version | v2.2 |
+| Version | v2.3 |
 
 ## 📖 Comment utiliser
 
