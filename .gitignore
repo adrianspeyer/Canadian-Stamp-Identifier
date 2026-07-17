@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+__MACOSX
+
+# iCloud
+*.icloud
+.icloud
+
+# Thumbnails
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Node (if ever used for tooling)
+node_modules/
+npm-debug.log
+
+# Python
+__pycache__/
+*.pyc
+.env

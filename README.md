@@ -98,7 +98,7 @@ No installation needed — works in any modern web browser. Works offline after 
 
 | Metric | Value |
 |---|---|
-| Stamps catalogued | 3,476 |
+| Stamps catalogued | 3,482 |
 | Years covered | 1851–2026 (175 years) |
 | Categories | 15 top-level, 100+ subcategories, all canonical |
 | Empty notes | 0 — every stamp has historical context |
@@ -136,6 +136,16 @@ Every contribution — a corrected note, a better colour description, a missing 
 2. **Add images** to `images/[decade]/` using the naming convention below
 3. **Update** `data/stamps.json` with stamp details (see [JSON Format Reference](#-json-format-reference))
 4. **Submit** a pull request
+
+### Adding Stamps with Claude Code
+
+This repo includes a [`CLAUDE.md`](CLAUDE.md) file that lets [Claude Code](https://docs.anthropic.com/en/docs/claude-code) automate the entire stamp-addition workflow. To use it:
+
+1. **Install Claude Code** and open the repo
+2. **Drop raw stamp images** into `images/2020s/`
+3. **Tell Claude Code** what the stamps are — paste the Canada Post press release text or provide a URL
+4. Claude Code will: rename images to the project convention, assign sequential IDs in chronological order, write English descriptions, translate to French, pick the right category, update stamp counts across all files, bump the service worker cache, and run QA
+5. **Review the summary**, then let it commit and push
 
 ### Image Guidelines
 
@@ -265,7 +275,7 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 ## 🗺️ Roadmap
 
 ### Completed ✅
-- [x] Complete catalogue 1851–2026 (3,476 stamps)
+- [x] Complete catalogue 1851–2026 (3,482 stamps)
 - [x] Unified responsive design (phone → desktop)
 - [x] Decade navigation with chevron arrows
 - [x] Service worker, batched rendering, lazy loading, content-visibility
@@ -284,7 +294,7 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 - [x] Automatic category and colour translation
 
 ### Future 🔮
-- [ ] Complete French stamp translations (mainTopic + notes for all 3,476 stamps)
+- [ ] Complete French stamp translations (mainTopic + notes for all 3,482 stamps)
 - [ ] Print-friendly views
 - [ ] Bookmark/favourites
 - [ ] Wishlist

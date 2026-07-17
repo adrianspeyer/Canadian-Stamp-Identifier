@@ -33,7 +33,7 @@
 
 Cet outil facilite l'identification des timbres grâce à la **correspondance visuelle** dans une grille de cartes adaptative et recherchable. Au lieu de feuilleter des catalogues :
 
-- **Parcourez plus de 3 476 timbres** dans une grille adaptative qui fonctionne sur tous les appareils
+- **Parcourez plus de 3 482 timbres** dans une grille adaptative qui fonctionne sur tous les appareils
 - **Filtrez par décennie** avec une barre de pastilles défilante — sautez instantanément à n'importe quelle époque
 - **Recherche intelligente** par sujet, année, couleur, valeur faciale et notes historiques
 - **Touchez pour les détails** — numéro, valeur faciale, catégorie, couleur et contexte historique
@@ -51,7 +51,7 @@ Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Fon
 - **Recherche instantanée** : tapez une année, un sujet, une couleur ou un mot-clé — recherche aussi dans les notes
 - **Filtrage par décennie** : barre de pastilles défilante avec le nombre de timbres par époque
 - **Filtres combinés** : recherchez dans une décennie (p. ex. « castor » dans les années 1850)
-- **Saisie avec rebond** : réactif même avec plus de 3 476 timbres
+- **Saisie avec rebond** : réactif même avec plus de 3 482 timbres
 
 ### Interface visuelle
 - **Grille de cartes adaptative** : de 2 colonnes sur téléphone à 10+ sur écran ultralarge
@@ -96,7 +96,7 @@ Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Fon
 
 | Métrique | Valeur |
 |---|---|
-| Timbres catalogués | 3 476 |
+| Timbres catalogués | 3 482 |
 | Années couvertes | 1851–2026 (175 ans) |
 | Catégories | 15 de premier niveau, 100+ sous-catégories, toutes canoniques |
 | Notes vides | 0 — chaque timbre a un contexte historique |
@@ -135,6 +135,16 @@ Chaque contribution — une note corrigée, une meilleure description de couleur
 2. **Ajoutez des images** dans `images/[décennie]/` selon la convention de nommage ci-dessous
 3. **Mettez à jour** `data/stamps.json` avec les détails du timbre (voir [Format JSON de référence](#-format-json-de-référence))
 4. **Soumettez** un pull request
+
+### Ajout de timbres avec Claude Code
+
+Ce dépôt inclut un fichier [`CLAUDE.md`](CLAUDE.md) permettant à [Claude Code](https://docs.anthropic.com/en/docs/claude-code) d'automatiser l'ajout de timbres. Pour l'utiliser :
+
+1. **Installez Claude Code** et ouvrez le dépôt
+2. **Déposez les images brutes** dans `images/2020s/`
+3. **Décrivez les timbres** à Claude Code — collez le communiqué de presse de Postes Canada (texte ou URL)
+4. Claude Code se charge de : renommer les images selon la convention du projet, attribuer les numéros en ordre chronologique, rédiger les descriptions en anglais, traduire en français, choisir la bonne catégorie, mettre à jour les compteurs dans tous les fichiers, incrémenter le cache du service worker et lancer le contrôle qualité
+5. **Vérifiez le résumé**, puis laissez-le valider et pousser les changements
 
 ### Directives pour les images
 
@@ -255,7 +265,7 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 ## 🗺️ Feuille de route
 
 ### Complété ✅
-- [x] Catalogue complet 1851–2026 (3 476 timbres)
+- [x] Catalogue complet 1851–2026 (3 482 timbres)
 - [x] Design adaptatif unifié (téléphone → ordinateur)
 - [x] Navigation par décennie avec flèches
 - [x] Service worker, rendu par lots, chargement progressif, content-visibility
@@ -271,7 +281,7 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 - [x] Traduction automatique des catégories et des couleurs
 
 ### Futur 🔮
-- [ ] Compléter les traductions françaises (mainTopic + notes pour les 3 476 timbres)
+- [ ] Compléter les traductions françaises (mainTopic + notes pour les 3 482 timbres)
 - [ ] Vues adaptées à l'impression
 - [ ] Signets/favoris
 - [ ] Liste de souhaits
