@@ -1,12 +1,12 @@
 # 🍁 Canadian Stamp Identifier
 
-**A comprehensive visual identification tool for Canadian postage stamps (1851–2026)**
+**A visual identification tool for Canadian postage stamps (1851–2026)**
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://adrianspeyer.github.io/Canadian-Stamp-Identifier)
 [![Contributors Welcome](https://img.shields.io/badge/Contributors-Welcome-green?style=for-the-badge)](#-how-to-contribute)
 [![GitHub Issues](https://img.shields.io/github/issues/adrianspeyer/canadian-stamp-identifier?style=for-the-badge)](https://github.com/adrianspeyer/canadian-stamp-identifier/issues)
 
-> **🎯 Mission**: The most comprehensive visual identification tool for Canadian stamps, making stamp identification accessible to collectors worldwide.
+> **🎯 Mission**: Make Canadian stamp identification accessible to collectors worldwide.
 
 🇫🇷 [Version française](README-fr.md)
 
@@ -33,7 +33,7 @@
 
 This tool makes stamp identification easy through **visual pattern matching** in a responsive, searchable card grid. Instead of flipping through catalogues:
 
-- **Browse 3,470+ stamps** in a responsive grid that works on every device
+- **Browse 3,488 stamps** in a responsive grid that works on every device
 - **Filter by decade** with a scrollable pill bar — instantly jump to any era
 - **Smart search** across topics, years, colours, denominations, and historical notes
 - **Tap for details** — get ID, denomination, category, colour, and historical context
@@ -43,7 +43,7 @@ This tool makes stamp identification easy through **visual pattern matching** in
 
 **👆 [Launch the Stamp Identifier](https://adrianspeyer.github.io/Canadian-Stamp-Identifier)**
 
-No installation needed — works in any modern web browser. Works offline after first visit.
+No installation needed — works in any modern web browser. Previously cached catalogue data and images can be viewed offline; uncached images require a connection.
 
 ## ✨ Features
 
@@ -51,7 +51,7 @@ No installation needed — works in any modern web browser. Works offline after 
 - **Instant search**: type a year, topic, colour, or keyword — searches notes too
 - **Decade filtering**: scrollable pill bar with stamp counts per era
 - **Combined filtering**: search within a decade (e.g., "beaver" in the 1850s)
-- **Debounced input**: responsive even with 3,470+ stamps
+- **Debounced input**: responsive even with 3,488 stamps
 
 ### Visual Interface
 - **Responsive card grid**: 2 columns on phones → 10+ on ultrawide
@@ -94,19 +94,21 @@ No installation needed — works in any modern web browser. Works offline after 
 - All data via `createElement` + `textContent`
 - Zero third-party JavaScript
 
+Catalogue notes support visual identification; they are not an authentication or valuation service. Colour shades and specialist varieties may require independent references. Report corrections with a source and the project stamp ID.
+
 ## 📊 Current Statistics
 
 | Metric | Value |
 |---|---|
 | Stamps catalogued | 3,488 |
 | Years covered | 1851–2026 (175 years) |
-| Categories | 15 top-level, 100+ subcategories, all canonical |
-| Empty notes | 0 — every stamp has historical context |
+| Categories | 14 top-level, 100+ subcategories, all canonical |
+| Empty notes | 0 — every entry has descriptive or issue notes |
 | Empty colours | 0 — every stamp has a colour description |
 | Non-canonical categories | 0 — every subTopic follows `Category: Subcategory` format |
 | Platforms | Phone, tablet, desktop |
 | Dependencies | 0 |
-| Version | v2.3 |
+| Version | v2.7 |
 
 ## 📖 How to Use
 
@@ -126,7 +128,7 @@ Every contribution — a corrected note, a better colour description, a missing 
 | Contribution | How |
 |---|---|
 | **Spot an error** | Open a [GitHub Issue](https://github.com/adrianspeyer/canadian-stamp-identifier/issues) with the stamp ID and correction |
-| **Have a stamp image** | Upload it in an issue — we'll handle the rest |
+| **Have a stamp image** | Include its source, credit, and permission or reuse terms in an issue |
 | **Refine colours** | Many modern stamps are "multicoloured" — more specific descriptions welcome |
 | **Add historical context** | Know the story behind a stamp? Share it in an issue |
 
@@ -135,7 +137,8 @@ Every contribution — a corrected note, a better colour description, a missing 
 1. **Fork** the repository on GitHub
 2. **Add images** to `images/[decade]/` using the naming convention below
 3. **Update** `data/stamps.json` with stamp details (see [JSON Format Reference](#-json-format-reference))
-4. **Submit** a pull request
+4. **Run** `python3 qa-images.py`; the five listed placeholder images are currently expected to be missing
+5. **Submit** a pull request with sources for factual corrections and matching French updates
 
 ### Adding Stamps with Claude Code
 
@@ -237,11 +240,11 @@ Each stamp in `data/stamps.json` has this structure:
 - Mention notable varieties or errors where known (e.g., "A variety exists with inverted centre")
 - Use Canadian English (colour, honour, catalogue)
 - **Never include Scott catalogue numbers** (licensing restriction)
-- Cross-reference other stamps using proprietary IDs: "See also #140 and #868"
+- Cross-reference other stamps using project IDs: "See also #140 and #868"
 
 ## 🔢 Note on IDs
 
-The stamp IDs in this project (`#001`, `#002`, etc.) are **proprietary reference numbers** created specifically for this tool. They are **not** Scott catalogue numbers or any other licensed numbering system.
+The stamp IDs in this project (`#001`, `#002`, etc.) are **reference numbers specific to this tool**. They are **not** Scott catalogue numbers or any other licensed numbering system.
 
 For varieties, errors, and detailed pricing, cross-reference the **year**, **topic**, and **denomination** in official stamp catalogues.
 
@@ -275,7 +278,7 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 ## 🗺️ Roadmap
 
 ### Completed ✅
-- [x] Complete catalogue 1851–2026 (3,488 stamps)
+- [x] Catalogue covering 1851–2026 (3,488 stamps)
 - [x] Unified responsive design (phone → desktop)
 - [x] Decade navigation with chevron arrows
 - [x] Service worker, batched rendering, lazy loading, content-visibility
@@ -294,7 +297,7 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 - [x] Automatic category and colour translation
 
 ### Future 🔮
-- [ ] Complete French stamp translations (mainTopic + notes for all 3,488 stamps)
+- [ ] Review and refine existing French titles and notes
 - [ ] Print-friendly views
 - [ ] Bookmark/favourites
 - [ ] Wishlist
@@ -302,13 +305,10 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 
 ## 📜 License & Legal
 
-**License**: [GNU Affero General Public License v3.0](LICENSE)
-- Ensures this remains open source forever — including network/server use
-- All improvements benefit the community
-- Commercial use allowed with attribution
+**Code license**: [GNU Affero General Public License v3.0](LICENSE). See the full license for terms governing use, modification and distribution.
 
-**Images**: Contributors retain copyright, grant usage rights for this project
-**Data**: Public domain compilation
+**Images and source material**: Stamp designs, photographs and other third-party material may have separate rights. This repository does not provide a complete image-by-image rights record or establish that all catalogue text is public domain. Contributions should identify sources, credits and permission or reuse terms. Preserve existing credits.
+
 **Not affiliated** with Canada Post or any official source
 
 ---
@@ -317,7 +317,7 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 
 **🍁 Proudly Canadian • 🌟 Community Driven • 🚀 Built for Collectors**
 
-*The most comprehensive Canadian stamp identification tool on the web*
+*Explore Canadian postal history, one stamp at a time*
 
 [**Try It Now →**](https://adrianspeyer.github.io/Canadian-Stamp-Identifier)
 

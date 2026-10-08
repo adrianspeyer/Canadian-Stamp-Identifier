@@ -1,12 +1,12 @@
 # 🍁 Identificateur de timbres canadiens
 
-**Un outil complet d'identification visuelle des timbres-poste canadiens (1851–2026)**
+**Un outil d'identification visuelle des timbres-poste canadiens (1851–2026)**
 
 [![Démo en direct](https://img.shields.io/badge/Démo-en_direct-blue?style=for-the-badge)](https://adrianspeyer.github.io/Canadian-Stamp-Identifier)
 [![Contributeurs bienvenus](https://img.shields.io/badge/Contributeurs-Bienvenus-green?style=for-the-badge)](#-comment-contribuer)
 [![Problèmes GitHub](https://img.shields.io/github/issues/adrianspeyer/canadian-stamp-identifier?style=for-the-badge)](https://github.com/adrianspeyer/canadian-stamp-identifier/issues)
 
-> **🎯 Mission** : L'outil d'identification visuelle le plus complet pour les timbres canadiens, rendant l'identification accessible aux collectionneurs du monde entier.
+> **🎯 Mission** : Rendre l'identification des timbres canadiens accessible aux collectionneurs du monde entier.
 
 🇬🇧 [English version](README.md)
 
@@ -33,7 +33,7 @@
 
 Cet outil facilite l'identification des timbres grâce à la **correspondance visuelle** dans une grille de cartes adaptative et recherchable. Au lieu de feuilleter des catalogues :
 
-- **Parcourez plus de 3 488 timbres** dans une grille adaptative qui fonctionne sur tous les appareils
+- **Parcourez 3 488 timbres** dans une grille adaptative qui fonctionne sur tous les appareils
 - **Filtrez par décennie** avec une barre de pastilles défilante — sautez instantanément à n'importe quelle époque
 - **Recherche intelligente** par sujet, année, couleur, valeur faciale et notes historiques
 - **Touchez pour les détails** — numéro, valeur faciale, catégorie, couleur et contexte historique
@@ -43,7 +43,7 @@ Cet outil facilite l'identification des timbres grâce à la **correspondance vi
 
 **👆 [Lancer l'Identificateur de timbres](https://adrianspeyer.github.io/Canadian-Stamp-Identifier)**
 
-Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Fonctionne hors ligne après la première visite.
+Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Les données et images déjà en cache sont consultables hors ligne; les autres images nécessitent une connexion.
 
 ## ✨ Fonctionnalités
 
@@ -51,7 +51,7 @@ Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Fon
 - **Recherche instantanée** : tapez une année, un sujet, une couleur ou un mot-clé — recherche aussi dans les notes
 - **Filtrage par décennie** : barre de pastilles défilante avec le nombre de timbres par époque
 - **Filtres combinés** : recherchez dans une décennie (p. ex. « castor » dans les années 1850)
-- **Saisie avec rebond** : réactif même avec plus de 3 488 timbres
+- **Saisie avec rebond** : réactif même avec 3 488 timbres
 
 ### Interface visuelle
 - **Grille de cartes adaptative** : de 2 colonnes sur téléphone à 10+ sur écran ultralarge
@@ -92,19 +92,21 @@ Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Fon
 - Toutes les données via `createElement` + `textContent`
 - Zéro JavaScript tiers
 
+Les notes facilitent l’identification visuelle; elles ne constituent pas un service d’authentification ou d’évaluation. Les nuances et variétés spécialisées peuvent nécessiter des références indépendantes. Signalez les corrections avec une source et le numéro du projet.
+
 ## 📊 Statistiques actuelles
 
 | Métrique | Valeur |
 |---|---|
 | Timbres catalogués | 3 488 |
 | Années couvertes | 1851–2026 (175 ans) |
-| Catégories | 15 de premier niveau, 100+ sous-catégories, toutes canoniques |
-| Notes vides | 0 — chaque timbre a un contexte historique |
+| Catégories | 14 de premier niveau, 100+ sous-catégories, toutes canoniques |
+| Notes vides | 0 — chaque entrée a des notes descriptives ou des renseignements d’émission |
 | Couleurs vides | 0 — chaque timbre a une description de couleur |
 | Catégories non canoniques | 0 — chaque sous-catégorie suit le format `Catégorie : Sous-catégorie` |
 | Plateformes | Téléphone, tablette, ordinateur |
 | Dépendances | 0 |
-| Version | v2.3 |
+| Version | v2.7 |
 
 ## 📖 Comment utiliser
 
@@ -223,7 +225,7 @@ Chaque timbre dans `data/stamps.json` a cette structure :
 
 | Champ | Description | Obligatoire |
 |---|---|---|
-| `id` | Numéro de référence exclusif (voir [À propos des numéros](#-à-propos-des-numéros)) | Oui |
+| `id` | Numéro de référence propre au projet (voir [À propos des numéros](#-à-propos-des-numéros)) | Oui |
 | `year` | Année d'émission | Oui |
 | `mainTopic` | Sujet/motif principal (en anglais) | Oui |
 | `subTopic` | Catégorie au format `Category: Subcategory` (en anglais) | Oui |
@@ -237,7 +239,7 @@ Les traductions françaises sont stockées séparément dans `data/stamps-fr.jso
 
 ## 🔢 À propos des numéros
 
-Les numéros de timbres de ce projet (`#001`, `#002`, etc.) sont des **numéros de référence exclusifs** créés spécifiquement pour cet outil. Ce ne sont **pas** des numéros de catalogue Scott ni d'aucun autre système sous licence.
+Les numéros de timbres de ce projet (`#001`, `#002`, etc.) sont des **numéros de référence propres à cet outil**. Ce ne sont **pas** des numéros de catalogue Scott ni d'aucun autre système sous licence.
 
 Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **sujet** et la **valeur faciale** dans les catalogues officiels de timbres.
 
@@ -265,7 +267,7 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 ## 🗺️ Feuille de route
 
 ### Complété ✅
-- [x] Catalogue complet 1851–2026 (3 488 timbres)
+- [x] Catalogue couvrant la période 1851–2026 (3 488 timbres)
 - [x] Design adaptatif unifié (téléphone → ordinateur)
 - [x] Navigation par décennie avec flèches
 - [x] Service worker, rendu par lots, chargement progressif, content-visibility
@@ -281,20 +283,17 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 - [x] Traduction automatique des catégories et des couleurs
 
 ### Futur 🔮
-- [ ] Compléter les traductions françaises (mainTopic + notes pour les 3 488 timbres)
+- [ ] Réviser et améliorer les titres et notes en français
 - [ ] Vues adaptées à l'impression
 - [ ] Signets/favoris
 - [ ] Liste de souhaits
 
 ## 📜 Licence et mentions légales
 
-**Licence** : [GNU Affero General Public License v3.0](LICENSE)
-- Garantit que ce projet reste à code source ouvert pour toujours — y compris l'utilisation en réseau/serveur
-- Toutes les améliorations profitent à la communauté
-- Utilisation commerciale permise avec attribution
+**Licence du code** : [GNU Affero General Public License v3.0](LICENSE). Consultez le texte intégral pour les conditions d’utilisation, de modification et de distribution.
 
-**Images** : Les contributeurs conservent le droit d'auteur et accordent les droits d'utilisation pour ce projet
-**Données** : Compilation du domaine public
+**Images et sources** : Les motifs de timbres, photographies et autres éléments provenant de tiers peuvent être soumis à des droits distincts. Ce dépôt ne fournit pas de relevé complet des droits de chaque image et n’établit pas que tous les textes du catalogue appartiennent au domaine public. Les contributions doivent préciser les sources, crédits et autorisations ou conditions de réutilisation. Conservez les crédits existants.
+
 **Non affilié** à Postes Canada ni à aucune source officielle
 
 ---
@@ -303,7 +302,7 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 
 **🍁 Fièrement canadien • 🌟 Propulsé par la communauté • 🚀 Conçu pour les collectionneurs**
 
-*L'outil d'identification de timbres canadiens le plus complet sur le Web*
+*Explorez l’histoire postale canadienne, un timbre à la fois*
 
 [**Essayez maintenant →**](https://adrianspeyer.github.io/Canadian-Stamp-Identifier)
 
