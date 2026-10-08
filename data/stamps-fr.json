@@ -14,7 +14,7 @@
     },
     "004": {
       "mainTopic": "Castor",
-      "notes": "Émis le 1er avril 1852; Qté : 2 850 300; Dentelure : non dentelé; Imprimeur : Rawdon, Wright, Hatch & Edson. Deuxième tirage du motif du castor sur papier vélin au lieu du papier vergé. De multiples nuances existent, du vermillon au rouge orangé, et les collectionneurs distinguent de nombreuses variétés de planche."
+      "notes": "Émis le 1er avril 1852; Qté : 2 850 300; Dentelure : non dentelé; Imprimeur : Rawdon, Wright, Hatch & Edson. Deuxième tirage du motif du castor (no 001) sur papier vélin au lieu du papier vergé. De multiples nuances existent, du vermillon au rouge orangé, et les collectionneurs distinguent de nombreuses variétés de planche."
     },
     "005": {
       "mainTopic": "Jacques Cartier",
@@ -22,7 +22,7 @@
     },
     "006": {
       "mainTopic": "Prince Albert",
-      "notes": "Émis le 1er mars 1855; Qté : 250 078; Dentelure : non dentelé; Imprimeur : Rawdon, Wright, Hatch & Edson. Version regravée du timbre sur papier vélin plus épais. La nuance pourpre rougeâtre le distingue du premier tirage en violet ardoise."
+      "notes": "Émis le 1er mars 1855; Qté : 250 078; Dentelure : non dentelé; Imprimeur : Rawdon, Wright, Hatch & Edson. Version regravée du no 002 sur papier vélin plus épais. La nuance pourpre rougeâtre le distingue du premier tirage en violet ardoise."
     },
     "007": {
       "mainTopic": "Reine Victoria",
@@ -54,7 +54,7 @@
     },
     "014": {
       "mainTopic": "Prince Albert (dernier tirage)",
-      "notes": "Émis le 1er juillet 1859; Qté : 5 700 000; Dentelure : 12; Imprimeur : American Bank Note Company, New York. Prince Albert de l'ère décimale en brun, contrastant avec le premier tirage en rose. Utilisé pour le tarif de lettre recommandée. Plusieurs variétés de nuances existent."
+      "notes": "Émis le 1er juillet 1859; Qté : 5 700 000; Dentelure : 12; Imprimeur : American Bank Note Company, New York. Prince Albert de l'ère décimale en brun, contrastant avec le premier tirage en rose (no 017). Utilisé pour le tarif de lettre recommandée. Plusieurs variétés de nuances existent."
     },
     "015": {
       "mainTopic": "Reine Victoria",
@@ -70,7 +70,7 @@
     },
     "017": {
       "mainTopic": "Prince Albert (premier tirage)",
-      "notes": "Émis le 1er juillet 1859; Dentelure : 12; Imprimeur : American Bank Note Company, New York. Premier tirage du 10¢ décimal Prince Albert en rose, remplacé ensuite par la nuance brune. La couleur rose est considérablement plus rare et très prisée des collectionneurs."
+      "notes": "Émis le 1er juillet 1859; Dentelure : 12; Imprimeur : American Bank Note Company, New York. Premier tirage du 10¢ décimal Prince Albert en rose, remplacé ensuite par la nuance brune (no 014). La couleur rose est considérablement plus rare et très prisée des collectionneurs."
     },
     "018": {
       "mainTopic": "Reine Victoria",
@@ -670,7 +670,7 @@
     },
     "166": {
       "mainTopic": "Poste aérienne",
-      "notes": "Émission surchargée de la Conférence d'Ottawa — le timbre de poste aérienne de 6¢ surchargé à 5¢ pour correspondre au tarif aérien réduit. Émis pour la Conférence économique impériale de 1932 tenue à Ottawa."
+      "notes": "Émission surchargée de la Conférence d'Ottawa — le timbre de poste aérienne de 6¢ (no 165) surchargé à 5¢ pour correspondre au tarif aérien réduit. Émis pour la Conférence économique impériale de 1932 tenue à Ottawa."
     },
     "167": {
       "mainTopic": "Roi George V",
@@ -13769,194 +13769,194 @@
       "notes": "Émis le 29 septembre 2025. Se-tenant avec no 3438 et no 3439. Carnet de 6. Représente le panneau gauche d'une boîte en bois courbé."
     },
     "3441": {
+      "mainTopic": "Diwali",
+      "notes": "Émis le 15 octobre 2025. Carnet de 6. Série : Diwali. Émission annuelle célébrant la fête des lumières hindoue, sikhe et jaïne."
+    },
+    "3442": {
       "mainTopic": "Soldat Singh — Jour du Souvenir",
       "notes": "Émis le 3 novembre 2025 (feuillet de 5; carnet de 6). Série : Jour du Souvenir. Rend hommage au service du soldat Singh, représentant l'apport des Canadiens d'origine sud-asiatique qui ont servi dans l'armée canadienne."
     },
     "3443": {
-      "mainTopic": "Diwali",
-      "notes": "Émis le 15 octobre 2025. Carnet de 6. Série : Diwali. Émission annuelle célébrant la fête des lumières hindoue, sikhe et jaïne."
-    },
-    "3444": {
-      "mainTopic": "Hanoukka",
-      "notes": "Émis le 13 novembre 2025. Carnet de 6. Série : Hanoukka. Émission annuelle célébrant la fête juive des lumières."
-    },
-    "3446": {
       "mainTopic": "Noël — La Nativité",
       "notes": "Émis le 6 novembre 2025. Carnet de 12. Série : Noël 2025. Scène traditionnelle de la Nativité pour le timbre-poste de Noël religieux."
     },
-    "3447": {
+    "3444": {
       "mainTopic": "Noël — Contes en guirlandes",
       "notes": "Émis le 6 novembre 2025. Carnet de 12. Série : Noël — Contes en guirlandes. Motif festif et fantaisiste pour le timbre-poste de Noël profane."
     },
-    "3448": {
+    "3445": {
       "mainTopic": "Noël — Contes en guirlandes (1,75 $)",
       "notes": "Émis le 6 novembre 2025. Feuillet de 6. Série : Noël — Contes en guirlandes. Timbre-poste des Fêtes au tarif des envois à destination des États-Unis."
     },
-    "3449": {
+    "3446": {
       "mainTopic": "Noël — Contes en guirlandes (3,65 $)",
       "notes": "Émis le 6 novembre 2025. Feuillet de 6. Série : Noël — Contes en guirlandes. Timbre-poste des Fêtes au tarif du régime international."
     },
-    "3451": {
+    "3447": {
+      "mainTopic": "Hanoukka",
+      "notes": "Émis le 13 novembre 2025. Carnet de 6. Série : Hanoukka. Émission annuelle célébrant la fête juive des lumières."
+    },
+    "3448": {
       "mainTopic": "Bédéistes canadiens — Kate Beaton",
       "notes": "Émis le 20 novembre 2025. Carnet de 12. Série : Bédéistes canadiens (II). Kate Beaton — bédéiste du Cap-Breton (Nouvelle-Écosse), connue pour son webcomic Hark! A Vagrant et son roman graphique Ducks: Two Years in the Oil Sands, lauréat d'un Prix du Gouverneur général."
     },
-    "3452": {
+    "3449": {
       "mainTopic": "Bédéistes canadiens — Jimmy Beaulieu",
       "notes": "Émis le 20 novembre 2025. Carnet de 12. Série : Bédéistes canadiens (II). Jimmy Beaulieu — bédéiste et éditeur québécois, figure motrice de la bande dessinée indépendante au Québec."
     },
-    "3453": {
+    "3450": {
       "mainTopic": "Bédéistes canadiens — Guy Delisle",
       "notes": "Émis le 20 novembre 2025. Carnet de 12. Série : Bédéistes canadiens (II). Guy Delisle — bédéiste québécois connu pour ses récits de voyage en Corée du Nord (Pyongyang), en Birmanie et à Jérusalem, mêlant autobiographie et regard politique."
     },
-    "3454": {
+    "3451": {
       "mainTopic": "Bédéistes canadiens — Julie Doucet",
       "notes": "Émis le 20 novembre 2025. Carnet de 12. Série : Bédéistes canadiens (II). Julie Doucet — pionnière montréalaise de la bande dessinée underground, connue pour son influent fanzine autobiographique Dirty Plotte."
     },
-    "3455": {
+    "3452": {
       "mainTopic": "Bédéistes canadiens — Bryan Lee O'Malley",
       "notes": "Émis le 20 novembre 2025. Carnet de 12. Série : Bédéistes canadiens (II). Bryan Lee O'Malley — de London (Ontario), créateur de la série Scott Pilgrim, devenue une franchise culte de romans graphiques, de film et de jeu vidéo."
     },
-    "3456": {
+    "3453": {
       "mainTopic": "Bédéistes canadiens — Michael Nicoll Yahgulanaas",
       "notes": "Émis le 20 novembre 2025. Carnet de 12. Série : Bédéistes canadiens (II). Michael Nicoll Yahgulanaas — artiste haïda, créateur du genre « Haida Manga », qui marie l'art formel haïda et la narration du manga japonais."
     },
-    "3457": {
+    "3454": {
       "mainTopic": "Mois de l'histoire des Noirs — Maestro Fresh Wes",
       "notes": "Émis le 28 janvier 2026. Série : Le hip-hop au Canada. Carnet de 6. Maestro Fresh Wes — rappeur torontois dont le simple « Let Your Backbone Slide » (1989) est considéré comme le premier succès hip-hop canadien et un jalon du genre au pays."
     },
-    "3458": {
+    "3455": {
       "mainTopic": "Mois de l'histoire des Noirs — Michie Mee",
       "notes": "Émis le 28 janvier 2026. Série : Le hip-hop au Canada. Carnet de 6. Michie Mee — l'une des premières femmes du hip-hop canadien, rappeuse jamaïcaine-canadienne de Toronto qui a ouvert la voie à la fin des années 1980."
     },
-    "3459": {
+    "3456": {
       "mainTopic": "Mois de l'histoire des Noirs — Muzion",
       "notes": "Émis le 28 janvier 2026. Série : Le hip-hop au Canada. Carnet de 6. Muzion — groupe hip-hop montréalais pionnier de la fin des années 1990, qui a contribué à établir le rap francophone au Québec."
     },
-    "3460": {
+    "3457": {
       "mainTopic": "Fleurs — Fleurs de cerisier (roses)",
       "notes": "Émis le 2 mars 2026; Série : Fleurs du printemps. Fleurs de cerisier roses — célèbrent les cerisiers ornementaux qui fleurissent chaque printemps dans les villes canadiennes, notamment dans les parcs de Vancouver."
     },
-    "3461": {
+    "3458": {
       "mainTopic": "Fleurs — Fleurs de cerisier (blanches)",
       "notes": "Émis le 2 mars 2026; Série : Fleurs du printemps. Fleurs de cerisier blanches — le Japon a offert des cerisiers à plusieurs villes canadiennes en signe d'amitié; le festival des cerisiers en fleurs de Vancouver est un événement annuel majeur."
     },
-    "3462": {
+    "3459": {
       "mainTopic": "Aïd (vert)",
-      "notes": "Émis le 10 mars 2026; Imprimeur : Colour Innovations; Conception : Paprika; PJC : Vancouver (C.-B.). Série : Aïd. Huitième émission de Postes Canada consacrée à l'Aïd, et la première à comporter trois motifs. Les timbres octogonaux intègrent des feuilles d'érable stylisées dans un motif géométrique islamique traditionnel, reflet de la diversité culturelle du Canada. Les cercles et polygones entrelacés s'inspirent des motifs mathématiques et naturels caractéristiques de l'ornementation islamique. Célèbre l'Aïd al-Fitr et l'Aïd al-Adha, observés par plus de 1,5 million de musulmans au Canada. Voir aussi #3035, #3215, #3265, #3296, #3341, #3378, #3421, #3463, #3464."
+      "notes": "Émis le 10 mars 2026; Imprimeur : Colour Innovations; Conception : Paprika; PJC : Vancouver (C.-B.). Série : Aïd. Huitième émission de Postes Canada consacrée à l'Aïd, et la première à comporter trois motifs. Les timbres octogonaux intègrent des feuilles d'érable stylisées dans un motif géométrique islamique traditionnel, reflet de la diversité culturelle du Canada. Les cercles et polygones entrelacés s'inspirent des motifs mathématiques et naturels caractéristiques de l'ornementation islamique. Célèbre l'Aïd al-Fitr et l'Aïd al-Adha, observés par plus de 1,5 million de musulmans au Canada. Voir aussi no 3035, no 3215, no 3265, no 3296, no 3341, no 3378, no 3421, no 3460, no 3461."
+    },
+    "3460": {
+      "mainTopic": "Aïd (rose)",
+      "notes": "Émis le 10 mars 2026; Imprimeur : Colour Innovations; Conception : Paprika; PJC : Vancouver (C.-B.). Série : Aïd. Même motif géométrique islamique octogonal avec feuilles d'érable stylisées que les variantes verte (no 3459) et bleue (no 3461), dans une palette rose et magenta. Fait partie d'un carnet de six timbres PERMANENTᴹᴰ. Huitième émission annuelle de l'Aïd."
+    },
+    "3461": {
+      "mainTopic": "Aïd (bleu)",
+      "notes": "Émis le 10 mars 2026; Imprimeur : Colour Innovations; Conception : Paprika; PJC : Vancouver (C.-B.). Série : Aïd. Même motif géométrique islamique octogonal avec feuilles d'érable stylisées que les variantes verte (no 3459) et rose (no 3460), dans une palette bleu et marine. Fait partie d'un carnet de six timbres PERMANENTᴹᴰ. Huitième émission annuelle de l'Aïd."
+    },
+    "3462": {
+      "mainTopic": "Cabanes à sucre (rouge)",
+      "notes": "Émis le 19 mars 2026; qté : 130 000 carnets de 6; impression : Colour Innovations; illustrateur : Gérard DuBois; conception : Paprika; PPJO : Saint-Georges, QC. Série : Cabanes à sucre (2026). Scène hivernale extérieure montrant une cabane à sucre traditionnelle du Québec avec des enfants jouant, un traîneau tiré par un cheval et la collecte de la sève d'érable. Le timbre prend la forme d'une boîte de conserve de sirop d'érable d'époque, inspiré de l'art commercial des années 1940 et 1950. Les traditions du temps des sucres font partie du patrimoine immatériel du Québec. Voir aussi no 3463."
     },
     "3463": {
-      "mainTopic": "Aïd (rose)",
-      "notes": "Émis le 10 mars 2026; Imprimeur : Colour Innovations; Conception : Paprika; PJC : Vancouver (C.-B.). Série : Aïd. Même motif géométrique islamique octogonal avec feuilles d'érable stylisées que les variantes verte (#3462) et bleue (#3464), dans une palette rose et magenta. Fait partie d'un carnet de six timbres PERMANENTᴹᴰ. Huitième émission annuelle de l'Aïd."
+      "mainTopic": "Cabanes à sucre (jaune)",
+      "notes": "Émis le 19 mars 2026; impression : Colour Innovations; illustrateur : Gérard DuBois; conception : Paprika. Série : Cabanes à sucre (2026). Scène intérieure d'une famille réunie autour d'une table à carreaux savourant un repas traditionnel de cabane à sucre. Forme de boîte de conserve de sirop d'érable d'époque. Voir aussi no 3462."
     },
     "3464": {
-      "mainTopic": "Aïd (bleu)",
-      "notes": "Émis le 10 mars 2026; Imprimeur : Colour Innovations; Conception : Paprika; PJC : Vancouver (C.-B.). Série : Aïd. Même motif géométrique islamique octogonal avec feuilles d'érable stylisées que les variantes verte (#3462) et rose (#3463), dans une palette bleu et marine. Fait partie d'un carnet de six timbres PERMANENTᴹᴰ. Huitième émission annuelle de l'Aïd."
-    },
-    "3465": {
-      "mainTopic": "Cabanes à sucre (rouge)",
-      "notes": "Émis le 19 mars 2026; qté : 130 000 carnets de 6; impression : Colour Innovations; illustrateur : Gérard DuBois; conception : Paprika; PPJO : Saint-Georges, QC. Série : Cabanes à sucre (2026). Scène hivernale extérieure montrant une cabane à sucre traditionnelle du Québec avec des enfants jouant, un traîneau tiré par un cheval et la collecte de la sève d'érable. Le timbre prend la forme d'une boîte de conserve de sirop d'érable d'époque, inspiré de l'art commercial des années 1940 et 1950. Les traditions du temps des sucres font partie du patrimoine immatériel du Québec. Voir aussi no 3466."
-    },
-    "3467": {
       "mainTopic": "Fondation communautaire de Postes Canada (semipostal)",
       "notes": "Émis le 4 mai 2026; timbre semi-postal soutenant des programmes pour l'enfance et la jeunesse; conception : Adrian Horvath; illustration : Amélie Martel; PPJO : Ottawa. Série : Fondation communautaire de Postes Canada (15e année). Le timbre montre deux jeunes qui entretiennent un jardin communautaire de légumes-racines prêts à récolter — un rappel que les enfants s'épanouissent lorsqu'on leur offre les bons soins et occasions. Une surtaxe de 1 $ par carnet de 10 timbres finance des subventions aux écoles, organismes de bienfaisance et organismes qui aident les enfants et les jeunes (jusqu'à 21 ans)."
     },
-    "3468": {
+    "3465": {
       "mainTopic": "Lieux de fierté — Little Sister's Book & Art Emporium (Vancouver)",
-      "notes": "Émis le 5 juin 2026; impression : Lowe-Martin; conception : Kelly Small (Intents & Purposes Inc.); illustration : Tim Singleton; PPJO : Vancouver. Série : Lieux de fierté (deuxième et dernière série). Little Sister's Book & Art Emporium — la célèbre librairie de Vancouver qui a mené une cause déterminante pour protéger les droits des personnes 2ELGBTQIA+ en vertu de la Charte canadienne des droits et libertés. Voir aussi no 3469, no 3470 et no 3471."
+      "notes": "Émis le 5 juin 2026; impression : Lowe-Martin; conception : Kelly Small (Intents & Purposes Inc.); illustration : Tim Singleton; PPJO : Vancouver. Série : Lieux de fierté (deuxième et dernière série). Little Sister's Book & Art Emporium — la célèbre librairie de Vancouver qui a mené une cause déterminante pour protéger les droits des personnes 2ELGBTQIA+ en vertu de la Charte canadienne des droits et libertés. Voir aussi no 3466, no 3467 et no 3468."
+    },
+    "3466": {
+      "mainTopic": "Lieux de fierté — Metamorphosis (Saskatoon)",
+      "notes": "Émis le 5 juin 2026; impression : Lowe-Martin; conception : Kelly Small (Intents & Purposes Inc.); illustration : Tim Singleton; PPJO : Saskatoon. Série : Lieux de fierté. Metamorphosis — un festival de Saskatoon considéré comme la première célébration de la culture queer dans l'Ouest canadien. Voir aussi no 3465."
+    },
+    "3467": {
+      "mainTopic": "Lieux de fierté — The 519 (Toronto)",
+      "notes": "Émis le 5 juin 2026; impression : Lowe-Martin; conception : Kelly Small (Intents & Purposes Inc.); illustration : Tim Singleton; PPJO : Toronto. Série : Lieux de fierté. The 519 — un carrefour communautaire réputé au cœur du village queer historique de Toronto, premier centre communautaire de la Ville de Toronto géré par et pour la communauté 2ELGBTQIA+. Voir aussi no 3465."
+    },
+    "3468": {
+      "mainTopic": "Lieux de fierté — The Turret (Halifax)",
+      "notes": "Émis le 5 juin 2026; impression : Lowe-Martin; conception : Kelly Small (Intents & Purposes Inc.); illustration : Tim Singleton; PPJO : Halifax. Série : Lieux de fierté. The Turret, à Halifax — un lieu de rassemblement important pour la vie sociale, politique et culturelle 2ELGBTQIA+ de 1976 à 1982. Voir aussi no 3465."
     },
     "3469": {
-      "mainTopic": "Lieux de fierté — Metamorphosis (Saskatoon)",
-      "notes": "Émis le 5 juin 2026; impression : Lowe-Martin; conception : Kelly Small (Intents & Purposes Inc.); illustration : Tim Singleton; PPJO : Saskatoon. Série : Lieux de fierté. Metamorphosis — un festival de Saskatoon considéré comme la première célébration de la culture queer dans l'Ouest canadien. Voir aussi no 3468."
-    },
-    "3470": {
-      "mainTopic": "Lieux de fierté — The 519 (Toronto)",
-      "notes": "Émis le 5 juin 2026; impression : Lowe-Martin; conception : Kelly Small (Intents & Purposes Inc.); illustration : Tim Singleton; PPJO : Toronto. Série : Lieux de fierté. The 519 — un carrefour communautaire réputé au cœur du village queer historique de Toronto, premier centre communautaire de la Ville de Toronto géré par et pour la communauté 2ELGBTQIA+. Voir aussi no 3468."
-    },
-    "3471": {
-      "mainTopic": "Lieux de fierté — The Turret (Halifax)",
-      "notes": "Émis le 5 juin 2026; impression : Lowe-Martin; conception : Kelly Small (Intents & Purposes Inc.); illustration : Tim Singleton; PPJO : Halifax. Série : Lieux de fierté. The Turret, à Halifax — un lieu de rassemblement important pour la vie sociale, politique et culturelle 2ELGBTQIA+ de 1976 à 1982. Voir aussi no 3468."
-    },
-    "3472": {
       "mainTopic": "Don de sang",
       "notes": "Émis le 11 juin 2026; impression : Lowe-Martin; conception : Kristine Do; illustration : Peter Grundy; PPJO : Ottawa. Émis pour la Semaine nationale du don de sang et la Journée mondiale du donneur de sang. Le motif présente un cœur stylisé renfermant une goutte de sang dont les anneaux concentriques symbolisent l'effet d'entraînement des dons. Environ deux pour cent seulement des Canadiens admissibles donnent, pourtant un seul don — séparé en globules rouges, plasma et plaquettes — peut sauver jusqu'à trois vies."
     },
-    "3473": {
+    "3470": {
       "mainTopic": "Leaders autochtones — Bryan Trottier",
-      "notes": "Émis le 19 juin 2026; impression : Colour Innovations; conception : Tétro; PPJO : Val Marie (Saskatchewan). Série : Leaders autochtones (cinquième série, en hommage à des leaders autochtones du domaine des sports). Bryan Trottier (né en 1956 à Val Marie, en Saskatchewan) — d'origine crie, métisse, chippewa et irlandaise — est six fois gagnant de la coupe Stanley, membre du Panthéon des sports canadiens et cofondateur de l'équipe de hockey Aboriginal Alumni. Voir aussi no 3474 et no 3475."
+      "notes": "Émis le 19 juin 2026; impression : Colour Innovations; conception : Tétro; PPJO : Val Marie (Saskatchewan). Série : Leaders autochtones (cinquième série, en hommage à des leaders autochtones du domaine des sports). Bryan Trottier (né en 1956 à Val Marie, en Saskatchewan) — d'origine crie, métisse, chippewa et irlandaise — est six fois gagnant de la coupe Stanley, membre du Panthéon des sports canadiens et cofondateur de l'équipe de hockey Aboriginal Alumni. Voir aussi no 3471 et no 3472."
     },
-    "3474": {
+    "3471": {
       "mainTopic": "Leaders autochtones — Edward Lennie",
-      "notes": "Émis le 19 juin 2026; impression : Colour Innovations; conception : Tétro; PPJO : Inuvik (Territoires du Nord-Ouest). Série : Leaders autochtones. Connu comme le père des Jeux du Nord, Charles Edward Inglangasak Lennie (1934-2020) a consacré sa vie à la promotion et à la préservation des sports arctiques, contribuant à fonder les Jeux du Nord et entraînant des athlètes dans huit épreuves traditionnelles. Voir aussi no 3473."
+      "notes": "Émis le 19 juin 2026; impression : Colour Innovations; conception : Tétro; PPJO : Inuvik (Territoires du Nord-Ouest). Série : Leaders autochtones. Connu comme le père des Jeux du Nord, Charles Edward Inglangasak Lennie (1934-2020) a consacré sa vie à la promotion et à la préservation des sports arctiques, contribuant à fonder les Jeux du Nord et entraînant des athlètes dans huit épreuves traditionnelles. Voir aussi no 3470."
     },
-    "3475": {
+    "3472": {
       "mainTopic": "Leaders autochtones — Chef Wilton Littlechild",
-      "notes": "Émis le 19 juin 2026; impression : Colour Innovations; conception : Tétro; PPJO : Maskwacis (Alberta). Série : Leaders autochtones. Jacob Wilton « Willie » Littlechild, c.c. (né en 1944 à Maskwacis, en Alberta) — ancien député et commissaire de la Commission de vérité et réconciliation — a contribué à fonder la National Indian Athletic Association, les Jeux autochtones de l'Amérique du Nord et les Jeux mondiaux des nations autochtones. Voir aussi no 3473."
+      "notes": "Émis le 19 juin 2026; impression : Colour Innovations; conception : Tétro; PPJO : Maskwacis (Alberta). Série : Leaders autochtones. Jacob Wilton « Willie » Littlechild, c.c. (né en 1944 à Maskwacis, en Alberta) — ancien député et commissaire de la Commission de vérité et réconciliation — a contribué à fonder la National Indian Athletic Association, les Jeux autochtones de l'Amérique du Nord et les Jeux mondiaux des nations autochtones. Voir aussi no 3470."
     },
-    "3476": {
+    "3473": {
       "mainTopic": "Légion royale canadienne",
       "notes": "Émis le 17 juillet 2026; impression : Colour Innovations; conception : Blair Thomson (Believe in); photographie : Jo Thomson (Believe in); PPJO : Ottawa. Souligne le 100e anniversaire de la Légion royale canadienne, constituée par une loi du Parlement le 17 juillet 1926. Le timbre présente la bannière de la Légion avec les dates 1926-2026 et les mots « 100 Years » en typographie audacieuse. Forte de 1 350 filiales au pays, la Légion soutient les anciens combattants et leurs familles et perpétue le Souvenir grâce à sa Campagne nationale du coquelicot."
     },
-    "3466": {
-      "mainTopic": "Cabanes à sucre (jaune)",
-      "notes": "Émis le 19 mars 2026; impression : Colour Innovations; illustrateur : Gérard DuBois; conception : Paprika. Série : Cabanes à sucre (2026). Scène intérieure d'une famille réunie autour d'une table à carreaux savourant un repas traditionnel de cabane à sucre. Forme de boîte de conserve de sirop d'érable d'époque. Voir aussi no 3465."
+    "3474": {
+      "mainTopic": "Loups — Loup gris (Canis lupus)",
+      "notes": "Émis le 13 août 2026; impression : Lowe-Martin; conception : Andrew Perro; photographie : John E. Marriott; PPJO : Whitney (Ontario), près de l'entrée est du parc provincial Algonquin. Carnet de 8. Souligne le rôle des loups comme espèce clé, essentielle à la santé et à la biodiversité des écosystèmes canadiens. Le loup gris est le plus grand et le plus répandu des loups au Canada, présent partout sauf dans les Maritimes. Voir aussi no 3475, no 3476 et no 3477."
+    },
+    "3475": {
+      "mainTopic": "Loups — Loup de l'Est (Canis sp. cf. lycaon)",
+      "notes": "Émis le 13 août 2026; impression : Lowe-Martin; conception : Andrew Perro; photographie : Michael Runtz et Steve Dunsford. À peine plus grand qu'un coyote de l'Est, le loup de l'Est est une espèce en péril inscrite à la liste fédérale, vivant surtout dans le parc Algonquin et le sud-ouest du Québec; on compte de 200 à 1 000 loups adultes. Voir aussi no 3474."
+    },
+    "3476": {
+      "mainTopic": "Loups — Loup gris arctique (Canis lupus arctos)",
+      "notes": "Émis le 13 août 2026; impression : Lowe-Martin; conception : Andrew Perro; photographie : Ejaz Khan. Le loup gris arctique est un chasseur nomade bien adapté au climat nordique, représenté ici par une meute au pelage blanc traversant la neige. Voir aussi no 3474."
     },
     "3477": {
-      "mainTopic": "Loups — Loup gris (Canis lupus)",
-      "notes": "Émis le 13 août 2026; impression : Lowe-Martin; conception : Andrew Perro; photographie : John E. Marriott; PPJO : Whitney (Ontario), près de l'entrée est du parc provincial Algonquin. Carnet de 8. Souligne le rôle des loups comme espèce clé, essentielle à la santé et à la biodiversité des écosystèmes canadiens. Le loup gris est le plus grand et le plus répandu des loups au Canada, présent partout sauf dans les Maritimes. Voir aussi no 3478, no 3479 et no 3480."
+      "mainTopic": "Loups — Loup gris côtier (Canis lupus crassodon)",
+      "notes": "Émis le 13 août 2026; impression : Lowe-Martin; conception : Andrew Perro; photographie : Michelle Valberg. Le loup gris côtier est un excellent nageur qui vit le long de la côte pacifique et des îles côtières; la couverture du carnet montre des loups gris côtiers sur l'île de Vancouver. Voir aussi no 3474."
     },
     "3478": {
-      "mainTopic": "Loups — Loup de l'Est (Canis sp. cf. lycaon)",
-      "notes": "Émis le 13 août 2026; impression : Lowe-Martin; conception : Andrew Perro; photographie : Michael Runtz et Steve Dunsford. À peine plus grand qu'un coyote de l'Est, le loup de l'Est est une espèce en péril inscrite à la liste fédérale, vivant surtout dans le parc Algonquin et le sud-ouest du Québec; on compte de 200 à 1 000 loups adultes. Voir aussi no 3477."
+      "mainTopic": "Courtepointes — Northern Night",
+      "notes": "Émis le 10 septembre 2026; impression : Lowe-Martin; conception : Shelby Guergis; photographie : Musée royal de l'Ontario; PPJO : Florenceville (Nouveau-Brunswick). Carnet de 6. Célèbre l'art de la courtepointe au Canada. Northern Night (1956), conçue par Ada Bruce Torrance d'Orillia (Ontario), montre un huard sous les aurores boréales, la Grande Ourse et l'étoile Polaire; cousue par la Simcoe County Arts and Crafts Association, elle a remporté le grand prix du concours du Star Weekly. Voir aussi no 3479."
     },
     "3479": {
-      "mainTopic": "Loups — Loup gris arctique (Canis lupus arctos)",
-      "notes": "Émis le 13 août 2026; impression : Lowe-Martin; conception : Andrew Perro; photographie : Ejaz Khan. Le loup gris arctique est un chasseur nomade bien adapté au climat nordique, représenté ici par une meute au pelage blanc traversant la neige. Voir aussi no 3477."
+      "mainTopic": "Courtepointes — Log Cabin",
+      "notes": "Émis le 10 septembre 2026; impression : Lowe-Martin; conception : Shelby Guergis; photographie : Musée royal de l'Ontario. Courtepointe en coton et en laine (vers 1890) au motif « log cabin » disposé en « barn-raising », réalisée par Frederica Matilda Tompkins d'East Florenceville (Nouveau-Brunswick); collection du Musée royal de l'Ontario. Voir aussi no 3478."
     },
     "3480": {
-      "mainTopic": "Loups — Loup gris côtier (Canis lupus crassodon)",
-      "notes": "Émis le 13 août 2026; impression : Lowe-Martin; conception : Andrew Perro; photographie : Michelle Valberg. Le loup gris côtier est un excellent nageur qui vit le long de la côte pacifique et des îles côtières; la couverture du carnet montre des loups gris côtiers sur l'île de Vancouver. Voir aussi no 3477."
+      "mainTopic": "Journée nationale de la vérité et de la réconciliation — Chandail orange (Premières Nations)",
+      "notes": "Émis le 29 septembre 2026; impression : Lowe-Martin; conception : Blair Thomson (Believe in); illustration : Emily Kewageshig, Jason Sikoak et Christi Belcourt; PPJO : Williams Lake (Colombie-Britannique). Carnet de 8; timbres en forme de t-shirt. Série : Journée nationale de la vérité et de la réconciliation, en partenariat avec le Cercle des survivants. Souligne la première cohorte d'élèves de la C.-B. diplômés après avoir vécu la Journée du chandail orange chaque année depuis la maternelle; la journée est née en 2013 de l'histoire de Phyllis Webstad. Voir aussi no 3481, no 3482 et no 3483."
     },
     "3481": {
-      "mainTopic": "Courtepointes — Northern Night",
-      "notes": "Émis le 10 septembre 2026; impression : Lowe-Martin; conception : Shelby Guergis; photographie : Musée royal de l'Ontario; PPJO : Florenceville (Nouveau-Brunswick). Carnet de 6. Célèbre l'art de la courtepointe au Canada. Northern Night (1956), conçue par Ada Bruce Torrance d'Orillia (Ontario), montre un huard sous les aurores boréales, la Grande Ourse et l'étoile Polaire; cousue par la Simcoe County Arts and Crafts Association, elle a remporté le grand prix du concours du Star Weekly. Voir aussi no 3482."
+      "mainTopic": "Journée nationale de la vérité et de la réconciliation — Chandail orange (Inuits)",
+      "notes": "Émis le 29 septembre 2026; impression : Lowe-Martin; conception : Blair Thomson (Believe in). Timbre en forme de t-shirt reflétant les expériences propres aux communautés inuites, choisi par le Cercle des survivants du Centre national pour la vérité et la réconciliation. Voir aussi no 3480."
     },
     "3482": {
-      "mainTopic": "Courtepointes — Log Cabin",
-      "notes": "Émis le 10 septembre 2026; impression : Lowe-Martin; conception : Shelby Guergis; photographie : Musée royal de l'Ontario. Courtepointe en coton et en laine (vers 1890) au motif « log cabin » disposé en « barn-raising », réalisée par Frederica Matilda Tompkins d'East Florenceville (Nouveau-Brunswick); collection du Musée royal de l'Ontario. Voir aussi no 3481."
+      "mainTopic": "Journée nationale de la vérité et de la réconciliation — Chandail orange (Métis)",
+      "notes": "Émis le 29 septembre 2026; impression : Lowe-Martin; conception : Blair Thomson (Believe in). Timbre en forme de t-shirt reflétant les expériences propres aux communautés métisses, choisi par le Cercle des survivants du Centre national pour la vérité et la réconciliation. Voir aussi no 3480."
     },
     "3483": {
-      "mainTopic": "Journée nationale de la vérité et de la réconciliation — Chandail orange (Premières Nations)",
-      "notes": "Émis le 29 septembre 2026; impression : Lowe-Martin; conception : Blair Thomson (Believe in); illustration : Emily Kewageshig, Jason Sikoak et Christi Belcourt; PPJO : Williams Lake (Colombie-Britannique). Carnet de 8; timbres en forme de t-shirt. Série : Journée nationale de la vérité et de la réconciliation, en partenariat avec le Cercle des survivants. Souligne la première cohorte d'élèves de la C.-B. diplômés après avoir vécu la Journée du chandail orange chaque année depuis la maternelle; la journée est née en 2013 de l'histoire de Phyllis Webstad. Voir aussi no 3484, no 3485 et no 3486."
+      "mainTopic": "Journée nationale de la vérité et de la réconciliation — Chandail orange (Terre mère)",
+      "notes": "Émis le 29 septembre 2026; impression : Lowe-Martin; conception : Blair Thomson (Believe in). Timbre en forme de t-shirt rendant hommage à la Terre mère, symbole du lien entre les générations passées, présentes et futures. Voir aussi no 3480."
     },
     "3484": {
-      "mainTopic": "Journée nationale de la vérité et de la réconciliation — Chandail orange (Inuits)",
-      "notes": "Émis le 29 septembre 2026; impression : Lowe-Martin; conception : Blair Thomson (Believe in). Timbre en forme de t-shirt reflétant les expériences propres aux communautés inuites, choisi par le Cercle des survivants du Centre national pour la vérité et la réconciliation. Voir aussi no 3483."
-    },
-    "3485": {
-      "mainTopic": "Journée nationale de la vérité et de la réconciliation — Chandail orange (Métis)",
-      "notes": "Émis le 29 septembre 2026; impression : Lowe-Martin; conception : Blair Thomson (Believe in). Timbre en forme de t-shirt reflétant les expériences propres aux communautés métisses, choisi par le Cercle des survivants du Centre national pour la vérité et la réconciliation. Voir aussi no 3483."
-    },
-    "3486": {
-      "mainTopic": "Journée nationale de la vérité et de la réconciliation — Chandail orange (Terre mère)",
-      "notes": "Émis le 29 septembre 2026; impression : Lowe-Martin; conception : Blair Thomson (Believe in). Timbre en forme de t-shirt rendant hommage à la Terre mère, symbole du lien entre les générations passées, présentes et futures. Voir aussi no 3483."
-    },
-    "3487": {
       "mainTopic": "Citrouilles d'Halloween",
       "notes": "Attendu : automne 2026. Citrouilles-lanternes pour la saison d'Halloween — poursuivant la tradition de Postes Canada de timbres saisonniers automnaux."
     },
-    "3488": {
+    "3485": {
       "mainTopic": "Jour du Souvenir",
       "notes": "Attendu : novembre 2026. Série : Jour du Souvenir. En hommage aux sacrifices des militaires canadiens et à la tradition du coquelicot."
     },
-    "3489": {
+    "3486": {
       "mainTopic": "Diwali",
       "notes": "Attendu : 2026. Série : Diwali. Émission annuelle célébrant la fête des lumières."
     },
-    "3490": {
+    "3487": {
       "mainTopic": "Hanoukka",
       "notes": "Attendu : 2026. Série : Hanoukka. Émission annuelle célébrant la fête juive des lumières."
     },
-    "3491": {
+    "3488": {
       "mainTopic": "Noël",
       "notes": "Attendu : 2026. Série : Noël. Timbre des Fêtes annuel."
     }

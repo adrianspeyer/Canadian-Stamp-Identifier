@@ -114,6 +114,7 @@ const I18N = {
         'Landmarks':           'Monuments',
         'Monuments':           'Monuments',
         'Labour':              'Travail',
+        'Law':                 'Droit',
         'Disasters':           'Catastrophes',
         'LGBTQ2+':             'LGBTQ2+',
         'Canada 150':          'Canada 150',
@@ -188,6 +189,12 @@ const I18N = {
         'CFL':                 'LCF',
         'Motorsport':          'Sport automobile',
         'Figure Skating':      'Patinage artistique',
+        'Basketball':          'Basketball',
+        'Golf':                'Golf',
+        'Athletics':           'Athlétisme',
+        'Equestrian':          'Sports équestres',
+        'Winter Sports':       'Sports d\'hiver',
+        'Recreation':          'Loisirs',
         'Baseball':            'Baseball',
         'Football':            'Football',
         'Fishing':             'Pêche',
@@ -220,6 +227,10 @@ const I18N = {
         'Heraldry':            'Héraldique',
         'Military':            'Militaire',
         'Honours':             'Honneurs',
+        'Flag':                'Drapeau',
+        'Parliament':          'Parlement',
+        'Canada Day':          'Fête du Canada',
+        'National Symbols':    'Symboles nationaux',
         'Maps':                'Cartes',
 
         // Architecture & Landmarks
@@ -233,6 +244,7 @@ const I18N = {
         'Cities':              'Villes',
         'Religious':           'Religieux',
         'Memorials':           'Mémoriaux',
+        'Bridges':             'Ponts',
 
         // Postal History
         'Postage Due':         'Timbre-taxe',
@@ -243,6 +255,9 @@ const I18N = {
         'Definitives':         'Timbres courants',
         'Community Foundation': 'Fondation communautaire',
         'Collectibles':        'Objets de collection',
+        'Mail Delivery':       'Livraison du courrier',
+        'Postal Workers':      'Travailleurs des postes',
+        'Postal Unions':       'Unions postales',
 
         // Culture & Society
         'Organizations':       'Organisations',

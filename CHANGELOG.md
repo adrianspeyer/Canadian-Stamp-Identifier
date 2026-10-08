@@ -1,5 +1,19 @@
 # Canadian Stamp Identifier — Changelog
 
+## v2.5 — ID Numbering & Subcategories
+
+### IDs
+- **Late-2025 IDs renumbered into issue-date order and gaps closed** (#3442, #3445 and #3450 no longer missing): Diwali 2025 is now #3441, Private Singh #3442, Christmas 2025 #3443–#3446, Hanukkah 2025 #3447, Canadian Graphic Novelists #3448–#3453; every 2026 stamp shifted down by 3 (#3454–#3488). IDs now run #001–#3488 with no gaps.
+- Image files renamed to match, and the 2025–2026 images missing a denomination now include it (`-p-`, `-175-`, `-365-`)
+- All "See also" cross-references updated in both languages; French references now consistently use "no NNNN", and five French notes missing an English cross-reference (#004, #006, #014, #017, #166) gained it
+- Older catalogue order left as-is: the remaining date inversions are definitive sets grouped by series (e.g. #012/#013), not numbering errors
+
+### Categories
+- **354 stamps that had only a top-level category now have a subcategory**, and many were moved to the right top-level category (e.g. Postage Due stamps were under Sports & Recreation, "The Flight to Egypt" under Transportation, flag definitives under Government with no subcategory)
+- New subcategories (with French translations in `i18n.js`): Flag, Parliament, Canada Day, National Symbols, Bridges, Mail Delivery, Postal Workers, Postal Unions, Basketball, Golf, Athletics, Equestrian, Winter Sports, Recreation; added missing French label for "Law"
+
+---
+
 ## v2.4 — Wolves, Quilts & Truth and Reconciliation 2026
 
 ### Data
