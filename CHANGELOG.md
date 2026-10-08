@@ -2,6 +2,8 @@
 
 ## v2.7 — Visual and Description Review
 
+- Clarified in English and French that the project is non-commercial, stamp images are used for education and reference, and the AGPL-3.0 code licence does not cover those images.
+
 - Public documentation: synchronized version and category counts, clarified offline coverage and reuse information, and replaced the verbose review snapshot with a changed-field index and source links.
 
 - Reviewed all 3,490 catalogue entries on image contact sheets (3,485 available images and five existing placeholders).

@@ -292,9 +292,7 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 
 **Licence du code** : [GNU Affero General Public License v3.0](LICENSE). Consultez le texte intégral pour les conditions d’utilisation, de modification et de distribution.
 
-**Images et sources** : Les motifs de timbres, photographies et autres éléments provenant de tiers peuvent être soumis à des droits distincts. Ce dépôt ne fournit pas de relevé complet des droits de chaque image et n’établit pas que tous les textes du catalogue appartiennent au domaine public. Les contributions doivent préciser les sources, crédits et autorisations ou conditions de réutilisation. Conservez les crédits existants.
-
-**Non affilié** à Postes Canada ni à aucune source officielle
+**Images** : Ce projet non commercial présente des images de timbres à des fins éducatives et de référence. La licence AGPL-3.0 s’applique uniquement au code source. Les images de timbres sont exclues de cette licence, et les droits d’auteur applicables demeurent la propriété de leurs titulaires respectifs. Ce projet n’est ni affilié à Postes Canada ni approuvé par celle-ci.
 
 ---
 

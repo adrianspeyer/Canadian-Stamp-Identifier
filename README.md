@@ -307,9 +307,7 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 
 **Code license**: [GNU Affero General Public License v3.0](LICENSE). See the full license for terms governing use, modification and distribution.
 
-**Images and source material**: Stamp designs, photographs and other third-party material may have separate rights. This repository does not provide a complete image-by-image rights record or establish that all catalogue text is public domain. Contributions should identify sources, credits and permission or reuse terms. Preserve existing credits.
-
-**Not affiliated** with Canada Post or any official source
+**Images**: This non-commercial project provides stamp images for educational and reference purposes. The AGPL-3.0 licence applies to the source code only. Stamp images are excluded from that licence, and any applicable copyright remains with the respective rights holders. This project is not affiliated with or endorsed by Canada Post.
 
 ---
 
