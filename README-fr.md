@@ -160,46 +160,46 @@ Ce dépôt inclut un fichier [`CLAUDE.md`](CLAUDE.md) permettant à [Claude Code
 
 Chaque timbre utilise le format `Catégorie : Sous-catégorie` pour le champ `subTopic`. Les données sont stockées en anglais; l'application traduit automatiquement en français via une table de correspondance. Voici les 15 catégories canoniques :
 
-### Histoire et patrimoine (925 timbres)
-`Royauté` · `Anniversaires` · `Personnalités` · `Peuples autochtones` · `Millénaire` · `Guerre et militaire` · `Canadiens notables` · `Exploration` · `Dirigeants politiques` · `Premiers ministres` · `International` · `Droits civils` · `Histoire des Noirs` · `Confédération` · `Maritime` · `Ruée vers l'or` · `Humanitaire` · `Travail` · `Catastrophes` · `LGBTQ2+`
+### Histoire et patrimoine (761 timbres)
+`Royauté` · `Guerre et militaire` · `Millénaire` · `Peuples autochtones` · `Exploration` · `Dirigeants politiques` · `International` · `Histoire des Noirs` · `Premiers ministres` · `Canadiens notables` · `Anniversaires` · `Droits civils` · `Confédération` · `Canada 150` · `LGBTQ2+` · `Personnalités` · `Travail` · `Maritime` · `Ruée vers l'or` · `Dirigeants mondiaux` · `Organisations` · `Humanitaire` · `Catastrophes`
 
-### Nature et faune (707 timbres)
-`Animaux` · `Plantes` · `Fleurs` · `Arbres` · `Oiseaux` · `Paysages` · `Parcs` · `Parcs nationaux` · `Vie marine` · `Montagnes` · `Préhistorique` · `Insectes` · `Champignons` · `Fossiles` · `Météo et ciel` · `Saisons`
+### Nature et faune (576 timbres)
+`Fleurs` · `Animaux` · `Oiseaux` · `Paysages` · `Vie marine` · `Arbres` · `Préhistorique` · `Insectes` · `Parcs nationaux` · `Parcs` · `Plantes` · `Montagnes` · `Météo et ciel` · `Champignons` · `Chutes d'eau`
 
-### Arts et culture (380 timbres)
-`Arts visuels` · `Musique` · `Auteurs` · `Littérature` · `Photographie` · `Cinéma` · `Cinéma et télévision` · `Bandes dessinées` · `Science-fiction` · `Opéra` · `Danse` · `Théâtre` · `Artisanat` · `Design` · `Folklore` · `Artefacts culturels` · `Littérature jeunesse` · `Musées`
+### Arts et culture (440 timbres)
+`Peintures` · `Arts visuels` · `Musique` · `Photographie` · `Cinéma et télévision` · `Auteurs` · `Artisanat` · `Bandes dessinées` · `Art autochtone` · `Artefacts culturels` · `Folklore` · `Science-fiction` · `Littérature jeunesse` · `Jardins` · `Opéra` · `Musées` · `Théâtre` · `Danse` · `Cirque` · `Design` · `Littérature`
 
-### Fêtes et événements (304 timbres)
-`Noël` · `Nouvel An lunaire` · `Halloween` · `Hanoukka` · `Divali` · `Aïd` · `Salutations` · `Célébrations` · `Saint-Valentin`
+### Fêtes et événements (373 timbres)
+`Noël` · `Nouvel An lunaire` · `Halloween` · `Salutations` · `Expositions` · `Aïd` · `Divali` · `Célébrations` · `Hanoukka`
 
-### Sports et loisirs (303 timbres)
-`Hockey` · `Olympiques` · `LCF` · `Sport automobile` · `Patinage artistique` · `Baseball` · `Football` · `Pêche` · `Course` · `Paralympiques` · `Crosse` · `Curling` · `Cyclisme` · `Aviron`
+### Sports et loisirs (341 timbres)
+`Hockey` · `Olympiques` · `Événements` · `LCF` · `Loisirs` · `Pêche` · `Golf` · `Sport automobile` · `Patinage artistique` · `Basketball` · `Natation` · `Paralympiques` · `Sports équestres` · `Crosse` · `Aviron` · `Athlétisme` · `Baseball` · `Ski` · `Curling` · `Cyclisme` · `Sports d'hiver` · `Course`
 
-### Transport (205 timbres)
-`Aéronefs` · `Poste aérienne` · `Navires et bateaux` · `Maritime` · `Trains` · `Chemins de fer` · `Automobiles` · `Véhicules` · `Routes` · `Motocyclettes` · `Voies navigables`
+### Transport (225 timbres)
+`Navires et bateaux` · `Aéronefs` · `Véhicules` · `Trains` · `Routes` · `Poste aérienne` · `Voies navigables` · `Motocyclettes`
 
-### Gouvernement et symboles nationaux (133 timbres)
-`Provinces` · `GRC` · `Justice` · `Héraldique` · `Militaire` · `Honneurs`
+### Gouvernement et symboles nationaux (188 timbres)
+`Drapeau` · `Provinces` · `Parlement` · `Symboles nationaux` · `GRC` · `Justice` · `Gouvernement` · `Honneurs` · `Héraldique` · `Fête du Canada` · `Militaire`
 
-### Architecture et monuments (133 timbres)
-`Panoramique` · `Bâtiments patrimoniaux` · `Lieux historiques` · `Ingénierie` · `Phares` · `UNESCO` · `Gouvernement` · `Villes` · `Religieux` · `Mémoriaux`
+### Architecture et monuments (172 timbres)
+`Lieux historiques` · `Bâtiments patrimoniaux` · `UNESCO` · `Villes` · `Ponts` · `Phares` · `Panoramique` · `Religieux` · `Mémoriaux` · `Gouvernement` · `Ingénierie`
 
-### Culture et société (119 timbres)
-`Organisations` · `Éducation` · `Gastronomie` · `Services d'urgence` · `Zodiaque` · `Attractions routières` · `Patrimoine` · `Jouets et jeux` · `Commerce et industrie` · `Immigration`
+### Culture et société (145 timbres)
+`Éducation` · `Organisations` · `Services d'urgence` · `Patrimoine` · `Attractions routières` · `Zodiaque` · `Commerce et industrie` · `Immigration` · `Gastronomie` · `Jeunesse` · `Communauté` · `Jouets et jeux`
 
-### Histoire postale (114 timbres)
-`Timbre-taxe` · `Livraison spéciale` · `Courrier recommandé` · `Timbres en rouleau` · `Bureaux de poste` · `Timbres courants` · `Fondation communautaire` · `Objets de collection`
+### Histoire postale (121 timbres)
+`Timbre-taxe` · `Objets de collection` · `Fondation communautaire` · `Livraison du courrier` · `Livraison spéciale` · `Unions postales` · `Travailleurs des postes` · `Courrier recommandé` · `Bureaux de poste`
 
-### Science et technologie (89 timbres)
-`Espace` · `Inventions` · `Médecine` · `Communications` · `Géologie` · `Astronomie` · `Aviation` · `Énergie`
+### Science et technologie (96 timbres)
+`Science` · `Inventions` · `Médecine` · `Espace` · `Communications` · `Géologie` · `Astronomie` · `Aviation`
 
-### Industrie (39 timbres)
-`Agriculture` · `Ressources` · `Fabrication` · `Énergie` · `Commerce`
+### Industrie (33 timbres)
+`Ressources` · `Agriculture` · `Énergie` · `Fabrication` · `Commerce`
 
-### Organisations (23 timbres)
-`Scoutisme et guidisme` · `Postal` · `Santé` · `Nations Unies`
+### Organisations (7 timbres)
+`Scoutisme et guidisme` · `Nations Unies`
 
-### Sensibilisation publique (16 timbres)
+### Sensibilisation publique (12 timbres)
 `Santé`
 
 > **Note** : Les valeurs de sous-catégorie sont stockées en anglais dans `stamps.json` et traduites automatiquement par l'application. Les contributeurs doivent utiliser les valeurs anglaises lors de l'ajout de données. Consultez le [README anglais](README.md) pour les valeurs exactes.

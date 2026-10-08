@@ -1,5 +1,21 @@
 # Canadian Stamp Identifier — Changelog
 
+## v2.6 — Category Audit
+
+### Categories
+- **Full category audit of all 3,490 stamps**: 1,635 stamps re-categorized (1,024 of them moved to a different top-level category). Many entries had been keyword-matched or shifted by one row in bulk, e.g. Star Trek under Royalty, Canadian Hockey Legends under Space, NHL team pucks under Scouting & Girl Guides, Muskox under Anniversaries, Vi Milstead (a pilot) under Plants
+- Stamps in the same series now share a category where the series has a single subject (Christmas, Birds of Canada, Indians of Canada, Olympic issues, Ships of Canada, Canadian Locomotives, UNESCO sites, etc.); series that genuinely span subjects (Tourist Attractions, From Far and Wide, Endangered Species) are categorized stamp by stamp
+- **Duplicate subcategories merged**: War/military → War & Military, Aboriginals → Indigenous Peoples, Explorers → Exploration, Airplanes/helicopters → Aircraft, Maritime (Transportation) → Ships & Boats, Fish & Marine life → Marine Life, Handicrafts → Crafts, Film → Film & Television, Art / Artists → Visual Arts, Inventors → Inventions, Organizations: R.C.M.P. → Government: RCMP; stray one-offs (Coil Stamps, Politics, Landmarks, Monuments…) folded into their proper homes
+- 157 subcategories now in use
+
+### Data fixes
+- #2737, #2740, #2741 (Chinatown Gates — Montreal, Vancouver, Ottawa) had notes copied from the NHL Team Pucks issue; replaced with correct descriptions in EN and FR, and their French titles translated
+
+### Docs
+- README / README-fr category counts and subcategory lists regenerated from the data
+
+---
+
 ## v2.5 — ID Numbering & Subcategories
 
 ### IDs

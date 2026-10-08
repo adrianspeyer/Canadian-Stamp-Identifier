@@ -161,46 +161,46 @@ This repo includes a [`CLAUDE.md`](CLAUDE.md) file that lets [Claude Code](https
 
 Every stamp uses the `Category: Subcategory` format for the `subTopic` field. Here are all 15 canonical categories with their subcategories:
 
-### History & Heritage (925 stamps)
-`Royalty` · `Anniversaries` · `People` · `Indigenous Peoples` · `Millennium` · `War & Military` · `Notable Canadians` · `Exploration` · `Political Leaders` · `Prime Ministers` · `International` · `Civil Rights` · `Black History` · `Confederation` · `Maritime` · `Gold Rush` · `Humanitarian` · `Labour` · `Disasters` · `LGBTQ2+`
+### History & Heritage (761 stamps)
+`Royalty` · `War & Military` · `Millennium` · `Indigenous Peoples` · `Exploration` · `Political Leaders` · `International` · `Black History` · `Prime Ministers` · `Notable Canadians` · `Anniversaries` · `Civil Rights` · `Confederation` · `Canada 150` · `LGBTQ2+` · `People` · `Labour` · `Maritime` · `Gold Rush` · `World Leaders` · `Organizations` · `Humanitarian` · `Disasters`
 
-### Nature & Wildlife (707 stamps)
-`Animals` · `Plants` · `Flowers` · `Trees` · `Birds` · `Landscapes` · `Parks` · `National Parks` · `Marine Life` · `Mountains` · `Prehistoric` · `Insects` · `Fungi` · `Fossils` · `Weather & Sky` · `Seasons`
+### Nature & Wildlife (576 stamps)
+`Flowers` · `Animals` · `Birds` · `Landscapes` · `Marine Life` · `Trees` · `Prehistoric` · `Insects` · `National Parks` · `Parks` · `Plants` · `Mountains` · `Weather & Sky` · `Fungi` · `Waterfalls`
 
-### Arts & Culture (380 stamps)
-`Visual Arts` · `Music` · `Authors` · `Literature` · `Photography` · `Film` · `Film & Television` · `Comics` · `Science Fiction` · `Opera` · `Dance` · `Theatre` · `Crafts` · `Design` · `Folklore` · `Cultural Artifacts` · `Children's Literature` · `Museums`
+### Arts & Culture (440 stamps)
+`Paintings` · `Visual Arts` · `Music` · `Photography` · `Film & Television` · `Authors` · `Crafts` · `Comics` · `Indigenous Art` · `Cultural Artifacts` · `Folklore` · `Science Fiction` · `Children's Literature` · `Gardens` · `Opera` · `Museums` · `Theatre` · `Dance` · `Circus` · `Design` · `Literature`
 
-### Holidays & Events (304 stamps)
-`Christmas` · `Lunar New Year` · `Halloween` · `Hanukkah` · `Diwali` · `Eid` · `Greetings` · `Celebrations` · `Valentine's Day`
+### Holidays & Events (373 stamps)
+`Christmas` · `Lunar New Year` · `Halloween` · `Greetings` · `Exhibitions` · `Eid` · `Diwali` · `Celebrations` · `Hanukkah`
 
-### Sports & Recreation (303 stamps)
-`Hockey` · `Olympics` · `CFL` · `Motorsport` · `Figure Skating` · `Baseball` · `Football` · `Fishing` · `Racing` · `Paralympics` · `Lacrosse` · `Curling` · `Cycling` · `Rowing`
+### Sports & Recreation (341 stamps)
+`Hockey` · `Olympics` · `Events` · `CFL` · `Recreation` · `Fishing` · `Golf` · `Motorsport` · `Figure Skating` · `Basketball` · `Swimming` · `Paralympics` · `Equestrian` · `Lacrosse` · `Rowing` · `Athletics` · `Baseball` · `Skiing` · `Curling` · `Cycling` · `Winter Sports` · `Racing`
 
-### Transportation (205 stamps)
-`Aircraft` · `Airmail` · `Ships & Boats` · `Maritime` · `Trains` · `Railways` · `Automobiles` · `Vehicles` · `Roads` · `Motorcycles` · `Waterways`
+### Transportation (225 stamps)
+`Ships & Boats` · `Aircraft` · `Vehicles` · `Trains` · `Roads` · `Airmail` · `Waterways` · `Motorcycles`
 
-### Government & National Symbols (133 stamps)
-`Provinces` · `RCMP` · `Justice` · `Heraldry` · `Military` · `Honours`
+### Government & National Symbols (188 stamps)
+`Flag` · `Provinces` · `Parliament` · `National Symbols` · `RCMP` · `Justice` · `Government` · `Honours` · `Heraldry` · `Canada Day` · `Military`
 
-### Architecture & Landmarks (133 stamps)
-`Scenic` · `Heritage Buildings` · `Historic Sites` · `Engineering` · `Lighthouses` · `UNESCO` · `Government` · `Cities` · `Religious` · `Memorials`
+### Architecture & Landmarks (172 stamps)
+`Historic Sites` · `Heritage Buildings` · `UNESCO` · `Cities` · `Bridges` · `Lighthouses` · `Scenic` · `Religious` · `Memorials` · `Government` · `Engineering`
 
-### Culture & Society (119 stamps)
-`Organizations` · `Education` · `Food & Drink` · `Emergency Services` · `Zodiac` · `Roadside Attractions` · `Heritage` · `Toys & Games` · `Business & Industry` · `Immigration`
+### Culture & Society (145 stamps)
+`Education` · `Organizations` · `Emergency Services` · `Heritage` · `Roadside Attractions` · `Zodiac` · `Business & Industry` · `Immigration` · `Food & Drink` · `Youth` · `Community` · `Toys & Games`
 
-### Postal History (114 stamps)
-`Postage Due` · `Special Delivery` · `Registered Mail` · `Coil Stamps` · `Post Offices` · `Definitives` · `Community Foundation` · `Collectibles`
+### Postal History (121 stamps)
+`Postage Due` · `Collectibles` · `Community Foundation` · `Mail Delivery` · `Special Delivery` · `Postal Unions` · `Postal Workers` · `Registered Mail` · `Post Offices`
 
-### Science & Technology (89 stamps)
-`Space` · `Inventions` · `Medicine` · `Communications` · `Geology` · `Astronomy` · `Aviation` · `Energy`
+### Science & Technology (96 stamps)
+`Science` · `Inventions` · `Medicine` · `Space` · `Communications` · `Geology` · `Astronomy` · `Aviation`
 
-### Industry (39 stamps)
-`Agriculture` · `Resources` · `Manufacturing` · `Energy` · `Commerce`
+### Industry (33 stamps)
+`Resources` · `Agriculture` · `Energy` · `Manufacturing` · `Commerce`
 
-### Organizations (23 stamps)
-`Scouting & Girl Guides` · `Postal` · `Health` · `United Nations`
+### Organizations (7 stamps)
+`Scouting & Girl Guides` · `United Nations`
 
-### Public Awareness (16 stamps)
+### Public Awareness (12 stamps)
 `Health`
 
 ## 📋 JSON Format Reference
