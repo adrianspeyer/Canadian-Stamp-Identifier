@@ -77,7 +77,7 @@ No installation needed — works in any modern web browser. Works offline after 
 ### Bilingual (EN / FR)
 - **Language toggle** in the header — switches instantly between English and French
 - **Complete French UI**: all buttons, labels, filters, panels, and error states
-- **Automatic category translation**: all 15 categories and 100+ subcategories translate via lookup
+- **Automatic category translation**: all 14 categories and 100+ subcategories translate via lookup
 - **Colour translation**: all philatelic colour terms translate automatically
 - **French stamp data**: `stamps-fr.json` provides translated mainTopics and notes (incremental — falls back to English for untranslated stamps)
 - **Persistent**: language preference saved in localStorage
@@ -98,7 +98,7 @@ No installation needed — works in any modern web browser. Works offline after 
 
 | Metric | Value |
 |---|---|
-| Stamps catalogued | 3,490 |
+| Stamps catalogued | 3,488 |
 | Years covered | 1851–2026 (175 years) |
 | Categories | 15 top-level, 100+ subcategories, all canonical |
 | Empty notes | 0 — every stamp has historical context |
@@ -159,18 +159,18 @@ This repo includes a [`CLAUDE.md`](CLAUDE.md) file that lets [Claude Code](https
 
 ## 📂 Category Reference
 
-Every stamp uses the `Category: Subcategory` format for the `subTopic` field. Here are all 15 canonical categories with their subcategories:
+Every stamp uses the `Category: Subcategory` format for the `subTopic` field. Here are all 14 canonical categories with their subcategories:
 
-### History & Heritage (761 stamps)
+### History & Heritage (760 stamps)
 `Royalty` · `War & Military` · `Millennium` · `Indigenous Peoples` · `Exploration` · `Political Leaders` · `International` · `Black History` · `Prime Ministers` · `Notable Canadians` · `Anniversaries` · `Civil Rights` · `Confederation` · `Canada 150` · `LGBTQ2+` · `People` · `Labour` · `Maritime` · `Gold Rush` · `World Leaders` · `Organizations` · `Humanitarian` · `Disasters`
 
-### Nature & Wildlife (576 stamps)
+### Nature & Wildlife (573 stamps)
 `Flowers` · `Animals` · `Birds` · `Landscapes` · `Marine Life` · `Trees` · `Prehistoric` · `Insects` · `National Parks` · `Parks` · `Plants` · `Mountains` · `Weather & Sky` · `Fungi` · `Waterfalls`
 
-### Arts & Culture (440 stamps)
+### Arts & Culture (439 stamps)
 `Paintings` · `Visual Arts` · `Music` · `Photography` · `Film & Television` · `Authors` · `Crafts` · `Comics` · `Indigenous Art` · `Cultural Artifacts` · `Folklore` · `Science Fiction` · `Children's Literature` · `Gardens` · `Opera` · `Museums` · `Theatre` · `Dance` · `Circus` · `Design` · `Literature`
 
-### Holidays & Events (373 stamps)
+### Holidays & Events (376 stamps)
 `Christmas` · `Lunar New Year` · `Halloween` · `Greetings` · `Exhibitions` · `Eid` · `Diwali` · `Celebrations` · `Hanukkah`
 
 ### Sports & Recreation (341 stamps)
@@ -179,10 +179,10 @@ Every stamp uses the `Category: Subcategory` format for the `subTopic` field. He
 ### Transportation (225 stamps)
 `Ships & Boats` · `Aircraft` · `Vehicles` · `Trains` · `Roads` · `Airmail` · `Waterways` · `Motorcycles`
 
-### Government & National Symbols (188 stamps)
+### Government & National Symbols (187 stamps)
 `Flag` · `Provinces` · `Parliament` · `National Symbols` · `RCMP` · `Justice` · `Government` · `Honours` · `Heraldry` · `Canada Day` · `Military`
 
-### Architecture & Landmarks (172 stamps)
+### Architecture & Landmarks (173 stamps)
 `Historic Sites` · `Heritage Buildings` · `UNESCO` · `Cities` · `Bridges` · `Lighthouses` · `Scenic` · `Religious` · `Memorials` · `Government` · `Engineering`
 
 ### Culture & Society (145 stamps)
@@ -275,7 +275,7 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 ## 🗺️ Roadmap
 
 ### Completed ✅
-- [x] Complete catalogue 1851–2026 (3,490 stamps)
+- [x] Complete catalogue 1851–2026 (3,488 stamps)
 - [x] Unified responsive design (phone → desktop)
 - [x] Decade navigation with chevron arrows
 - [x] Service worker, batched rendering, lazy loading, content-visibility
@@ -294,7 +294,7 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 - [x] Automatic category and colour translation
 
 ### Future 🔮
-- [ ] Complete French stamp translations (mainTopic + notes for all 3,490 stamps)
+- [ ] Complete French stamp translations (mainTopic + notes for all 3,488 stamps)
 - [ ] Print-friendly views
 - [ ] Bookmark/favourites
 - [ ] Wishlist

@@ -33,7 +33,7 @@
 
 Cet outil facilite l'identification des timbres grâce à la **correspondance visuelle** dans une grille de cartes adaptative et recherchable. Au lieu de feuilleter des catalogues :
 
-- **Parcourez plus de 3 490 timbres** dans une grille adaptative qui fonctionne sur tous les appareils
+- **Parcourez plus de 3 488 timbres** dans une grille adaptative qui fonctionne sur tous les appareils
 - **Filtrez par décennie** avec une barre de pastilles défilante — sautez instantanément à n'importe quelle époque
 - **Recherche intelligente** par sujet, année, couleur, valeur faciale et notes historiques
 - **Touchez pour les détails** — numéro, valeur faciale, catégorie, couleur et contexte historique
@@ -51,7 +51,7 @@ Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Fon
 - **Recherche instantanée** : tapez une année, un sujet, une couleur ou un mot-clé — recherche aussi dans les notes
 - **Filtrage par décennie** : barre de pastilles défilante avec le nombre de timbres par époque
 - **Filtres combinés** : recherchez dans une décennie (p. ex. « castor » dans les années 1850)
-- **Saisie avec rebond** : réactif même avec plus de 3 490 timbres
+- **Saisie avec rebond** : réactif même avec plus de 3 488 timbres
 
 ### Interface visuelle
 - **Grille de cartes adaptative** : de 2 colonnes sur téléphone à 10+ sur écran ultralarge
@@ -69,7 +69,7 @@ Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Fon
 ### Bilingue (EN / FR)
 - **Sélecteur de langue** dans l'en-tête — bascule instantanément entre l'anglais et le français
 - **Interface française complète** : tous les boutons, libellés, filtres et panneaux
-- **Traduction automatique des catégories** : les 15 catégories et plus de 100 sous-catégories se traduisent automatiquement
+- **Traduction automatique des catégories** : les 14 catégories et plus de 100 sous-catégories se traduisent automatiquement
 - **Traduction des couleurs** : tous les termes philatéliques se traduisent automatiquement
 - **Persistant** : la préférence de langue est sauvegardée
 
@@ -96,7 +96,7 @@ Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Fon
 
 | Métrique | Valeur |
 |---|---|
-| Timbres catalogués | 3 490 |
+| Timbres catalogués | 3 488 |
 | Années couvertes | 1851–2026 (175 ans) |
 | Catégories | 15 de premier niveau, 100+ sous-catégories, toutes canoniques |
 | Notes vides | 0 — chaque timbre a un contexte historique |
@@ -158,18 +158,18 @@ Ce dépôt inclut un fichier [`CLAUDE.md`](CLAUDE.md) permettant à [Claude Code
 
 ## 📂 Référence des catégories
 
-Chaque timbre utilise le format `Catégorie : Sous-catégorie` pour le champ `subTopic`. Les données sont stockées en anglais; l'application traduit automatiquement en français via une table de correspondance. Voici les 15 catégories canoniques :
+Chaque timbre utilise le format `Catégorie : Sous-catégorie` pour le champ `subTopic`. Les données sont stockées en anglais; l'application traduit automatiquement en français via une table de correspondance. Voici les 14 catégories canoniques :
 
-### Histoire et patrimoine (761 timbres)
+### Histoire et patrimoine (760 timbres)
 `Royauté` · `Guerre et militaire` · `Millénaire` · `Peuples autochtones` · `Exploration` · `Dirigeants politiques` · `International` · `Histoire des Noirs` · `Premiers ministres` · `Canadiens notables` · `Anniversaires` · `Droits civils` · `Confédération` · `Canada 150` · `LGBTQ2+` · `Personnalités` · `Travail` · `Maritime` · `Ruée vers l'or` · `Dirigeants mondiaux` · `Organisations` · `Humanitaire` · `Catastrophes`
 
-### Nature et faune (576 timbres)
+### Nature et faune (573 timbres)
 `Fleurs` · `Animaux` · `Oiseaux` · `Paysages` · `Vie marine` · `Arbres` · `Préhistorique` · `Insectes` · `Parcs nationaux` · `Parcs` · `Plantes` · `Montagnes` · `Météo et ciel` · `Champignons` · `Chutes d'eau`
 
-### Arts et culture (440 timbres)
+### Arts et culture (439 timbres)
 `Peintures` · `Arts visuels` · `Musique` · `Photographie` · `Cinéma et télévision` · `Auteurs` · `Artisanat` · `Bandes dessinées` · `Art autochtone` · `Artefacts culturels` · `Folklore` · `Science-fiction` · `Littérature jeunesse` · `Jardins` · `Opéra` · `Musées` · `Théâtre` · `Danse` · `Cirque` · `Design` · `Littérature`
 
-### Fêtes et événements (373 timbres)
+### Fêtes et événements (376 timbres)
 `Noël` · `Nouvel An lunaire` · `Halloween` · `Salutations` · `Expositions` · `Aïd` · `Divali` · `Célébrations` · `Hanoukka`
 
 ### Sports et loisirs (341 timbres)
@@ -178,10 +178,10 @@ Chaque timbre utilise le format `Catégorie : Sous-catégorie` pour le champ `su
 ### Transport (225 timbres)
 `Navires et bateaux` · `Aéronefs` · `Véhicules` · `Trains` · `Routes` · `Poste aérienne` · `Voies navigables` · `Motocyclettes`
 
-### Gouvernement et symboles nationaux (188 timbres)
+### Gouvernement et symboles nationaux (187 timbres)
 `Drapeau` · `Provinces` · `Parlement` · `Symboles nationaux` · `GRC` · `Justice` · `Gouvernement` · `Honneurs` · `Héraldique` · `Fête du Canada` · `Militaire`
 
-### Architecture et monuments (172 timbres)
+### Architecture et monuments (173 timbres)
 `Lieux historiques` · `Bâtiments patrimoniaux` · `UNESCO` · `Villes` · `Ponts` · `Phares` · `Panoramique` · `Religieux` · `Mémoriaux` · `Gouvernement` · `Ingénierie`
 
 ### Culture et société (145 timbres)
@@ -265,7 +265,7 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 ## 🗺️ Feuille de route
 
 ### Complété ✅
-- [x] Catalogue complet 1851–2026 (3 490 timbres)
+- [x] Catalogue complet 1851–2026 (3 488 timbres)
 - [x] Design adaptatif unifié (téléphone → ordinateur)
 - [x] Navigation par décennie avec flèches
 - [x] Service worker, rendu par lots, chargement progressif, content-visibility
@@ -281,7 +281,7 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 - [x] Traduction automatique des catégories et des couleurs
 
 ### Futur 🔮
-- [ ] Compléter les traductions françaises (mainTopic + notes pour les 3 490 timbres)
+- [ ] Compléter les traductions françaises (mainTopic + notes pour les 3 488 timbres)
 - [ ] Vues adaptées à l'impression
 - [ ] Signets/favoris
 - [ ] Liste de souhaits

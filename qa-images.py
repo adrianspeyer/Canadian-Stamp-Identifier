@@ -69,23 +69,14 @@ def main():
 
     # Check 3: Duplicate image paths (two or more stamps sharing one file)
     dupes = {path: ids for path, ids in referenced.items() if len(ids) > 1}
-    # Filter out known legitimate duplicates (015/015a, 019/019a)
-    legit = {
-        frozenset(["015", "015a"]),
-        frozenset(["019", "019a"]),
-    }
-    real_dupes = {
-        path: ids for path, ids in dupes.items()
-        if frozenset(ids) not in legit
-    }
-    if real_dupes:
-        print(f"❌  {len(real_dupes)} image path(s) shared by multiple stamps:")
-        for path, ids in sorted(real_dupes.items()):
+    if dupes:
+        print(f"❌  {len(dupes)} image path(s) shared by multiple stamps:")
+        for path, ids in sorted(dupes.items()):
             id_list = ", ".join(f"#{i}" for i in ids)
             print(f"   {id_list} → {path}")
-        errors += len(real_dupes)
+        errors += len(dupes)
     else:
-        print("✅  No unexpected duplicate image paths.")
+        print("✅  No duplicate image paths.")
 
     print()
 

@@ -202,7 +202,7 @@ If Canada Post changes rates, ALL permanent stamps must be updated.
 ### stamps.json
 - Array of objects under `{"stamps": [...]}`
 - IDs are strings: `"001"`, `"3476"`
-- IDs can include alpha suffixes: `"015a"`, `"019a"` (colour variants)
+- IDs are sequential numeric strings, without letter suffixes. Record colour variants in the main stamp’s notes rather than creating separate entries that reuse its image.
 - Array is in chronological order by issue date
 
 ### stamps-fr.json
@@ -212,7 +212,7 @@ If Canada Post changes rates, ALL permanent stamps must be updated.
 
 ---
 
-## Canonical Categories (15 top-level)
+## Canonical Categories (14 top-level)
 
 Always use `Top-Level: Subcategory` format. The approved top-level categories are:
 - History & Heritage

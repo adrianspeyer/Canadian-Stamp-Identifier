@@ -1,5 +1,17 @@
 # Canadian Stamp Identifier — Changelog
 
+## v2.7 — Visual and Description Review
+
+- Reviewed all 3,490 catalogue entries on image contact sheets (3,485 available images and five existing placeholders).
+- Corrected 582 retained entries and merged two duplicate records: 375 colour labels, 17 categories, 17 titles, and 207 English notes; updated 200 French entries. Search uses these fields; there is no separate tag field.
+- Replaced mismatched descriptions, including African violets, sunflowers, Québec City, NHL Zambonis, and animal mothers; corrected selected biographical and location details using reference sources.
+- Re-labelled dimensions, adhesive and printer information incorrectly stored as perforation data in 164 entries.
+- Colour changes describe broad visible families. Historical and production claims were checked selectively.
+- Merged shared-image records #015a and #019a into the notes for #015 and #019 in both languages, retaining their old colour claims as unverified. The catalogue now has 3,488 entries with continuous numeric IDs #001–#3488; other IDs and image filenames are unchanged. Removed the obsolete duplicate-image QA exceptions.
+- Updated category counts and service-worker caches. Full before/after data and source links: [review audit](reviews/2026-10-08.json).
+
+---
+
 ## v2.6 — Category Audit
 
 ### Categories
