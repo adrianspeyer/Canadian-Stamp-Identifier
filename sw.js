@@ -4,9 +4,9 @@
  * Especially important on iOS where Safari aggressively evicts HTTP cache.
  */
 
-const CACHE_NAME = 'csi-v10';
-const DATA_CACHE = 'csi-data-v10';
-const IMAGE_CACHE = 'csi-images-v10';
+const CACHE_NAME = 'csi-v11';
+const DATA_CACHE = 'csi-data-v11';
+const IMAGE_CACHE = 'csi-images-v11';
 const MAX_CACHED_IMAGES = 500; // Cap image cache to ~50MB (avg ~100KB each)
 
 // Core app files — cached on install
@@ -51,8 +51,8 @@ self.addEventListener('fetch', (event) => {
 
     const path = url.pathname;
 
-    // stamps.json — network first, fall back to cache
-    if (path.endsWith('/stamps.json')) {
+    // stamps.json and stamps-fr.json — network first, fall back to cache
+    if (path.endsWith('/stamps.json') || path.endsWith('/stamps-fr.json')) {
         event.respondWith(networkFirstThenCache(event.request, DATA_CACHE));
         return;
     }

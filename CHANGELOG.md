@@ -27,7 +27,8 @@
 - README category counts refreshed to match the data (History & Heritage 925, Nature & Wildlife 707, Arts & Culture 380, Culture & Society 119)
 
 ### Infrastructure
-- Cache version bumped to v10
+- Cache version bumped to v11
+- Service worker: `stamps-fr.json` is now fetched network-first like `stamps.json` (it was cache-first, so French data updates could be served stale until the next cache bump)
 - Stamp counts updated across README.md, README-fr.md, index.html and app.js
 
 ---
