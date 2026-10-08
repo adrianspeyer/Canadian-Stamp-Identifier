@@ -33,7 +33,7 @@
 
 Cet outil facilite l'identification des timbres grâce à la **correspondance visuelle** dans une grille de cartes adaptative et recherchable. Au lieu de feuilleter des catalogues :
 
-- **Parcourez plus de 3 482 timbres** dans une grille adaptative qui fonctionne sur tous les appareils
+- **Parcourez plus de 3 490 timbres** dans une grille adaptative qui fonctionne sur tous les appareils
 - **Filtrez par décennie** avec une barre de pastilles défilante — sautez instantanément à n'importe quelle époque
 - **Recherche intelligente** par sujet, année, couleur, valeur faciale et notes historiques
 - **Touchez pour les détails** — numéro, valeur faciale, catégorie, couleur et contexte historique
@@ -51,7 +51,7 @@ Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Fon
 - **Recherche instantanée** : tapez une année, un sujet, une couleur ou un mot-clé — recherche aussi dans les notes
 - **Filtrage par décennie** : barre de pastilles défilante avec le nombre de timbres par époque
 - **Filtres combinés** : recherchez dans une décennie (p. ex. « castor » dans les années 1850)
-- **Saisie avec rebond** : réactif même avec plus de 3 482 timbres
+- **Saisie avec rebond** : réactif même avec plus de 3 490 timbres
 
 ### Interface visuelle
 - **Grille de cartes adaptative** : de 2 colonnes sur téléphone à 10+ sur écran ultralarge
@@ -96,7 +96,7 @@ Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Fon
 
 | Métrique | Valeur |
 |---|---|
-| Timbres catalogués | 3 482 |
+| Timbres catalogués | 3 490 |
 | Années couvertes | 1851–2026 (175 ans) |
 | Catégories | 15 de premier niveau, 100+ sous-catégories, toutes canoniques |
 | Notes vides | 0 — chaque timbre a un contexte historique |
@@ -160,13 +160,13 @@ Ce dépôt inclut un fichier [`CLAUDE.md`](CLAUDE.md) permettant à [Claude Code
 
 Chaque timbre utilise le format `Catégorie : Sous-catégorie` pour le champ `subTopic`. Les données sont stockées en anglais; l'application traduit automatiquement en français via une table de correspondance. Voici les 15 catégories canoniques :
 
-### Histoire et patrimoine (916 timbres)
+### Histoire et patrimoine (925 timbres)
 `Royauté` · `Anniversaires` · `Personnalités` · `Peuples autochtones` · `Millénaire` · `Guerre et militaire` · `Canadiens notables` · `Exploration` · `Dirigeants politiques` · `Premiers ministres` · `International` · `Droits civils` · `Histoire des Noirs` · `Confédération` · `Maritime` · `Ruée vers l'or` · `Humanitaire` · `Travail` · `Catastrophes` · `LGBTQ2+`
 
-### Nature et faune (704 timbres)
+### Nature et faune (707 timbres)
 `Animaux` · `Plantes` · `Fleurs` · `Arbres` · `Oiseaux` · `Paysages` · `Parcs` · `Parcs nationaux` · `Vie marine` · `Montagnes` · `Préhistorique` · `Insectes` · `Champignons` · `Fossiles` · `Météo et ciel` · `Saisons`
 
-### Arts et culture (378 timbres)
+### Arts et culture (380 timbres)
 `Arts visuels` · `Musique` · `Auteurs` · `Littérature` · `Photographie` · `Cinéma` · `Cinéma et télévision` · `Bandes dessinées` · `Science-fiction` · `Opéra` · `Danse` · `Théâtre` · `Artisanat` · `Design` · `Folklore` · `Artefacts culturels` · `Littérature jeunesse` · `Musées`
 
 ### Fêtes et événements (304 timbres)
@@ -184,7 +184,7 @@ Chaque timbre utilise le format `Catégorie : Sous-catégorie` pour le champ `su
 ### Architecture et monuments (133 timbres)
 `Panoramique` · `Bâtiments patrimoniaux` · `Lieux historiques` · `Ingénierie` · `Phares` · `UNESCO` · `Gouvernement` · `Villes` · `Religieux` · `Mémoriaux`
 
-### Culture et société (118 timbres)
+### Culture et société (119 timbres)
 `Organisations` · `Éducation` · `Gastronomie` · `Services d'urgence` · `Zodiaque` · `Attractions routières` · `Patrimoine` · `Jouets et jeux` · `Commerce et industrie` · `Immigration`
 
 ### Histoire postale (114 timbres)
@@ -265,7 +265,7 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 ## 🗺️ Feuille de route
 
 ### Complété ✅
-- [x] Catalogue complet 1851–2026 (3 482 timbres)
+- [x] Catalogue complet 1851–2026 (3 490 timbres)
 - [x] Design adaptatif unifié (téléphone → ordinateur)
 - [x] Navigation par décennie avec flèches
 - [x] Service worker, rendu par lots, chargement progressif, content-visibility
@@ -281,7 +281,7 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 - [x] Traduction automatique des catégories et des couleurs
 
 ### Futur 🔮
-- [ ] Compléter les traductions françaises (mainTopic + notes pour les 3 482 timbres)
+- [ ] Compléter les traductions françaises (mainTopic + notes pour les 3 490 timbres)
 - [ ] Vues adaptées à l'impression
 - [ ] Signets/favoris
 - [ ] Liste de souhaits

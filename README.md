@@ -98,7 +98,7 @@ No installation needed — works in any modern web browser. Works offline after 
 
 | Metric | Value |
 |---|---|
-| Stamps catalogued | 3,482 |
+| Stamps catalogued | 3,490 |
 | Years covered | 1851–2026 (175 years) |
 | Categories | 15 top-level, 100+ subcategories, all canonical |
 | Empty notes | 0 — every stamp has historical context |
@@ -161,13 +161,13 @@ This repo includes a [`CLAUDE.md`](CLAUDE.md) file that lets [Claude Code](https
 
 Every stamp uses the `Category: Subcategory` format for the `subTopic` field. Here are all 15 canonical categories with their subcategories:
 
-### History & Heritage (916 stamps)
+### History & Heritage (925 stamps)
 `Royalty` · `Anniversaries` · `People` · `Indigenous Peoples` · `Millennium` · `War & Military` · `Notable Canadians` · `Exploration` · `Political Leaders` · `Prime Ministers` · `International` · `Civil Rights` · `Black History` · `Confederation` · `Maritime` · `Gold Rush` · `Humanitarian` · `Labour` · `Disasters` · `LGBTQ2+`
 
-### Nature & Wildlife (704 stamps)
+### Nature & Wildlife (707 stamps)
 `Animals` · `Plants` · `Flowers` · `Trees` · `Birds` · `Landscapes` · `Parks` · `National Parks` · `Marine Life` · `Mountains` · `Prehistoric` · `Insects` · `Fungi` · `Fossils` · `Weather & Sky` · `Seasons`
 
-### Arts & Culture (378 stamps)
+### Arts & Culture (380 stamps)
 `Visual Arts` · `Music` · `Authors` · `Literature` · `Photography` · `Film` · `Film & Television` · `Comics` · `Science Fiction` · `Opera` · `Dance` · `Theatre` · `Crafts` · `Design` · `Folklore` · `Cultural Artifacts` · `Children's Literature` · `Museums`
 
 ### Holidays & Events (304 stamps)
@@ -185,7 +185,7 @@ Every stamp uses the `Category: Subcategory` format for the `subTopic` field. He
 ### Architecture & Landmarks (133 stamps)
 `Scenic` · `Heritage Buildings` · `Historic Sites` · `Engineering` · `Lighthouses` · `UNESCO` · `Government` · `Cities` · `Religious` · `Memorials`
 
-### Culture & Society (118 stamps)
+### Culture & Society (119 stamps)
 `Organizations` · `Education` · `Food & Drink` · `Emergency Services` · `Zodiac` · `Roadside Attractions` · `Heritage` · `Toys & Games` · `Business & Industry` · `Immigration`
 
 ### Postal History (114 stamps)
@@ -275,7 +275,7 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 ## 🗺️ Roadmap
 
 ### Completed ✅
-- [x] Complete catalogue 1851–2026 (3,482 stamps)
+- [x] Complete catalogue 1851–2026 (3,490 stamps)
 - [x] Unified responsive design (phone → desktop)
 - [x] Decade navigation with chevron arrows
 - [x] Service worker, batched rendering, lazy loading, content-visibility
@@ -294,7 +294,7 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 - [x] Automatic category and colour translation
 
 ### Future 🔮
-- [ ] Complete French stamp translations (mainTopic + notes for all 3,482 stamps)
+- [ ] Complete French stamp translations (mainTopic + notes for all 3,490 stamps)
 - [ ] Print-friendly views
 - [ ] Bookmark/favourites
 - [ ] Wishlist
