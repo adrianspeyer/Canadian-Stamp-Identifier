@@ -20,7 +20,7 @@
         <div class="header-inner">
             <div class="header-brand">
                 <h1 class="header-title" data-i18n="site.title">Canadian Stamp Identifier</h1>
-                <p class="header-subtitle"><span data-i18n="site.subtitle">Visual identification tool</span> · <span id="headerYearRange">1851–2026</span> · v2.7</p>
+                <p class="header-subtitle"><span data-i18n="site.subtitle">Visual identification tool</span> · <span id="headerYearRange">1851–2026</span> · v2.8</p>
             </div>
             <nav class="header-nav">
                 <div class="lang-toggle">
@@ -62,6 +62,8 @@
             <div class="filter-bar" id="filterBar">
                 <span id="resultsCount" class="results-count"></span>
                 <button type="button" id="clearFiltersBtn" class="clear-filters-btn" hidden data-i18n="filter.clear">Clear filters</button>
+                <button type="button" id="printResultsBtn" class="print-btn" data-i18n="print.results" disabled>Print results</button>
+                <span id="printStatus" class="print-status" role="status" aria-live="polite"></span>
             </div>
         </div>
     </div>
@@ -105,6 +107,8 @@
                 </div>
                 <div class="modal-info">
                     <h2 id="modalTitle" class="modal-title"></h2>
+                    <button type="button" id="printStampBtn" class="print-btn" data-i18n="print.stamp">Print stamp</button>
+                    <span id="printModalStatus" class="print-status" role="status" aria-live="polite"></span>
                     <div class="modal-meta" id="modalMeta">
                         <!-- JS populates -->
                     </div>
@@ -113,6 +117,8 @@
             </div>
         </div>
     </div>
+
+    <section id="printView"></section>
 
     <!-- ============ ABOUT PANEL ============ -->
     <div class="panel-backdrop" id="aboutPanel" hidden>

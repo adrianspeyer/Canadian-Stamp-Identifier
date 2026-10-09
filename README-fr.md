@@ -60,6 +60,13 @@ Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Les
 - **Navigation par décennie** : flèches avec défilement automatique de la pastille active
 - **Retour en haut** : bouton de retour rapide après défilement
 
+### Impression
+
+- **Imprimer les résultats** imprime tous les timbres correspondant à la recherche et à la décennie choisies, y compris ceux hors écran
+- **Imprimer le timbre**, dans la fiche détaillée, imprime un timbre avec ses renseignements et ses notes historiques
+- Les boutons préparent les images avant d’ouvrir la boîte de dialogue d’impression; un libellé remplace les images non disponibles
+- Choisissez une imprimante ou l’option d’enregistrement en PDF du navigateur; affinez les filtres pour réduire le nombre de pages
+
 ### Multiplateforme
 - **Téléphone** : grille de 2–3 colonnes, cartes tactiles, recherche fixe
 - **Tablette** : 4–6 colonnes, chargement d'images avec protection de délai d'attente
@@ -106,7 +113,7 @@ Les notes facilitent l’identification visuelle; elles ne constituent pas un se
 | Catégories non canoniques | 0 — chaque sous-catégorie suit le format `Catégorie : Sous-catégorie` |
 | Plateformes | Téléphone, tablette, ordinateur |
 | Dépendances | 0 |
-| Version | v2.7 |
+| Version | v2.8 |
 
 ## 📖 Comment utiliser
 
@@ -281,12 +288,8 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 - [x] Taux du timbre permanent mis à jour à 1,24 $
 - [x] Interface bilingue (EN/FR) avec sélecteur de langue
 - [x] Traduction automatique des catégories et des couleurs
-
-### Futur 🔮
-- [ ] Réviser et améliorer les titres et notes en français
-- [ ] Vues adaptées à l'impression
-- [ ] Signets/favoris
-- [ ] Liste de souhaits
+- [x] Révision des titres, des noms de séries et des notes en français
+- [x] Impression des résultats filtrés ou d’un timbre avec ses notes (FR/EN)
 
 ## 📜 Licence et mentions légales
 

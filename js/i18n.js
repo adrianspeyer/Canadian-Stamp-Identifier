@@ -37,6 +37,14 @@ const I18N = {
         'filter.of':            { en: 'of',                                 fr: 'sur' },
         'filter.clear':         { en: 'Clear filters',                      fr: 'Effacer les filtres' },
 
+        // Printing
+        'print.results':        { en: 'Print results',                      fr: 'Imprimer les résultats' },
+        'print.stamp':          { en: 'Print stamp',                        fr: 'Imprimer le timbre' },
+        'print.oneStamp':       { en: 'stamp',                              fr: 'timbre' },
+        'print.preparing':      { en: 'Preparing images…',                  fr: 'Préparation des images…' },
+        'print.search':         { en: 'Search',                             fr: 'Recherche' },
+        'print.decade':         { en: 'Decade',                             fr: 'Décennie' },
+
         // Loading
         'loading.text':         { en: 'Loading stamps',                     fr: 'Chargement des timbres' },
         'loading.of':           { en: 'of',                                 fr: 'sur' },
@@ -393,6 +401,15 @@ const I18N = {
         this._lang = browserLang.startsWith('fr') ? 'fr' : 'en';
         document.documentElement.lang = this._lang;
         return this._lang;
+    },
+
+    /** Localise face values while preserving the catalogue's denomination data. */
+    formatDenomination(value) {
+        if (this.getLang() !== 'fr') return value;
+        return value.replace('Current monetary value:', 'Valeur monétaire actuelle :')
+            .replace(/\$(\d+(?:\.\d+)?)/g, (_, amount) =>
+                `${Number(amount).toLocaleString('fr-CA', { minimumFractionDigits: 2 })}\u00a0$`)
+            .replace(/\s+\.$/, '.');
     },
 
     /** Load French stamp translations */

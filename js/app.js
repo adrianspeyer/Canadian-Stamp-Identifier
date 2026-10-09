@@ -67,6 +67,7 @@ class StampIdentifier {
             this.restoreFilterState();
             this.applyFilters();
             this.bindEvents();
+            document.getElementById('printResultsBtn').disabled = false;
             this.applyLanguage(); // Translate all static UI elements
             this.dismissLoading();
         } catch (err) {
@@ -537,6 +538,7 @@ class StampIdentifier {
        ────────────────────────────────────────────── */
     showDetails(stamp) {
         if (!stamp) return;
+        this.selectedStamp = stamp;
 
         const img = document.getElementById('modalImage');
         const frame = document.getElementById('modalImageFrame');
@@ -564,7 +566,7 @@ class StampIdentifier {
         const fields = [
             { label: I18N.t('modal.id'), value: stamp.id },
             { label: I18N.t('modal.year'), value: stamp.year },
-            { label: I18N.t('modal.denomination'), value: stamp.denomination },
+            { label: I18N.t('modal.denomination'), value: I18N.formatDenomination(stamp.denomination) },
             { label: I18N.t('modal.colour'), value: I18N.translateColour(stamp.color) },
         ];
 
@@ -639,6 +641,125 @@ class StampIdentifier {
     }
 
     /* ──────────────────────────────────────────────
+       PRINTING
+       ────────────────────────────────────────────── */
+    preparePrintView() {
+        const view = document.getElementById('printView');
+        if (view.childElementCount) return;
+
+        // Apply any search text still waiting for the debounce timer.
+        this.handleSearchInput(this.searchInput.value);
+        const detail = !this.modal.hidden && this.selectedStamp;
+        const stamps = detail ? [this.selectedStamp] : this.cardElements
+            .filter(card => !card.hidden).map(card => card._stamp);
+        view.classList.toggle('print-detail', !!detail);
+
+        const heading = document.createElement('h1');
+        heading.textContent = I18N.t('site.title');
+        view.appendChild(heading);
+        const summary = document.createElement('p');
+        const context = [`${stamps.length.toLocaleString(I18N.getLang())} ${I18N.t(stamps.length === 1 ? 'print.oneStamp' : 'filter.stamps')}`];
+        if (!detail && this.activeDecade !== null) context.push(`${I18N.t('print.decade')}: ${this.activeDecade}–${this.activeDecade + 9}`);
+        if (!detail && this.searchInput.value.trim()) context.push(`${I18N.t('print.search')}: ${this.searchInput.value.trim()}`);
+        summary.textContent = context.join(' · ');
+        view.appendChild(summary);
+
+        const list = document.createElement('div');
+        list.className = 'print-cards';
+        for (const stamp of stamps) {
+            const card = document.createElement('article');
+            card.className = 'print-card';
+            const title = document.createElement('h2');
+            title.textContent = `${stamp.year} — ${I18N.getStampField(stamp, 'mainTopic')}`;
+            const frame = document.createElement('div');
+            frame.className = 'print-image';
+            const fallback = document.createElement('span');
+            fallback.textContent = I18N.t('card.unavailable');
+            frame.appendChild(fallback);
+            if (stamp.image) {
+                const img = document.createElement('img');
+                img.alt = I18N.getStampField(stamp, 'mainTopic');
+                img.loading = 'eager';
+                img.hidden = true;
+                img.addEventListener('load', () => {
+                    img.hidden = false;
+                    fallback.hidden = true;
+                }, { once: true });
+                img.src = encodeURI(stamp.image);
+                frame.appendChild(img);
+            }
+            card.append(frame, title);
+            const metadata = document.createElement('p');
+            metadata.textContent = `#${stamp.id} · ${I18N.formatDenomination(stamp.denomination)}`;
+            card.appendChild(metadata);
+            if (detail) {
+                for (const [label, value] of [
+                    ['modal.colour', I18N.translateColour(stamp.color)],
+                    ['modal.category', I18N.translateCategory(stamp.subTopic)],
+                    ['modal.notes', I18N.getStampField(stamp, 'notes')],
+                ]) {
+                    const paragraph = document.createElement('p');
+                    const caption = document.createElement('strong');
+                    caption.textContent = `${I18N.t(label)}${I18N.getLang() === 'fr' ? '\u00a0' : ''}: `;
+                    paragraph.append(caption, document.createTextNode(value || '—'));
+                    card.appendChild(paragraph);
+                }
+            }
+            list.appendChild(card);
+        }
+        if (!stamps.length) {
+            const empty = document.createElement('p');
+            empty.textContent = I18N.t('empty.title');
+            list.appendChild(empty);
+        }
+        view.appendChild(list);
+        const footer = document.createElement('p');
+        footer.className = 'print-footer';
+        footer.textContent = I18N.t('modal.footer');
+        view.appendChild(footer);
+    }
+
+    async printSelection() {
+        if (this.printing) return;
+        this.printing = true;
+        const buttons = ['printResultsBtn', 'printStampBtn'].map(id => document.getElementById(id));
+        const statuses = ['printStatus', 'printModalStatus'].map(id => document.getElementById(id));
+        buttons.forEach(button => { button.disabled = true; });
+        statuses.forEach(status => { status.textContent = I18N.t('print.preparing'); });
+        try {
+            this.preparePrintView();
+            // Print a separate, eager-loaded snapshot: off-screen lazy cards must not disappear.
+            // A bounded wait also allows printing offline or with unavailable stamp images.
+            const images = [...document.querySelectorAll('#printView img')];
+            await Promise.all(images.map(img => new Promise(resolve => {
+                if (img.complete) return resolve();
+                const finish = () => {
+                    clearTimeout(timer);
+                    img.removeEventListener('load', finish);
+                    img.removeEventListener('error', finish);
+                    resolve();
+                };
+                const timer = setTimeout(finish, StampIdentifier.IMAGE_LOAD_TIMEOUT);
+                img.addEventListener('load', finish, { once: true });
+                img.addEventListener('error', finish, { once: true });
+            })));
+            // Cached images can be complete before their queued load event is delivered.
+            for (const img of images) {
+                if (img.complete && img.naturalWidth > 0) {
+                    img.hidden = false;
+                    img.parentElement.querySelector('span').hidden = true;
+                }
+            }
+            window.print();
+        } finally {
+            // afterprint clears the snapshot, including on browsers where print() is non-blocking.
+            this.printing = false;
+            buttons.forEach(button => { button.disabled = false; });
+            statuses.forEach(status => { status.textContent = ''; });
+        }
+    }
+
+    /* ──────────────────────────────────────────────
        LOADING DISMISSAL
        ────────────────────────────────────────────── */
     dismissLoading() {
@@ -652,6 +773,11 @@ class StampIdentifier {
        EVENT BINDING
        ────────────────────────────────────────────── */
     bindEvents() {
+        document.getElementById('printResultsBtn').addEventListener('click', () => this.printSelection());
+        document.getElementById('printStampBtn').addEventListener('click', () => this.printSelection());
+        window.addEventListener('beforeprint', () => this.preparePrintView());
+        window.addEventListener('afterprint', () => document.getElementById('printView').replaceChildren());
+
         // --- Search (debounced) ---
         let searchTimer = null;
         this.searchInput.addEventListener('input', () => {
@@ -718,6 +844,10 @@ class StampIdentifier {
 
         // --- Keyboard ---
         document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'p') {
+                e.preventDefault();
+                this.printSelection();
+            }
             if (e.key === 'Escape') {
                 if (!this.modal.hidden) {
                     this.closeModal();

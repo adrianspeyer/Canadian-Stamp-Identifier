@@ -1,5 +1,13 @@
 # Canadian Stamp Identifier — Changelog
 
+## v2.8 — French Refinement and Printing
+
+- Refined 817 French titles and 1,024 French notes across 1,470 entries: translated leftover English and mixed-language subjects and series, restored proper names, and corrected accents and terminology. All 3,488 entries have French titles and notes. This was a language review, not a new historical-data audit. [Changed-field index and source links](reviews/2026-10-08-french.json).
+- Added bilingual Print results and Print stamp buttons, plus Ctrl/Cmd+P support. Printouts include filtered off-screen results or an individual stamp’s full notes; images are prepared before printing, with text fallbacks for missing images.
+- Localised permanent-rate descriptions and dollar amounts in French stamp details and printouts.
+- Removed bookmarks/favourites and wishlists from both roadmaps; marked French refinement and print-friendly views completed.
+- Updated service-worker caches to v15.
+
 ## v2.7 — Visual and Description Review
 
 - Clarified in English and French that the project is non-commercial, stamp images are used for education and reference, and the AGPL-3.0 code licence does not cover those images.

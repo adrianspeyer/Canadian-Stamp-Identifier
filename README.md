@@ -60,6 +60,13 @@ No installation needed — works in any modern web browser. Previously cached ca
 - **Decade navigation**: chevron arrows with active pill auto-scroll
 - **Scroll-to-top**: quick return button after scrolling
 
+### Printing
+
+- **Print results** prints all stamps matching your current search and decade filters, including off-screen results
+- **Print stamp** in the detail view prints one stamp with its metadata and historical notes
+- Print buttons prepare images before opening the browser print dialog; unavailable images receive a text label
+- Use the browser’s printer or Save as PDF option; narrow the filters for a shorter printout
+
 ### Cross-Platform
 - **Phone**: 2–3 column grid, touch-friendly, sticky search
 - **Tablet**: 4–6 columns, timeout-protected image loading
@@ -108,7 +115,7 @@ Catalogue notes support visual identification; they are not an authentication or
 | Non-canonical categories | 0 — every subTopic follows `Category: Subcategory` format |
 | Platforms | Phone, tablet, desktop |
 | Dependencies | 0 |
-| Version | v2.7 |
+| Version | v2.8 |
 
 ## 📖 How to Use
 
@@ -295,12 +302,10 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 - [x] 336 legacy subcategories normalised to canonical format
 - [x] Bilingual UI (EN/FR) with language toggle
 - [x] Automatic category and colour translation
+- [x] Reviewed and refined French titles, series names, and notes
+- [x] Print filtered results or an individual stamp with notes (EN/FR)
 
 ### Future 🔮
-- [ ] Review and refine existing French titles and notes
-- [ ] Print-friendly views
-- [ ] Bookmark/favourites
-- [ ] Wishlist
 - [ ] Refine "multicoloured" with more specific descriptions (community)
 
 ## 📜 License & Legal
