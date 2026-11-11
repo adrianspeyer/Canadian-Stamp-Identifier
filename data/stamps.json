@@ -34833,52 +34833,102 @@
     {
       "id": "3484",
       "year": 2026,
-      "mainTopic": "Jack-O'-Lanterns",
+      "mainTopic": "Jack-O'-Lanterns (Mummy)",
       "subTopic": "Holidays & Events: Halloween",
       "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
-      "color": "multicoloured",
-      "image": "images/2020s/3484-jack-o-lanterns-p-2026.jpg",
-      "notes": "Expected: Fall 2026. Jack-o'-lanterns for the Halloween season — continuing Canada Post's tradition of festive seasonal stamps."
+      "color": "white pumpkin on teal and black",
+      "image": "images/2020s/3484-jack-o-lanterns-mummy-p-2026.jpg",
+      "notes": "Issued: Oct. 13, 2026; Booklet of 6; Printer: Colour Innovations; Designer: Kristine Do; Photographer: Maya Visnyei; Pumpkin carving: Zac Flavelle; Prop styling: Catherine Doherty. First of three hand-carved jack-o'-lantern characters: a white pumpkin carved in layered bands as a mummy. The Official First Day Cover is cancelled at Smoky Lake, Alberta, the \"Pumpkin Capital of Alberta\" and home of the Great White North Pumpkin Weigh-Off & Fair. See also #3485, #3486."
     },
     {
       "id": "3485",
       "year": 2026,
-      "mainTopic": "Remembrance Day",
-      "subTopic": "History & Heritage: War & Military",
+      "mainTopic": "Jack-O'-Lanterns (Witch)",
+      "subTopic": "Holidays & Events: Halloween",
       "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
-      "color": "multicoloured",
-      "image": "images/2020s/3485-remembrance-day-p-2026.jpg",
-      "notes": "Expected: November 2026. Series: Remembrance Day. Honouring the sacrifices of Canadian servicemen and servicewomen in conflicts from WWI to modern peacekeeping missions."
+      "color": "orange warty pumpkin on deep red",
+      "image": "images/2020s/3485-jack-o-lanterns-witch-p-2026.jpg",
+      "notes": "Issued: Oct. 13, 2026; Booklet of 6; Printer: Colour Innovations; Designer: Kristine Do; Photographer: Maya Visnyei. A warty orange pumpkin carved as a witch, with a curled stem for a nose, surrounded by potion bottles and a black-cat shadow. See also #3484, #3486."
     },
     {
       "id": "3486",
+      "year": 2026,
+      "mainTopic": "Jack-O'-Lanterns (Monster)",
+      "subTopic": "Holidays & Events: Halloween",
+      "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+      "color": "orange and green pumpkin on purple",
+      "image": "images/2020s/3486-jack-o-lanterns-monster-p-2026.jpg",
+      "notes": "Issued: Oct. 13, 2026; Booklet of 6; Printer: Colour Innovations; Designer: Kristine Do; Photographer: Maya Visnyei. An orange pumpkin carved as a monster, stitched with green squash patches beneath cobwebs and spiders. See also #3484, #3485."
+    },
+    {
+      "id": "3487",
       "year": 2026,
       "mainTopic": "Diwali",
       "subTopic": "Holidays & Events: Diwali",
       "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
       "color": "multicoloured",
-      "image": "images/2020s/3486-diwali-p-2026.jpg",
-      "notes": "Expected: 2026. Series: Diwali. Annual issue celebrating the festival of lights."
+      "image": "images/2020s/3487-diwali-p-2026.jpg",
+      "notes": "Issued: Oct. 19, 2026; Booklet of 6; Printer: Colour Innovations; Designer: Kristine Do; Illustrator: Radha Joshi Raul. Series: Diwali. A woman's hands string marigolds and mango leaves into a torana, a garland hung at the entrance of a home or temple to welcome guests and invite Lakshmi, goddess of prosperity; part of the string outlines a diya, the clay oil lamp symbolizing the triumph of light over darkness. Official First Day Cover cancelled at Brampton, Ontario. Canada Post has issued a Diwali stamp every year since 2020."
     },
     {
-      "id": "3487",
+      "id": "3488",
+      "year": 2026,
+      "mainTopic": "Christmas — Angel",
+      "subTopic": "Holidays & Events: Christmas",
+      "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+      "color": "multicoloured",
+      "image": "images/2020s/3488-christmas-angel-p-2026.jpg",
+      "notes": "Issued: Nov. 2, 2026; Booklet of 10; Printer: Colour Innovations; Designer: Jocelyne Saulnier (Joce Creative); Artist: Mario Mauro; Photography: Jive Photographic Inc. Series: Christmas 2026. An angel poised in the heavens, hands together in prayer and wings extended, from the mural surrounding the altar of Paroisse Saint-Pierre (St. Peter's Church) in Chéticamp, Nova Scotia. Official First Day Cover cancelled at Chéticamp with a Star of Bethlehem."
+    },
+    {
+      "id": "3489",
+      "year": 2026,
+      "mainTopic": "Holiday — Snowflakes",
+      "subTopic": "Holidays & Events: Christmas",
+      "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+      "color": "icy blue on white",
+      "image": "images/2020s/3489-holiday-snowflakes-domestic-p-2026.jpg",
+      "notes": "Issued: Nov. 2, 2026; Booklet of 10 and souvenir sheet of 3; Printer: Colour Innovations; Illustrator: Manantsoa Razafimandimby, after photography by Don Komarechka. Series: Holiday 2026. Magnified close-up of a real snowflake crystal in icy-blue hues on white — the domestic-rate design of three. Official First Day Cover cancelled at Bonne Bay, Newfoundland and Labrador, an area known for heavy snowfall. See also #3490, #3491."
+    },
+    {
+      "id": "3490",
+      "year": 2026,
+      "mainTopic": "Holiday — Snowflakes ($1.75)",
+      "subTopic": "Holidays & Events: Christmas",
+      "denomination": "$1.75",
+      "color": "icy blue on white",
+      "image": "images/2020s/3490-holiday-snowflakes-us-175-2026.jpg",
+      "notes": "Issued: Nov. 2, 2026; Souvenir sheet of 3; Printer: Colour Innovations; Illustrator: Manantsoa Razafimandimby, after photography by Don Komarechka. U.S.-rate snowflake design featuring a fern-like stellar dendrite crystal. See also #3489, #3491."
+    },
+    {
+      "id": "3491",
+      "year": 2026,
+      "mainTopic": "Holiday — Snowflakes ($3.65)",
+      "subTopic": "Holidays & Events: Christmas",
+      "denomination": "$3.65",
+      "color": "icy blue on white",
+      "image": "images/2020s/3491-holiday-snowflakes-international-365-2026.jpg",
+      "notes": "Issued: Nov. 2, 2026; Souvenir sheet of 3; Printer: Colour Innovations; Illustrator: Manantsoa Razafimandimby, after photography by Don Komarechka. International-rate snowflake design featuring a crystal with broad hexagonal plate tips. See also #3489, #3490."
+    },
+    {
+      "id": "3492",
+      "year": 2026,
+      "mainTopic": "Force 136 — Remembrance Day",
+      "subTopic": "History & Heritage: War & Military",
+      "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
+      "color": "multicoloured",
+      "image": "images/2020s/3492-force-136-remembrance-day-p-2026.jpg",
+      "notes": "Issued: Nov. 4, 2026; Booklet of 6 and pane of 5; Printer: Colour Innovations; Designer: Clear Space. Series: Remembrance Day. A 1945 black-and-white photograph of Chinese Canadian soldiers awaiting repatriation, overlaid with Force 136's red phoenix insignia and the name in English, French and traditional Chinese. Barred from enlisting until 1944, about 150 Chinese Canadians were recruited for covert operations in Japanese-occupied Asia with Britain's Force 136 or Australia's Services Reconnaissance Department; their service helped lead to repeal of the Chinese Exclusion Act in 1947. Official First Day Cover cancelled at Vancouver with the Burma Star."
+    },
+    {
+      "id": "3493",
       "year": 2026,
       "mainTopic": "Hanukkah",
       "subTopic": "Holidays & Events: Hanukkah",
       "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
       "color": "multicoloured",
-      "image": "images/2020s/3487-hanukkah-p-2026.jpg",
-      "notes": "Expected: 2026. Series: Hanukkah. Annual issue celebrating the Jewish festival of lights."
-    },
-    {
-      "id": "3488",
-      "year": 2026,
-      "mainTopic": "Christmas",
-      "subTopic": "Holidays & Events: Christmas",
-      "denomination": "PERMANENT™ (P). Current monetary value: $1.24 .",
-      "color": "multicoloured",
-      "image": "images/2020s/3488-christmas-p-2026.jpg",
-      "notes": "Expected: 2026. Series: Christmas. Annual holiday stamp."
+      "image": "images/2020s/3493-hanukkah-p-2026.jpg",
+      "notes": "Issued: Nov. 9, 2026; Booklet of 6; Printer: Lowe-Martin; Designer: Hélène L'Heureux; Illustrator: Jacqueline Kott-Wolle. Series: Hanukkah. A family lighting a hanukkiyah, painted from an archival photograph of three generations of the artist's family at their North Toronto home during Hanukkah. Official First Day Cover cancelled at Toronto."
     }
   ]
 }

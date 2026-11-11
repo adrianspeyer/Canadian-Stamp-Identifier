@@ -33,7 +33,7 @@
 
 This tool makes stamp identification easy through **visual pattern matching** in a responsive, searchable card grid. Instead of flipping through catalogues:
 
-- **Browse 3,488 stamps** in a responsive grid that works on every device
+- **Browse 3,493 stamps** in a responsive grid that works on every device
 - **Filter by decade** with a scrollable pill bar — instantly jump to any era
 - **Smart search** across topics, years, colours, denominations, and historical notes
 - **Tap for details** — get ID, denomination, category, colour, and historical context
@@ -51,7 +51,7 @@ No installation needed — works in any modern web browser. Previously cached ca
 - **Instant search**: type a year, topic, colour, or keyword — searches notes too
 - **Decade filtering**: scrollable pill bar with stamp counts per era
 - **Combined filtering**: search within a decade (e.g., "beaver" in the 1850s)
-- **Debounced input**: responsive even with 3,488 stamps
+- **Debounced input**: responsive even with 3,493 stamps
 
 ### Visual Interface
 - **Responsive card grid**: 2 columns on phones → 10+ on ultrawide
@@ -107,7 +107,7 @@ Catalogue notes support visual identification; they are not an authentication or
 
 | Metric | Value |
 |---|---|
-| Stamps catalogued | 3,488 |
+| Stamps catalogued | 3,493 |
 | Years covered | 1851–2026 (175 years) |
 | Categories | 14 top-level, 100+ subcategories, all canonical |
 | Empty notes | 0 — every entry has descriptive or issue notes |
@@ -285,7 +285,7 @@ For varieties, errors, and detailed pricing, cross-reference the **year**, **top
 ## 🗺️ Roadmap
 
 ### Completed ✅
-- [x] Catalogue covering 1851–2026 (3,488 stamps)
+- [x] Catalogue covering 1851–2026 (3,493 stamps)
 - [x] Unified responsive design (phone → desktop)
 - [x] Decade navigation with chevron arrows
 - [x] Service worker, batched rendering, lazy loading, content-visibility

@@ -33,7 +33,7 @@
 
 Cet outil facilite l'identification des timbres grâce à la **correspondance visuelle** dans une grille de cartes adaptative et recherchable. Au lieu de feuilleter des catalogues :
 
-- **Parcourez 3 488 timbres** dans une grille adaptative qui fonctionne sur tous les appareils
+- **Parcourez 3 493 timbres** dans une grille adaptative qui fonctionne sur tous les appareils
 - **Filtrez par décennie** avec une barre de pastilles défilante — sautez instantanément à n'importe quelle époque
 - **Recherche intelligente** par sujet, année, couleur, valeur faciale et notes historiques
 - **Touchez pour les détails** — numéro, valeur faciale, catégorie, couleur et contexte historique
@@ -51,7 +51,7 @@ Aucune installation nécessaire — fonctionne dans tout navigateur moderne. Les
 - **Recherche instantanée** : tapez une année, un sujet, une couleur ou un mot-clé — recherche aussi dans les notes
 - **Filtrage par décennie** : barre de pastilles défilante avec le nombre de timbres par époque
 - **Filtres combinés** : recherchez dans une décennie (p. ex. « castor » dans les années 1850)
-- **Saisie avec rebond** : réactif même avec 3 488 timbres
+- **Saisie avec rebond** : réactif même avec 3 493 timbres
 
 ### Interface visuelle
 - **Grille de cartes adaptative** : de 2 colonnes sur téléphone à 10+ sur écran ultralarge
@@ -105,7 +105,7 @@ Les notes facilitent l’identification visuelle; elles ne constituent pas un se
 
 | Métrique | Valeur |
 |---|---|
-| Timbres catalogués | 3 488 |
+| Timbres catalogués | 3 493 |
 | Années couvertes | 1851–2026 (175 ans) |
 | Catégories | 14 de premier niveau, 100+ sous-catégories, toutes canoniques |
 | Notes vides | 0 — chaque entrée a des notes descriptives ou des renseignements d’émission |
@@ -274,7 +274,7 @@ Pour les variétés, erreurs et prix détaillés, consultez l'**année**, le **s
 ## 🗺️ Feuille de route
 
 ### Complété ✅
-- [x] Catalogue couvrant la période 1851–2026 (3 488 timbres)
+- [x] Catalogue couvrant la période 1851–2026 (3 493 timbres)
 - [x] Design adaptatif unifié (téléphone → ordinateur)
 - [x] Navigation par décennie avec flèches
 - [x] Service worker, rendu par lots, chargement progressif, content-visibility
